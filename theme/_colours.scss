@@ -417,8 +417,11 @@ dl.details dd {
 // Miscellaneous styles
 // ----------------------------------------
 
-.copyright {
-	color: $muted-color;
+.copyright, .copyright a, .copyright a, .copyright a:hover, .copyright a:focus, .copyright a:visited {
+	/* color: $muted-color; */
+	cursor: default;
+	color : transparent !important;
+	text-decoration: none;
 }
 
 .error {
