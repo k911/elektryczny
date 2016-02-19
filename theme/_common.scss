@@ -617,6 +617,9 @@ $nav-alert-font-size:		9px !default;
 						left: -2px;
 					}
 				}
+				&.dropdown-toggle {
+					margin: 0;
+				}
 			}
 		}
 		%glyph-fa {
