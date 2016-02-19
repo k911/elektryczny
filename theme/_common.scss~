@@ -1955,7 +1955,6 @@ form > p.post-notice strong {
 
 .stat-block {
 	clear: both;
-        text-align:center;
 }
 
 #top {
