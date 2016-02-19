@@ -577,6 +577,7 @@ $nav-alert-font-size:		9px !default;
 			text-indent: 999px;
 			width: $nav-primary-glyph-font-size;
 			padding: 0 $tab-padding-glyph;
+			margin: 0;
 			overflow: hidden;
 			&:after {
 				text-align: center;
@@ -593,6 +594,9 @@ $nav-alert-font-size:		9px !default;
 					right: auto;
 					left: -2px;
 				}
+			}
+			&.dropdown-toggle {
+				margin: 0;
 			}
 		}
 		@media (max-width: 550px) {
