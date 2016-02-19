@@ -1,6 +1,4 @@
-//
-//	Add your custom code to this file
-//
-//	This file requires SASS compiler.
-//	You can find instructions here: http://www.artodia.com/phpbb-31-tutorials/compile-theme/
-//
+/* fix for icon displaying on the user's name */
+.navbar.secondary > ul > li > a.small-icon {
+	padding-left: 1.5em !important;
+}

@@ -459,6 +459,7 @@ $nav-alert-font-size:		9px !default;
 			font-size: $nav-primary-font-size;
 			outline-style: none;
 			&.dropdown-toggle {
+				margin-right: .5em; /* fixed no margin when tab with dt is selected, it was weird */
 				position: relative;
 				&:before {
 					$nav-primary-font-size-toggle:	ceil($nav-primary-font-size * 2 / 3) !default;
@@ -478,7 +479,7 @@ $nav-alert-font-size:		9px !default;
 					}
 				}
 				&:hover:before {
-					display: none;
+					/* display: none; // was weird */
 				}
 			}
 			.username-coloured {

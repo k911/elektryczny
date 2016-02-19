@@ -121,10 +121,10 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
 .navbar .nav-tabs > ul #quick-links.empty { display: none; }
 .navbar .nav-tabs > ul #quick-links.showing-responsive-menu { display: block; }
 .navbar .nav-tabs .nav-link { text-decoration: none; color: inherit; display: inline-block; height: 30px; line-height: 30px; padding: 0 12px; vertical-align: baseline; font-size: 12px; outline-style: none; }
-.navbar .nav-tabs .nav-link.dropdown-toggle { position: relative; }
+.navbar .nav-tabs .nav-link.dropdown-toggle { margin-right: .5em; /* fixed no margin when tab with dt is selected, it was weird */ position: relative; }
 .navbar .nav-tabs .nav-link.dropdown-toggle:before { content: '\f078'; font-family: FontAwesome; position: absolute; right: 0; top: 50%; font-size: 8px; line-height: 12px; width: 8px; height: 12px; margin-top: -6px; }
 .rtl .navbar .nav-tabs .nav-link.dropdown-toggle:before { right: auto; left: 0; }
-.navbar .nav-tabs .nav-link.dropdown-toggle:hover:before { display: none; }
+.navbar .nav-tabs .nav-link.dropdown-toggle:hover:before { /* display: none; // was weird */ }
 .navbar .nav-tabs .nav-link .username-coloured { color: inherit !important; font-weight: inherit; font-style: inherit; }
 .navbar .nav-tabs .responsive-menu .nav-link:before, .navbar .nav-tabs .dropdown-visible .nav-link:before { display: none; }
 .navbar .nav-tabs .dropdown { top: 30px; }
@@ -2276,3 +2276,6 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 .imageset.icon_topic_newest:after, .imageset.icon_topic_reported:after, .imageset.icon_topic_deleted:after, .imageset.icon_topic_unapproved:after { color: #d06d3c; }
 
 .imageset.icon_topic_poll:after { color: #709085; }
+
+/* fix for icon displaying on the user's name */
+.navbar.secondary > ul > li > a.small-icon { padding-left: 1.5em !important; }

@@ -88,7 +88,7 @@
 								<!-- EVENT navbar_header_profile_list_before -->
 			
 								<li class="small-icon icon-ucp"><a href="{U_PROFILE}" title="{L_PROFILE}" role="menuitem">{L_PROFILE}</a></li>
-								<li class="small-icon icon-profile"><a href="{U_USER_PROFILE}" title="{L_READ_PROFILE}" role="menuitem">{L_READ_PROFILE}</a></li>
+								<li class="small-icon icon-profile icon-profile-temporaryfix"><a href="{U_USER_PROFILE}" title="{L_READ_PROFILE}" role="menuitem">{L_READ_PROFILE}</a></li>
 			
 								<!-- EVENT navbar_header_profile_list_after -->
 			
@@ -164,7 +164,7 @@
 					<li class="small-icon icon-register"><a href="{U_REGISTER}">{L_REGISTER}</a></li>
 				<!-- ENDIF -->
 			<!-- ELSEIF not S_DISPLAY_SEARCH -->
-				<li><a href="{U_PROFILE}" class="small-icon icon-profile">{CURRENT_USERNAME_SIMPLE}</a></li>
+				<li><a href="{U_PROFILE}" class="small-icon icon-profile icon-profile-temporaryfix">{CURRENT_USERNAME_SIMPLE}</a></li>
 			<!-- ENDIF -->
 		{% endif %}
 
