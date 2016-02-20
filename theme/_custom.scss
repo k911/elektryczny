@@ -18,3 +18,22 @@ code.spoiler {
 	font-size: 14px;
 	display: none;
 }
+
+/* youtube bbcode */
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 12.25%;
+  padding-top: 25px;
+  height: 0;
+  max-width: 440px;
+  min-height: 150px;
+  display: block;
+}
+.videoWrapper iframe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
