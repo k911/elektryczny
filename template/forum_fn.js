@@ -1419,6 +1419,18 @@ function parseDocument($container) {
 	$container.find('dd.lastpost > span:only-child > br:only-child').parents('dd.lastpost').addClass('empty');
 	
 	/**
+	* Spoiler à la wykop.pl
+	* Using:
+	* 	| <a href="#" class="spoiler">pokaż spoiler</a>
+	*	| <code class="spoiler">{TEXT}</code>
+	*/
+	$('a.spoiler').click(function(e) {
+		e.preventDefault();
+		$(this).next('code.spoiler').show();
+		$(this).hide();
+	});
+	
+	/**
 	* HD images
 	*/
 	if (window.matchMedia && window.matchMedia('(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.5dppx)').matches) {
