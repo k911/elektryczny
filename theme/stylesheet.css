@@ -497,7 +497,7 @@ form > p.post-notice strong { line-height: 20px; }
 
 #jumpbox { margin: 5px 0; }
 
-.stat-block { clear: both; }
+.stat-block { clear: both; text-align: center; }
 
 #top { position: absolute; top: -20px; }
 
@@ -2281,3 +2281,12 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 
 /* fix for icon displaying on the user's name */
 .navbar.secondary > ul > li > a.small-icon { padding-left: 1.5em !important; }
+
+/* spoiler à la wykop.pl */
+.spoiler { font-size: 14px; }
+
+a.spoiler { font-variant: small-caps; }
+
+a.spoiler:hover { text-decoration: none; }
+
+code.spoiler { font-family: monospace; font-size: 14px; display: none; }
