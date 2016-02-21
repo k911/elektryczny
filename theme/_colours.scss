@@ -1337,7 +1337,7 @@ fieldset.quick-login input.inputbox {
 // Form button styles
 // ----------------------------------------
 
-a.button1, input.button1, input.button3, a.button2, input.button2 {
+a.button1, input.button1, input.button3, a.button2, input.button2, button.button2 {
 	color: $button-text;
 	border-color: $button-border;
 	background-color: $button-bg;
@@ -1354,14 +1354,14 @@ input.button3 {
 }
 
 // Hover states
-a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover {
+a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, button.button2:hover, input.button3:hover {
 	border-color: $secondary-color;
 	background-color: $secondary-color;
 	color: $overlay-color;
 }
 
 // Focus states
-input.button1:focus, input.button2:focus, input.button3:focus {
+input.button1:focus, input.button2:focus, button.button2:focus, input.button3:focus {
 	border-color: $secondary-color;
 	background-color: $secondary-color;
 	color: $overlay-color;

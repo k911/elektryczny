@@ -58,13 +58,38 @@
 	</dl>
 </div>
 
+<!-- TODO: 
+     * Użyć tutaj bootstrapa (docelowo wszędzie?)
+	 * Zmienić ikony glyphicons & font awesome na -> materialdesign icons
+	 -->
+
 <!-- EVENT posting_editor_buttons_before -->
 <div id="format-buttons">
 	<input type="button" class="button2 bbcode-b" accesskey="b" name="addbbcode0" value=" B " style="font-weight:bold; width: 30px" onclick="bbstyle(0)" title="{L_BBCODE_B_HELP}" />
 	<input type="button" class="button2 bbcode-i" accesskey="i" name="addbbcode2" value=" i " style="font-style:italic; width: 30px" onclick="bbstyle(2)" title="{L_BBCODE_I_HELP}" />
 	<input type="button" class="button2 bbcode-u" accesskey="u" name="addbbcode4" value=" u " style="text-decoration: underline; width: 30px" onclick="bbstyle(4)" title="{L_BBCODE_U_HELP}" />
+	<span class="btn-separator"></span>
+	<button type="button" class="button2" onclick="bbfontstyle('[textalign=justify]', '[/textalign]')" title="Wyjustowanie tekstu"><i class="fa fa-align-justify"></i></button>
+	<button type="button" class="button2" onclick="bbfontstyle('[textalign=left]', '[/textalign]')" title="Wyrównanie tekstu do lewej"><i class="fa fa-align-left"></i></button>
+	<button type="button" class="button2" onclick="bbfontstyle('[textalign=center]', '[/textalign]')" title="Wyśrodkowanie tekstu"><i class="fa fa-align-center"></i></button>
+	<button type="button" class="button2" onclick="bbfontstyle('[textalign=right]', '[/textalign]')" title="Wyrównanie tekstu do prawej"><i class="fa fa-align-right"></i></button>
+	<br /><br />
+	<span style="vertical-align: middle;">Czcionka:</span>
+	<select name="addbbcode20" class="bbcode-size" onchange="bbfontstyle('[size=' + this.form.addbbcode20.options[this.form.addbbcode20.selectedIndex].value + ']', '[/size]');this.form.addbbcode20.selectedIndex = 2;" title="{L_BBCODE_F_HELP}">
+		<option value="50">{L_FONT_TINY}</option>
+		<option value="85">{L_FONT_SMALL}</option>
+		<option value="100" selected="selected">{L_FONT_NORMAL}</option>
+		<!-- IF not MAX_FONT_SIZE or MAX_FONT_SIZE >= 150 -->
+			<option value="150">{L_FONT_LARGE}</option>
+			<!-- IF not MAX_FONT_SIZE or MAX_FONT_SIZE >= 200 -->
+				<option value="200">{L_FONT_HUGE}</option>
+			<!-- ENDIF -->
+		<!-- ENDIF -->
+	</select>
+	<input type="button" class="button2 bbcode-color" name="bbpalette" id="bbpalette" value="{L_FONT_COLOR}" onclick="change_palette();" title="{L_BBCODE_S_HELP}" />
+	<br /><br />
 	<!-- IF S_BBCODE_QUOTE -->
-		<input type="button" class="button2 bbcode-quote" accesskey="q" name="addbbcode6" value="Quote" style="width: 50px" onclick="bbstyle(6)" title="{L_BBCODE_Q_HELP}" />
+		<input type="button" class="button2 bbcode-quote" accesskey="q" name="addbbcode6" value="Cytat" style="width: 50px" onclick="bbstyle(6)" title="{L_BBCODE_Q_HELP}" />
 	<!-- ENDIF -->
 	
 	<input type="button" class="button2 bbcode-list" accesskey="l" name="addbbcode10" value="List" style="width: 40px" onclick="bbstyle(10)" title="{L_BBCODE_L_HELP}" />
@@ -79,29 +104,13 @@
 	<!-- IF S_BBCODE_FLASH -->
 		<input type="button" class="button2 bbcode-flash" accesskey="d" name="addbbcode18" value="Flash" onclick="bbstyle(18)" title="{L_BBCODE_D_HELP}" />
 	<!-- ENDIF -->
-	<select name="addbbcode20" class="bbcode-size" onchange="bbfontstyle('[size=' + this.form.addbbcode20.options[this.form.addbbcode20.selectedIndex].value + ']', '[/size]');this.form.addbbcode20.selectedIndex = 2;" title="{L_BBCODE_F_HELP}">
-		<option value="50">{L_FONT_TINY}</option>
-		<option value="85">{L_FONT_SMALL}</option>
-		<option value="100" selected="selected">{L_FONT_NORMAL}</option>
-		<!-- IF not MAX_FONT_SIZE or MAX_FONT_SIZE >= 150 -->
-			<option value="150">{L_FONT_LARGE}</option>
-			<!-- IF not MAX_FONT_SIZE or MAX_FONT_SIZE >= 200 -->
-				<option value="200">{L_FONT_HUGE}</option>
-			<!-- ENDIF -->
-		<!-- ENDIF -->
-	</select>
-	<input type="button" class="button2 bbcode-color" name="bbpalette" id="bbpalette" value="{L_FONT_COLOR}" onclick="change_palette();" title="{L_BBCODE_S_HELP}" />
-
-<input type="button" class="button2 bbcode-b"  name="addbbcode0" value="Formatuj Kod" style="width: 30px" onclick="window.open('http://codebeautify.org/')"  />
-  <input type="button" class="button2 bbcode-b" onclick="window.open('http://www.hostmath.com/Default.aspx', 'Edytor LaTeX', 'height=800,width=1000');" value="Edytor LaTeX"/>
-	<!-- EVENT posting_editor_buttons_custom_tags_before -->
-
-	<!-- BEGIN custom_tags -->
-		<input type="button" class="button2 bbcode-{custom_tags.BBCODE_TAG_CLEAN}" name="addbbcode{custom_tags.BBCODE_ID}" value="{custom_tags.BBCODE_TAG}" onclick="bbstyle({custom_tags.BBCODE_ID})" title="{custom_tags.BBCODE_HELPLINE}" />
-
-
+	<input type="button" class="button2" value="Formatuj Kod" onclick="window.open('http://codebeautify.org/')"  />
+	<input type="button" class="button2" onclick="window.open('http://www.hostmath.com/Default.aspx', 'Edytor LaTeX', 'height=800,width=1000');" value="Edytor LaTeX"/>
 	
-   <!-- END custom_tags -->
- 
+	<!-- EVENT posting_editor_buttons_custom_tags_before -->
+	<!-- BEGIN custom_tags -->
+	<input type="button" class="button2 bbcode-{custom_tags.BBCODE_TAG_CLEAN}" name="addbbcode{custom_tags.BBCODE_ID}" value="{custom_tags.BBCODE_TAG}" onclick="bbstyle({custom_tags.BBCODE_ID})" title="{custom_tags.BBCODE_HELPLINE}" />
+	<!-- END custom_tags -->
+	
 <!-- EVENT posting_editor_buttons_after -->
 <!-- ENDIF -->

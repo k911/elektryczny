@@ -232,7 +232,7 @@ fieldset.submit-buttons input {
 	margin: 15px 0 2px 0;
 }
 
-#format-buttons input, #format-buttons select {
+#format-buttons input, #format-buttons button, #format-buttons select {
 	vertical-align: middle;
 }
 
@@ -315,11 +315,11 @@ input[type="search"]::-webkit-search-cancel-button {
 
 // Form button styles
 // ----------------------------------------
-input.button1, input.button2 {
+input.button1, input.button2, button.button2 {
 	font-size: $input-button-font-size;
 }
 
-a.button1, input.button1, input.button3, a.button2, input.button2 {
+a.button1, input.button1, input.button3, a.button2, input.button2, button.button2 {
 	width: auto !important;
 	padding-top: 1px;
 	padding-bottom: 1px;
@@ -346,12 +346,12 @@ input.button3 {
 	font-variant: small-caps;
 }
 
-input[type="button"], input[type="submit"], input[type="reset"], input[type="checkbox"], input[type="radio"] {
+input[type="button"], input[type="submit"], input[type="reset"], input[type="checkbox"], input[type="radio"], button {
 	cursor: pointer;
 }
 
 // Alternative button
-a.button2, input.button2, input.button3 {
+a.button2, input.button2, button.button2, input.button3 {
 	border: 1px solid transparent;
 }
 
@@ -365,7 +365,7 @@ a.button1, a.button1:link, a.button1:visited, a.button1:active, a.button2, a.but
 }
 
 // Hover states
-a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover {
+a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, button.button2:hover, input.button3:hover {
 	border: 1px solid transparent;
 }
 
@@ -374,7 +374,7 @@ input.disabled {
 }
 
 // Focus states
-input.button1:focus, input.button2:focus, input.button3:focus {
+input.button1:focus, input.button2:focus, button.button2:focus, input.button3:focus {
 	outline-style: none;
 }
 
