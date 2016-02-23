@@ -13,6 +13,10 @@ a.time {
 		margin-right: .5em !important;
 	}
 }
+/* --pm counter in responsive menu destroys overall view-- */
+.responsive-menu li.responsive-clone strong {
+	display: none;
+}
 
 /* CUSTOM */
 /* --- spoiler à la wykop.pl */

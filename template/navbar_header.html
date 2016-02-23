@@ -72,9 +72,9 @@
 					<a class="nav-link" href="{U_FAQ}" rel="help" title="{L_FAQ_EXPLAIN}" role="menuitem">{L_FAQ}</a>
 				</li>
 				<!-- EVENT overall_header_navigation_append -->
-				<!-- IF U_ACP --><li class="tab acp" data-last-responsive="true" data-responsive-class="small-icon icon-acp"><a class="nav-link" href="{U_ACP}" title="{L_ACP}" role="menuitem">{L_ACP_SHORT}</a></li><!-- ENDIF -->
+				<!-- IF U_ACP --><li class="tab acp" data-select-match="acp" data-responsive-class="small-icon icon-acp" data-last-responsive="true"><a class="nav-link" href="{U_ACP}" title="{L_ACP}" role="menuitem">{L_ACP_SHORT}</a></li><!-- ENDIF -->
 				<!-- IF U_MCP -->
-					<li class="tab mcp" data-last-responsive="true" data-select-match="mcp" data-responsive-class="small-icon icon-mcp">
+					<li class="tab mcp" data-select-match="mcp" data-responsive-class="small-icon icon-mcp" data-last-responsive="true">
 						<a class="nav-link" href="{U_MCP}" title="{L_MCP}" role="menuitem">{L_MCP_SHORT}</a>
 					</li>
 				<!-- ENDIF -->
@@ -99,7 +99,7 @@
 						</div>
 					</li>
 					<!-- IF S_DISPLAY_PM -->
-						<li class="tab pm<!-- IF PRIVATE_MESSAGE_COUNT > 0 --> non-zero<!-- ENDIF -->" data-select-match="pm">
+						<li class="tab pm<!-- IF PRIVATE_MESSAGE_COUNT > 0 --> non-zero<!-- ENDIF -->" data-select-match="pm" data-responsive-class="small-icon icon-pm">
 							<a class="nav-link" href="{U_PRIVATEMSGS}" role="menuitem">{L_PRIVATE_MESSAGES}</a>
 							<strong>
 								<span class="counter">{PRIVATE_MESSAGE_COUNT}</span>
@@ -108,7 +108,7 @@
 						</li>
 					<!-- ENDIF -->
 					<!-- IF S_NOTIFICATIONS_DISPLAY -->
-						<li class="tab notifications dropdown-container<!-- IF NOTIFICATIONS_COUNT > 0 --> non-zero<!-- ENDIF -->" data-select-match="notifications">
+						<li class="tab notifications dropdown-container<!-- IF NOTIFICATIONS_COUNT > 0 --> non-zero<!-- ENDIF -->" data-skip-responsive="true">
 							<a href="{U_VIEW_ALL_NOTIFICATIONS}" id="notification_list_button" class="nav-link dropdown-trigger">{L_NOTIFICATIONS}</a>
 							<strong>
 								<span class="counter">{NOTIFICATIONS_COUNT}</span>
@@ -119,7 +119,7 @@
 					<!-- ENDIF -->
 				<!-- ENDIF -->
 				<!-- IF S_REGISTERED_USER -->
-					<li class="tab logout" data-skip-responsive="true"><a class="nav-link" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">{L_LOGIN_LOGOUT}</a></li>
+					<li class="tab logout" data-select-match="login" data-responsive-class="small-icon icon-login" data-last-responsive="true"><a class="nav-link" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">{L_LOGIN_LOGOUT}</a></li>
 				<!-- ELSE -->
 					<li class="tab login" data-skip-responsive="true" data-select-match="login"><a class="nav-link" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">{L_LOGIN_LOGOUT}</a></li>
 					<!-- IF S_REGISTER_ENABLED -->
