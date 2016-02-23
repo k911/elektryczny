@@ -49,7 +49,7 @@ $forum-heading-font-weight:				500;
 
 $button-font-size:						$font-size + 3px;
 $button-line-height:					floor(($font-size + 8px) / 2) * 2;	// Convert to even number
-$button-glyph-font-size:				floor($font-size / 2) * 2;	// Convert to even number
+$button-glyph-font-size:				10px; //floor($font-size / 2) * 2;	// Convert to even number
 
 $dropdown-header-font-size:				$font-size + 2px;
 $dropdown-header-font-family:			Arial, "Helvetica Neue", Helvetica, Arial, sans-serif;

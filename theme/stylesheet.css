@@ -121,8 +121,8 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
 .navbar .nav-tabs > ul #quick-links.empty { display: none; }
 .navbar .nav-tabs > ul #quick-links.showing-responsive-menu { display: block; }
 .navbar .nav-tabs .nav-link { text-decoration: none; color: inherit; display: inline-block; height: 30px; line-height: 30px; padding: 0 12px; vertical-align: baseline; font-size: 12px; outline-style: none; }
-.navbar .nav-tabs .nav-link.dropdown-toggle { margin-right: .5em; /* fixed no margin when tab with dt is selected, it was weird */ position: relative; }
-.navbar .nav-tabs .nav-link.dropdown-toggle:before { content: '\f078'; font-family: FontAwesome; position: absolute; right: 0; top: 50%; font-size: 8px; line-height: 12px; width: 8px; height: 12px; margin-top: -6px; }
+.navbar .nav-tabs .nav-link.dropdown-toggle { position: relative; }
+.navbar .nav-tabs .nav-link.dropdown-toggle:before { content: '\f236'; font-family: "Material Design Icons"; position: absolute; right: 0; top: 50%; font-size: 10px; line-height: 12px; width: 10px; height: 12px; margin-top: -6px; }
 .rtl .navbar .nav-tabs .nav-link.dropdown-toggle:before { right: auto; left: 0; }
 .navbar .nav-tabs .nav-link.dropdown-toggle:hover:before { /* display: none; // was weird */ }
 .navbar .nav-tabs .nav-link .username-coloured { color: inherit !important; font-weight: inherit; font-style: inherit; }
@@ -135,41 +135,40 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
 .navbar .nav-tabs .tab > strong .arrow { border: 3px solid transparent; border-bottom: 1px none black; position: absolute; bottom: -3px; right: 4px; line-height: 0; text-shadow: none; _display: none; width: 0; height: 0; }
 .navbar .nav-tabs .tab.non-zero > strong { display: block; }
 .navbar .nav-tabs .responsive-menu .nav-link, .navbar .nav-tabs .account .nav-link, .navbar .nav-tabs .pm .nav-link, .navbar .nav-tabs .notifications .nav-link, .navbar .nav-tabs .mcp .nav-link, .navbar .nav-tabs .acp .nav-link, .navbar .nav-tabs .faq .nav-link, .navbar .nav-tabs .logout .nav-link, .navbar .nav-tabs .login .nav-link, .navbar .nav-tabs .register .nav-link, .navbar .nav-tabs .rightside .boardrules .nav-link, .navbar .nav-tabs .rightside .pages .nav-link, .navbar .nav-tabs .members .nav-link, .navbar .nav-tabs .forums .nav-link, .navbar .nav-tabs .leftside .boardrules .nav-link, .navbar .nav-tabs .leftside .pages .nav-link { position: relative; padding-left: 30px; }
-.navbar .nav-tabs .responsive-menu .nav-link:after, .navbar .nav-tabs .account .nav-link:after, .navbar .nav-tabs .pm .nav-link:after, .navbar .nav-tabs .notifications .nav-link:after, .navbar .nav-tabs .mcp .nav-link:after, .navbar .nav-tabs .acp .nav-link:after, .navbar .nav-tabs .faq .nav-link:after, .navbar .nav-tabs .logout .nav-link:after, .navbar .nav-tabs .login .nav-link:after, .navbar .nav-tabs .register .nav-link:after, .navbar .nav-tabs .rightside .boardrules .nav-link:after, .navbar .nav-tabs .rightside .pages .nav-link:after, .navbar .nav-tabs .members .nav-link:after, .navbar .nav-tabs .forums .nav-link:after, .navbar .nav-tabs .leftside .boardrules .nav-link:after, .navbar .nav-tabs .leftside .pages .nav-link:after { position: absolute; left: 12px; top: 50%; margin-top: -7px; width: 14px; font-size: 12px; line-height: 14px; height: 14px; text-align: left; font-weight: normal; font-style: normal; text-indent: 0; }
+.navbar .nav-tabs .responsive-menu .nav-link:after, .navbar .nav-tabs .account .nav-link:after, .navbar .nav-tabs .pm .nav-link:after, .navbar .nav-tabs .notifications .nav-link:after, .navbar .nav-tabs .mcp .nav-link:after, .navbar .nav-tabs .acp .nav-link:after, .navbar .nav-tabs .faq .nav-link:after, .navbar .nav-tabs .logout .nav-link:after, .navbar .nav-tabs .login .nav-link:after, .navbar .nav-tabs .register .nav-link:after, .navbar .nav-tabs .rightside .boardrules .nav-link:after, .navbar .nav-tabs .rightside .pages .nav-link:after, .navbar .nav-tabs .members .nav-link:after, .navbar .nav-tabs .forums .nav-link:after, .navbar .nav-tabs .leftside .boardrules .nav-link:after, .navbar .nav-tabs .leftside .pages .nav-link:after { position: absolute; left: 12px; top: 50%; margin-top: -7px; width: 14px; font-size: 14px; line-height: 14px; height: 14px; text-align: left; font-weight: normal; font-style: normal; text-indent: 0; }
 .rtl .navbar .nav-tabs .responsive-menu .nav-link, .rtl .navbar .nav-tabs .account .nav-link, .rtl .navbar .nav-tabs .pm .nav-link, .rtl .navbar .nav-tabs .notifications .nav-link, .rtl .navbar .nav-tabs .mcp .nav-link, .rtl .navbar .nav-tabs .acp .nav-link, .rtl .navbar .nav-tabs .faq .nav-link, .rtl .navbar .nav-tabs .logout .nav-link, .rtl .navbar .nav-tabs .login .nav-link, .rtl .navbar .nav-tabs .register .nav-link, .rtl .navbar .nav-tabs .rightside .boardrules .nav-link, .rtl .navbar .nav-tabs .rightside .pages .nav-link, .rtl .navbar .nav-tabs .members .nav-link, .rtl .navbar .nav-tabs .forums .nav-link, .rtl .navbar .nav-tabs .leftside .boardrules .nav-link, .rtl .navbar .nav-tabs .leftside .pages .nav-link { padding-left: 12px; padding-right: 30px; }
 .rtl .navbar .nav-tabs .responsive-menu .nav-link:after, .rtl .navbar .nav-tabs .account .nav-link:after, .rtl .navbar .nav-tabs .pm .nav-link:after, .rtl .navbar .nav-tabs .notifications .nav-link:after, .rtl .navbar .nav-tabs .mcp .nav-link:after, .rtl .navbar .nav-tabs .acp .nav-link:after, .rtl .navbar .nav-tabs .faq .nav-link:after, .rtl .navbar .nav-tabs .logout .nav-link:after, .rtl .navbar .nav-tabs .login .nav-link:after, .rtl .navbar .nav-tabs .register .nav-link:after, .rtl .navbar .nav-tabs .rightside .boardrules .nav-link:after, .rtl .navbar .nav-tabs .rightside .pages .nav-link:after, .rtl .navbar .nav-tabs .members .nav-link:after, .rtl .navbar .nav-tabs .forums .nav-link:after, .rtl .navbar .nav-tabs .leftside .boardrules .nav-link:after, .rtl .navbar .nav-tabs .leftside .pages .nav-link:after { left: auto; right: 12px; }
-.navbar .nav-tabs .responsive-menu .nav-link, .navbar .nav-tabs .account .nav-link, .navbar .nav-tabs .pm .nav-link, .navbar .nav-tabs .notifications .nav-link, .navbar .nav-tabs .mcp .nav-link, .navbar .nav-tabs .acp .nav-link, .navbar .nav-tabs .faq .nav-link, .navbar .nav-tabs .logout .nav-link, .navbar .nav-tabs .login .nav-link, .navbar .nav-tabs .register .nav-link, .navbar .nav-tabs .rightside .boardrules .nav-link, .navbar .nav-tabs .rightside .pages .nav-link { text-indent: 999px; width: 14px; padding: 0 8px; margin: 0; overflow: hidden; }
+.navbar .nav-tabs .responsive-menu .nav-link, .navbar .nav-tabs .account .nav-link, .navbar .nav-tabs .pm .nav-link, .navbar .nav-tabs .notifications .nav-link, .navbar .nav-tabs .mcp .nav-link, .navbar .nav-tabs .acp .nav-link, .navbar .nav-tabs .faq .nav-link, .navbar .nav-tabs .logout .nav-link, .navbar .nav-tabs .login .nav-link, .navbar .nav-tabs .register .nav-link, .navbar .nav-tabs .rightside .boardrules .nav-link, .navbar .nav-tabs .rightside .pages .nav-link { margin: 0; overflow: hidden; }
 .navbar .nav-tabs .responsive-menu .nav-link:after, .navbar .nav-tabs .account .nav-link:after, .navbar .nav-tabs .pm .nav-link:after, .navbar .nav-tabs .notifications .nav-link:after, .navbar .nav-tabs .mcp .nav-link:after, .navbar .nav-tabs .acp .nav-link:after, .navbar .nav-tabs .faq .nav-link:after, .navbar .nav-tabs .logout .nav-link:after, .navbar .nav-tabs .login .nav-link:after, .navbar .nav-tabs .register .nav-link:after, .navbar .nav-tabs .rightside .boardrules .nav-link:after, .navbar .nav-tabs .rightside .pages .nav-link:after { text-align: center; font-size: 14px; left: 8px; }
 .rtl .navbar .nav-tabs .responsive-menu .nav-link:after, .rtl .navbar .nav-tabs .account .nav-link:after, .rtl .navbar .nav-tabs .pm .nav-link:after, .rtl .navbar .nav-tabs .notifications .nav-link:after, .rtl .navbar .nav-tabs .mcp .nav-link:after, .rtl .navbar .nav-tabs .acp .nav-link:after, .rtl .navbar .nav-tabs .faq .nav-link:after, .rtl .navbar .nav-tabs .logout .nav-link:after, .rtl .navbar .nav-tabs .login .nav-link:after, .rtl .navbar .nav-tabs .register .nav-link:after, .rtl .navbar .nav-tabs .rightside .boardrules .nav-link:after, .rtl .navbar .nav-tabs .rightside .pages .nav-link:after { left: auto; right: 8px; }
 .navbar .nav-tabs .responsive-menu .nav-link + strong, .navbar .nav-tabs .account .nav-link + strong, .navbar .nav-tabs .pm .nav-link + strong, .navbar .nav-tabs .notifications .nav-link + strong, .navbar .nav-tabs .mcp .nav-link + strong, .navbar .nav-tabs .acp .nav-link + strong, .navbar .nav-tabs .faq .nav-link + strong, .navbar .nav-tabs .logout .nav-link + strong, .navbar .nav-tabs .login .nav-link + strong, .navbar .nav-tabs .register .nav-link + strong, .navbar .nav-tabs .rightside .boardrules .nav-link + strong, .navbar .nav-tabs .rightside .pages .nav-link + strong { right: -2px; }
 .rtl .navbar .nav-tabs .responsive-menu .nav-link + strong, .rtl .navbar .nav-tabs .account .nav-link + strong, .rtl .navbar .nav-tabs .pm .nav-link + strong, .rtl .navbar .nav-tabs .notifications .nav-link + strong, .rtl .navbar .nav-tabs .mcp .nav-link + strong, .rtl .navbar .nav-tabs .acp .nav-link + strong, .rtl .navbar .nav-tabs .faq .nav-link + strong, .rtl .navbar .nav-tabs .logout .nav-link + strong, .rtl .navbar .nav-tabs .login .nav-link + strong, .rtl .navbar .nav-tabs .register .nav-link + strong, .rtl .navbar .nav-tabs .rightside .boardrules .nav-link + strong, .rtl .navbar .nav-tabs .rightside .pages .nav-link + strong { right: auto; left: -2px; }
 .navbar .nav-tabs .responsive-menu .dropdown-toggle.nav-link, .navbar .nav-tabs .account .dropdown-toggle.nav-link, .navbar .nav-tabs .pm .dropdown-toggle.nav-link, .navbar .nav-tabs .notifications .dropdown-toggle.nav-link, .navbar .nav-tabs .mcp .dropdown-toggle.nav-link, .navbar .nav-tabs .acp .dropdown-toggle.nav-link, .navbar .nav-tabs .faq .dropdown-toggle.nav-link, .navbar .nav-tabs .logout .dropdown-toggle.nav-link, .navbar .nav-tabs .login .dropdown-toggle.nav-link, .navbar .nav-tabs .register .dropdown-toggle.nav-link, .navbar .nav-tabs .rightside .boardrules .dropdown-toggle.nav-link, .navbar .nav-tabs .rightside .pages .dropdown-toggle.nav-link { margin: 0; }
-@media (max-width: 550px) { .navbar .nav-tabs .members .nav-link, .navbar .nav-tabs .forums .nav-link, .navbar .nav-tabs .leftside .boardrules .nav-link, .navbar .nav-tabs .leftside .pages .nav-link { text-indent: 999px; width: 14px; padding: 0 8px; overflow: hidden; }
-  .navbar .nav-tabs .members .nav-link:after, .navbar .nav-tabs .forums .nav-link:after, .navbar .nav-tabs .leftside .boardrules .nav-link:after, .navbar .nav-tabs .leftside .pages .nav-link:after { text-align: center; font-size: 14px; left: 8px; }
-  .rtl .navbar .nav-tabs .members .nav-link:after, .rtl .navbar .nav-tabs .forums .nav-link:after, .rtl .navbar .nav-tabs .leftside .boardrules .nav-link:after, .rtl .navbar .nav-tabs .leftside .pages .nav-link:after { left: auto; right: 8px; }
-  .navbar .nav-tabs .members .nav-link + strong, .navbar .nav-tabs .forums .nav-link + strong, .navbar .nav-tabs .leftside .boardrules .nav-link + strong, .navbar .nav-tabs .leftside .pages .nav-link + strong { right: -2px; }
-  .rtl .navbar .nav-tabs .members .nav-link + strong, .rtl .navbar .nav-tabs .forums .nav-link + strong, .rtl .navbar .nav-tabs .leftside .boardrules .nav-link + strong, .rtl .navbar .nav-tabs .leftside .pages .nav-link + strong { right: auto; left: -2px; }
-  .navbar .nav-tabs .members .dropdown-toggle.nav-link, .navbar .nav-tabs .forums .dropdown-toggle.nav-link, .navbar .nav-tabs .leftside .boardrules .dropdown-toggle.nav-link, .navbar .nav-tabs .leftside .pages .dropdown-toggle.nav-link { margin: 0; } }
-.navbar .nav-tabs .responsive-menu .nav-link:after, .navbar .nav-tabs .forums .nav-link:after, .navbar .nav-tabs .account .nav-link:after, .navbar .nav-tabs .notifications .nav-link:after, .navbar .nav-tabs .mcp .nav-link:after, .navbar .nav-tabs .logout .nav-link:after, .navbar .nav-tabs .login .nav-link:after, .navbar .nav-tabs .register .nav-link:after, .navbar .nav-tabs .boardrules .nav-link:after, .navbar .nav-tabs .pages .nav-link:after { font-family: FontAwesome; }
-.navbar .nav-tabs .members .nav-link:after, .navbar .nav-tabs .pm .nav-link:after, .navbar .nav-tabs .acp .nav-link:after, .navbar .nav-tabs .faq .nav-link:after { font-family: 'Glyphicons Regular', 'Glyphicons'; }
-.navbar .nav-tabs .responsive-menu .nav-link:after { content: '\f0c9'; }
+@media (max-width: 550px) { .navbar .nav-tabs .responsive-menu .nav-link, .navbar .nav-tabs .members .nav-link, .navbar .nav-tabs .forums .nav-link, .navbar .nav-tabs .account .nav-link, .navbar .nav-tabs .pm .nav-link, .navbar .nav-tabs .notifications .nav-link, .navbar .nav-tabs .mcp .nav-link, .navbar .nav-tabs .acp .nav-link, .navbar .nav-tabs .faq .nav-link, .navbar .nav-tabs .logout .nav-link, .navbar .nav-tabs .login .nav-link, .navbar .nav-tabs .register .nav-link, .navbar .nav-tabs .leftside .boardrules .nav-link, .navbar .nav-tabs .leftside .pages .nav-link { text-indent: 999px; width: 14px; padding: 0 8px; overflow: hidden; }
+  .navbar .nav-tabs .responsive-menu .nav-link:after, .navbar .nav-tabs .members .nav-link:after, .navbar .nav-tabs .forums .nav-link:after, .navbar .nav-tabs .account .nav-link:after, .navbar .nav-tabs .pm .nav-link:after, .navbar .nav-tabs .notifications .nav-link:after, .navbar .nav-tabs .mcp .nav-link:after, .navbar .nav-tabs .acp .nav-link:after, .navbar .nav-tabs .faq .nav-link:after, .navbar .nav-tabs .logout .nav-link:after, .navbar .nav-tabs .login .nav-link:after, .navbar .nav-tabs .register .nav-link:after, .navbar .nav-tabs .leftside .boardrules .nav-link:after, .navbar .nav-tabs .leftside .pages .nav-link:after { text-align: center; font-size: 14px; left: 8px; }
+  .rtl .navbar .nav-tabs .responsive-menu .nav-link:after, .rtl .navbar .nav-tabs .members .nav-link:after, .rtl .navbar .nav-tabs .forums .nav-link:after, .rtl .navbar .nav-tabs .account .nav-link:after, .rtl .navbar .nav-tabs .pm .nav-link:after, .rtl .navbar .nav-tabs .notifications .nav-link:after, .rtl .navbar .nav-tabs .mcp .nav-link:after, .rtl .navbar .nav-tabs .acp .nav-link:after, .rtl .navbar .nav-tabs .faq .nav-link:after, .rtl .navbar .nav-tabs .logout .nav-link:after, .rtl .navbar .nav-tabs .login .nav-link:after, .rtl .navbar .nav-tabs .register .nav-link:after, .rtl .navbar .nav-tabs .leftside .boardrules .nav-link:after, .rtl .navbar .nav-tabs .leftside .pages .nav-link:after { left: auto; right: 8px; }
+  .navbar .nav-tabs .responsive-menu .nav-link + strong, .navbar .nav-tabs .members .nav-link + strong, .navbar .nav-tabs .forums .nav-link + strong, .navbar .nav-tabs .account .nav-link + strong, .navbar .nav-tabs .pm .nav-link + strong, .navbar .nav-tabs .notifications .nav-link + strong, .navbar .nav-tabs .mcp .nav-link + strong, .navbar .nav-tabs .acp .nav-link + strong, .navbar .nav-tabs .faq .nav-link + strong, .navbar .nav-tabs .logout .nav-link + strong, .navbar .nav-tabs .login .nav-link + strong, .navbar .nav-tabs .register .nav-link + strong, .navbar .nav-tabs .leftside .boardrules .nav-link + strong, .navbar .nav-tabs .leftside .pages .nav-link + strong { right: -2px; }
+  .rtl .navbar .nav-tabs .responsive-menu .nav-link + strong, .rtl .navbar .nav-tabs .members .nav-link + strong, .rtl .navbar .nav-tabs .forums .nav-link + strong, .rtl .navbar .nav-tabs .account .nav-link + strong, .rtl .navbar .nav-tabs .pm .nav-link + strong, .rtl .navbar .nav-tabs .notifications .nav-link + strong, .rtl .navbar .nav-tabs .mcp .nav-link + strong, .rtl .navbar .nav-tabs .acp .nav-link + strong, .rtl .navbar .nav-tabs .faq .nav-link + strong, .rtl .navbar .nav-tabs .logout .nav-link + strong, .rtl .navbar .nav-tabs .login .nav-link + strong, .rtl .navbar .nav-tabs .register .nav-link + strong, .rtl .navbar .nav-tabs .leftside .boardrules .nav-link + strong, .rtl .navbar .nav-tabs .leftside .pages .nav-link + strong { right: auto; left: -2px; }
+  .navbar .nav-tabs .responsive-menu .dropdown-toggle.nav-link, .navbar .nav-tabs .members .dropdown-toggle.nav-link, .navbar .nav-tabs .forums .dropdown-toggle.nav-link, .navbar .nav-tabs .account .dropdown-toggle.nav-link, .navbar .nav-tabs .pm .dropdown-toggle.nav-link, .navbar .nav-tabs .notifications .dropdown-toggle.nav-link, .navbar .nav-tabs .mcp .dropdown-toggle.nav-link, .navbar .nav-tabs .acp .dropdown-toggle.nav-link, .navbar .nav-tabs .faq .dropdown-toggle.nav-link, .navbar .nav-tabs .logout .dropdown-toggle.nav-link, .navbar .nav-tabs .login .dropdown-toggle.nav-link, .navbar .nav-tabs .register .dropdown-toggle.nav-link, .navbar .nav-tabs .leftside .boardrules .dropdown-toggle.nav-link, .navbar .nav-tabs .leftside .pages .dropdown-toggle.nav-link { margin: 0; } }
+.navbar .nav-tabs .responsive-menu .nav-link:after, .navbar .nav-tabs .members .nav-link:after, .navbar .nav-tabs .forums .nav-link:after, .navbar .nav-tabs .account .nav-link:after, .navbar .nav-tabs .pm .nav-link:after, .navbar .nav-tabs .notifications .nav-link:after, .navbar .nav-tabs .mcp .nav-link:after, .navbar .nav-tabs .acp .nav-link:after, .navbar .nav-tabs .faq .nav-link:after, .navbar .nav-tabs .logout .nav-link:after, .navbar .nav-tabs .login .nav-link:after, .navbar .nav-tabs .register .nav-link:after, .navbar .nav-tabs .boardrules .nav-link:after, .navbar .nav-tabs .pages .nav-link:after { font-family: "Material Design Icons"; }
+.navbar .nav-tabs .responsive-menu .nav-link:after { content: '\f44e'; }
+@media (max-width: 550px) { .navbar .nav-tabs .responsive-menu .nav-link { padding: 0 8px !important; } }
 .navbar .nav-tabs .members .nav-link { padding-left: 32px; }
 .rtl .navbar .nav-tabs .members .nav-link { padding-left: 12px; padding-right: 32px; }
-.navbar .nav-tabs .members .nav-link:after { content: '\E044'; }
+.navbar .nav-tabs .members .nav-link:after { content: '\f10d'; }
 @media (max-width: 550px) { .navbar .nav-tabs .members .nav-link { padding: 0 8px !important; } }
-.navbar .nav-tabs .forums .nav-link:after { content: '\f075'; }
-.navbar .nav-tabs .account .nav-link:after { content: '\f007'; }
-.navbar .nav-tabs .pm .nav-link:after { content: '\E130'; margin-top: -9px; }
-.navbar .nav-tabs .notifications .nav-link:after { content: '\f0f3'; font-size: 13px; }
-.navbar .nav-tabs .mcp .nav-link:after { content: '\f0e3'; }
-.navbar .nav-tabs .acp .nav-link:after { content: '\E271'; }
-.navbar .nav-tabs .faq .nav-link:after { content: '\E195'; }
-@media (max-width: 550px) { .navbar .nav-tabs .faq, .navbar .nav-tabs .faq .nav-link { display: none !important; } }
-.navbar .nav-tabs .logout .nav-link:after { content: '\f08b'; margin-left: 1px; }
-.navbar .nav-tabs .login .nav-link:after { content: '\f090'; }
-.navbar .nav-tabs .register .nav-link:after { content: '\f234'; }
-.navbar .nav-tabs .boardrules .nav-link:after { content: '\f071'; }
-.navbar .nav-tabs .pages .nav-link:after { content: '\f0f6'; }
+.navbar .nav-tabs .forums .nav-link:after { content: '\f270'; }
+.navbar .nav-tabs .account .nav-link:after { content: '\f103'; }
+.navbar .nav-tabs .pm .nav-link:after { content: '\f453'; }
+.navbar .nav-tabs .notifications .nav-link:after { content: '\f191'; }
+.navbar .nav-tabs .mcp .nav-link:after { content: '\f390'; }
+.navbar .nav-tabs .acp .nav-link:after { content: '\f572'; }
+.navbar .nav-tabs .faq .nav-link:after { content: '\f3ef'; }
+.navbar .nav-tabs .logout .nav-link:after { content: '\f435'; }
+.navbar .nav-tabs .login .nav-link:after { content: '\f434'; }
+.navbar .nav-tabs .register .nav-link:after { content: '\f113'; }
+.navbar .nav-tabs .boardrules .nav-link:after { content: '\f125'; }
+.navbar .nav-tabs .pages .nav-link:after { content: '\f30e'; }
 .navbar .inner.static { position: fixed; top: 0; z-index: 50; left: 0; right: 0; padding-top: 0; padding-bottom: 0; width: auto; max-width: none; opacity: .9; transition: opacity .2s; }
 #wrap .navbar .inner.static > .static-inner { padding: 10px; }
 .navbar .inner.static > .static-inner { box-sizing: border-box; margin: 0 auto; max-width: none; min-width: 625px; margin: 0 12px; padding-top: 0 !important; padding-bottom: 0 !important; }
@@ -227,8 +226,7 @@ ul.linklist li.responsive-menu { position: relative; margin: 0 5px; }
 
 ul.linklist li.responsive-menu a.responsive-menu-link { display: inline-block; margin: 0 5px; font-size: 17px; position: relative; width: 17px; line-height: 21px; text-decoration: none; }
 
-ul.linklist li.responsive-menu a.responsive-menu-link:before { content: '\E159'; font-family: 'Glyphicons Regular', 'Glyphicons'; position: absolute; left: 0; top: 50%; margin-top: -6.5px; width: 15px; font-size: 13px; line-height: 13px; height: 13px; text-align: center; font-weight: normal; font-style: normal; text-indent: 0; }
-ul.linklist li.responsive-menu a.responsive-menu-link:hover:before { content: '\E602'; }
+ul.linklist li.responsive-menu a.responsive-menu-link:before { font-family: "Material Design Icons"; content: '\f44e'; position: absolute; left: 0; top: 50%; margin-top: -6.5px; width: 15px; font-size: 13px; line-height: 13px; height: 13px; text-align: center; font-weight: normal; font-style: normal; text-indent: 0; }
 
 .hasjs ul.linklist.leftside, .hasjs ul.linklist.rightside { max-width: 48%; }
 
@@ -252,7 +250,7 @@ ul.linklist.bulletin > li.no-bulletin:before { content: none; }
 
 .header-avatar img { margin-bottom: 2px; max-height: 20px; vertical-align: middle; width: auto; }
 
-.header-avatar span:after { content: '\f078'; font-family: FontAwesome; display: inline-block; font-size: 7px; float: right; padding-left: 2px; font-weight: normal; opacity: 0.7; }
+.header-avatar span:after { content: '\f236'; font-family: "Material Design Icons"; display: inline-block; font-size: 7px; float: right; padding-left: 2px; font-weight: normal; opacity: 0.7; }
 
 .dropdown-container { position: relative; }
 
@@ -309,8 +307,8 @@ ul.linklist.bulletin > li.no-bulletin:before { content: none; }
 .breadcrumbs .crumb { float: left; font-weight: bold; word-wrap: normal; position: relative; padding-left: 13px; }
 .rtl .breadcrumbs .crumb { padding-left: 0; padding-right: 13px; }
 
-.breadcrumbs .crumb:before { content: '\f054'; font-family: FontAwesome; font-weight: normal; position: absolute; left: 1px; width: 11px; top: 50%; margin-top: -5.5px; font-size: 7px; height: 11px; line-height: 11px; text-align: center; }
-.rtl .breadcrumbs .crumb:before { left: auto; right: 1px; content: '\f053'; }
+.breadcrumbs .crumb:before { content: "\f238"; font-family: "Material Design Icons"; font-weight: normal; position: absolute; left: 1px; width: 11px; top: 50%; margin-top: -5.5px; font-size: 10px; height: 11px; line-height: 11px; text-align: center; }
+.rtl .breadcrumbs .crumb:before { left: auto; right: 1px; content: '\f237'; }
 
 .breadcrumbs .crumb:first-child { padding-left: 0; padding-right: 0; }
 .breadcrumbs .crumb:first-child:before { display: none; }
@@ -438,7 +436,7 @@ fieldset.fields1 dl.pmlist dd.recipients { margin-left: 0 !important; }
 
 .pagination li.page-jump a { width: 15px; background: transparent none !important; border-color: transparent !important; padding-left: 0; padding-right: 0; }
 
-.pagination li.page-jump a:after, .pagination li.next a:after, .pagination li.previous a:after { position: absolute; left: 3px; right: 3px; top: 4px; height: 11px; font-size: 11px; line-height: 11px; text-align: center; font-weight: normal; text-indent: 0; font-family: FontAwesome; content: '\f08e'; }
+.pagination li.page-jump a:after, .pagination li.next a:after, .pagination li.previous a:after { position: absolute; left: 3px; right: 3px; top: 4px; height: 11px; font-size: 11px; line-height: 11px; text-align: center; font-weight: normal; text-indent: 0; font-family: "Material Design Icons"; content: '\f429'; }
 
 .pagination li.page-jump a:after { font-size: 11px; }
 
@@ -457,7 +455,7 @@ fieldset.fields1 dl.pmlist dd.recipients { margin-left: 0 !important; }
 @media (max-height: 500px) { .phpbb_alert { top: 25px; } }
 .phpbb_alert .alert_close { display: block; float: right; width: 24px; height: 24px; overflow: hidden; text-decoration: none !important; background: transparent none 0 0 no-repeat; margin-top: -12px; margin-right: -36px; position: relative; }
 
-.phpbb_alert .alert_close:before, .phpbb_alert .alert_close:after { content: '\f057'; font-family: FontAwesome; position: absolute; font-size: 18px; line-height: 24px; font-weight: normal; font-style: normal; text-indent: 0; text-align: center; left: 0; top: 0; margin: 0; padding: 0; width: 24px; height: 24px; }
+.phpbb_alert .alert_close:before, .phpbb_alert .alert_close:after { content: '\f24d'; font-family: "Material Design Icons"; position: absolute; font-size: 18px; line-height: 24px; font-weight: normal; font-style: normal; text-indent: 0; text-align: center; left: 0; top: 0; margin: 0; padding: 0; width: 24px; height: 24px; }
 
 .phpbb_alert .alert_close:before { content: '\f111'; font-size: 20px; }
 
@@ -631,10 +629,10 @@ dl.faq a.top2 { float: right; }
 
 a.top, a.top2 { position: relative; }
 
-a.top:after, a.top2:after { content: '\f139'; font-family: FontAwesome; position: absolute; top: 50%; left: 0; height: 14px; width: 14px; margin-top: -7px; text-align: center; font-size: 12px; line-height: 14px; vertical-align: baseline; font-weight: normal; font-style: normal; text-transform: none; text-indent: 0; pointer-events: none; }
+a.top:after, a.top2:after { content: '\f239'; font-family: "Material Design Icons"; position: absolute; top: 50%; left: 0; height: 14px; width: 14px; margin-top: -7px; text-align: center; font-size: 12px; line-height: 14px; vertical-align: baseline; font-weight: normal; font-style: normal; text-transform: none; text-indent: 0; pointer-events: none; }
 
 a.arrow-up, a.arrow-down, a.arrow-left, .rtl a.arrow-right, a.arrow-right, .rtl a.arrow-left { position: relative; }
-a.arrow-up:after, a.arrow-down:after, a.arrow-left:after, .rtl a.arrow-right:after, a.arrow-right:after, .rtl a.arrow-left:after { position: absolute; top: 50%; margin-top: -5px; text-align: center; font-family: FontAwesome; font-size: 8px; line-height: 10px; vertical-align: baseline; font-weight: normal; font-style: normal; text-transform: none; text-indent: 0; pointer-events: none; }
+a.arrow-up:after, a.arrow-down:after, a.arrow-left:after, .rtl a.arrow-right:after, a.arrow-right:after, .rtl a.arrow-left:after { position: absolute; top: 50%; margin-top: -5px; text-align: center; font-family: "Material Design Icons"; font-size: 10px; line-height: 10px; vertical-align: baseline; font-weight: normal; font-style: normal; text-transform: none; text-indent: 0; pointer-events: none; }
 
 a.arrow-up:after { content: '\f077'; left: 0; }
 .rtl a.arrow-up:after { left: auto; right: 0; }
@@ -666,7 +664,7 @@ a.feed-icon-forum { float: right; margin: 3px; width: 16px; height: 16px; positi
 
 .topiclist.forums a.feed-icon-forum { margin-top: 12px; }
 
-a.feed-icon-forum:after { content: '\f09e'; position: absolute; left: 0; right: 0; width: 16px; height: 16px; font-family: FontAwesome; font-size: 14px; font-weight: normal; font-style: normal; line-height: 16px; text-align: center; }
+a.feed-icon-forum:after { content: '\f55b'; position: absolute; left: 0; right: 0; width: 16px; height: 16px; font-family: "Material Design Icons"; font-size: 14px; font-weight: normal; font-style: normal; line-height: 16px; text-align: center; }
 
 a.anchor { display: block; }
 
@@ -678,8 +676,8 @@ ul.topiclist li { display: block; list-style-type: none; margin: 0; }
 .forabg ul.topiclist li.header a, .forumbg ul.topiclist li.header a { color: #fff; }
 .forabg ul.topiclist li.header a:hover, .forumbg ul.topiclist li.header a:hover { color: #fff; }
 .forabg ul.topiclist li.header .forum-toggle, .forumbg ul.topiclist li.header .forum-toggle { position: absolute; right: 5px; top: 50%; margin-top: -8px; height: 16px; width: 16px; text-decoration: none !important; outline-style: none !important; color: inherit; transition: opacity 0.3s ease; opacity: .5; }
-.forabg ul.topiclist li.header .forum-toggle:after, .forumbg ul.topiclist li.header .forum-toggle:after { content: '\E192'; font-family: 'Glyphicons Regular', 'Glyphicons'; position: absolute; top: 0; left: 0; width: 16px; height: 16px; font-size: 12px; line-height: 16px; }
-.forabg ul.topiclist li.header .forum-toggle.toggled:after, .forumbg ul.topiclist li.header .forum-toggle.toggled:after { content: '\E191'; }
+.forabg ul.topiclist li.header .forum-toggle:after, .forumbg ul.topiclist li.header .forum-toggle:after { content: '\f465'; font-family: "Material Design Icons"; position: absolute; top: 0; left: 0; width: 16px; height: 16px; font-size: 16px; line-height: 16px; }
+.forabg ul.topiclist li.header .forum-toggle.toggled:after, .forumbg ul.topiclist li.header .forum-toggle.toggled:after { content: '\f504'; }
 .forabg ul.topiclist li.header .forum-toggle:hover, .forumbg ul.topiclist li.header .forum-toggle:hover { opacity: 1; }
 
 ul.topiclist dl { position: relative; }
@@ -1038,22 +1036,21 @@ a.post { display: inline !important; background: none !important; box-shadow: no
 .button, .post-buttons > #expand > a { cursor: pointer; display: inline-block; height: 18px; line-height: 18px; font-size: 14px; white-space: nowrap; border: 1px solid transparent; border-radius: 4px; background: transparent none 0 0 repeat-x; padding: 2px 8px; font-family: "Open Sans", "Droid Sans", Verdana, Arial, Helvetica; position: relative; text-decoration: none !important; outline-style: none !important; vertical-align: bottom; }
 .buttons > .button, .post-buttons > #expand.buttons > a { border-width: 0; padding: 3px 9px; }
 .button > strong, .post-buttons > #expand > a > strong { font-weight: 600; }
+@media (max-width: 550px) { .button .button-text, .post-buttons > #expand > a .button-text { display: none; } }
 
 .dropdown-select { padding-right: 24px; }
 .dropdown-down.dropdown-visible .dropdown-select { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 .dropdown-up.dropdown-visible .dropdown-select { border-top-left-radius: 0; border-top-right-radius: 0; }
 
-.icon-button:before, .dropdown-select:after, .button.responsive-menu-link:before, .post-buttons > #expand > a:before { background: transparent !important; font-family: FontAwesome; content: '\f013'; display: inline-block; float: right; height: 12px; margin: 3px 0 0 2px; width: 12px; font-family: FontAwesome; font-size: 10px; line-height: 12px; text-align: center; font-weight: normal; text-indent: 0; font-style: normal; text-transform: none; }
-.buttons > .icon-button:before, .buttons > .dropdown-select:after, .buttons > .button.responsive-menu-link:before, .post-buttons > #expand.buttons > a:before { position: relative; top: -1px; right: -1px; }
-.rtl .buttons > .icon-button:before, .rtl .buttons > .dropdown-select:after, .rtl .buttons > .button.responsive-menu-link:before, .rtl .post-buttons > #expand.buttons > a:before { right: auto; right: -1px; }
+.icon-button:before, .dropdown-select:after, .post-buttons > #expand > a:before { background: transparent !important; font-family: "Material Design Icons"; content: '\f6a4'; display: inline-block; float: right; height: 14px; width: 14px; margin: 3px 0 0 2px; font-size: 10px; line-height: 12px; text-align: center; font-weight: normal; text-indent: 0; font-style: normal; text-transform: none; }
+.buttons > .icon-button:before, .buttons > .dropdown-select:after, .post-buttons > #expand.buttons > a:before { position: relative; top: -1px; right: -1px; }
+.rtl .buttons > .icon-button:before, .rtl .buttons > .dropdown-select:after, .rtl .post-buttons > #expand.buttons > a:before { right: auto; right: -1px; }
 
-.dropdown-select:after, .reply-icon:before, .pmreply-icon:before, .post-icon:before, .newpm-icon:before, .reply-all:before, .locked-icon:before, .forwardpm-icon:before, .tools-icon:before, .modtools-icon:before, .search-icon:before, .search-adv-icon:before, .thanks-icon:before, .removethanks-icon:before, .quote-icon:before, .edit-icon:before, .warn-icon:before, .delete-icon:before, .report-icon:before, .info-icon:before, .button.responsive-menu-link:before, .post-buttons > #expand > a:before { background-image: none !important; font-family: FontAwesome; }
+.dropdown-select:after, .reply-icon:before, .pmreply-icon:before, .post-icon:before, .newpm-icon:before, .reply-all:before, .locked-icon:before, .forwardpm-icon:before, .tools-icon:before, .modtools-icon:before, .search-icon:before, .search-adv-icon:before, .thanks-icon:before, .removethanks-icon:before, .quote-icon:before, .edit-icon:before, .warn-icon:before, .delete-icon:before, .report-icon:before, .info-icon:before, .button.responsive-menu-link:before, .post-buttons > #expand > a:before { background-image: none !important; font-family: "Material Design Icons"; }
 
-.post-icon:before, .newpm-icon:before, .locked-icon:before, .search-icon:before, .search-adv-icon:before, .thanks-icon:before, .removethanks-icon:before, .edit-icon:before, .warn-icon:before { font-family: 'Glyphicons Regular', 'Glyphicons'; }
+.dropdown-select.icon-button:before, .dropdown-select:after, .post-buttons > #expand > a.dropdown-select:before { margin-right: 4px; }
 
-.dropdown-select.icon-button:before, .dropdown-select:after, .dropdown-select.button.responsive-menu-link:before, .post-buttons > #expand > a.dropdown-select:before { margin-right: 4px; }
-
-.dropdown-select:after { border-left: 1px solid transparent; content: '\f0d7'; position: absolute; float: none; margin: 0; top: 0; right: 0; line-height: 22px; height: 22px; width: 16px; vertical-align: baseline; }
+.dropdown-select:after { border-left: 1px solid transparent; content: '\f236'; position: absolute; float: none; margin: 0; top: 0; right: 0; line-height: 22px; height: 22px; width: 16px; vertical-align: baseline; }
 
 .buttons, .buttons .button, .buttons .post-buttons > #expand > a { float: left; }
 
@@ -1061,30 +1058,34 @@ a.post { display: inline !important; background: none !important; box-shadow: no
 
 #jumpbox .dropdown-select { margin: 0; }
 
-.reply-icon:before, .pmreply-icon:before { content: '\f112'; margin-left: 4px; margin-top: 4px; }
+.reply-icon:before, .pmreply-icon:before { content: '\f549'; }
 
-.post-icon:before, .newpm-icon:before { content: '\E151'; margin-left: 5px; font-size: 12px; }
+.post-icon:before, .newpm-icon:before { content: '\f455'; }
 
-.reply-all:before { content: '\f122'; margin-left: 4px; }
+.reply-all:before { content: '\f54a'; }
 
-.locked-icon:before { content: '\E204'; margin-left: 5px; }
+.locked-icon:before { content: '\f430'; }
 .buttons > .locked-icon:before { top: 0; }
 
-.forwardpm-icon:before { content: '\f064'; margin-left: 4px; margin-top: 4px; }
+.forwardpm-icon:before { content: '\f585'; }
 
 .modtools-icon { width: 22px; text-indent: 999px; overflow: hidden; }
 
-.tools-icon:before, .modtools-icon:before, .search-icon:before, .search-adv-icon:before { content: '\f0ad'; font-size: 14px; height: 18px; margin-top: 0; width: 16px; line-height: 18px; }
+.tools-icon:before, .modtools-icon:before, .search-icon:before, .search-adv-icon:before { font-size: 14px; height: 18px; margin-top: 0; width: 16px; line-height: 18px; }
 
-.search-icon:before { content: '\E028'; font-size: 13px; width: 15px; padding-right: 1px; }
+.tools-icon:before { content: '\f6a4'; }
 
-.search-adv-icon:before { content: '\E137'; font-size: 13px; }
+.search-icon:before { content: '\f43b'; }
 
-.modtools-icon:before { content: '\f0e3'; }
+.search-adv-icon:before { content: '\f582'; }
 
-.thanks-icon:before, .removethanks-icon:before { content: '\E344'; font-size: 13px; }
+.modtools-icon:before { content: '\f390'; }
 
-.removethanks-icon:before { content: '\E345'; }
+.thanks-icon:before, .removethanks-icon:before { font-size: 13px; }
+
+.thanks-icon:before { content: '\f601'; }
+
+.removethanks-icon:before { content: '\f5ff'; }
 
 .small-icon { background-position: 0 50%; background-repeat: no-repeat; background-image: none; }
 
@@ -1097,11 +1098,9 @@ ul.linklist.bulletin > li.small-icon:before { display: none; }
 .contact-icons.dropdown-contents { min-width: 0; padding: 0; font-size: 0; }
 
 .contact-icon { position: relative; display: block; height: 16px; width: 16px; }
-.contact-icon:after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; text-align: center; font-family: FontAwesome; font-size: 14px; line-height: 16px; vertical-align: baseline; font-weight: normal; font-style: normal; text-transform: none; text-indent: 0; pointer-events: none; }
+.contact-icon:after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; text-align: center; font-family: "Material Design Icons"; font-size: 14px; line-height: 16px; vertical-align: baseline; font-weight: normal; font-style: normal; text-transform: none; text-indent: 0; pointer-events: none; }
 
 .contact-icons a { border-bottom: 1px dotted; border-right: 1px dotted; display: block; float: left; padding: 8px; }
-
-.pm-icon:after, .email-icon:after, .phpbb_icq-icon:after, .phpbb_aol-icon:after { font-family: 'Glyphicons Regular', 'Glyphicons'; }
 
 .contact-icons .last-cell { border-right: none; }
 
@@ -1109,31 +1108,31 @@ ul.linklist.bulletin > li.small-icon:before { display: none; }
 
 .contact-icons div { clear: left; }
 
-.pm-icon:after { content: '\E245'; }
+.pm-icon:after { content: '\f453'; }
 
-.email-icon:after { content: '\2709'; }
+.email-icon:after { content: '\f2e3'; }
 
-.jabber-icon:after { content: '\f0eb'; font-size: 16px; }
+.jabber-icon:after { content: '\f427'; font-size: 16px; }
 
-.phpbb_icq-icon:after { content: '\2698'; }
+.phpbb_icq-icon:after { content: '\f33f'; }
 
-.phpbb_wlm-icon:after { content: '\f007'; }
+.phpbb_wlm-icon:after { content: '\f103'; }
 
-.phpbb_aol-icon:after { content: '\E563'; }
+.phpbb_aol-icon:after { content: '\f670'; }
 
-.phpbb_website-icon:after { content: '\f08e'; }
+.phpbb_website-icon:after { content: '\f68c'; }
 
-.phpbb_youtube-icon:after { content: '\f16a'; }
+.phpbb_youtube-icon:after { content: '\f6b0'; }
 
-.phpbb_facebook-icon:after { content: '\f230'; }
+.phpbb_facebook-icon:after { content: '\f302'; }
 
-.phpbb_googleplus-icon:after { content: '\f0d5'; }
+.phpbb_googleplus-icon:after { content: '\f3b0'; }
 
-.phpbb_skype-icon:after { content: '\f17e'; }
+.phpbb_skype-icon:after { content: '\f59e'; }
 
-.phpbb_twitter-icon:after { content: '\f099'; }
+.phpbb_twitter-icon:after { content: '\f631'; }
 
-.phpbb_yahoo-icon:after { content: '\f19e'; }
+.phpbb_yahoo-icon:after { content: '\f126'; }
 
 .post-buttons { float: right; list-style: none; margin-top: 2px; }
 .rtl .post-buttons { float: left; }
@@ -1144,31 +1143,30 @@ ul.linklist.bulletin > li.small-icon:before { display: none; }
 
 .post-buttons > li { float: left; margin-right: 3px; }
 
-.post-buttons .icon-button, .post-buttons .button.responsive-menu-link, .post-buttons > #expand > a { padding: 0 5px; }
-.post-buttons .icon-button.delete-icon, .post-buttons .delete-icon.button.responsive-menu-link, .post-buttons > #expand > a.delete-icon, .post-buttons .icon-button.report-icon, .post-buttons .report-icon.button.responsive-menu-link, .post-buttons > #expand > a.report-icon { border-width: 0; padding: 1px 6px; }
+.post-buttons .icon-button, .post-buttons > #expand > a { padding: 0 5px; }
+.post-buttons .icon-button.delete-icon, .post-buttons > #expand > a.delete-icon, .post-buttons .icon-button.report-icon, .post-buttons > #expand > a.report-icon { border-width: 0; padding: 1px 6px; }
 
-.post-buttons .icon-button span, .post-buttons .button.responsive-menu-link span, .post-buttons > #expand > a span { display: block; height: 0; overflow: hidden; position: absolute; width: 1px; }
+.post-buttons .icon-button span, .post-buttons > #expand > a span { display: block; height: 0; overflow: hidden; position: absolute; width: 1px; }
 
-.post-buttons .icon-button:before, .post-buttons .dropdown-select:after, .post-buttons .button.responsive-menu-link:before, .post-buttons > #expand > a:before { margin-left: 0; }
+.post-buttons .icon-button:before, .post-buttons .dropdown-select:after, .post-buttons > #expand > a:before { margin-left: 0; }
 
-.quote-icon:before { content: '\f10d'; }
+.quote-icon:before { content: '\f373'; font-size: 14px; }
 
-.edit-icon:before { content: '\E151'; margin-right: -2px; font-size: 11px; margin-top: 2px; }
+.edit-icon:before { content: '\f4da'; font-size: 14px; }
 
-.warn-icon:before { content: '\E525'; padding-right: 1px; }
+.warn-icon:before { content: '\f104'; font-size: 14px; }
 
-.delete-icon:before { content: '\f00d'; font-size: 12px; }
+.delete-icon:before { content: '\f24c'; font-size: 14px; }
 
-.report-icon:before { content: '\f06a'; font-size: 12px; margin-top: 3px; }
+.report-icon:before { content: '\f125'; font-size: 14px; }
 
-.info-icon:before { content: '\f128'; font-size: 13px; }
+.info-icon:before { content: '\f3ef'; font-size: 14px; }
 
-.button.responsive-menu-link, .post-buttons > #expand > a.responsive-menu-link { width: 12px; }
-.button.responsive-menu-link:before, .post-buttons > #expand > a.responsive-menu-link:before { content: '\f0c9'; font-size: 11px; margin-top: 3px; }
+.button.responsive-menu-link:before, .post-buttons > #expand > a.responsive-menu-link:before { content: '\f44e'; font-size: 14px; }
 
 .post-buttons > #expand > a { width: 12px; overflow: hidden; text-indent: 999px; }
-.post-buttons > #expand > a:before { content: '\f078'; }
-.post-buttons > #expand > a.expanded:before { content: '\f077'; }
+.post-buttons > #expand > a:before { content: '\f236'; }
+.post-buttons > #expand > a.expanded:before { content: '\f239'; }
 
 .post-buttons .dropdown { top: 20px; }
 
@@ -1247,8 +1245,8 @@ ul.cplist { margin-bottom: 5px; border-top: 1px solid transparent; }
 .responsive-tab { position: relative; }
 
 .responsive-tab > a.responsive-tab-link { display: block; font-size: 16px; position: relative; width: 16px; line-height: 14px; text-decoration: none; }
-.responsive-tab > a.responsive-tab-link:before { content: '\E159'; font-family: 'Glyphicons Regular', 'Glyphicons'; position: absolute; left: 10px; top: 50%; margin-top: -7px; width: 14px; font-size: 13px; line-height: 15px; height: 15px; text-align: center; font-weight: normal; font-style: normal; text-indent: 0; }
-.dropdown-visible.responsive-tab > a.responsive-tab-link:before, .responsive-tab > a.responsive-tab-link:hover:before { content: '\E602'; }
+.responsive-tab > a.responsive-tab-link:before { content: '\f44e'; font-family: "Material Design Icons"; position: absolute; left: 10px; top: 50%; margin-top: -7px; width: 14px; font-size: 13px; line-height: 15px; height: 15px; text-align: center; font-weight: normal; font-style: normal; text-indent: 0; }
+.dropdown-visible.responsive-tab > a.responsive-tab-link:before, .responsive-tab > a.responsive-tab-link:hover:before { content: '\f236'; }
 
 #tabs .dropdown, #minitabs .dropdown { top: 28px; margin-right: -2px; font-size: 12px; line-height: 1.4; font-weight: normal; }
 
@@ -1482,12 +1480,10 @@ input.button1:focus, input.button2:focus, button.button2:focus, input.button3:fo
 
 .tiny { width: 10%; }
 
-.imageset.icon_topic_latest, .imageset.icon_topic_newest, .imageset.icon_topic_reported, .imageset.icon_topic_deleted, .imageset.icon_topic_unapproved, .imageset.icon_topic_attach, .imageset.icon_topic_poll, .imageset.icon_contact { position: relative; text-indent: 999px; }
-.imageset.icon_topic_latest:after, .imageset.icon_topic_newest:after, .imageset.icon_topic_reported:after, .imageset.icon_topic_deleted:after, .imageset.icon_topic_unapproved:after, .imageset.icon_topic_attach:after, .imageset.icon_topic_poll:after, .imageset.icon_contact:after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; text-align: center; font-size: 13px; line-height: 13px; vertical-align: baseline; font-weight: normal; font-style: normal; text-transform: none; text-indent: 0; pointer-events: none; }
+.imageset.icon_topic_attach, .imageset.icon_topic_latest, .imageset.icon_topic_newest, .imageset.icon_topic_reported, .imageset.icon_topic_deleted, .imageset.icon_topic_unapproved, .imageset.icon_topic_poll, .imageset.icon_contact { position: relative; text-indent: 999px; }
+.imageset.icon_topic_attach:after, .imageset.icon_topic_latest:after, .imageset.icon_topic_newest:after, .imageset.icon_topic_reported:after, .imageset.icon_topic_deleted:after, .imageset.icon_topic_unapproved:after, .imageset.icon_topic_poll:after, .imageset.icon_contact:after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; text-align: center; font-size: 13px; line-height: 13px; vertical-align: baseline; font-weight: normal; font-style: normal; text-transform: none; text-indent: 0; pointer-events: none; }
 
-.imageset.icon_topic_latest:after, .imageset.icon_topic_newest:after, .imageset.icon_topic_reported:after, .imageset.icon_topic_deleted:after, .imageset.icon_topic_unapproved:after { font-family: FontAwesome; }
-
-.imageset.icon_topic_attach:after, .imageset.icon_topic_poll:after, .imageset.icon_contact:after { font-family: 'Glyphicons Regular', 'Glyphicons'; }
+.imageset.icon_topic_attach:after, .imageset.icon_topic_latest:after, .imageset.icon_topic_newest:after, .imageset.icon_topic_reported:after, .imageset.icon_topic_deleted:after, .imageset.icon_topic_unapproved:after, .imageset.icon_topic_poll:after, .imageset.icon_contact:after { font-family: "Material Design Icons"; }
 
 .imageset.icon_topic_reported, .imageset.icon_topic_deleted, .imageset.icon_topic_unapproved { width: 16px; height: 16px; }
 .imageset.icon_topic_reported:after, .imageset.icon_topic_deleted:after, .imageset.icon_topic_unapproved:after { top: 50%; bottom: auto; margin-top: -8px; height: 16px; font-size: 14px; line-height: 16px; }
@@ -1502,98 +1498,92 @@ span.imageset { display: inline-block !important; background: transparent none 0
 
 .imageset.icon_post_target, .imageset.icon_post_target_unread { background-size: 11px 9px; padding-left: 11px; padding-top: 9px; }
 
-.imageset.icon_topic_attach:after { content: '\E063'; }
+.imageset.icon_topic_attach:after { content: '\f15d'; }
 
-.imageset.icon_topic_latest:after, .imageset.icon_topic_newest:after { content: '\f061'; }
+.imageset.icon_topic_latest:after, .imageset.icon_topic_newest:after { content: '\f150'; }
 
-.imageset.icon_topic_reported:after { content: '\f071'; }
+.imageset.icon_topic_reported:after { content: '\f125'; }
 
-.imageset.icon_topic_deleted:after { content: '\f057'; }
+.imageset.icon_topic_deleted:after { content: '\f252'; }
 
-.imageset.icon_topic_unapproved:after { content: '\f059'; }
+.imageset.icon_topic_unapproved:after { content: '\f1a3'; }
 
-.imageset.icon_topic_poll:after { content: '\E042'; }
+.imageset.icon_topic_poll:after { content: '\f50e'; }
 
-.imageset.icon_contact:after { content: '\E188'; }
-.imageset.icon_contact:hover:after { content: '\E602'; }
-.dropdown-up .imageset.icon_contact:hover:after { content: '\E601'; }
+.imageset.icon_contact:after { content: '\f46c'; }
+.imageset.icon_contact:hover:after { content: '\f236'; }
+.dropdown-up .imageset.icon_contact:hover:after { content: '\f239'; }
 
-.icon-bump, .icon-contact, .icon-delete-cookies, .icon-download, .icon-logout, .icon-login, .icon-mcp, .icon-members, .icon-notification, .icon-pages, .icon-pm, .icon-print, .icon-profile, .icon-register, .icon-sendemail, .icon-subscribe, .icon-team, .icon-unsubscribe, .icon-time, .icon-thanks_toplist, .icon-search-new, .icon-search-unanswered, .icon-search-unread, .icon-search-self, .icon-search, .responsive-search a, .icon-search-active, .icon-search-advanced, .icon-acp, .icon-bookmark, .icon-faq, .icon-home, .icon-mark, .icon-ucp, .icon-new-posts, .icon-forums, .icon-chat, .icon-thanks { position: relative; background-image: none; }
-.icon-bump:after, .icon-contact:after, .icon-delete-cookies:after, .icon-download:after, .icon-logout:after, .icon-login:after, .icon-mcp:after, .icon-members:after, .icon-members:before, ul.linklist.bulletin > li.small-icon.icon-members:before, .icon-notification:after, .icon-pages:after, .icon-pm:after, .icon-print:after, .icon-profile:after, .icon-register:after, .icon-sendemail:after, .icon-subscribe:after, .icon-team:after, .icon-team:before, ul.linklist.bulletin > li.small-icon.icon-team:before, .icon-unsubscribe:after, .icon-time:after, .icon-thanks_toplist:after, .icon-search-new:after, .icon-search-unanswered:after, .icon-search-unread:after, .icon-search-self:after, .icon-search:after, .responsive-search a:after, .icon-search-active:after, .icon-search-advanced:after, .icon-acp:after, .icon-bookmark:after, .icon-faq:after, .icon-home:after, .icon-mark:after, .icon-ucp:after, .icon-new-posts:after, .icon-forums:after, .icon-chat:after, .icon-thanks:after { content: ''; position: absolute; top: 50%; left: 0; height: 14px; margin-top: -7px; text-align: center; font-size: 12px; line-height: 14px; vertical-align: baseline; font-weight: normal; font-style: normal; text-transform: none; text-indent: 0; pointer-events: none; }
-.small-icon.icon-bump:after, .small-icon.icon-contact:after, .small-icon.icon-delete-cookies:after, .small-icon.icon-download:after, .small-icon.icon-logout:after, .small-icon.icon-login:after, .small-icon.icon-mcp:after, .small-icon.icon-members:after, .small-icon.icon-members:before, ul.linklist.bulletin > li.small-icon.icon-members:before, .small-icon.icon-notification:after, .small-icon.icon-pages:after, .small-icon.icon-pm:after, .small-icon.icon-print:after, .small-icon.icon-profile:after, .small-icon.icon-register:after, .small-icon.icon-sendemail:after, .small-icon.icon-subscribe:after, .small-icon.icon-team:after, .small-icon.icon-team:before, ul.linklist.bulletin > li.small-icon.icon-team:before, .small-icon.icon-unsubscribe:after, .small-icon.icon-time:after, .small-icon.icon-thanks_toplist:after, .small-icon.icon-search-new:after, .small-icon.icon-search-unanswered:after, .small-icon.icon-search-unread:after, .small-icon.icon-search-self:after, .small-icon.icon-search:after, .responsive-search a.small-icon:after, .small-icon.icon-search-active:after, .small-icon.icon-search-advanced:after, .small-icon.icon-acp:after, .small-icon.icon-bookmark:after, .small-icon.icon-faq:after, .small-icon.icon-home:after, .small-icon.icon-mark:after, .small-icon.icon-ucp:after, .small-icon.icon-new-posts:after, .small-icon.icon-forums:after, .small-icon.icon-chat:after, .small-icon.icon-thanks:after { width: 18px; text-align: center; }
+.icon-search-new, .icon-search-unanswered, .icon-search-unread, .icon-search-self, .icon-search, .responsive-search a, .icon-search-active, .icon-search-advanced, .icon-acp, .icon-bookmark, .icon-bump, .icon-contact, .icon-delete-cookies, .icon-download, .icon-faq, .icon-home, .icon-logout, .icon-login, .icon-mark, .icon-mcp, .icon-members, .icon-notification, .icon-pages, .icon-pm, .icon-print, .icon-profile, .icon-register, .icon-sendemail, .icon-subscribe, .icon-team, .icon-ucp, .icon-unsubscribe, .icon-new-posts, .icon-forums, .icon-chat, .icon-time, .icon-thanks, .icon-thanks_toplist { position: relative; background-image: none; }
+.icon-search-new:after, .icon-search-unanswered:after, .icon-search-unread:after, .icon-search-self:after, .icon-search:after, .responsive-search a:after, .icon-search-active:after, .icon-search-advanced:after, .icon-acp:after, .icon-bookmark:after, .icon-bump:after, .icon-contact:after, .icon-delete-cookies:after, .icon-download:after, .icon-faq:after, .icon-home:after, .icon-logout:after, .icon-login:after, .icon-mark:after, .icon-mcp:after, .icon-members:after, .icon-notification:after, .icon-pages:after, .icon-pm:after, .icon-print:after, .icon-profile:after, .icon-register:after, .icon-sendemail:after, .icon-subscribe:after, .icon-team:after, .icon-ucp:after, .icon-unsubscribe:after, .icon-new-posts:after, .icon-forums:after, .icon-chat:after, .icon-time:after, .icon-thanks:after, .icon-thanks_toplist:after { content: ''; position: absolute; top: 50%; left: 0; height: 14px; margin-top: -7px; text-align: center; font-size: 12px; line-height: 14px; vertical-align: baseline; font-weight: normal; font-style: normal; text-transform: none; text-indent: 0; pointer-events: none; }
+.small-icon.icon-search-new:after, .small-icon.icon-search-unanswered:after, .small-icon.icon-search-unread:after, .small-icon.icon-search-self:after, .small-icon.icon-search:after, .responsive-search a.small-icon:after, .small-icon.icon-search-active:after, .small-icon.icon-search-advanced:after, .small-icon.icon-acp:after, .small-icon.icon-bookmark:after, .small-icon.icon-bump:after, .small-icon.icon-contact:after, .small-icon.icon-delete-cookies:after, .small-icon.icon-download:after, .small-icon.icon-faq:after, .small-icon.icon-home:after, .small-icon.icon-logout:after, .small-icon.icon-login:after, .small-icon.icon-mark:after, .small-icon.icon-mcp:after, .small-icon.icon-members:after, .small-icon.icon-notification:after, .small-icon.icon-pages:after, .small-icon.icon-pm:after, .small-icon.icon-print:after, .small-icon.icon-profile:after, .small-icon.icon-register:after, .small-icon.icon-sendemail:after, .small-icon.icon-subscribe:after, .small-icon.icon-team:after, .small-icon.icon-ucp:after, .small-icon.icon-unsubscribe:after, .small-icon.icon-new-posts:after, .small-icon.icon-forums:after, .small-icon.icon-chat:after, .small-icon.icon-time:after, .small-icon.icon-thanks:after, .small-icon.icon-thanks_toplist:after { width: 18px; text-align: center; }
 
-.icon-bump:after, .icon-contact:after, .icon-delete-cookies:after, .icon-download:after, .icon-logout:after, .icon-login:after, .icon-mcp:after, .icon-members:after, .icon-members:before, ul.linklist.bulletin > li.small-icon.icon-members:before, .icon-notification:after, .icon-pages:after, .icon-pm:after, .icon-print:after, .icon-profile:after, .icon-register:after, .icon-sendemail:after, .icon-subscribe:after, .icon-team:after, .icon-team:before, ul.linklist.bulletin > li.small-icon.icon-team:before, .icon-unsubscribe:after, .icon-time:after, .icon-thanks_toplist:after { font-family: FontAwesome; }
+.icon-search-new:after, .icon-search-unanswered:after, .icon-search-unread:after, .icon-search-self:after, .icon-search:after, .responsive-search a:after, .icon-search-active:after, .icon-search-advanced:after, .icon-acp:after, .icon-bookmark:after, .icon-bump:after, .icon-contact:after, .icon-delete-cookies:after, .icon-download:after, .icon-faq:after, .icon-home:after, .icon-logout:after, .icon-login:after, .icon-mark:after, .icon-mcp:after, .icon-members:after, .icon-notification:after, .icon-pages:after, .icon-pm:after, .icon-print:after, .icon-profile:after, .icon-register:after, .icon-sendemail:after, .icon-subscribe:after, .icon-team:after, .icon-ucp:after, .icon-unsubscribe:after, .icon-new-posts:after, .icon-forums:after, .icon-chat:after, .icon-time:after, .icon-thanks:after, .icon-thanks_toplist:after { font-family: "Material Design Icons"; }
 
-.icon-search-new:after, .icon-search-unanswered:after, .icon-search-unread:after, .icon-search-self:after, .icon-search:after, .responsive-search a:after, .icon-search-active:after, .icon-search-advanced:after, .icon-acp:after, .icon-bookmark:after, .icon-faq:after, .icon-home:after, .icon-mark:after, .icon-ucp:after, .icon-new-posts:after, .icon-forums:after, .icon-chat:after, .icon-thanks:after { font-family: 'Glyphicons Regular', 'Glyphicons'; }
+.icon-search-new:after, .icon-search-unanswered:after, .icon-search-unread:after, .icon-search-self:after, .icon-search:after, .responsive-search a:after, .icon-search-active:after, .icon-search-advanced:after { content: '\f43b'; }
 
-.icon-search-new:after, .icon-search-unanswered:after, .icon-search-unread:after, .icon-search-self:after, .icon-search:after, .responsive-search a:after, .icon-search-active:after, .icon-search-advanced:after { content: '\E028'; }
+.icon-acp:after { content: '\f572'; }
 
-.icon-acp:after { content: '\E271'; }
+.icon-bookmark:after { content: '\f1b6'; }
 
-.icon-bookmark:after { content: '\E073'; margin-left: -1px; margin-right: -1px; }
+.icon-bump:after { content: '\f634'; }
 
-.icon-bump:after { content: '\f079'; }
+.icon-contact:after { content: '\f284'; }
 
-.icon-contact:after { content: '\f0e0'; }
+.icon-delete-cookies:after { content: '\f2b5'; }
 
-.icon-delete-cookies:after { content: '\f014'; }
+.icon-download:after { content: '\f2cf'; }
 
-.icon-download:after { content: '\f019'; }
+.icon-faq:after { content: '\f3ef'; }
 
-.icon-faq:after { content: '\E195'; }
-
-.icon-home:after { content: '\E021'; }
+.icon-home:after { content: '\f3d1'; }
 .icon-home.breadcrumbs:after { text-align: left; }
 
-.icon-logout:after { content: '\f08b'; }
+.icon-logout:after { content: '\f435'; }
 
-.icon-login:after { content: '\f090'; }
+.icon-login:after { content: '\f434'; }
 
-.icon-mark:after { content: '\E153'; margin-top: -8px; }
+.icon-mark:after { content: '\f223'; }
 
-.icon-mcp:after { content: '\f0e3'; }
+.icon-mcp:after { content: '\f390'; }
 
-.icon-members:after, .icon-members:before, ul.linklist.bulletin > li.small-icon.icon-members:before { content: '\f007'; }
-.icon-members:before, ul.linklist.bulletin > li.small-icon.icon-members:before { display: block; font-size: 10px; padding: 0; padding-left: 4px; padding-top: 1px; opacity: .7; }
+.icon-members:after { content: '\f10d'; }
 
-.icon-notification:after { content: '\f0a2'; }
-.icon-notification.non-zero:after { content: '\f0f3'; }
+.icon-notification:after { content: '\f193'; }
+.icon-notification.non-zero:after { content: '\f191'; }
 
-.icon-pages:after { content: '\f0c5'; }
+.icon-pages:after { content: '\f285'; }
 
-.icon-pm:after { content: '\f003'; }
-.icon-pm.non-zero:after { content: '\f0e0'; }
+.icon-pm:after { content: '\f457'; }
+.icon-pm.non-zero:after { content: '\f453'; }
 
-.icon-print:after { content: '\f02f'; }
+.icon-print:after { content: '\f519'; }
 
-.icon-profile:after { content: '\f007'; }
+.icon-profile:after { content: '\f103'; }
 
-.icon-register:after { content: '\f234'; }
+.icon-register:after { content: '\f113'; }
 
-.icon-sendemail:after { content: '\f003'; }
+.icon-sendemail:after { content: '\f2e3'; }
 
-.icon-subscribe:after { content: '\f05d'; }
+.icon-subscribe:after { content: '\f229'; }
 
-.icon-team:after, .icon-team:before, ul.linklist.bulletin > li.small-icon.icon-team:before { content: '\f007'; }
-.icon-team:before, ul.linklist.bulletin > li.small-icon.icon-team:before { display: block; font-size: 10px; padding: 0; white-space: nowrap; padding-top: 1px; opacity: .7; content: '\f007\f007'; }
+.icon-team:after { content: '\f6a2'; }
 
-.icon-ucp:after { content: '\E281'; }
+.icon-ucp:after { content: '\f582'; }
 
-.icon-unsubscribe:after { content: '\f05c'; }
+.icon-unsubscribe:after { content: '\f22a'; }
 
-.icon-new-posts:after { content: '\E245'; }
+.icon-new-posts:after { content: '\f277'; }
 
-.icon-forums:after { content: '\E245'; }
+.icon-forums:after { content: '\f381'; }
 
-.icon-chat:after { content: '\E246'; }
+.icon-chat:after { content: '\f45b'; }
 
-.icon-time:after { content: '\f017'; }
+.icon-time:after { content: '\f246'; }
 
-.icon-thanks { background-image: none !important; }
-.icon-thanks:after { content: '\E344'; }
+.icon-thanks:after { content: '\f601'; }
 
-.icon-thanks_toplist { background-image: none !important; }
-.icon-thanks_toplist:after { content: '\f005'; }
+.icon-thanks_toplist:after { content: '\f5bd'; }
 
 @media (max-width: 700px) { .responsive-hide { display: none !important; }
   .responsive-show { display: block !important; }
@@ -1841,7 +1831,7 @@ div.rules { background-color: #decfc7; color: #d06d3c; }
 
 p.post-notice { background-color: #efe0d8; color: #d06d3c; background-image: none; }
 
-p.post-notice.deleted:before, p.post-notice.unapproved:before, p.post-notice.reported:before, p.post-notice.error:before { font-family: FontAwesome; }
+p.post-notice.deleted:before, p.post-notice.unapproved:before, p.post-notice.reported:before, p.post-notice.error:before { font-family: "Material Design Icons"; }
 
 p.post-notice.deleted:before { content: '\f057'; color: #d06d3c; }
 
@@ -2013,8 +2003,8 @@ dd.profile-warnings { color: #BC2A4D; }
 
 .phpbb_aol-icon:after { color: #ffd800; text-shadow: 0 0 1px #000, 0 0 2px #000; }
 
-.icon-bump:after, .icon-contact:after, .icon-delete-cookies:after, .icon-download:after, .icon-logout:after, .icon-login:after, .icon-mcp:after, .icon-members:after, .icon-members:before, ul.linklist.bulletin > li.small-icon.icon-members:before, .icon-notification:after, .icon-pages:after, .icon-pm:after, .icon-print:after, .icon-profile:after, .icon-register:after, .icon-sendemail:after, .icon-subscribe:after, .icon-team:after, .icon-team:before, ul.linklist.bulletin > li.small-icon.icon-team:before, .icon-unsubscribe:after, .icon-time:after, .icon-thanks_toplist:after, .icon-search-new:after, .icon-search-unanswered:after, .icon-search-unread:after, .icon-search-self:after, .icon-search:after, .responsive-search a:after, .icon-search-active:after, .icon-search-advanced:after, .icon-acp:after, .icon-bookmark:after, .icon-faq:after, .icon-home:after, .icon-mark:after, .icon-ucp:after, .icon-new-posts:after, .icon-forums:after, .icon-chat:after, .icon-thanks:after { color: #1fa67a; }
-.icon-bump:hover:after, .icon-contact:hover:after, .icon-delete-cookies:hover:after, .icon-download:hover:after, .icon-logout:hover:after, .icon-login:hover:after, .icon-mcp:hover:after, .icon-members:hover:after, .icon-members:hover:before, ul.linklist.bulletin > li.small-icon.icon-members:hover:before, .icon-notification:hover:after, .icon-pages:hover:after, .icon-pm:hover:after, .icon-print:hover:after, .icon-profile:hover:after, .icon-register:hover:after, .icon-sendemail:hover:after, .icon-subscribe:hover:after, .icon-team:hover:after, .icon-team:hover:before, ul.linklist.bulletin > li.small-icon.icon-team:hover:before, .icon-unsubscribe:hover:after, .icon-time:hover:after, .icon-thanks_toplist:hover:after, .icon-search-new:hover:after, .icon-search-unanswered:hover:after, .icon-search-unread:hover:after, .icon-search-self:hover:after, .icon-search:hover:after, .responsive-search a:hover:after, .icon-search-active:hover:after, .icon-search-advanced:hover:after, .icon-acp:hover:after, .icon-bookmark:hover:after, .icon-faq:hover:after, .icon-home:hover:after, .icon-mark:hover:after, .icon-ucp:hover:after, .icon-new-posts:hover:after, .icon-forums:hover:after, .icon-chat:hover:after, .icon-thanks:hover:after { color: #d06d3c; }
+.icon-search-new:after, .icon-search-unanswered:after, .icon-search-unread:after, .icon-search-self:after, .icon-search:after, .responsive-search a:after, .icon-search-active:after, .icon-search-advanced:after, .icon-acp:after, .icon-bookmark:after, .icon-bump:after, .icon-contact:after, .icon-delete-cookies:after, .icon-download:after, .icon-faq:after, .icon-home:after, .icon-logout:after, .icon-login:after, .icon-mark:after, .icon-mcp:after, .icon-members:after, .icon-notification:after, .icon-pages:after, .icon-pm:after, .icon-print:after, .icon-profile:after, .icon-register:after, .icon-sendemail:after, .icon-subscribe:after, .icon-team:after, .icon-ucp:after, .icon-unsubscribe:after, .icon-new-posts:after, .icon-forums:after, .icon-chat:after, .icon-time:after, .icon-thanks:after, .icon-thanks_toplist:after { color: #1fa67a; }
+.icon-search-new:hover:after, .icon-search-unanswered:hover:after, .icon-search-unread:hover:after, .icon-search-self:hover:after, .icon-search:hover:after, .responsive-search a:hover:after, .icon-search-active:hover:after, .icon-search-advanced:hover:after, .icon-acp:hover:after, .icon-bookmark:hover:after, .icon-bump:hover:after, .icon-contact:hover:after, .icon-delete-cookies:hover:after, .icon-download:hover:after, .icon-faq:hover:after, .icon-home:hover:after, .icon-logout:hover:after, .icon-login:hover:after, .icon-mark:hover:after, .icon-mcp:hover:after, .icon-members:hover:after, .icon-notification:hover:after, .icon-pages:hover:after, .icon-pm:hover:after, .icon-print:hover:after, .icon-profile:hover:after, .icon-register:hover:after, .icon-sendemail:hover:after, .icon-subscribe:hover:after, .icon-team:hover:after, .icon-ucp:hover:after, .icon-unsubscribe:hover:after, .icon-new-posts:hover:after, .icon-forums:hover:after, .icon-chat:hover:after, .icon-time:hover:after, .icon-thanks:hover:after, .icon-thanks_toplist:hover:after { color: #d06d3c; }
 
 .icon-search-new:after, .icon-search-unanswered:after, .icon-search-unread:after { color: #d06d3c; }
 
@@ -2279,10 +2269,17 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 
 .imageset.icon_topic_poll:after { color: #709085; }
 
-/* fix for icon displaying on the user's name */
+/* FIXES */
+/* ---fix for icon displaying on the user's name */
 .navbar.secondary > ul > li > a.small-icon { padding-left: 1.5em !important; }
 
-/* spoiler à la wykop.pl */
+/* ---time icon was too small */
+a.time { font-size: 120%; }
+
+/* ---no padding after icon: chevron-down */
+@media (min-width: 551px) { .nav-link.dropdown-toggle { margin-right: .5em !important; } }
+/* CUSTOM */
+/* --- spoiler à la wykop.pl */
 .spoiler { font-size: 14px; }
 
 a.spoiler { font-variant: small-caps; }
@@ -2291,7 +2288,7 @@ a.spoiler:hover { text-decoration: none; }
 
 code.spoiler { font-family: monospace; font-size: 14px; display: none; }
 
-/* youtube bbcode */
+/* --- youtube bbcode */
 .videoWrapper { position: relative; padding-bottom: 12.25%; padding-top: 25px; height: 0; max-width: 440px; min-height: 150px; display: block; }
 
 .videoWrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }

@@ -29,6 +29,12 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 	& > strong {
 		font-weight: 600;
 	}
+	
+	.button-text {
+		@media (max-width: 550px) {
+			display: none;
+		}
+	}
 }
 
 .dropdown-select {
@@ -45,16 +51,15 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 
 .icon-button:before {
 	background: transparent !important;
-	font-family: FontAwesome;
-	content: '\f013';	// fa-cog
+	font-family: "Material Design Icons";
+	content: '\f6a4';	// icon: mdi-wrench
 	display: inline-block;
 	float: right;
-	height: $button-glyph-font-size + 2px;
+	height: 14px;
+	width: 14px;
 	margin: 3px 0 0 2px;
-	width: $button-glyph-font-size + 2px;
-	font-family: FontAwesome;
 	font-size: $button-glyph-font-size;
-	line-height: $button-glyph-font-size + 2px;
+	line-height: 12px;
 	text-align: center;
 	font-weight: normal;
 	text-indent: 0;
@@ -73,13 +78,9 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 
 %icon-button {
 	background-image: none !important;
-	font-family: FontAwesome;
+	font-family: "Material Design Icons";
 	&:hover {
 	}
-}
-
-%icon-button-gi {
-	font-family: 'Glyphicons Regular', 'Glyphicons';
 }
 
 %icon-button-visible {
@@ -97,7 +98,7 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 	@extend %icon-button;
 	@extend %icon-button-visible;
 	border-left: 1px solid transparent;
-	content: '\f0d7';	// fa-caret-down
+	content: '\f236';	// icon: mdi-chevron-down
 	position: absolute;
 	float: none;
 	margin: 0;
@@ -124,30 +125,25 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 // Big button images
 .reply-icon:before, .pmreply-icon:before {
 	@extend %icon-button;
-	content: '\f112';	// fa-mail-reply
-	margin-left: 4px;
-	margin-top: 4px;
+	content: '\f549';	// icon: mdi-reply
+	//margin-left: 4px;
+	//margin-top: 4px;
 }
 
 .post-icon:before, .newpm-icon:before {
 	@extend %icon-button;
-	@extend %icon-button-gi;
-	content: '\E151';	// glyphicons-edit
-	margin-left: 5px;
-	font-size: 12px;
+	content: '\f455';	// icon: mdi-message-draw
 }
 
 .reply-all:before {
 	@extend %icon-button;
-	content: '\f122';	// fa-mail-reply-all
-	margin-left: 4px;
+	content: '\f54a';	// icon: mdi-reply-all
 }
 
 .locked-icon:before {
 	@extend %icon-button;
-	@extend %icon-button-gi;
-	content: '\E204';	// glyphicons-lock
-	margin-left: 5px;
+	content: '\f430';	// icon: mdi-lock
+	//margin-left: 5px;
 	.buttons > & {
 		top: 0;
 	}
@@ -155,9 +151,7 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 
 .forwardpm-icon:before {
 	@extend %icon-button;
-	content: '\f064';	// fa-share
-	margin-left: 4px;
-	margin-top: 4px;
+	content: '\f585';	// icon: mdi-share
 }
 
 .modtools-icon {
@@ -169,7 +163,6 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 .tools-icon:before, .modtools-icon:before, .search-icon:before, .search-adv-icon:before {
 	@extend %icon-button;
 	@extend %icon-button-visible;
-	content: '\f0ad';	// fa-wrench
 	font-size: 14px;
 	height: $button-line-height;
 	margin-top: 0;
@@ -177,34 +170,29 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 	line-height: $button-line-height;
 }
 
+.tools-icon:before {
+	content: '\f6a4';	// icon: mdi-wrench
+}
 .search-icon:before {
-	@extend %icon-button-gi;
-	content: '\E028';	// glyphicons-search
-	font-size: 13px;
-	width: 15px;
-	padding-right: 1px;
+	content: '\f43b';	// icon: mdi-magnify
 }
-
 .search-adv-icon:before {
-	@extend %icon-button-gi;
-	content: '\E137';	// glyphicons-cogwheel
-	font-size: 13px;
+	content: '\f582';	// icon: mdi-settings
 }
-
 .modtools-icon:before {
-	content: '\f0e3';	// fa-gavel
+	content: '\f390';	// icon: mdi-gavel
 }
 
 // Thanks for posts mod
 .thanks-icon:before, .removethanks-icon:before {
 	@extend %icon-button;
-	@extend %icon-button-gi;
-	content: '\E344';	// glyphicons-thumbs-up
 	font-size: 13px;
 }
-
+.thanks-icon:before {
+	content: '\f601';	// icon: mdi-thumb-up
+}
 .removethanks-icon:before {
-	content: '\E345';	// glyphicons-thumbs-down
+	content: '\f5ff';	// icon: mdi-thumb-down
 }
 
 // Icon images
@@ -249,7 +237,7 @@ ul.linklist.bulletin > li.small-icon:before {
 		right: 0;
 		bottom: 0;
 		text-align: center;
-		font-family: FontAwesome;
+		font-family: "Material Design Icons";
 		font-size: 14px;
 		line-height: 16px;
 		vertical-align: baseline;
@@ -268,10 +256,6 @@ ul.linklist.bulletin > li.small-icon:before {
 	padding: 8px;
 }
 
-%contact-icon-gi {
-	font-family: 'Glyphicons Regular', 'Glyphicons';
-}
-
 .contact-icons .last-cell {
 	border-right: none;
 }
@@ -285,49 +269,46 @@ ul.linklist.bulletin > li.small-icon:before {
 }
 
 // Profile icons
+// CHANGE TO MDI
 .pm-icon:after {
-	@extend %contact-icon-gi;
-	content: '\E245';	// glyphicons-conversation
+	content: '\f453';	// icon: mdi-message
 }
 .email-icon:after {
-	@extend %contact-icon-gi;
-	content: '\2709';	// glyphicons-envelope
+	content: '\f2e3';	// icon: mdi-email
 }
 .jabber-icon:after {
-	content: '\f0eb';	// fa-lightbulb-o
+	content: '\f427';	// icon: mdi-lightbulb
 	font-size: 16px;
 }
 .phpbb_icq-icon:after {
-	@extend %contact-icon-gi;
-	content: '\2698';	// glyphicons-flower
+	content: '\f33f';	// icon: mdi-flower
 }
 .phpbb_wlm-icon:after {
-	content: '\f007';	// fa-user
+	content: '\f103';	// icon: mdi-account
 }
 .phpbb_aol-icon:after {
-	@extend %contact-icon-gi;
-	content: '\E563';	// glyphicons-person-walking
+	content: '\f670';	// icon: mdi-walk
 }
 .phpbb_website-icon:after {
-	content: '\f08e';	// fa-external-link
+	content: '\f68c';	// icon: mdi-web
 }
 .phpbb_youtube-icon:after {
-	content: '\f16a';	// fa-youtube-play
+	content: '\f6b0';	// icon: mdi-youtube-play
 }
 .phpbb_facebook-icon:after {
-	content: '\f230';	// fa-facebook-official
+	content: '\f302';	// icon: mdi-facebook-box
 }
 .phpbb_googleplus-icon:after {
-	content: '\f0d5';	// fa-google-plus
+	content: '\f3b0';	// icon: mdi-google-plus
 }
 .phpbb_skype-icon:after {
-	content: '\f17e';	// fa-skype
+	content: '\f59e';	// icon: mdi-skype
 }
 .phpbb_twitter-icon:after {
-	content: '\f099';	// fa-twitter
+	content: '\f631';	// icon: mdi-twitter
 }
 .phpbb_yahoo-icon:after {
-	content: '\f19e';	// fa-yahoo
+	content: '\f126';	// icon: mdi-alert-box (no yahoo icon)
 }
 
 // Post control buttons
@@ -396,47 +377,38 @@ ul.linklist.bulletin > li.small-icon:before {
 
 .quote-icon:before {
 	@extend %icon-button;
-	content: '\f10d';	// fa-quote-left
+	content: '\f373';	// icon: mdi-format-quote
+	font-size: 14px;
 }
 .edit-icon:before {
 	@extend %icon-button;
-	@extend %icon-button-gi;
-	content: '\E151';	// glyphicons-edit
-	margin-right: -2px;
-	font-size: 11px;
-	margin-top: 2px;
+	content: '\f4da';	// icon: mdi-pencil
+	font-size: 14px;
 }
 .warn-icon:before {
 	@extend %icon-button;
-	@extend %icon-button-gi;
-	content: '\E525';	// glyphicons-user-alert
-	padding-right: 1px;
+	content: '\f104';	// icon: mdi-account-alert
+	font-size: 14px;
 }
 .delete-icon:before {
 	@extend %icon-button;
-	content: '\f00d';	// fa-close
-	font-size: 12px;
+	content: '\f24c';	// icon: mdi-close
+	font-size: 14px;
 }
 .report-icon:before {
 	@extend %icon-button;
-	content: '\f06a';	// fa-exclamation-circle
-	font-size: 12px;
-	margin-top: 3px;
+	content: '\f125';	// icon: mdi-alert
+	font-size: 14px;
 }
 .info-icon:before {
 	@extend %icon-button;
-	content: '\f128';	// fa-question
-	font-size: 13px;
+	content: '\f3ef';	// icon: mdi-information
+	font-size: 14px;
 }
-.button.responsive-menu-link {
-	@extend .icon-button;
-	width: 12px;
-	&:before {
-		@extend %icon-button;
-		content: '\f0c9';	// fa-reorder
-		font-size: 11px;
-		margin-top: 3px;
-	}
+.button.responsive-menu-link:before {
+	@extend %icon-button;
+	content: '\f44e';	// icon: mdi-menu
+	font-size: 14px;
 }
 
 .post-buttons > #expand > a {
@@ -447,10 +419,10 @@ ul.linklist.bulletin > li.small-icon:before {
 	text-indent: 999px;
 	&:before {
 		@extend %icon-button;
-		content: '\f078';	// fa-chevron-down
+		content: '\f236';	// icon: mdi-chevron-down
 	}
 	&.expanded:before {
-		content: '\f077';	// fa-chevron-up
+		content: '\f239';	// icon: mdi-chevron-up
 	}
 }
 

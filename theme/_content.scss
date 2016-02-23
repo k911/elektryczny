@@ -28,18 +28,18 @@ ul.topiclist li {
 			transition: opacity 0.3s ease;
 			opacity: .5;
 			&:after {
-				content: '\E192';	// glyphicons-circle-minus
-				font-family: 'Glyphicons Regular', 'Glyphicons';
+				content: '\f465';	// icon: mdi-minus
+				font-family: "Material Design Icons";
 				position: absolute;
 				top: 0;
 				left: 0;
 				width: 16px;
 				height: 16px;
-				font-size: 12px;
+				font-size: 16px;
 				line-height: 16px;
 			}
 			&.toggled:after {
-				content: '\E191';	// glyphicons-circle-plus
+				content: '\f504';	// icon: mdi-plus
 			}
 			&:hover {
 				opacity: 1;

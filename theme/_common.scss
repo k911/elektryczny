@@ -459,18 +459,17 @@ $nav-alert-font-size:		9px !default;
 			font-size: $nav-primary-font-size;
 			outline-style: none;
 			&.dropdown-toggle {
-				margin-right: .5em; /* fixed no margin when tab with dt is selected, it was weird */
 				position: relative;
 				&:before {
 					$nav-primary-font-size-toggle:	ceil($nav-primary-font-size * 2 / 3) !default;
-					content: '\f078';	// fa-chevron-down
-					font-family: FontAwesome;
+					content: '\f236';	// icon: mdi-chevron-down
+					font-family: "Material Design Icons";
 					position: absolute;
 					right: 0;
 					top: 50%;
-					font-size: $nav-primary-font-size-toggle;
+					font-size: $button-glyph-font-size;
 					line-height: $nav-primary-font-size;
-					width: $nav-primary-font-size-toggle;
+					width: $button-glyph-font-size;
 					height: $nav-primary-font-size;
 					margin-top: -6px;
 					.rtl & {
@@ -555,7 +554,7 @@ $nav-alert-font-size:		9px !default;
 				top: 50%;
 				margin-top: $nav-primary-glyph-margin;
 				width: $nav-primary-glyph-font-size;
-				font-size: $nav-primary-font-size;
+				font-size: 14px;
 				line-height: $nav-primary-glyph-font-size;
 				height: $nav-primary-glyph-font-size;
 				text-align: left;
@@ -574,9 +573,9 @@ $nav-alert-font-size:		9px !default;
 		}
 		%glyph-only {
 			@extend %glyph;
-			text-indent: 999px;
-			width: $nav-primary-glyph-font-size;
-			padding: 0 $tab-padding-glyph;
+			// text-indent: 999px;
+			// width: $nav-primary-glyph-font-size;
+			// padding: 0 $tab-padding-glyph;
 			margin: 0;
 			overflow: hidden;
 			&:after {
@@ -626,20 +625,19 @@ $nav-alert-font-size:		9px !default;
 				}
 			}
 		}
-		%glyph-fa {
-			font-family: FontAwesome;
-		}
-		%glyph-gi {
-			font-family: 'Glyphicons Regular', 'Glyphicons';
+		%glyph-mdi {
+			font-family: "Material Design Icons";
 		}
 
 		.responsive-menu .nav-link {
 			@extend %glyph-only;
 			&:after {
-				@extend %glyph-fa;
-				content: '\f0c9';	// fa-bars
-				// @extend %glyph-gi;
-				// content: '\E159';	// glyphicons-show-lines
+				@extend %glyph-mdi;
+				content: '\f44e';	// icon: mdi-menu
+			}
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
+				padding: 0 $tab-padding-glyph !important;
 			}
 		}
 
@@ -651,8 +649,8 @@ $nav-alert-font-size:		9px !default;
 				padding-right: ($tab-padding + 20px);
 			}
 			&:after {
-				@extend %glyph-gi;
-				content: '\E044';	// glyphicons-group
+				@extend %glyph-mdi;
+				content: '\f10d';	// icon: mdi-account-multiple
 			}
 			@media (max-width: 550px) {
 				@extend %glyph-only-media;
@@ -663,8 +661,8 @@ $nav-alert-font-size:		9px !default;
 		.forums .nav-link {
 			@extend %glyph;
 			&:after {
-				@extend %glyph-fa;
-				content: '\f075';	// fa-comment
+				@extend %glyph-mdi;
+				content: '\f270';	// icon: mdi-comment
 			}
 			@media (max-width: 550px) {
 				@extend %glyph-only-media;
@@ -674,91 +672,107 @@ $nav-alert-font-size:		9px !default;
 		.account .nav-link {
 			@extend %glyph-only;
 			&:after {
-				@extend %glyph-fa;
-				content: '\f007';	// fa-user
+				@extend %glyph-mdi;
+				content: '\f103';	// icon: mdi-account
+			}
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
 			}
 		}
 
 		.pm .nav-link {
 			@extend %glyph-only;
 			&:after {
-				@extend %glyph-gi;
-				content: '\E130';	// glyphicons-message-new
-				margin-top: ceil($nav-primary-glyph-margin * 1.3);
+				@extend %glyph-mdi;
+				content: '\f453';	// icon: mdi-message
+			}
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
 			}
 		}
 
 		.notifications .nav-link {
 			@extend %glyph-only;
 			&:after {
-				@extend %glyph-fa;
-				content: '\f0f3';	// fa-bell
-				font-size: $nav-primary-glyph-font-size - 1px;
+				@extend %glyph-mdi;
+				content: '\f191';	// icon: mdi-bell //TODO: (.active).click(): check mdi-bell-off
+			}
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
 			}
 		}
 
 		.mcp .nav-link {
 			@extend %glyph-only;
 			&:after {
-				@extend %glyph-fa;
-				content: '\f0e3';	// fa-gavel
+				@extend %glyph-mdi;
+				content: '\f390';	// icon: mdi-gavel
+			}
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
 			}
 		}
 
 		.acp .nav-link {
 			@extend %glyph-only;
 			&:after {
-				@extend %glyph-gi;
-				content: '\E271';	// glyphicons-shield
+				@extend %glyph-mdi;
+				content: '\f572';	// icon: mdi-security
+			}
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
 			}
 		}
 
 		.faq .nav-link {
 			@extend %glyph-only;
 			&:after {
-				@extend %glyph-gi;
-				content: '\E195';	// glyphicons-circle-question-mark
+				@extend %glyph-mdi;
+				content: '\f3ef';	// icon: mdi-information
 			}
-		}
-
-		@media (max-width: 550px) {
-			.faq {
-				&, & .nav-link {
-					display: none !important;
-				}
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
 			}
 		}
 
 		.logout .nav-link {
 			@extend %glyph-only;
 			&:after {
-				@extend %glyph-fa;
-				content: '\f08b';	// fa-sign-out
-				margin-left: 1px;
+				@extend %glyph-mdi;
+				content: '\f435';	// icon: mdi-logout
+			}
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
 			}
 		}
 
 		.login .nav-link {
 			@extend %glyph-only;
 			&:after {
-				@extend %glyph-fa;
-				content: '\f090';	// fa-sign-in
+				@extend %glyph-mdi;
+				content: '\f434';	// icon: mdi-login
+			}
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
 			}
 		}
 
 		.register .nav-link {
 			@extend %glyph-only;
 			&:after {
-				@extend %glyph-fa;
-				content: '\f234';	// fa-user-plus
+				@extend %glyph-mdi;
+				content: '\f113';	// icon: mdi-account-plus
+			}
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
 			}
 		}
 
 		// Commonly used links for extensions
 		.boardrules .nav-link {
 			&:after {
-				@extend %glyph-fa;
-				content: '\f071';	// fa-exclamation-triangle
+				@extend %glyph-mdi;
+				content: '\f125';	// icon: mdi-alert
 			}
 		}
 		.leftside .boardrules .nav-link {
@@ -773,8 +787,8 @@ $nav-alert-font-size:		9px !default;
 
 		.pages .nav-link {
 			&:after {
-				@extend %glyph-fa;
-				content: '\f0f6';	// fa-file-text-o
+				@extend %glyph-mdi;
+				content: '\f30e';	// icon: mdi-file-document
 			}
 		}
 		.leftside .pages .nav-link {
@@ -1128,10 +1142,8 @@ ul.linklist li.responsive-menu a.responsive-menu-link {
 
 ul.linklist li.responsive-menu a.responsive-menu-link {
 	&:before {
-		// content: '\f0c9';	// fa-bars
-		// font-family: FontAwesome;
-		content: '\E159';	// glyphicons-show-lines
-		font-family: 'Glyphicons Regular', 'Glyphicons';
+		font-family: "Material Design Icons";
+		content: '\f44e'; // icon: mdi-menu
 		position: absolute;
 		left: 0;
 		top: 50%;
@@ -1144,10 +1156,6 @@ ul.linklist li.responsive-menu a.responsive-menu-link {
 		font-weight: normal;
 		font-style: normal;
 		text-indent: 0;
-	}
-	&:hover:before {
-		// font-family: 'Glyphicons Regular', 'Glyphicons';
-		content: '\E602';	// glyphicons-chevron-down
 	}
 }
 
@@ -1215,8 +1223,8 @@ ul.linklist.bulletin > li.no-bulletin:before {
 }
 
 .header-avatar span:after {
-	content: '\f078';	// fa-chevron-down
-	font-family: FontAwesome;
+	content: '\f236';	// icon: mdi-chevron-down
+	font-family: "Material Design Icons";
 	display: inline-block;
 	font-size: 7px;
 	float: right;
@@ -1392,22 +1400,22 @@ $dropdown-content-line-height:	$line-height !default;
 }
 
 .breadcrumbs .crumb:before {
-	content: '\f054';	// fa-chevron-right
-	font-family: FontAwesome;
+	content: "\f238";	// icon: mdi-chevron-right
+	font-family: "Material Design Icons";
 	font-weight: normal;
 	position: absolute;
 	left: 1px;
 	width: $list-font-size;
 	top: 50%;
 	margin-top: -#{$list-font-size / 2};
-	font-size: $list-font-size - 4px;
+	font-size: $button-glyph-font-size;
 	height: $list-font-size;
 	line-height: $list-font-size;
 	text-align: center;
 	.rtl & {
 		left: auto;
 		right: 1px;
-		content: '\f053';	// fa-chevron-left
+		content: '\f237';	// icon: mdi-chevron-left
 	}
 }
 
@@ -1719,8 +1727,8 @@ $pagination-link-line-height:		$font-size !default;
 	text-align: center;
 	font-weight: normal;
 	text-indent: 0;
-	font-family: FontAwesome;
-	content: '\f08e';	// fa-external-link
+	font-family: "Material Design Icons";
+	content: '\f429';	// icon: mdi-link
 }
 
 .pagination li.page-jump a:after {
@@ -1795,8 +1803,8 @@ $pagination-link-line-height:		$font-size !default;
 
 .phpbb_alert .alert_close:before,
 .phpbb_alert .alert_close:after {
-	content: '\f057';	// fa-times-circle
-	font-family: FontAwesome;
+	content: '\f24d';	// icon: mdi-close-box
+	font-family: "Material Design Icons";
 	position: absolute;
 	font-size: 18px;
 	line-height: 24px;

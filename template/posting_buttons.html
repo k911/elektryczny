@@ -58,21 +58,16 @@
 	</dl>
 </div>
 
-<!-- TODO: 
-     * Użyć tutaj bootstrapa (docelowo wszędzie?)
-	 * Zmienić ikony glyphicons & font awesome na -> materialdesign icons
-	 -->
-
 <!-- EVENT posting_editor_buttons_before -->
 <div id="format-buttons">
 	<input type="button" class="button2 bbcode-b" accesskey="b" name="addbbcode0" value=" B " style="font-weight:bold; width: 30px" onclick="bbstyle(0)" title="{L_BBCODE_B_HELP}" />
 	<input type="button" class="button2 bbcode-i" accesskey="i" name="addbbcode2" value=" i " style="font-style:italic; width: 30px" onclick="bbstyle(2)" title="{L_BBCODE_I_HELP}" />
 	<input type="button" class="button2 bbcode-u" accesskey="u" name="addbbcode4" value=" u " style="text-decoration: underline; width: 30px" onclick="bbstyle(4)" title="{L_BBCODE_U_HELP}" />
 	<span class="btn-separator"></span>
-	<button type="button" class="button2" onclick="bbfontstyle('[textalign=justify]', '[/textalign]')" title="Wyjustowanie tekstu"><i class="fa fa-align-justify"></i></button>
-	<button type="button" class="button2" onclick="bbfontstyle('[textalign=left]', '[/textalign]')" title="Wyrównanie tekstu do lewej"><i class="fa fa-align-left"></i></button>
-	<button type="button" class="button2" onclick="bbfontstyle('[textalign=center]', '[/textalign]')" title="Wyśrodkowanie tekstu"><i class="fa fa-align-center"></i></button>
-	<button type="button" class="button2" onclick="bbfontstyle('[textalign=right]', '[/textalign]')" title="Wyrównanie tekstu do prawej"><i class="fa fa-align-right"></i></button>
+	<button type="button" class="button2" onclick="bbfontstyle('[textalign=justify]', '[/textalign]')" title="Wyjustowanie tekstu"><span class="mdi mdi-format-align-justify"></span></button>
+	<button type="button" class="button2" onclick="bbfontstyle('[textalign=left]', '[/textalign]')" title="Wyrównanie tekstu do lewej"><span class="mdi mdi-format-align-left"></span></button>
+	<button type="button" class="button2" onclick="bbfontstyle('[textalign=center]', '[/textalign]')" title="Wyśrodkowanie tekstu"><span class="mdi mdi-format-align-center"></span></button>
+	<button type="button" class="button2" onclick="bbfontstyle('[textalign=right]', '[/textalign]')" title="Wyrównanie tekstu do prawej"><span class="mdi mdi-format-align-right"></span></button>
 	<br /><br />
 	<span style="vertical-align: middle;">Czcionka:</span>
 	<select name="addbbcode20" class="bbcode-size" onchange="bbfontstyle('[size=' + this.form.addbbcode20.options[this.form.addbbcode20.selectedIndex].value + ']', '[/size]');this.form.addbbcode20.selectedIndex = 2;" title="{L_BBCODE_F_HELP}">

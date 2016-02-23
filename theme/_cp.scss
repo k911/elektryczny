@@ -198,10 +198,8 @@ a.responsive-tab-link {
 		text-decoration: none;
 	}
 	.responsive-tab > &:before {
-		// content: '\f0c9';	// fa-bars
-		// font-family: FontAwesome;
-		content: '\E159';	// glyphicons-show-lines
-		font-family: 'Glyphicons Regular', 'Glyphicons';
+		content: '\f44e'; // icon: mdi-menu
+		font-family: "Material Design Icons";
 		position: absolute;
 		left: 10px;
 		top: 50%;
@@ -217,8 +215,7 @@ a.responsive-tab-link {
 	}
 	.dropdown-visible.responsive-tab > &:before,
 	.responsive-tab > &:hover:before {
-		// font-family: 'Glyphicons Regular', 'Glyphicons';
-		content: '\E602';	// glyphicons-chevron-down
+		content: '\f236';	// icon: mdi-chevron-down
 	}
 }
 
