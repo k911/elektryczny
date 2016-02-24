@@ -199,7 +199,7 @@ a.top:after, a.top2:after {
 a.arrow-up {
 	@extend %arrow;
 	&:after {
-		content: '\f077';	// fa-chevron-up
+		content: '\f239';	// icon: mdi-chevron-up
 		left: 0;
 	}
 	.rtl &:after {
@@ -210,7 +210,7 @@ a.arrow-up {
 a.arrow-down {
 	@extend %arrow;
 	&:after {
-		content: '\f078';	// fa-chevron-down
+		content: '\f236';	// icon: mdi-chevron-down
 		right: 0;
 		padding-top: 1px;
 	}
@@ -222,7 +222,7 @@ a.arrow-down {
 a.arrow-left, .rtl a.arrow-right {
 	@extend %arrow;
 	&:after {
-		content: '\f053';	// fa-chevron-left
+		content: '\f237';	// icon: mdi-chevron-left
 		left: 0;
 		right: auto;
 		padding-top: 1px;
@@ -231,7 +231,7 @@ a.arrow-left, .rtl a.arrow-right {
 a.arrow-right, .rtl a.arrow-left {
 	@extend %arrow;
 	&:after {
-		content: '\f054';	// fa-chevron-right
+		content: "\f238";	// icon: mdi-chevron-right
 		right: 0;
 		left: auto;
 		padding-top: 1px;

@@ -1737,14 +1737,14 @@ $pagination-link-line-height:		$font-size !default;
 
 .rtl .pagination li.previous a:after,
 .pagination li.next a:after {
-	content: '\f054';	// fa-chevron-right
+	content: "\f238";	// icon: mdi-chevron-right
 	right: 1px;
 	left: 3px;
 }
 
 .rtl .pagination li.next a:after,
 .pagination li.previous a:after {
-	content: '\f053';	// fa-chevron-left
+	content: '\f237';	// icon: mdi-chevron-left
 	left: 1px;
 	right: 3px;
 }
@@ -1821,7 +1821,7 @@ $pagination-link-line-height:		$font-size !default;
 }
 
 .phpbb_alert .alert_close:before {
-	content: '\f111';	// fa-circle
+	content: '\f225';	// icon: mdi-checkbox-blank-circle
 	font-size: 20px;
 }
 

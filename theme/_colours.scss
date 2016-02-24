@@ -460,19 +460,19 @@ p.post-notice {
 
 p.post-notice.deleted:before {
 	@extend %post-notice;
-	content: '\f057';	// fa-times-circle
+	content: '\f252';	// icon: mdi-close-octagon
 	color: $secondary-color;
 }
 
 p.post-notice.unapproved:before {
 	@extend %post-notice;
-	content: '\f059';	// fa-question-circle
+	content: '\f1a3';	// icon: mdi-block-helper
 	color: $secondary-color;
 }
 
 p.post-notice.reported:before, p.post-notice.error:before {
 	@extend %post-notice;
-	content: '\f071';	// fa-warning
+	content: '\f128';	// icon: mdi-alert-octagon
 	color: $secondary-color;
 }
 
