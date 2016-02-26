@@ -12,7 +12,7 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 	font-size: $button-font-size;
 	white-space: nowrap;
 	border: $button-border-width solid transparent;
-	border-radius: $big-button-border-radius;
+	border-radius: $big-button-variant-border-radius;
 	background: transparent none 0 0 repeat-x;
 	padding: $button-top-padding $button-side-padding;
 	font-family: "Open Sans", "Droid Sans", Verdana, Arial, Helvetica;
@@ -132,7 +132,7 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 
 .post-icon:before, .newpm-icon:before {
 	@extend %icon-button;
-	content: '\f455';	// icon: mdi-message-draw
+	content: '\f4da';	// icon: mdi-pencil
 }
 
 .reply-all:before {
@@ -142,11 +142,7 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 
 .locked-icon:before {
 	@extend %icon-button;
-	content: '\f430';	// icon: mdi-lock
-	//margin-left: 5px;
-	.buttons > & {
-		top: 0;
-	}
+	content: '\f4dd';	// icon: mdi-pencil-lock
 }
 
 .forwardpm-icon:before {

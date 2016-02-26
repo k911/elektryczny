@@ -3,10 +3,6 @@
 .navbar.secondary > ul > li > a.small-icon {
 	padding-left: 1.5em !important;
 }
-/* ---time icon was too small */
-a.time {
-	font-size: 120%;
-}
 /* ---no padding after icon: chevron-down */
 @media (min-width: 551px) {
 	.nav-link.dropdown-toggle {

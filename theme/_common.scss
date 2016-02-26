@@ -324,10 +324,6 @@ $nav-alert-font-size:		9px !default;
 	&.tabbed, &.secondary {
 		@include section-empty;
 	}
-
-	#page-body & {
-		margin-bottom: 10px;
-	}
 	+ .navbar {
 		margin-top: 5px;
 	}
@@ -337,7 +333,8 @@ $nav-alert-font-size:		9px !default;
 	&.secondary {
 		@extend %clearfix;
 		margin: 0;
-		padding: 1px 0;
+		padding-top: 4.35px; //fix layout bug with main navbar (a little bit out of layout)
+		padding-bottom: 1.3px; // TODO: Awful code!!!
 		> ul {
 			list-style-type: none;
 			margin: 0;
@@ -981,7 +978,7 @@ $nav-alert-font-size:		9px !default;
 	}
 	@else {
 		padding: 0;
-		margin: 10px 0;
+		margin: 5px 0;
 	}
 }
 
@@ -1085,7 +1082,6 @@ ul.linklist > li {
 	line-height: $list-line-height;
 	list-style-type: none;
 	margin-right: 7px;
-	padding-top: 1px;
 	width: auto;
 	&, &.rightside {
 		&.icon-only {
@@ -1769,7 +1765,8 @@ $pagination-link-line-height:		$font-size !default;
 // jQuery popups
 // ----------------------------------------
 .phpbb_alert {
-	border: 1px solid transparent;
+	border-width: 1px;
+	border-style: solid;
 	display: none;
 	left: 0;
 	padding: 0 25px 20px 25px;
@@ -1791,38 +1788,31 @@ $pagination-link-line-height:		$font-size !default;
 .phpbb_alert .alert_close {
 	display: block;
 	float: right;
-	width: 24px;
-	height: 24px;
-	overflow: hidden;
+	width: 10px;
+	height: 10px;
 	text-decoration: none !important;
-	background: transparent none 0 0 no-repeat;
-	margin-top: -12px;
-	margin-right: -36px;
+	background-color: $overlay-color;
+	margin-top: -8px;
+	margin-right: -33px;
 	position: relative;
 }
 
-.phpbb_alert .alert_close:before,
-.phpbb_alert .alert_close:after {
-	content: '\f24d';	// icon: mdi-close-box
+.phpbb_alert .alert_close:before {
 	font-family: "Material Design Icons";
 	position: absolute;
-	font-size: 18px;
-	line-height: 24px;
+	content: '\f24f';	// icon: mdi-close-circle
+	font-size: 20px;
+	line-height: 10px;
 	font-weight: normal;
 	font-style: normal;
 	text-indent: 0;
 	text-align: center;
-	left: 0;
+	left: -5px;
 	top: 0;
 	margin: 0;
 	padding: 0;
-	width: 24px;
-	height: 24px;
-}
-
-.phpbb_alert .alert_close:before {
-	content: '\f225';	// icon: mdi-checkbox-blank-circle
-	font-size: 20px;
+	width: 20px;
+	height: 20px;
 }
 
 .phpbb_alert p {

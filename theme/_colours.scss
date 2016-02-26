@@ -5,7 +5,6 @@
 
 html, body {
 	color: $text-color;
-	background-image: url('./images/pattern.png');
 	@if $use-wrapper {
 		background-color: $page-background;
 		&.simple {
@@ -99,7 +98,6 @@ hr {
 #wrap {
 	@if $use-wrapper {
 		background-color: $content-background;
-		background-image: url('./images/pattern.png');
 		border-color: $content-border-color;
 	}
 }

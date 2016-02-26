@@ -136,7 +136,7 @@ $block-background2:						#f6f6f6;	// Blocks with .bg2 background color
 $block-background3:						#f8f8f8;	// Blocks with .bg3 background color - mostly UCP/MCP and posting form
 
 $block-border:							#e0e0e0;	// Border color for blocks
-$border-radius:							3px;		// Main border radius
+$border-radius:							0;		// Main border radius
 $block-top-border:						lighten($block-background, 10%);	// Top border of forums in forums list
 $block-bottom-border:					darken($block-background, 5%);		// Bottom border of forums in forums list
 $block-inner-border:					$block-bottom-border;	// Border inside blocks where there is only 1 border instead of top/bottom borders
@@ -249,7 +249,8 @@ $button-side-padding:					8px;
 $button-border-width:					1px;
 $button-height:							$button-line-height + ($button-top-padding + $button-border-width) * 2;
 
-$big-button-border-radius:				4px;	// For big buttons and blocks like quick search
+$big-button-border-radius:				0;	// For big buttons and blocks like quick search
+$big-button-variant-border-radius:		3px; // Big buttons variant;
 
 // BBCode
 $bbcode-border-radius:					0px;

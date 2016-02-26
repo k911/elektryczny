@@ -426,7 +426,6 @@ input.button1:focus, input.button2:focus, button.button2:focus, input.button3:fo
 .search-header {
 	border-radius: $big-button-border-radius;
 	display: block;
-	border: 1px solid transparent;
 	.navbar.with-search & {
 		margin-top: 1px;
 	}
