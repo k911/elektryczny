@@ -1,10 +1,10 @@
 // Configuration file
-$show-logo:								true;	// true or false
-$center-logo:							true;	// true or false
+$show-logo:								false;	// true or false
+$center-logo:							false;	// true or false
 $logo-block-padding:					10px 0;
 $responsive-hide-logo:					false;	// Hide logo on mobile devices. true or false
 
-$show-forum-title:						false;	// true or false
+$show-forum-title:						true;	// true or false
 
 $profile-width:							150px;
 $profile-side:							left;	// left or right
@@ -22,26 +22,27 @@ $tabbed-navigation:						false;	// true or false. Toggles tabbed navigation layo
 //
 
 $font-size:								11px;	// Base font size
-$font-family:							Verdana, Helvetica, Arial, sans-serif;	// Default font
+$font-family:							'Roboto', sans-serif;	// Default font
 $line-height:							1.4;	// Line height
 
 $h1-font-size:							$font-size + 10px;
-$h1-font-family:						"Trebuchet MS", Arial, Helvetica, sans-serif;
+$h1-font-family:						'Roboto', sans-serif;
 
 $h2-font-size:							$font-size + 8px;
-$h2-font-family:						"Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
+$h2-font-family:						'Roboto', sans-serif;
 
 $paragraph-line-height:					1.3;
 
 $nav-primary-font-size:					$font-size + 1px;
 $nav-secondary-font-size:				$font-size + 1px;
 
+$card-default:							1;
 $heading-font-size:						$font-size + 4px;
 $panel-heading-font-size:				$font-size + 4px;
 
 $list-heading-font-size:				$font-size + 1px;
 $list-heading-line-height:				$font-size + 7px;
-$list-heading-font-family:				"Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
+$list-heading-font-family:				'Roboto', sans-serif;
 
 $forum-heading-font-size:				$list-heading-font-size + 2px;
 $forum-heading-font-family:				$list-heading-font-family;
@@ -52,12 +53,12 @@ $button-line-height:					floor(($font-size + 8px) / 2) * 2;	// Convert to even n
 $button-glyph-font-size:				10px; //floor($font-size / 2) * 2;	// Convert to even number
 
 $dropdown-header-font-size:				$font-size + 2px;
-$dropdown-header-font-family:			Arial, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$dropdown-header-line-height:			30px;
+$dropdown-header-font-family:			'Roboto', sans-serif;
+$dropdown-header-line-height:			30px; //todo: delete
 
 $forum-link-font-size:					$font-size + 5px;
 $forum-link-line-height:				1.2;
-$forum-link-font-family:				"Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
+$forum-link-font-family:				'Roboto', sans-serif;
 
 $forum-list-column-font-size:			$font-size + 1px;
 $forum-list-last-column-font-size:		$font-size;
@@ -72,7 +73,7 @@ $tab-line-height:						$tab-font-size * 2 + 4px;
 // Posts
 $post-content-font-size:				$font-size + 2px;	// Post content
 $post-content-line-height:				1.4;
-$post-content-font-family:				"Lucida Grande", "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
+$post-content-font-family:				'Roboto', sans-serif;
 
 $post-title-font-size:					$font-size + 5px;
 $post-title-line-height:				1.25;
@@ -91,7 +92,7 @@ $post-profile-line-height:				$line-height;
 
 // Forms
 $input-button-font-size:				$font-size + 2px;
-$input-button-font-family:				"Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+$input-button-font-family:				'Roboto', sans-serif;
 $bbcode-button-font-size:				$font-size + 1px;
 
 //
@@ -102,16 +103,33 @@ $bbcode-button-font-size:				$font-size + 1px;
 $black-color:							#000;		// Main color to mix with. Black for light styles, white for dark styles
 $white-color:							#fff;		// Opposite of $black-color
 
-// Page colors
-$page-background:						#e8e8e8;	// HTML element
-$content-background:					#e0e0e0;	// Page inside content wrapper
-$content-border-color:					#e0e0e0;	// Border color for content wrapper
-
 // Primary colors
-$primary-color:							#1fa67a;	// Main color, used for links and stuff
-$secondary-color:						#d06d3c;	// Secondary color, usually in red - yellow range
+$primary-color:							#2196F3;	// Blue 500
+$primary-color-dark:					#1565C0;	// Blue 800
+$primary-color-content:					#64B5F6;	// Blue 300
+
+$primary-color-variant:					#03A9F4;	// Light Blue 500
+$primary-color-variant-dark:			#01579B;	// Light Blue 900
+$primary-color-variant-content:			#4FC3F7;	// Light Blue 300
+
+$primary-color-accent:					#2979FF;	// Blue A400
+$primary-color-accent-dark:				#2962FF;	// Blue A700
+
+// Secondary colors
+$secondary-color:						#FFC107;	// Amber 500
+$secondary-color-dark:					#FF6F00;	// Amber 900
+
+$secondary-color-accent:				#FFC400;	// Amber A400
+$secondary-color-accent-dark:			#FFAB00;	// Amber A700
+
+// Page colors							// Grey 300
+$page-background:						#E0E0E0;	// HTML element
+$content-background:					#E0E0E0;	// Page inside content wrapper
+$content-border-color:					#E0E0E0;	// Border color for content wrapper
+
 $overlay-color:							$white-color;	// Text on top of sections that use colorful background.
-$block-background:						#f4f4f4;	// Background of blocks
+										// Grey 100
+$block-background:						#F5F5F5;	// Background of blocks // should use shadow not color
 $block-background-reported:				#f5ede9;	// Background for reported posts
 
 // Global color values
@@ -119,9 +137,9 @@ $text-color:							#141414;	// Text color
 $bold-text-color:						$black-color;	// Text color with higher contrast to background. #000 or #fff
 $post-text-color:						$text-color;	// Text inside posts
 $link-color:							$primary-color;	// Links
-$link-hover-color:						$secondary-color;	// Links, hover state
-$muted-color:							mix($black-color, $content-background, 40%);	// Gray color
-$faint-color:							mix($black-color, $content-background, 30%);	// Gray color
+$link-hover-color:						$primary-color-variant-dark;	// Links, hover state
+$muted-color:							#BDBDBD;	// Gray color
+$faint-color:							#E0E0E0;	// Gray color
 $rules-color:							$secondary-color;	// Forum rules
 
 //
@@ -143,15 +161,25 @@ $block-inner-border:					$block-bottom-border;	// Border inside blocks where the
 
 $block-title-color:						desaturate($link-color, 5%);	// Title inside blocks, such as post title
 
+// Breadcrumbs
+
+$breadcrumb-color:						$primary-color;
+$breadcrumb-color-hover:				$secondary-color-dark;
+
 // Tabs
-$tab-color:								desaturate($link-color, 20%);
-$tab-background:						$block-background;
+$tab-color:								$faint-color;
+$tab-background:						$primary-color;
 
-$tab-hover-color:						$link-hover-color;
-$tab-hover-background:					$block-background3;
+$tab-hover-color:						$overlay-color;
+$tab-hover-background:					$primary-color;
+$tab-hover-border-bottom:				$secondary-color-accent;
 
-$tab-selected-color:					mix($text-color, $block-background3, 90%);
-$tab-selected-background:				$block-background3;
+$tab-selected-color:					$overlay-color;
+$tab-selected-background:				$primary-color;
+$tab-selected-border-bottom:			$secondary-color-accent;
+
+$tab-border-bottom-style:				solid;
+$tab-border-bottom-width:				2px;
 
 // Header
 $header-bg:								$content-background;
@@ -160,14 +188,18 @@ $header-link:							$overlay-color;
 $header-link-hover:						mix($header-link, $header-bg, 80%);
 
 // Primary navigation
-$primary-nav-bg:						$primary-color;
-$primary-nav-color:						$overlay-color;
 
-$primary-nav-selected-bg:				$block-background;
-$primary-nav-selected-color:			$primary-color;
+$primary-nav-card-depth:				$card-default;		//1-5 else none
+$primary-nav-bg:						$primary-color-dark;
+$primary-nav-color:						$faint-color;
 
-$primary-nav-hover-bg:					$block-background;
-$primary-nav-hover-color:				$secondary-color;
+$primary-nav-selected-bg:				$primary-color;
+$primary-nav-selected-color:			$overlay-color;
+$primary-nav-selected-bd-color:			$secondary-color;
+
+$primary-nav-hover-bg:					$primary-color;
+$primary-nav-hover-color:				$overlay-color;
+$primary-nav-hover-bd-color:			$secondary-color;
 
 $primary-nav-alert-bg:					hsl(0, saturation($secondary-color), lightness($secondary-color));
 $primary-nav-alert-color:				$overlay-color;
@@ -178,16 +210,16 @@ $secondary-nav-hover-link:				$link-hover-color;
 
 // Dropdown
 $dropdown-bg:							$block-background;
-$dropdown-border:						$primary-color;
+$dropdown-border:						$block-background;
 $dropdown-shadow:						1px 3px 5px rgba(0, 0, 0, 0.5);
 $dropdown-shadow-up:					1px 0 5px rgba(0, 0, 0, 0.5);
 $dropdown-inner-border:					if($light, darken($dropdown-bg, 10%), lighten($dropdown-bg, 10%));
 
 $dropdown-heading-top:					$dropdown-border;
 $dropdown-heading-bottom:				$dropdown-heading-top;
-$dropdown-heading-color:				$overlay-color;
-$dropdown-heading-link-color:			$overlay-color;
-$dropdown-heading-link-hover-color:		$overlay-color;
+$dropdown-heading-color:				$primary-color;
+$dropdown-heading-link-color:			$primary-color;
+$dropdown-heading-link-hover-color:		$primary-color-dark;
 
 $forum-description-color:				$overlay-color;
 $forum-description-bg:					mix($black-color, $block-background, 75%);
@@ -200,7 +232,7 @@ $notification-unread-strong-color:		desaturate(if(lightness($notification-unread
 $dropdown-notification-bg:				$block-background;
 $dropdown-notification-hover-bg:		$block-background2;
 $dropdown-notification-color:			$link-color;
-$dropdown-notification-strong-color:	desaturate(if(lightness($dropdown-notification-color) < 50%, darken($dropdown-notification-color, 30%), lighten($dropdown-notification-color, 30%)), 100%);
+$dropdown-notification-strong-color:	#9E9E9E; // Grey 500
 
 // Panels
 $panel-title-color:						desaturate(if($light, darken($primary-color, 10%), lighten($primary-color, 10%)), 25%);
@@ -268,141 +300,3 @@ $bbcode-code-color:						code-color(128deg);
 
 // Do not edit few lines below
 $post-side:								if($profile-side == left, right, left);
-
-// Mixins
-@mixin section {
-	background: $block-background;
-	border: 0 solid $block-border;
-	border-radius: $border-radius;
-	padding: 5px 10px;
-}
-
-@mixin section-forum {
-	@include section;
-	padding: 5px;
-}
-
-// Undo section mixin
-@mixin section-empty {
-	background: transparent;
-	border-width: 0;
-	border-radius: 0;
-	box-shadow: none;
-	padding: 0;
-}
-
-// Heading block
-@mixin section-heading {
-	margin: -5px -10px 5px;
-	border-radius: max(0, $border-radius - 1px);
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-	background: $heading-bg;
-	border: 0 solid $heading-border;
-	padding: 5px;
-	text-transform: none;
-	font-size: $heading-font-size;
-	line-height: $line-height;
-	font-weight: normal;
-	color: $heading-color;
-
-	@if $border-radius > 1px {
-		@media (max-width: 700px) {
-			border-radius: 0;
-		}
-	}
-
-	a {
-		color: $heading-link;
-		&:hover {
-			color: $heading-link-hover;
-		}
-	}
-}
-
-@mixin section-heading-forum {
-	@include section-heading;
-	@if $split-forums == false {
-		margin: -5px -5px 0;
-	}
-	@else {
-		@include section-heading-separate;
-		margin: 0;
-	}
-}
-
-@mixin section-heading-separate {
-	border-radius: $border-radius;
-}
-
-@mixin section-heading-cp {
-	background-color: transparent;
-	color: $stats-title-color;
-	background-image: none;
-	a {
-		color: $link-color;
-		&:hover {
-			color: $link-hover-color;
-		}
-	}
-}
-
-@mixin table-heading {
-	background: $heading-bg;
-	border: 0 solid $heading-border;
-	color: $heading-color;
-
-	@if $border-radius > 1px {
-		&:first-child {
-			border-top-left-radius: max(0, $border-radius - 1px);
-		}
-		&:last-child {
-			border-top-right-radius: max(0, $border-radius - 1px);
-		}
-	}
-}
-
-@mixin table-heading-transparent {
-	background: transparent;
-	color: inherit;
-}
-
-@mixin placeholder {
-	&::-moz-placeholder {
-		@content 
-	}
-	&::-webkit-input-placeholder {
-		@content
-	}
-	&:-ms-input-placeholder {
-		@content
-	}
-}
-
-@mixin tabbed-nav-layout-all {
-	@if ($use-wrapper) {
-		&, #wrap & {
-			@content;
-		}
-	}
-	@else {
-		@content;
-	}
-}
-
-@mixin tabbed-nav-layout-alt {
-	@if ($use-wrapper) {
-		@content;
-	}
-}
-
-@mixin tabbed-nav-layout-default {
-	@if ($use-wrapper) {
-		#wrap & {
-			@content;
-		}
-	}
-	@else {
-		@content;
-	}
-}

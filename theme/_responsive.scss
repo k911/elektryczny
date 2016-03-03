@@ -61,7 +61,6 @@ body {
 // Logo block
 // ----------------------------------------
 #site-description {
-	float: none;
 	width: auto;
 	text-align: center;
 }
@@ -197,7 +196,7 @@ ul.topiclist.forums dd.topics dfn, ul.topiclist.topics dd.posts dfn {
 }
 
 li.row .responsive-show strong {
-	font-weight: bold;
+	font-weight: 500;
 	color: inherit;
 }
 

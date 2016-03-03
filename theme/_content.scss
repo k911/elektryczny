@@ -926,7 +926,7 @@ dl.file dt {
 	text-transform: none;
 	margin: 0;
 	padding: 0;
-	font-weight: bold;
+	font-weight: 500;
 	font-family: $post-block-title-font-family;
 	font-size: $post-block-title-font-size;
 	line-height: $post-block-title-line-height;
@@ -978,7 +978,7 @@ fieldset.polls dl {
 }
 
 fieldset.polls dl.voted {
-	font-weight: bold;
+	font-weight: 500;
 }
 
 fieldset.polls dt {
@@ -1012,7 +1012,7 @@ fieldset.polls dd input {
 fieldset.polls dd div {
 	text-align: right;
 	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
+	font-weight: 500;
 	font-size: .9em;
 	padding: 0 3px;
 	overflow: visible;
@@ -1022,7 +1022,7 @@ fieldset.polls dd div {
 
 .vote-submitted {
 	font-size: $post-content-font-family + 2px;
-	font-weight: bold;
+	font-weight: 500;
 	text-align: center;
 }
 
@@ -1097,7 +1097,7 @@ fieldset.polls dd div {
 }
 
 dd.profile-warnings {
-	font-weight: bold;
+	font-weight: 500;
 }
 
 dd.profile-contact {
@@ -1221,7 +1221,7 @@ div.dl_links {
 }
 
 .dl_links strong {
-	font-weight: bold;
+	font-weight: 500;
 }
 
 .dl_links ul {

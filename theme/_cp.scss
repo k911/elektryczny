@@ -7,7 +7,6 @@
 #cp-menu {
 	float:left;
 	width: 19%;
-	margin: 0 -2px;
 	padding-right: 7px;
 	box-sizing: border-box;
 	.rtl & {
@@ -64,7 +63,7 @@ ul.cplist {
 .panel-container table.table1 thead th {
 	@include table-heading-transparent;
 	padding: 5px;
-	font-weight: bold;
+	font-weight: 500;
 	font-size: inherit;
 	line-height: inherit;
 }
@@ -114,6 +113,8 @@ ul.cplist {
 
 // CP tabs shared
 // ----------------------------------------
+$tabs-shared-padding: 9px;
+
 #tabs, #minitabs {
 	line-height: normal;
 }
@@ -129,13 +130,12 @@ ul.cplist {
 	display: block;
 	float: left;
 	font-size: $tab-font-size;
-	font-weight: bold;
 	line-height: $tab-line-height;
 }
 
 #tabs .tab > a, #minitabs .tab > a {
 	display: block;
-	padding: 0 9px;
+	padding: 0 $tabs-shared-padding;
 	position: relative;
 	text-decoration: none;
 	white-space: nowrap;
@@ -146,19 +146,16 @@ ul.cplist {
 
 // CP tabbed menu
 // ----------------------------------------
-#tabs {
-	margin: 20px 0 0 7px;
-}
-
-#tabs .tab > a {
-	border: 1px solid transparent;
-	border-radius: 4px 4px 0 0;
-	margin: 1px 1px 0 0;
-}
-
-#tabs .activetab > a {
-	margin-top: 0;
-	padding-bottom: 2px;
+#tabs .tab:not(.responsive-tab) a, #tabs .tab a.responsive-tab-link {
+	padding-top: $tab-border-bottom-width;
+	border-bottom-width: $tab-border-bottom-width;
+	border-bottom-style: $tab-border-bottom-style;
+	&:first-child {
+		padding-left: #{$tabs-shared-padding + $tab-border-bottom-width};
+	}
+	&:last-child {
+		padding-right: #{$tabs-shared-padding + $tab-border-bottom-width};
+	}
 }
 
 // Mini tabbed menu used in MCP
@@ -264,7 +261,7 @@ a.responsive-tab-link {
 // Default list state
 #navigation li {
 	display: inline;
-	font-weight: bold;
+	font-weight: 500;
 	margin: 1px 0;
 	padding: 0;
 }
@@ -302,7 +299,7 @@ a.responsive-tab-link {
 }
 
 dl.mini dt {
-	font-weight: bold;
+	font-weight: 500;
 }
 
 dl.mini dd {
@@ -310,7 +307,7 @@ dl.mini dd {
 }
 
 .friend-online {
-	font-weight: bold;
+	font-weight: 500;
 }
 
 .friend-offline {

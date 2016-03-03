@@ -78,13 +78,12 @@ body {
 $h1-font-size:		$font-size + 10px !default;
 $h1-line-height:	inherit !default;
 
-h1, p.sitename {
+h1 {
 	// Forum name
 	font-family: $h1-font-family;
 	margin-right: 200px;
 	margin-top: 15px;
 	margin-bottom: 0;
-	font-weight: bold;
 	font-size: $h1-font-size;
 	line-height: $h1-line-height;
 }
@@ -161,7 +160,7 @@ p.jumpbox-return {
 }
 
 b, strong {
-	font-weight: bold;
+	font-weight: 500;
 }
 
 i, em {
@@ -281,9 +280,31 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 // Site description and logo
 #site-description {
 	@extend %clearfix;
-	h1, p.sitename {
-		margin-left: 0;
-		margin-right: 0;
+	
+	/* card effect */
+	@include card($card-default);
+	position: relative;
+	z-index: 1;
+	/* card effect end */
+	
+	padding: 2em;
+	background-color: $primary-color;
+	
+	a.sitename {
+		margin: 0 auto;
+		color: $overlay-color;
+		font-weight: 300;
+		font-size: 24px;
+	}
+	
+	a.sitename:hover {
+		text-decoration: none;
+	}
+	
+	span {
+		font-size: 12px;
+		margin-left: 1px;
+		color: $faint-color;
 	}
 
 	@if $center-logo == true {
@@ -291,7 +312,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	}
 
 	@if $show-forum-title == false {
-		h1, p {
+		h1, span {
 			display: none;
 		}
 	}
@@ -395,26 +416,14 @@ $nav-alert-font-size:		9px !default;
 	}
 
 	.nav-tabs {
-		border-radius: $navtabs-border-radius;
-		& .leftside, .rtl & .rightside {
-			& .tab:first-child,
-			& .tab.first-visible {
-				border-radius: max($navtabs-border-radius - 1px, 0px); // 1px smaller than overall border to avoid rough edges
-				border-top-right-radius: 0;
-				border-bottom-right-radius: 0;
-			}
-		}
-		& .rightside, .rtl & .leftside {
-			& .tab:last-child,
-			& .tab.last-visible {
-				border-radius: max($navtabs-border-radius - 1px, 0px); // 1px smaller than overall border to avoid rough edges
-				border-top-left-radius: 0;
-				border-bottom-left-radius: 0;
-			}
-		}
-
 		@extend %clearfix;
 
+		/* card effect */
+		@include card($primary-nav-card-depth);
+		position: relative;
+		z-index: 2;
+		/* card effect end */
+		
 		& > ul {
 			list-style-type: none;
 			margin: 0;
@@ -503,7 +512,7 @@ $nav-alert-font-size:		9px !default;
 			// Alert
 			& > strong {
 				display: none;
-				font-weight: bold;
+				font-weight: 500;
 				font-size: $nav-alert-font-size;
 				padding: 0 2px;
 				border-radius: 3px;
@@ -816,7 +825,6 @@ $nav-alert-font-size:		9px !default;
 
 			.nav-tabs {
 				background: none;
-				box-shadow: none;
 				border-radius: 0;
 				border-width: 0;
 				padding: 0 10px;
@@ -907,15 +915,13 @@ $nav-alert-font-size:		9px !default;
 	.inner.static {
 		position: fixed;
 		top: 0;
-		z-index: 50;
 		left: 0;
 		right: 0;
+		z-index: 50;
 		padding-top: 0;
 		padding-bottom: 0;
 		width: auto;
 		max-width: none;
-		opacity: .9;
-		transition: opacity .2s;
 		#wrap & > .static-inner {
 			@include wrapper-padding;
 		}
@@ -923,9 +929,6 @@ $nav-alert-font-size:		9px !default;
 			@include page-width;
 			padding-top: 0 !important;
 			padding-bottom: 0 !important;
-		}
-		&:hover {
-			opacity: 1;
 		}
 		.nav-tabs {
 			border-radius: 0;
@@ -1001,28 +1004,11 @@ $nav-alert-font-size:		9px !default;
 .panel {
 	@include section;
 	margin-bottom: 10px;
-	padding: 5px 10px;
 
 	// UCP/MCP panel
 	&.bg3 {
-		border-radius: 0;
-		border-width: 0;
-		box-shadow: none;
-		border-top: 3px solid transparent;
+		padding-left: 0;
 		position: relative;
-		&:before, &:after {
-			content: '';
-			position: absolute;
-			top: 0;
-			width: 3px;
-			height: 50px;
-		}
-		&:before {
-			left: 0;
-		}
-		&:after {
-			right: 0;
-		}
 	}
 
 	// Posting form
@@ -1062,7 +1048,7 @@ $panel-heading-line-height:	$line-height !default;
 // Horizontal lists
 // ----------------------------------------
 .navbar ul.linklist {
-	padding: 2px 0;
+	padding: .5em 0;
 }
 
 ul.linklist {
@@ -1075,11 +1061,9 @@ ul.linklist {
 }
 
 $list-font-size:	$font-size !default;
-$list-line-height:	2 !default;
 ul.linklist > li {
 	float: left;
 	font-size: $list-font-size;
-	line-height: $list-line-height;
 	list-style-type: none;
 	margin-right: 7px;
 	width: auto;
@@ -1096,13 +1080,6 @@ ul.linklist > li.rightside, p.rightside, a.rightside {
 	margin-right: 0;
 	margin-left: 7px;
 	text-align: right;
-}
-
-ul.navlinks {
-	border-top: 1px solid transparent;
-	&#nav-breadcrumbs {
-		border-top-width: 0;
-	}
 }
 
 ul.leftside {
@@ -1385,9 +1362,9 @@ $dropdown-content-line-height:	$line-height !default;
 // ----------------------------------------
 .breadcrumbs .crumb {
 	float: left;
-	font-weight: bold;
 	word-wrap: normal;
 	position: relative;
+	font-weight: 500;
 	padding-left: $list-font-size + 2px;
 	.rtl & {
 		padding-left: 0;
@@ -1894,7 +1871,7 @@ $pagination-link-line-height:		$font-size !default;
 }
 
 .error {
-	font-weight: bold;
+	font-weight: 500;
 	font-size: $font-size;
 }
 
@@ -2046,24 +2023,21 @@ ul.linklist:after,
 	position: relative;
 }
 
-.dropdown-extended .header {
-	.dropdown-down & {
-		margin-top: -3px;
-	}
-	padding: 0 10px;
+.dropdown-extended .header, .dropdown-extended .footer {
+	padding: 10px;
 	font-family: $dropdown-header-font-family;
 	font-size: $dropdown-header-font-size;
-	font-weight: bold;
-	text-align: left;
-	// text-transform: uppercase;
-	line-height: $dropdown-header-line-height;
+	font-weight: 300;
+	a:hover {
+		text-decoration: none;
+	}
+}
 
+.dropdown-extended .header {
+	text-align: left;
 	.header_settings {
 		float: right;
-		font-weight: normal;
-		text-transform: none;
 	}
-
 	&:after {
 		content: '';
 		display: table;
@@ -2072,19 +2046,14 @@ ul.linklist:after,
 }
 
 .dropdown-extended .footer {
-	text-align: center;
-	font-size: $font-size;
+	text-align: right;
 }
 
 .dropdown-extended ul li a, .dropdown-extended ul li.no-url {
 	padding: 8px;
 }
 
-.dropdown-extended .footer > a {
-	padding: 5px 0;
-}
-
-.dropdown-extended ul li a, .notification_list dt > a, .dropdown-extended .footer > a {
+.dropdown-extended ul li a, .notification_list dt > a {
 	display: block;
 	text-decoration: none;
 }

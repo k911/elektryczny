@@ -107,8 +107,15 @@ hr {
 }
 
 // Navigation
-.breadcrumbs .crumb:before {
-	color: $muted-color;
+//.breadcrumbs .crumb:before {
+//	color: $muted-color;
+//}
+.breadcrumbs a {
+	text-decoration: none;
+	color: $breadcrumb-color;
+	&:hover {
+		color: $breadcrumb-color-hover;
+	}
 }
 
 .navbar {
@@ -134,11 +141,13 @@ hr {
 			&.selected {
 				color: $primary-nav-selected-color;
 				background-color: $primary-nav-selected-bg;
+				border-bottom-color: $primary-nav-selected-bd-color;
 			}
 			&:hover,
 			&.dropdown-visible {
 				color: $primary-nav-hover-color;
 				background-color: $primary-nav-hover-bg;
+				border-bottom-color: $primary-nav-hover-bd-color;
 			}
 			& > strong {
 				color: $primary-nav-alert-color;
@@ -203,8 +212,6 @@ hr {
 						color: $overlay-color;
 					}
 					background: none;
-					box-shadow: none;
-					filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 				}
 			}
 		}
@@ -245,17 +252,9 @@ table.zebra-list tr:nth-child(even) td, ul.zebra-list li:nth-child(even) {
 	&.panel {
 		background: transparent none;
 		background-color: rgba($content-background, .3);
-		border-top-color: $tab-selected-background;
-		&:before, &:after {
-			background: -webkit-linear-gradient(to bottom, $tab-selected-background 0%, rgba($tab-selected-background, 0) 100%);
-			background: linear-gradient(to bottom, $tab-selected-background 0%, rgba($tab-selected-background, 0) 100%);
-		}
 	}
 	.section-posting &.panel {
 		background-color: $block-background;
-		&:before, &:after {
-			background: transparent;
-		}
 	}
 }
 
@@ -371,7 +370,7 @@ dl.details dt {
 }
 
 dl.details dd {
-	color: $tab-color;
+	color: $muted-color;
 }
 
 .sep {
@@ -957,7 +956,7 @@ dd.profile-warnings {
 
 .icon-home {
 	&.breadcrumbs:after {
-		color: $link-color;
+		color: $primary-color;
 	}
 }
 
@@ -1097,25 +1096,23 @@ ul.cplist {
 
 // CP tabbed menu
 // ----------------------------------------
-#tabs .tab > a {
-	background: $tab-background;
-	color: $tab-color;
-}
 
-#tabs .tab > a:hover {
-	background: $tab-hover-background;
-	color: $tab-hover-color;
-}
-
-#tabs .activetab > a,
-#tabs .activetab > a:hover {
-	background: $tab-selected-background;
-	box-shadow: 0 5px 5px -5px $tab-selected-background;
-	border-color: $tab-selected-background;
-	color: $tab-selected-color;
-}
-
-#tabs .activetab > a:hover {
+#tabs .tab {
+	&:not(.responsive-tab) a, & a.responsive-tab-link {
+		color: $tab-color;
+		background: $tab-background;
+		border-bottom-color: $tab-background;
+		&:hover {
+			color: $tab-hover-color;
+			background: $tab-hover-background;
+			border-bottom-color: $tab-hover-border-bottom;
+		}
+	}
+	&.activetab:not(.responsive-tab) a, &.activetab a.responsive-tab-link {
+		color: $tab-selected-color;
+		background: $tab-selected-background;
+		border-bottom-color: $tab-selected-border-bottom;
+	}
 }
 
 // Mini tabbed menu used in MCP
@@ -1130,11 +1127,6 @@ ul.cplist {
 	color: #333333;
 }
 
-// Responsive tabs
-// ----------------------------------------
-.responsive-tab .responsive-tab-link:before {
-	color: $tab-color;
-}
 
 // UCP navigation menu
 // ----------------------------------------
@@ -1171,15 +1163,11 @@ ul.cplist {
 }
 
 .panel-container .panel {
-	background: mix($content-background, $block-background3, 60%);
+	background: $block-background;
 	box-shadow: none;
 	border-width: 0;
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 	& > .inner > h3:first-child {
 		@include section-heading-cp;
-	}
-	&:before, &:after {
-		background: transparent;
 	}
 }
 
@@ -1403,20 +1391,8 @@ input.disabled {
 }
 
 .dropdown-extended .header, .dropdown-extended .footer {
-	border-color: $block-inner-border;
-	color: $bold-text-color;
-}
-
-.dropdown-extended .footer {
-	border-top-style: solid;
-	border-top-width: 1px;
-}
-
-.dropdown-extended .header {
-	background: $dropdown-heading-top;
-	// background-image: -webkit-linear-gradient(top, $dropdown-heading-top 0, $dropdown-heading-bottom 100%);
-	// background-image: linear-gradient(to bottom, $dropdown-heading-top 0, $dropdown-heading-bottom 100%);
-	// filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($dropdown-heading-top)}', endColorstr='#{ie-hex-str($dropdown-heading-top)}');
+	border-color: $block-border;
+	border-style: solid;
 	color: $dropdown-heading-color;
 	a {
 		color: $dropdown-heading-link-color;
@@ -1424,6 +1400,14 @@ input.disabled {
 			color: $dropdown-heading-link-hover-color;
 		}
 	}
+}
+
+.dropdown-extended .footer {
+	border-top-width: 1px;
+}
+
+.dropdown-extended .header {
+	border-bottom-width: 1px;
 }
 
 ul.linklist li.responsive-menu a.responsive-menu-link:before {
@@ -1539,6 +1523,15 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 				}
 			}
 		}
+	}
+}
+
+/* COLOUR CLASSES */
+
+.icon-link {
+	color: $primary-color;
+	&:hover {
+		$color: $primary-color;
 	}
 }
 

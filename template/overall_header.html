@@ -25,22 +25,33 @@
 <!-- ENDIF -->
 
 <!-- IF S_ALLOW_CDN -->
-<script>
-	WebFontConfig = {
-		google: {
-			families: ['Open+Sans:600:cyrillic-ext,latin,greek-ext,greek,vietnamese,latin-ext,cyrillic']
-		}
-	};
-
-	(function(d) {
-		var wf = d.createElement('script'), s = d.scripts[0];
-		wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
-		wf.async = true;
-		s.parentNode.insertBefore(wf, s);
-	})(document);
-</script>
+<script type="text/javascript">
+	//TODO: Guess //
+  WebFontConfig = {
+    google: { families: [ 'Roboto:400,300,500:latin,latin-ext' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
 	<link rel="stylesheet" href="//cdn.materialdesignicons.com/1.4.57/css/materialdesignicons.min.css">
 <!-- ELSE -->
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Roboto:400,300,500:latin,latin-ext' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
 	<link rel="stylesheet" href="{T_THEME_PATH}/fonts/mdi-1.4.57/css/materialdesignicons.min.css">
 <!-- ENDIF -->
 
@@ -74,33 +85,34 @@
 <!-- ENDIF -->
 	<a id="top" class="anchor" accesskey="t"></a>
 	<div id="page-header" class="page-width">
+		<!-- INCLUDE navbar_header_top.html -->
 		<div class="headerbar" role="banner">
 			<div class="inner">
+				<!-- TODO: tidy a little bit -->
+				<div id="site-description">
+					<a id="logo" class="logo" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->"><img src="{T_THEME_PATH}/images/logo.png" data-src-hd="{T_THEME_PATH}/images/logo_hd.png" /></a>
+					<a class="sitename" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->">{SITENAME}</a>
+					<br />
+					<span>{SITE_DESCRIPTION}</span>
+					<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
+				</div>
 
-			<div id="site-description">
-				<a id="logo" class="logo" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->"><img src="{T_THEME_PATH}/images/logo.png" data-src-hd="{T_THEME_PATH}/images/logo_hd.png" /></a>
-				<p class="sitename">{SITENAME}</p>
-				<p>{SITE_DESCRIPTION}</p>
-				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
-			</div>
-
-			<!-- EVENT overall_header_searchbox_before -->
-			<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-			<!-- DEFINE $SEARCH_BOX -->
-			<div id="search-box" class="search-box search-header" role="search">
-				<form action="{U_SEARCH}" method="get" id="search">
-				<fieldset>
-					<input name="keywords" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search tiny" size="20" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
-					<button class="button icon-button search-icon" type="submit" title="{L_SEARCH}">{L_SEARCH}</button>
-					<a href="{U_SEARCH}" class="button icon-button search-adv-icon" title="{L_SEARCH_ADV}">{L_SEARCH_ADV}</a>
-					{S_SEARCH_HIDDEN_FIELDS}
-				</fieldset>
-				</form>
-			</div>
-			<!-- ENDDEFINE -->
-			<!-- IF $SEARCH_IN_NAVBAR == 0 -->{$SEARCH_BOX}<!-- ENDIF -->
-			<!-- ENDIF -->
-
+				<!-- EVENT overall_header_searchbox_before -->
+				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+				<!-- DEFINE $SEARCH_BOX -->
+				<div id="search-box" class="search-box search-header" role="search">
+					<form action="{U_SEARCH}" method="get" id="search">
+					<fieldset>
+						<input name="keywords" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search tiny" size="20" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
+						<button class="button icon-button search-icon" type="submit" title="{L_SEARCH}">{L_SEARCH}</button>
+						<a href="{U_SEARCH}" class="button icon-button search-adv-icon" title="{L_SEARCH_ADV}">{L_SEARCH_ADV}</a>
+						{S_SEARCH_HIDDEN_FIELDS}
+					</fieldset>
+					</form>
+				</div>
+				<!-- ENDDEFINE -->
+				<!-- IF $SEARCH_IN_NAVBAR == 0 -->{$SEARCH_BOX}<!-- ENDIF -->
+				<!-- ENDIF -->
 			</div>
 		</div>
 
