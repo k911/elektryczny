@@ -1106,10 +1106,8 @@ $responsive-menu-font-size:		$font-size + 2px !default;
 ul.linklist li.responsive-menu a.responsive-menu-link {
 	display: inline-block;
 	margin: 0 5px;
-	font-size: $responsive-menu-font-size + 4px;
 	position: relative;
 	width: $responsive-menu-font-size + 4px;
-	line-height: $responsive-menu-font-size + 8px;
 	text-decoration: none;
 }
 
