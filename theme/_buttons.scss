@@ -54,12 +54,7 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 	font-family: "Material Design Icons";
 	content: '\f6a4';	// icon: mdi-wrench
 	display: inline-block;
-	float: right;
-	height: 14px;
-	width: 14px;
-	margin: 3px 0 0 2px;
 	font-size: $button-glyph-font-size;
-	line-height: 12px;
 	text-align: center;
 	font-weight: normal;
 	text-indent: 0;
@@ -126,8 +121,6 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 .reply-icon:before, .pmreply-icon:before {
 	@extend %icon-button;
 	content: '\f549';	// icon: mdi-reply
-	//margin-left: 4px;
-	//margin-top: 4px;
 }
 
 .post-icon:before, .newpm-icon:before {
@@ -310,7 +303,6 @@ ul.linklist.bulletin > li.small-icon:before {
 // Post control buttons
 // ---------------------------------------------
 .post-buttons {
-	float: right;
 	list-style: none;
 	margin-top: 2px;
 	.rtl & {
@@ -347,14 +339,6 @@ ul.linklist.bulletin > li.small-icon:before {
 	margin-right: 3px;
 }
 
-.post-buttons .icon-button {
-	padding: 0 5px;
-	&.delete-icon, &.report-icon {
-		border-width: 0;
-		padding: 1px 6px;
-	}
-}
-
 // .hastouch .post-buttons .icon-button {
 // 	padding: 2px 8px;
 // }
@@ -365,10 +349,6 @@ ul.linklist.bulletin > li.small-icon:before {
 	overflow: hidden;
 	position: absolute;
 	width: 1px;
-}
-
-.post-buttons .icon-button:before {
-	margin-left: 0;
 }
 
 .quote-icon:before {

@@ -125,7 +125,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
 .navbar .nav-tabs .tab > strong .arrow { border: 3px solid transparent; border-bottom: 1px none black; position: absolute; bottom: -3px; right: 4px; line-height: 0; text-shadow: none; _display: none; width: 0; height: 0; }
 .navbar .nav-tabs .tab.non-zero > strong { display: block; }
 .navbar .nav-tabs .responsive-menu .nav-link, .navbar .nav-tabs .account .nav-link, .navbar .nav-tabs .pm .nav-link, .navbar .nav-tabs .notifications .nav-link, .navbar .nav-tabs .mcp .nav-link, .navbar .nav-tabs .acp .nav-link, .navbar .nav-tabs .faq .nav-link, .navbar .nav-tabs .logout .nav-link, .navbar .nav-tabs .login .nav-link, .navbar .nav-tabs .register .nav-link, .navbar .nav-tabs .rightside .boardrules .nav-link, .navbar .nav-tabs .rightside .pages .nav-link, .navbar .nav-tabs .members .nav-link, .navbar .nav-tabs .forums .nav-link, .navbar .nav-tabs .leftside .boardrules .nav-link, .navbar .nav-tabs .leftside .pages .nav-link { position: relative; padding-left: 30px; }
-.navbar .nav-tabs .responsive-menu .nav-link:after, .navbar .nav-tabs .account .nav-link:after, .navbar .nav-tabs .pm .nav-link:after, .navbar .nav-tabs .notifications .nav-link:after, .navbar .nav-tabs .mcp .nav-link:after, .navbar .nav-tabs .acp .nav-link:after, .navbar .nav-tabs .faq .nav-link:after, .navbar .nav-tabs .logout .nav-link:after, .navbar .nav-tabs .login .nav-link:after, .navbar .nav-tabs .register .nav-link:after, .navbar .nav-tabs .rightside .boardrules .nav-link:after, .navbar .nav-tabs .rightside .pages .nav-link:after, .navbar .nav-tabs .members .nav-link:after, .navbar .nav-tabs .forums .nav-link:after, .navbar .nav-tabs .leftside .boardrules .nav-link:after, .navbar .nav-tabs .leftside .pages .nav-link:after { position: absolute; left: 12px; top: 50%; margin-top: -7px; width: 14px; font-size: 14px; line-height: 14px; height: 14px; text-align: left; font-weight: normal; font-style: normal; text-indent: 0; }
+.navbar .nav-tabs .responsive-menu .nav-link:after, .navbar .nav-tabs .account .nav-link:after, .navbar .nav-tabs .pm .nav-link:after, .navbar .nav-tabs .notifications .nav-link:after, .navbar .nav-tabs .mcp .nav-link:after, .navbar .nav-tabs .acp .nav-link:after, .navbar .nav-tabs .faq .nav-link:after, .navbar .nav-tabs .logout .nav-link:after, .navbar .nav-tabs .login .nav-link:after, .navbar .nav-tabs .register .nav-link:after, .navbar .nav-tabs .rightside .boardrules .nav-link:after, .navbar .nav-tabs .rightside .pages .nav-link:after, .navbar .nav-tabs .members .nav-link:after, .navbar .nav-tabs .forums .nav-link:after, .navbar .nav-tabs .leftside .boardrules .nav-link:after, .navbar .nav-tabs .leftside .pages .nav-link:after { position: absolute; top: 0; left: 12px; font-size: 14px; font-weight: normal; font-style: normal; text-indent: 0; }
 .rtl .navbar .nav-tabs .responsive-menu .nav-link, .rtl .navbar .nav-tabs .account .nav-link, .rtl .navbar .nav-tabs .pm .nav-link, .rtl .navbar .nav-tabs .notifications .nav-link, .rtl .navbar .nav-tabs .mcp .nav-link, .rtl .navbar .nav-tabs .acp .nav-link, .rtl .navbar .nav-tabs .faq .nav-link, .rtl .navbar .nav-tabs .logout .nav-link, .rtl .navbar .nav-tabs .login .nav-link, .rtl .navbar .nav-tabs .register .nav-link, .rtl .navbar .nav-tabs .rightside .boardrules .nav-link, .rtl .navbar .nav-tabs .rightside .pages .nav-link, .rtl .navbar .nav-tabs .members .nav-link, .rtl .navbar .nav-tabs .forums .nav-link, .rtl .navbar .nav-tabs .leftside .boardrules .nav-link, .rtl .navbar .nav-tabs .leftside .pages .nav-link { padding-left: 12px; padding-right: 30px; }
 .rtl .navbar .nav-tabs .responsive-menu .nav-link:after, .rtl .navbar .nav-tabs .account .nav-link:after, .rtl .navbar .nav-tabs .pm .nav-link:after, .rtl .navbar .nav-tabs .notifications .nav-link:after, .rtl .navbar .nav-tabs .mcp .nav-link:after, .rtl .navbar .nav-tabs .acp .nav-link:after, .rtl .navbar .nav-tabs .faq .nav-link:after, .rtl .navbar .nav-tabs .logout .nav-link:after, .rtl .navbar .nav-tabs .login .nav-link:after, .rtl .navbar .nav-tabs .register .nav-link:after, .rtl .navbar .nav-tabs .rightside .boardrules .nav-link:after, .rtl .navbar .nav-tabs .rightside .pages .nav-link:after, .rtl .navbar .nav-tabs .members .nav-link:after, .rtl .navbar .nav-tabs .forums .nav-link:after, .rtl .navbar .nav-tabs .leftside .boardrules .nav-link:after, .rtl .navbar .nav-tabs .leftside .pages .nav-link:after { left: auto; right: 12px; }
 .navbar .nav-tabs .responsive-menu .nav-link, .navbar .nav-tabs .account .nav-link, .navbar .nav-tabs .pm .nav-link, .navbar .nav-tabs .notifications .nav-link, .navbar .nav-tabs .mcp .nav-link, .navbar .nav-tabs .acp .nav-link, .navbar .nav-tabs .faq .nav-link, .navbar .nav-tabs .logout .nav-link, .navbar .nav-tabs .login .nav-link, .navbar .nav-tabs .register .nav-link, .navbar .nav-tabs .rightside .boardrules .nav-link, .navbar .nav-tabs .rightside .pages .nav-link { margin: 0; overflow: hidden; }
@@ -204,9 +204,9 @@ ul.leftside { float: left; margin-left: 0; margin-right: 5px; text-align: left; 
 
 ul.rightside { float: right; margin-left: 5px; margin-right: -5px; text-align: right; }
 
-ul.linklist li.responsive-menu { position: relative; margin: 0 5px; }
+ul.linklist li.responsive-menu { position: relative; margin: 0 5px; width: 15px; }
 
-ul.linklist li.responsive-menu a.responsive-menu-link { display: inline-block; margin: 0 5px; font-size: 17px; position: relative; width: 17px; line-height: 21px; text-decoration: none; }
+ul.linklist li.responsive-menu a.responsive-menu-link { display: inline-block; text-decoration: none; }
 
 ul.linklist li.responsive-menu a.responsive-menu-link:before { font-family: "Material Design Icons"; content: '\f44e'; position: absolute; left: 0; top: 50%; margin-top: -6.5px; width: 15px; font-size: 13px; line-height: 13px; height: 13px; text-align: center; font-weight: normal; font-style: normal; text-indent: 0; }
 
@@ -1017,7 +1017,7 @@ a.post { display: inline !important; background: none !important; box-shadow: no
 .dropdown-down.dropdown-visible .dropdown-select { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 .dropdown-up.dropdown-visible .dropdown-select { border-top-left-radius: 0; border-top-right-radius: 0; }
 
-.icon-button:before, .dropdown-select:after, .post-buttons > #expand > a:before { background: transparent !important; font-family: "Material Design Icons"; content: '\f6a4'; display: inline-block; float: right; height: 14px; width: 14px; margin: 3px 0 0 2px; font-size: 10px; line-height: 12px; text-align: center; font-weight: normal; text-indent: 0; font-style: normal; text-transform: none; }
+.icon-button:before, .dropdown-select:after, .post-buttons > #expand > a:before { background: transparent !important; font-family: "Material Design Icons"; content: '\f6a4'; display: inline-block; font-size: 10px; text-align: center; font-weight: normal; text-indent: 0; font-style: normal; text-transform: none; }
 .buttons > .icon-button:before, .buttons > .dropdown-select:after, .post-buttons > #expand.buttons > a:before { position: relative; top: -1px; right: -1px; }
 .rtl .buttons > .icon-button:before, .rtl .buttons > .dropdown-select:after, .rtl .post-buttons > #expand.buttons > a:before { right: auto; right: -1px; }
 
@@ -1108,7 +1108,7 @@ ul.linklist.bulletin > li.small-icon:before { display: none; }
 
 .phpbb_yahoo-icon:after { content: '\f126'; }
 
-.post-buttons { float: right; list-style: none; margin-top: 2px; }
+.post-buttons { list-style: none; margin-top: 2px; }
 .rtl .post-buttons { float: left; }
 
 .has-profile .post-buttons { float: none; position: absolute; margin: 0; top: 5px; right: 0; }
@@ -1117,12 +1117,7 @@ ul.linklist.bulletin > li.small-icon:before { display: none; }
 
 .post-buttons > li { float: left; margin-right: 3px; }
 
-.post-buttons .icon-button, .post-buttons > #expand > a { padding: 0 5px; }
-.post-buttons .icon-button.delete-icon, .post-buttons > #expand > a.delete-icon, .post-buttons .icon-button.report-icon, .post-buttons > #expand > a.report-icon { border-width: 0; padding: 1px 6px; }
-
 .post-buttons .icon-button span, .post-buttons > #expand > a span { display: block; height: 0; overflow: hidden; position: absolute; width: 1px; }
-
-.post-buttons .icon-button:before, .post-buttons .dropdown-select:after, .post-buttons > #expand > a:before { margin-left: 0; }
 
 .quote-icon:before { content: '\f373'; font-size: 14px; }
 
@@ -1822,10 +1817,6 @@ dd.profile-warnings { color: #BC2A4D; }
 .buttons > .button.locked-icon, .post-buttons > #expand.buttons > a.locked-icon { color: #fff; }
 .buttons > .button.locked-icon:after, .post-buttons > #expand.buttons > a.locked-icon:after, .buttons > .button.locked-icon:before, .post-buttons > #expand.buttons > a.locked-icon:before { color: #fff !important; }
 .buttons > .button.locked-icon:hover, .post-buttons > #expand.buttons > a.locked-icon:hover { box-shadow: none; }
-.buttons > .button, .post-buttons > #expand.buttons > a, .button.report-icon, .post-buttons > #expand > a.report-icon, .button.delete-icon, .post-buttons > #expand > a.delete-icon { border-color: #2196F3; background-color: #2196F3; color: #fff; }
-.buttons > .button:after, .post-buttons > #expand.buttons > a:after, .buttons > .button:before, .post-buttons > #expand.buttons > a:before, .button.report-icon:after, .post-buttons > #expand > a.report-icon:after, .button.report-icon:before, .post-buttons > #expand > a.report-icon:before, .button.delete-icon:after, .post-buttons > #expand > a.delete-icon:after, .button.delete-icon:before, .post-buttons > #expand > a.delete-icon:before { color: #deeffd !important; }
-.button.report-icon, .post-buttons > #expand > a.report-icon, .button.delete-icon, .post-buttons > #expand > a.delete-icon { border-color: #FFC107; background-color: #FFC107; }
-.button.report-icon:after, .post-buttons > #expand > a.report-icon:after, .button.report-icon:before, .post-buttons > #expand > a.report-icon:before, .button.delete-icon:after, .post-buttons > #expand > a.delete-icon:after, .button.delete-icon:before, .post-buttons > #expand > a.delete-icon:before { color: #fff6da !important; }
 
 .buttons > .dropdown-select { color: #BDBDBD; }
 

@@ -556,14 +556,9 @@ $nav-alert-font-size:		9px !default;
 			padding-left: ($tab-padding + 18px);
 			&:after {
 				position: absolute;
+				top: 0;
 				left: $tab-padding;
-				top: 50%;
-				margin-top: $nav-primary-glyph-margin;
-				width: $nav-primary-glyph-font-size;
 				font-size: 14px;
-				line-height: $nav-primary-glyph-font-size;
-				height: $nav-primary-glyph-font-size;
-				text-align: left;
 				font-weight: normal;
 				font-style: normal;
 				text-indent: 0;
@@ -579,9 +574,6 @@ $nav-alert-font-size:		9px !default;
 		}
 		%glyph-only {
 			@extend %glyph;
-			// text-indent: 999px;
-			// width: $nav-primary-glyph-font-size;
-			// padding: 0 $tab-padding-glyph;
 			margin: 0;
 			overflow: hidden;
 			&:after {
@@ -1099,15 +1091,13 @@ ul.rightside {
 ul.linklist li.responsive-menu {
 	position: relative;
 	margin: 0 5px;
+	width: 15px;
 }
 
 $responsive-menu-font-size:		$font-size + 2px !default;
 
 ul.linklist li.responsive-menu a.responsive-menu-link {
 	display: inline-block;
-	margin: 0 5px;
-	position: relative;
-	width: $responsive-menu-font-size + 4px;
 	text-decoration: none;
 }
 

@@ -844,27 +844,6 @@ dd.profile-warnings {
 
 	& > strong {
 	}
-
-	.buttons > &, &.report-icon, &.delete-icon {
-		border-color: $primary-color;
-		background-color: $primary-color;
-		color: $overlay-color;
-
-		&:after, &:before {
-			color: mix($overlay-color, $primary-color, 85%) !important;
-		}
-
-		& > strong {
-		}
-	}
-	&.report-icon, &.delete-icon {
-		border-color: $secondary-color;
-		background-color: $secondary-color;
-
-		&:after, &:before {
-			color: mix($overlay-color, $secondary-color, 85%) !important;
-		}
-	}
 }
 
 .dropdown-select {
