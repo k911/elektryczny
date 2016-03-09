@@ -80,6 +80,7 @@ $h1-line-height:	inherit !default;
 
 h1 {
 	// Forum name
+	font-weight: 300;
 	font-family: $h1-font-family;
 	margin-right: 200px;
 	margin-top: 15px;
@@ -254,7 +255,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	@if $show-logo == true {
 		display: block;
 		box-sizing: border-box;
-		max-width: 100%;
+		width: $logo-width;
 		@if $center-logo == true {
 			&, & img {
 				margin: 0 auto;
@@ -287,22 +288,24 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	z-index: 1;
 	/* card effect end */
 	
-	padding: 2em;
+	padding: 1.25em;
 	background-color: $primary-color;
 	
-	a.sitename {
-		margin: 0 auto;
+	#site-description-text {
+		display: inline-block;
+		height: 96px;
+	}
+	
+	.sitename {
+		margin-top: 20px;
 		color: $overlay-color;
-		font-weight: 300;
 		font-size: 24px;
 	}
 	
-	a.sitename:hover {
-		text-decoration: none;
-	}
-	
 	span {
+		display: inline-block;
 		font-size: 12px;
+		margin-top: 7px;
 		margin-left: 1px;
 		color: $faint-color;
 	}

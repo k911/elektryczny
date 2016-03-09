@@ -71,22 +71,26 @@ body {
 	}
 	float: none;
 	margin: 0 auto;
-	padding: 10px;
+	width: 64px;
 	img {
 		margin: 0 auto;
 	}
 }
 
-#site-description h1, #site-description p, #site-description p.sitename {
+#site-description h1, #site-description p {
 	@if $responsive-hide-logo == true {
 		display: block;
 	}
 	text-align: inherit;
 	float: none;
-	margin: 5px;
+	margin: 0 !important;
 	line-height: 1.2em;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+#site-description-text {
+	height: auto !important;
 }
 
 #site-description p, .headerbar .search-header {

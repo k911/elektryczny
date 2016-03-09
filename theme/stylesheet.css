@@ -21,7 +21,7 @@ html { font-size: 100%; height: 100%; }
 
 body { font-family: "Roboto", sans-serif; font-size: 11px; line-height: 1.4; margin: 0; padding: 0 0 12px; word-wrap: break-word; min-height: 100%; box-sizing: border-box; -webkit-print-color-adjust: exact; }
 
-h1 { font-family: "Roboto", sans-serif; margin-right: 200px; margin-top: 15px; margin-bottom: 0; font-size: 21px; line-height: inherit; }
+h1 { font-weight: 300; font-family: "Roboto", sans-serif; margin-right: 200px; margin-top: 15px; margin-bottom: 0; font-size: 21px; line-height: inherit; }
 
 h2 { font-family: "Roboto", sans-serif; font-weight: normal; font-size: 19px; margin: 0.8em 0 0.2em 0; }
 
@@ -74,12 +74,14 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
 
 #page-footer h3 { margin-top: 20px; }
 
-.logo { display: none; }
+.logo { display: block; box-sizing: border-box; width: 96px; float: left; padding: 0; }
+.logo img { display: block; max-width: 100%; }
+.logo:hover { text-decoration: none; }
 
-#site-description { /* card effect */ box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); position: relative; z-index: 1; /* card effect end */ padding: 2em; background-color: #2196F3; }
-#site-description a.sitename { margin: 0 auto; color: #fff; font-weight: 300; font-size: 24px; }
-#site-description a.sitename:hover { text-decoration: none; }
-#site-description span { font-size: 12px; margin-left: 1px; color: #E0E0E0; }
+#site-description { /* card effect */ box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); position: relative; z-index: 1; /* card effect end */ padding: 1.25em; background-color: #2196F3; }
+#site-description #site-description-text { display: inline-block; height: 96px; }
+#site-description .sitename { margin-top: 20px; color: #fff; font-size: 24px; }
+#site-description span { display: inline-block; font-size: 12px; margin-top: 7px; margin-left: 1px; color: #E0E0E0; }
 
 .headerbar > .inner { position: relative; }
 
@@ -1554,7 +1556,7 @@ span.imageset { display: inline-block !important; background: transparent none 0
 
 html, body { color: #141414; background-color: #E0E0E0; }
 
-h1, p.sitename { color: #141414; }
+h1 { color: #141414; }
 
 h2 { color: #2196F3; }
 
@@ -2123,9 +2125,10 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
   #cp-main .forabg, #cp-main .forumdb, #cp-main .post, #cp-main .panel { border-radius: 0; }
   .navbar.tabbed .nav-tabs, .navbar.tabbed .nav-tabs .tab { border-radius: 0 !important; }
   #site-description { width: auto; text-align: center; }
-  .logo { float: none; margin: 0 auto; padding: 10px; }
+  .logo { float: none; margin: 0 auto; width: 64px; }
   .logo img { margin: 0 auto; }
-  #site-description h1, #site-description p, #site-description p.sitename { text-align: inherit; float: none; margin: 5px; line-height: 1.2em; overflow: hidden; text-overflow: ellipsis; }
+  #site-description h1, #site-description p { text-align: inherit; float: none; margin: 0 !important; line-height: 1.2em; overflow: hidden; text-overflow: ellipsis; }
+  #site-description-text { height: auto !important; }
   #site-description p, .headerbar .search-header { display: none; }
   .responsive-search { display: block !important; }
   .responsive-search a { display: block; width: 16px; height: 22px; text-indent: 99px; overflow: hidden; text-decoration: none; text-align: center; }
