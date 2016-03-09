@@ -1665,7 +1665,7 @@ dl.details dd { color: #BDBDBD; }
 
 .pagination li.page-jump a:hover:after { color: #01579B; }
 
-.copyright, .copyright a, .copyright a, .copyright a:hover, .copyright a:focus, .copyright a:visited { /* color: $muted-color; */ cursor: default; color: transparent !important; text-decoration: none; }
+.copyright, .copyright a, .copyright a, .copyright a:hover, .copyright a:focus, .copyright a:visited { text-decoration: none; }
 
 .error { color: #FFC107; }
 
