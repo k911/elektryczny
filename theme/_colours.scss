@@ -1450,10 +1450,6 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 		// Unread
 		background-color: $notification-unread-bg;
 		color: $notification-unread-color;
-		&, .panel-container & {
-			border-top-color: lighten($notification-unread-bg, 10%);
-			border-bottom-color: darken($notification-unread-bg, 10%);
-		}
 		strong {
 			color: $notification-unread-strong-color;
 		}

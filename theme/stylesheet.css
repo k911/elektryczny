@@ -2078,14 +2078,13 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 .notification_list li.dropdown-notification a.mark_read { background-color: white; }
 .notification_list li.dropdown-notification a.mark_read, .notification_list li.dropdown-notification a.mark_read:after { color: #9E9E9E; }
 .notification_list li.dropdown-notification a.mark_read:hover, .notification_list li.dropdown-notification a.mark_read:after:hover { color: #2196F3; }
-.notification_list li.bg3 { background-color: #e3ddca; color: #FFC107; }
-.notification_list li.bg3, .panel-container .notification_list li.bg3 { border-top-color: #f5f2eb; border-bottom-color: #d1c8a9; }
-.notification_list li.bg3 strong { color: #d0d0d0; }
+.notification_list li.bg3 { background-color: #FFFFFF; color: #1565C0; }
+.notification_list li.bg3 strong { color: #FFAB00; }
 .notification_list li.bg3 a { color: inherit; }
-.notification_list li.bg3 p.notification-time, .notification_list li.bg3 p.notifications_time { color: #debd5b; }
+.notification_list li.bg3 p.notification-time, .notification_list li.bg3 p.notifications_time { color: #7595b9; }
 .notification_list li.bg3 a.mark_read { background-color: white; }
-.notification_list li.bg3 a.mark_read, .notification_list li.bg3 a.mark_read:after { color: #d0d0d0; }
-.notification_list li.bg3 a.mark_read:hover, .notification_list li.bg3 a.mark_read:after:hover { color: #FFC107; }
+.notification_list li.bg3 a.mark_read, .notification_list li.bg3 a.mark_read:after { color: #FFAB00; }
+.notification_list li.bg3 a.mark_read:hover, .notification_list li.bg3 a.mark_read:after:hover { color: #1565C0; }
 .notification_list li.dropdown-notification:hover { background-color: #f6f6f6; color: #2196F3; }
 .notification_list li.dropdown-notification:hover, .panel-container .notification_list li.dropdown-notification:hover { border-top-color: white; border-bottom-color: #dddddd; }
 .notification_list li.dropdown-notification:hover strong { color: #9E9E9E; }
