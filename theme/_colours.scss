@@ -863,7 +863,7 @@ dd.profile-warnings {
 .dropdown-visible .dropdown-select, .dropdown-visible .dropdown-select:hover, .nojs .dropdown-container:hover .dropdown-select,
 .buttons > .button:hover,
 .button:hover, .dropdown-visible .dropdown-select, .nojs .dropdown-container:hover .dropdown-select {
-	border-color: $secondary-color !important;
+	border-color: $secondary-color;
 	background-color: $secondary-color;
 	color: $overlay-color;
 

@@ -1828,7 +1828,7 @@ dd.profile-warnings { color: #BC2A4D; }
 
 .dropdown-select:hover:after, .dropdown-visible .dropdown-select:after, .nojs .dropdown-container:hover .dropdown-select:after { border-color: #fcc41d; }
 
-.dropdown-visible .dropdown-select, .dropdown-visible .dropdown-select:hover, .nojs .dropdown-container:hover .dropdown-select, .buttons > .button:hover, .post-buttons > #expand.buttons > a:hover, .button:hover, .post-buttons > #expand > a:hover, .dropdown-visible .dropdown-select, .nojs .dropdown-container:hover .dropdown-select { border-color: #FFC107 !important; background-color: #FFC107; color: #fff; }
+.dropdown-visible .dropdown-select, .dropdown-visible .dropdown-select:hover, .nojs .dropdown-container:hover .dropdown-select, .buttons > .button:hover, .post-buttons > #expand.buttons > a:hover, .button:hover, .post-buttons > #expand > a:hover, .dropdown-visible .dropdown-select, .nojs .dropdown-container:hover .dropdown-select { border-color: #FFC107; background-color: #FFC107; color: #fff; }
 .dropdown-visible .dropdown-select:after, .dropdown-visible .dropdown-select:before, .dropdown-visible .dropdown-select:hover:after, .dropdown-visible .dropdown-select:hover:before, .nojs .dropdown-container:hover .dropdown-select:after, .nojs .dropdown-container:hover .dropdown-select:before, .buttons > .button:hover:after, .post-buttons > #expand.buttons > a:hover:after, .buttons > .button:hover:before, .post-buttons > #expand.buttons > a:hover:before, .button:hover:after, .post-buttons > #expand > a:hover:after, .button:hover:before, .post-buttons > #expand > a:hover:before, .dropdown-visible .dropdown-select:after, .dropdown-visible .dropdown-select:before, .nojs .dropdown-container:hover .dropdown-select:after, .nojs .dropdown-container:hover .dropdown-select:before { color: #fff !important; }
 
 .contact-icons a { border-color: #e8e8e8; }
@@ -2258,3 +2258,15 @@ code.spoiler { font-family: monospace; font-size: 14px; display: none; }
 
 /* utility classes */
 .btn-separator { margin-left: 1.5em; display: inline; }
+
+/* reputation system */
+.post-rate-block { float: right; margin-right: 12px; font-size: 20px; }
+.post-rate-block .button-circle:hover { color: #fff; text-decoration: none; }
+.post-rate-block .button-circle.rate-good-icon { color: #43A047; }
+.post-rate-block .button-circle.rate-good-icon:hover { color: #1B5E20; }
+.post-rate-block .button-circle.rate-bad-icon { color: #E53935; }
+.post-rate-block .button-circle.rate-bad-icon:hover { color: #B71C1C; }
+.post-rate-block .button-circle.post-reputation { color: #BDBDBD; }
+.post-rate-block .button-circle.post-reputation.negative { color: #E53935; }
+.post-rate-block .button-circle.post-reputation.positive { color: #43A047; }
+.post-rate-block .button-circle.rated_good, .post-rate-block .button-circle.rated_bad { display: none; }

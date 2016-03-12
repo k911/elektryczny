@@ -53,3 +53,43 @@ code.spoiler {
 	margin-left: 1.5em;
 	display: inline;
 }
+
+/* reputation system */
+.post-rate-block {
+	float: right;
+	margin-right: 12px;
+	font-size: 20px;
+	& .button-circle {
+		&:hover {
+			color: $overlay-color;
+			text-decoration: none;
+		}
+		&.rate-good-icon {
+			color: #43A047; // green-600
+			&:hover {
+				color: #1B5E20; // green-900
+			}
+		}
+		&.rate-bad-icon {
+			color: #E53935; // red-600
+			&:hover {
+				color: #B71C1C; // red-900
+			}
+		}
+		&.post-reputation {
+			color: $muted-color;
+			&.negative {
+				color: #E53935; // red-600
+			}
+			&.positive {
+				color: #43A047; // green-600
+			}
+		}
+		&.rated_good, &.rated_bad {
+			display: none;
+		}
+	}
+}
+
+
+
