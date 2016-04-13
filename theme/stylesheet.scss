@@ -3,31 +3,33 @@
  *	-- stylesheet.css replacement --
  *	This file requires SASS compiler.
  */
+ 
 
 // stylesheet variables
-@import "variables";
+@import "styles/variables";
 
 // stylesheet functions
-@import "functions";
+@import "styles/functions";
 
 // mixins 
-@import "mixins";
+@import "styles/mixins";
 
 
 // layout
-@import "common";
-@import "links";
-@import "content";
-@import "buttons";
-@import "cp";
-@import "forms";
-@import "imageset";
-@import "colours";
+@import "styles/common";
+@import "styles/links";
+@import "styles/content";
+@import "styles/buttons";
+@import "styles/cp";
+@import "styles/forms";
+@import "styles/imageset";
+@import "styles/colours";
+@import "styles/mdl-badge";
 
 // media queries
 @media (max-width: 700px) {
-	@import "responsive";
+	@import "styles/responsive";
 }
 
 // custom fixes
-@import "custom";
+@import "styles/custom";

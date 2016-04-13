@@ -26,7 +26,7 @@
 {% set quick_links_all %}{{ quick_links_first_block|trim }}{{ quick_links_last_block|trim }}{% endset %}
 
 <div class="navbar tabbed not-static" role="navigation">
-	<div class="inner page-width">
+	<div class="inner card-with-opacity card-hidden page-width">
 		<div class="nav-tabs" data-current-page="<!-- IF $NAV_SECTION -->{$NAV_SECTION}<!-- ELSE -->{SCRIPT_NAME}<!-- ENDIF -->">
 			<ul class="leftside">
 				<li id="quick-links" class="tab responsive-menu dropdown-container{% if quick_links_all == '' %} empty{% endif %}">
@@ -100,21 +100,13 @@
 						</div>
 					</li>
 					<!-- IF S_DISPLAY_PM -->
-						<li class="tab pm<!-- IF PRIVATE_MESSAGE_COUNT > 0 --> non-zero<!-- ENDIF -->" data-select-match="pm" data-responsive-class="small-icon icon-pm">
+						<li class="tab pm<!-- IF PRIVATE_MESSAGE_COUNT > 0 --> non-zero mdl-badge mdl-badge--small<!-- ENDIF -->" data-badge="{PRIVATE_MESSAGE_COUNT}" data-select-match="pm" data-responsive-class="small-icon icon-pm">
 							<a class="nav-link" href="{U_PRIVATEMSGS}" role="menuitem">{L_PRIVATE_MESSAGES}</a>
-							<strong>
-								<span class="counter">{PRIVATE_MESSAGE_COUNT}</span>
-								<span class="arrow"></span>
-							</strong>
 						</li>
 					<!-- ENDIF -->
 					<!-- IF S_NOTIFICATIONS_DISPLAY -->
-						<li class="tab notifications dropdown-container<!-- IF NOTIFICATIONS_COUNT > 0 --> non-zero<!-- ENDIF -->" data-skip-responsive="true">
+						<li class="tab notifications dropdown-container<!-- IF NOTIFICATIONS_COUNT > 0 --> non-zero mdl-badge mdl-badge--small<!-- ENDIF -->" data-badge="{NOTIFICATIONS_COUNT}" data-select-match="notifications" data-skip-responsive="true">
 							<a href="{U_VIEW_ALL_NOTIFICATIONS}" id="notification_list_button" class="nav-link dropdown-trigger">{L_NOTIFICATIONS}</a>
-							<strong>
-								<span class="counter">{NOTIFICATIONS_COUNT}</span>
-								<span class="arrow"></span>
-							</strong>
 							<!-- INCLUDE notification_dropdown.html -->
 						</li>
 					<!-- ENDIF -->

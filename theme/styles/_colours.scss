@@ -106,6 +106,10 @@ hr {
 	color: $header-text;
 }
 
+#page-header-box {
+	background-color: $primary-color;
+}
+
 // Navigation
 //.breadcrumbs .crumb:before {
 //	color: $muted-color;
@@ -135,7 +139,6 @@ hr {
 
 	.nav-tabs {
 		background-color: $primary-nav-bg;
-
 		.tab {
 			color: $primary-nav-color;
 			&.selected {
@@ -143,8 +146,7 @@ hr {
 				background-color: $primary-nav-selected-bg;
 				border-bottom-color: $primary-nav-selected-bd-color;
 			}
-			&:hover,
-			&.dropdown-visible {
+			&:hover:not(.selected), &.dropdown-visible:not(.selected) {
 				color: $primary-nav-hover-color;
 				background-color: $primary-nav-hover-bg;
 				border-bottom-color: $primary-nav-hover-bd-color;
@@ -920,13 +922,13 @@ dd.profile-warnings {
 
 %icon-search-new {
 	&:after {
-		color: $secondary-color;
+		color: $primary-color;
 	}
 }
 
 %icon-search-misc {
 	&:after {
-		color: $faint-color;
+		color: $primary-color;
 	}
 }
 
@@ -1361,11 +1363,6 @@ input.disabled {
 	border-top-color: $block-inner-border;
 }
 
-.dropdown-extended ul li:hover {
-	background-color: $block-background2;
-	color: $bold-text-color;
-}
-
 .dropdown-extended .header, .dropdown-extended .footer {
 	border-color: $block-border;
 	border-style: solid;
@@ -1379,10 +1376,12 @@ input.disabled {
 }
 
 .dropdown-extended .footer {
+	background: $dropdown-heading-bottom;
 	border-top-width: 1px;
 }
 
 .dropdown-extended .header {
+	background: $dropdown-heading-top;
 	border-bottom-width: 1px;
 }
 
@@ -1397,7 +1396,9 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 .dropdown .dropdown-contents {
 	background: $dropdown-bg;
 	border-color: $dropdown-border;
-	box-shadow: $dropdown-shadow;
+	/* card effect - dropdown contents */
+	@include card($card-default);
+	/* card effect end */
 }
 
 .dropdown-up .dropdown-contents {
@@ -1414,85 +1415,63 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 
 // Notifications
 // ----------------------------------------
-.notification_list li {
+.notification_list ul li {
+		
 	&.notification-reported strong, &.notification-disapproved strong {
 		color: $secondary-color;
 	}
 
+	// Normal notification
 	&.dropdown-notification {
 		background-color: $dropdown-notification-bg;
 		color: $dropdown-notification-color;
-		&, .panel-container & {
-			border-top-color: lighten($dropdown-notification-bg, 10%);
-			border-bottom-color: darken($dropdown-notification-bg, 10%);
+		a, a:hover {
+			color: $dropdown-notification-color;
 		}
 		strong {
 			color: $dropdown-notification-strong-color;
 		}
-		a {
-			color: inherit;
+		p.notification-time, p.notifications_time {
+			color: desaturate($dropdown-notification-color, 25%);
+		}
+	}
+	
+	// Hover normal notification
+	&.dropdown-notification:hover:not(.notification-unseen) {
+		background-color: $dropdown-notification-hover-bg;
+		color: $dropdown-notification-hover-color;
+		a, a:hover {
+			color: $dropdown-notification-hover-color;
+		}
+		strong {
+			color: $dropdown-notification-strong-hover-color;
 		}
 		p.notification-time, p.notifications_time {
-			color: desaturate(mix($dropdown-notification-bg, $dropdown-notification-color, 30%), 25%);
-		}
-		a.mark_read {
-			background-color: desaturate(if(lightness($dropdown-notification-bg) < 50%, darken($dropdown-notification-bg, 30%), lighten($dropdown-notification-bg, 30%)), 100%);
-			&, &:after {
-				color: $dropdown-notification-strong-color;
-				&:hover {
-					color: $dropdown-notification-color;
-				}
-			}
+			color: desaturate($dropdown-notification-hover-color, 25%);
 		}
 	}
 
-	&.bg3 {
-		// Unread
+	// Unread
+	&.notification-unseen {
 		background-color: $notification-unread-bg;
 		color: $notification-unread-color;
 		strong {
 			color: $notification-unread-strong-color;
 		}
-		a {
-			color: inherit;
+		a, a:hover {
+			color: $notification-unread-color;
 		}
 		p.notification-time, p.notifications_time {
-			color: desaturate(mix($notification-unread-bg, $notification-unread-color, 30%), 25%);
+			color: desaturate($notification-unread-color, 25%);
 		}
 		a.mark_read {
-			background-color: desaturate(if(lightness($notification-unread-bg) < 50%, darken($notification-unread-bg, 30%), lighten($notification-unread-bg, 30%)), 100%);
-			&, &:after {
-				color: $notification-unread-strong-color;
-				&:hover {
-					color: $notification-unread-color;
-				}
-			}
-		}
-	}
-
-	&.dropdown-notification:hover {
-		background-color: $dropdown-notification-hover-bg;
-		color: $dropdown-notification-color;
-		&, .panel-container & {
-			border-top-color: lighten($dropdown-notification-hover-bg, 10%);
-			border-bottom-color: darken($dropdown-notification-hover-bg, 10%);
-		}
-		strong {
-			color: $dropdown-notification-strong-color;
-		}
-		a {
-			color: inherit;
-		}
-		p.notification-time, p.notifications_time {
-			color: desaturate(mix($dropdown-notification-hover-bg, $dropdown-notification-color, 30%), 25%);
-		}
-		a.mark_read {
-			background-color: desaturate(if(lightness($dropdown-notification-hover-bg) < 50%, darken($dropdown-notification-hover-bg, 30%), lighten($dropdown-notification-hover-bg, 30%)), 100%);
-			&, &:after {
-				color: $dropdown-notification-strong-color;
-				&:hover {
-					color: $dropdown-notification-color;
-				}
+			/* card effect - notification check button */
+			@include card($card-default);
+			/* card effect end */
+			color: $dropdown-heading-link-color;
+			background-color: $dropdown-heading-top;
+			&:hover {
+				color: $dropdown-heading-link-hover-color;
 			}
 		}
 	}

@@ -163,11 +163,15 @@ $block-inner-border:					$block-bottom-border;	// Border inside blocks where the
 $block-title-color:						desaturate($link-color, 5%);	// Title inside blocks, such as post title
 
 // Breadcrumbs
-
 $breadcrumb-color:						$primary-color;
 $breadcrumb-color-hover:				$secondary-color-dark;
 
 // Tabs
+$tab-height: 							$nav-primary-font-size + 23px !default; // main tab width
+$tab-padding: 							12px !default;
+$tab-padding-glyph: 					8px !default;
+$tab-padding-glyph-left:				$tab-padding + 18px;
+
 $tab-color:								$faint-color;
 $tab-background:						$primary-color;
 
@@ -182,6 +186,10 @@ $tab-selected-border-bottom:			$secondary-color-accent;
 $tab-border-bottom-style:				solid;
 $tab-border-bottom-width:				2px;
 
+// Badge
+$badge-color:							$overlay-color;
+$badge-background:						#FF4081;		// Pink A200
+
 // Header
 $header-bg:								$content-background;
 $header-text:							$text-color;
@@ -190,11 +198,11 @@ $header-link-hover:						mix($header-link, $header-bg, 80%);
 
 // Primary navigation
 
-$primary-nav-card-depth:				$card-default;		//1-5 else none
-$primary-nav-bg:						$primary-color-dark;
+$primary-nav-card-depth:				1; //$card-default;		//1-5 else none
+$primary-nav-bg:						$primary-color;
 $primary-nav-color:						$faint-color;
 
-$primary-nav-selected-bg:				$primary-color;
+$primary-nav-selected-bg:				$primary-color-content;
 $primary-nav-selected-color:			$overlay-color;
 $primary-nav-selected-bd-color:			$secondary-color;
 
@@ -211,29 +219,32 @@ $secondary-nav-hover-link:				$link-hover-color;
 
 // Dropdown
 $dropdown-bg:							$block-background;
-$dropdown-border:						$block-background;
+$dropdown-border:						darken($dropdown-bg, 10%);
 $dropdown-shadow:						1px 3px 5px rgba(0, 0, 0, 0.5);
 $dropdown-shadow-up:					1px 0 5px rgba(0, 0, 0, 0.5);
-$dropdown-inner-border:					if($light, darken($dropdown-bg, 10%), lighten($dropdown-bg, 10%));
+$dropdown-inner-border:					$dropdown-border;
 
-$dropdown-heading-top:					$dropdown-border;
+$dropdown-heading-top:					$dropdown-bg;
 $dropdown-heading-bottom:				$dropdown-heading-top;
 $dropdown-heading-color:				$primary-color;
 $dropdown-heading-link-color:			$primary-color;
-$dropdown-heading-link-hover-color:		$primary-color-dark;
+$dropdown-heading-link-hover-color:		$secondary-color-dark;
 
 $forum-description-color:				$overlay-color;
 $forum-description-bg:					mix($black-color, $block-background, 75%);
 
 // Notifications
-$notification-unread-bg:				#FFFFFF;
-$notification-unread-color:				$primary-color-dark;
-$notification-unread-strong-color:		$secondary-color-accent-dark;
+$notification-unread-bg:				$primary-color-content;
+$notification-unread-color:				$overlay-color;
+$notification-unread-strong-color:		$overlay-color;
 
 $dropdown-notification-bg:				$block-background;
-$dropdown-notification-hover-bg:		$block-background2;
+$dropdown-notification-hover-bg:		$faint-color;
 $dropdown-notification-color:			$link-color;
+$dropdown-notification-hover-color:		$primary-color-dark;
 $dropdown-notification-strong-color:	#9E9E9E; // Grey 500
+$dropdown-notification-strong-hover-color:	$secondary-color-accent-dark;
+
 
 // Panels
 $panel-title-color:						desaturate(if($light, darken($primary-color, 10%), lighten($primary-color, 10%)), 25%);

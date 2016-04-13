@@ -295,7 +295,7 @@ span.imageset {
 .icon-mark {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f223';	// icon: mdi-check-all
+		content: '\f222';	// icon: mdi-check
 	}
 }
 .icon-mcp {

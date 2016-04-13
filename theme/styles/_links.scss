@@ -28,33 +28,22 @@ a:hover	{ text-decoration: underline; }
 
 // Notification mark read link
 .dropdown-extended a.mark_read {
-	display: block;
-	opacity: .2;
+	display: none;
 	position: absolute;
 	z-index: 2;
 	right: 0;
 	top: 0;
-	bottom: 0;
-	width: 30px;
+	height: 100%;
+	padding: 8px 10px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	transition: opacity .2s;
+	line-height: 50px;
+	font-size: 16px;
 }
 
 .dropdown-extended li:hover a.mark_read {
-	opacity: .85;
-}
-
-.dropdown-extended li a.mark_read:hover {
-	opacity: 1;
-}
-
-.dropdown-extended a.mark_read:after {
-	width: auto;
-	left: 4px;
-	right: 0;
-	font-size: 16px;
+	display: block;
 }
 
 // Links for forum/topic lists

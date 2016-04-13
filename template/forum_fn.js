@@ -5,7 +5,7 @@
 */
 var styleConfig = {
 	staticNavigation: true,
-	staticNavigationMinWidth: 500,
+	staticNavigationMinWidth: 700,
 	staticNavigationMinHeight: 400,
 	extendPosterProfile: true,
 	collapseForums: true
@@ -1310,25 +1310,26 @@ function parseDocument($container) {
 				navigation = $(nav),
 				isStatic = false,
 				parent = navigation.parent(),
-				dummy,
 				inner,
 				$w = $(window),
 				minTopPosition = 0,
 				minWidth = styleConfig.staticNavigationMinWidth,
 				minHeight = styleConfig.staticNavigationMinHeight,
-				windowWidth, navHeight,
+				windowWidth,
 				queued = false,
-				throttled = false;
-
-			navigation.before('<div class="static-nav-dummy inner" style="display:none;" />');
-			dummy = navigation.prev();
-
-			navigation.wrapInner('<div class="static-inner" />');
-			inner = navigation.children();
-
+				throttled = false,
+				navbarBox = $('.inner.page-width.card-with-opacity'),
+				headerBox = $('#page-header-box.card-with-opacity'),
+				breakLine = 0,
+				currOffset = 0,
+				prevOffset = 0,
+				debug_k911 = false;
+			
 			function enableStatic()
 			{
-				dummy.css('height', Math.floor(navigation.height()) + 'px').show();
+				if(debug_k911) 
+					console.log('enabled static');
+				$('#page-header-box').css('padding-top', Math.floor(navigation.height()) + 'px');
 				navigation.addClass('static');
 				parent.removeClass('not-static');
 				isStatic = true;
@@ -1337,7 +1338,11 @@ function parseDocument($container) {
 
 			function disableStatic()
 			{
-				dummy.hide();
+				if(debug_k911) 
+					console.log('disabled static');
+				$('#page-header-box').css('padding-top', 0);
+				navbarBox.addClass('card-hidden');
+				headerBox.removeClass('card-hidden');
 				navigation.removeClass('static');
 				parent.addClass('not-static');
 				isStatic = false;
@@ -1368,7 +1373,7 @@ function parseDocument($container) {
 				}
 				if (!isStatic)
 				{
-					navHeight = navigation.height();
+					//navHeight = navigation.height();
 					top = nav.getBoundingClientRect().top;
 					if (top > 0) {
 						return;
@@ -1386,7 +1391,6 @@ function parseDocument($container) {
 					testHash();
 				}
 			}
-
 			$w.on('scroll resize', function() { 
 				if (!isStatic) {
 					check(false);
@@ -1406,6 +1410,26 @@ function parseDocument($container) {
 					else {
 						queued = true;
 					}
+					
+					/**
+					* 	Smooth transition shadow box from header to navbar
+					*/
+					currOffset = $w.scrollTop();
+					breakLine = headerBox.height();
+					if(debug_k911) 
+						console.log('currOffset: ' + currOffset + ' switch @ ' + Math.abs(breakLine-currOffset) + ' more!');
+					if(Math.abs(currOffset - prevOffset) > Math.abs(breakLine - prevOffset)) {
+						if(debug_k911) 
+							console.log('~~switched!');
+						if(currOffset < breakLine) {
+							navbarBox.addClass('card-hidden');
+							headerBox.removeClass('card-hidden');
+						} else {
+							navbarBox.removeClass('card-hidden');
+							headerBox.addClass('card-hidden');
+						}
+						prevOffset = currOffset;
+					}
 				}
 			});
 			$w.on('load', function() { check(true); });
@@ -1420,7 +1444,7 @@ function parseDocument($container) {
 	
 	/**
 	* Spoiler à la wykop.pl
-	* Using:
+	* Usage:
 	* 	| <a href="#" class="spoiler">pokaż spoiler</a>
 	*	| <code class="spoiler">{TEXT}</code>
 	*/

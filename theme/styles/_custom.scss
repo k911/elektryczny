@@ -3,18 +3,6 @@
 .navbar.secondary > ul > li > a.small-icon {
 	padding-left: 1.5em !important;
 }
-/* ---no padding after icon: chevron-down */
-@media (min-width: 551px) {
-	.nav-link.dropdown-toggle {
-		margin-right: .5em !important;
-	}
-}
-/* --pm counter in responsive menu destroys overall view-- */
-.responsive-menu li.responsive-clone strong {
-	display: none;
-}
-
-/* CUSTOM */
 /* --- spoiler à la wykop.pl */
 .spoiler {
 	font-size: 14px;
@@ -30,6 +18,7 @@ code.spoiler {
 	font-size: 14px;
 	display: none;
 }
+
 /* --- youtube bbcode */
 .videoWrapper {
   position: relative;
@@ -91,5 +80,27 @@ code.spoiler {
 	}
 }
 
+/* CARD EFFECT PRESET */
+.card-with-opacity {
+	position: relative;
+	/* Primary navbar nav tabs card effect with customizable opacity */
+	&:after {
+		@include card($card-default);
+		opacity: 1;
+		// Block covering all #page-header-box content
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		pointer-events: none;
+	}
+}
+.card-hidden {
+	&:after {
+		opacity: 0 !important;
+	}
+}
 
 
