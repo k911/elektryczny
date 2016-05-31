@@ -67,15 +67,26 @@
 .mdl-badge.mdl-badge--overlap:after {
     right: -10px;
 }
-/* custom style badge */
+/* custom style badge for navbar */
 .mdl-badge.mdl-badge--small {
-	margin-right: 8.5px;
+	margin-right: 0px;
+	.nav-link {
+		margin-left: 4px !important;
+	}
 }
 .mdl-badge.mdl-badge--small:after {
-	top: 3px;
-	right: -8px;
-	width: 16.5px;
-	height: 16.5px;
+	top: 6px;
+	left: 8px;
 	font-weight: 400;
-	font-size: 9px;
+}
+@media screen and (max-width: 550px) {
+	.mdl-badge.mdl-badge--small {
+		&:after {
+			left: 4px;
+		}
+		.nav-link {
+			z-index: 1;
+			margin-left: 0px !important;
+		}
+	}
 }

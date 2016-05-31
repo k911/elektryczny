@@ -533,12 +533,6 @@ $nav-alert-font-size:		9px !default;
 			}
 		}
 		@media (max-width: 550px) {
-			.mdl-badge {
-				margin-right: 2.5px;
-				&:after {
-					right: -2px;
-				}
-			}
 			%glyph-only-media {
 				text-indent: 999px;
 				width: $nav-primary-glyph-font-size;
@@ -614,31 +608,42 @@ $nav-alert-font-size:		9px !default;
 			&:after {
 				@extend %glyph-mdi;
 				content: '\f103';	// icon: mdi-account
+				top: -1px; 			// icon fix
 			}
 			@media (max-width: 550px) {
 				@extend %glyph-only-media;
 			}
 		}
-
-		.pm .nav-link {
-			@extend %glyph-only;
-			&:after {
-				@extend %glyph-mdi;
-				content: '\f453';	// icon: mdi-message
+		
+		.pm {
+			.nav-link {
+				@extend %glyph-only;
+				&:after {
+					@extend %glyph-mdi;
+					content: '\f453';	// icon: mdi-message
+				}
+				@media (max-width: 550px) {
+					@extend %glyph-only-media;
+				}
 			}
-			@media (max-width: 550px) {
-				@extend %glyph-only-media;
+			&.non-zero .nav-link:after {
+				text-indent: 999px;
 			}
 		}
 
-		.notifications .nav-link {
-			@extend %glyph-only;
-			&:after {
-				@extend %glyph-mdi;
-				content: '\f191';	// icon: mdi-bell //TODO: (.active).click(): check mdi-bell-off
+		.notifications {
+			.nav-link {
+				@extend %glyph-only;
+				&:after {
+					@extend %glyph-mdi;
+					content: '\f191';	// icon: mdi-bell //TODO: (.active).click(): check mdi-bell-off
+				}
+				@media (max-width: 550px) {
+					@extend %glyph-only-media;
+				}
 			}
-			@media (max-width: 550px) {
-				@extend %glyph-only-media;
+			&.non-zero .nav-link:after {
+				text-indent: 999px;
 			}
 		}
 
@@ -647,6 +652,7 @@ $nav-alert-font-size:		9px !default;
 			&:after {
 				@extend %glyph-mdi;
 				content: '\f390';	// icon: mdi-gavel
+				top: -1px;			// icon fix
 			}
 			@media (max-width: 550px) {
 				@extend %glyph-only-media;

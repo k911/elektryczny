@@ -130,9 +130,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
 .navbar .nav-tabs .responsive-menu .nav-link + strong, .navbar .nav-tabs .account .nav-link + strong, .navbar .nav-tabs .pm .nav-link + strong, .navbar .nav-tabs .notifications .nav-link + strong, .navbar .nav-tabs .mcp .nav-link + strong, .navbar .nav-tabs .acp .nav-link + strong, .navbar .nav-tabs .faq .nav-link + strong, .navbar .nav-tabs .logout .nav-link + strong, .navbar .nav-tabs .login .nav-link + strong, .navbar .nav-tabs .register .nav-link + strong, .navbar .nav-tabs .rightside .boardrules .nav-link + strong, .navbar .nav-tabs .rightside .pages .nav-link + strong { right: -2px; }
 .rtl .navbar .nav-tabs .responsive-menu .nav-link + strong, .rtl .navbar .nav-tabs .account .nav-link + strong, .rtl .navbar .nav-tabs .pm .nav-link + strong, .rtl .navbar .nav-tabs .notifications .nav-link + strong, .rtl .navbar .nav-tabs .mcp .nav-link + strong, .rtl .navbar .nav-tabs .acp .nav-link + strong, .rtl .navbar .nav-tabs .faq .nav-link + strong, .rtl .navbar .nav-tabs .logout .nav-link + strong, .rtl .navbar .nav-tabs .login .nav-link + strong, .rtl .navbar .nav-tabs .register .nav-link + strong, .rtl .navbar .nav-tabs .rightside .boardrules .nav-link + strong, .rtl .navbar .nav-tabs .rightside .pages .nav-link + strong { right: auto; left: -2px; }
 .navbar .nav-tabs .responsive-menu .dropdown-toggle.nav-link, .navbar .nav-tabs .account .dropdown-toggle.nav-link, .navbar .nav-tabs .pm .dropdown-toggle.nav-link, .navbar .nav-tabs .notifications .dropdown-toggle.nav-link, .navbar .nav-tabs .mcp .dropdown-toggle.nav-link, .navbar .nav-tabs .acp .dropdown-toggle.nav-link, .navbar .nav-tabs .faq .dropdown-toggle.nav-link, .navbar .nav-tabs .logout .dropdown-toggle.nav-link, .navbar .nav-tabs .login .dropdown-toggle.nav-link, .navbar .nav-tabs .register .dropdown-toggle.nav-link, .navbar .nav-tabs .rightside .boardrules .dropdown-toggle.nav-link, .navbar .nav-tabs .rightside .pages .dropdown-toggle.nav-link { margin: 0; }
-@media (max-width: 550px) { .navbar .nav-tabs .mdl-badge { margin-right: 2.5px; }
-  .navbar .nav-tabs .mdl-badge:after { right: -2px; }
-  .navbar .nav-tabs .responsive-menu .nav-link, .navbar .nav-tabs .members .nav-link, .navbar .nav-tabs .forums .nav-link, .navbar .nav-tabs .account .nav-link, .navbar .nav-tabs .pm .nav-link, .navbar .nav-tabs .notifications .nav-link, .navbar .nav-tabs .mcp .nav-link, .navbar .nav-tabs .acp .nav-link, .navbar .nav-tabs .faq .nav-link, .navbar .nav-tabs .logout .nav-link, .navbar .nav-tabs .login .nav-link, .navbar .nav-tabs .register .nav-link, .navbar .nav-tabs .leftside .boardrules .nav-link, .navbar .nav-tabs .leftside .pages .nav-link { text-indent: 999px; width: 14px; padding: 0 8px; overflow: hidden; }
+@media (max-width: 550px) { .navbar .nav-tabs .responsive-menu .nav-link, .navbar .nav-tabs .members .nav-link, .navbar .nav-tabs .forums .nav-link, .navbar .nav-tabs .account .nav-link, .navbar .nav-tabs .pm .nav-link, .navbar .nav-tabs .notifications .nav-link, .navbar .nav-tabs .mcp .nav-link, .navbar .nav-tabs .acp .nav-link, .navbar .nav-tabs .faq .nav-link, .navbar .nav-tabs .logout .nav-link, .navbar .nav-tabs .login .nav-link, .navbar .nav-tabs .register .nav-link, .navbar .nav-tabs .leftside .boardrules .nav-link, .navbar .nav-tabs .leftside .pages .nav-link { text-indent: 999px; width: 14px; padding: 0 8px; overflow: hidden; }
   .navbar .nav-tabs .responsive-menu .nav-link:after, .navbar .nav-tabs .members .nav-link:after, .navbar .nav-tabs .forums .nav-link:after, .navbar .nav-tabs .account .nav-link:after, .navbar .nav-tabs .pm .nav-link:after, .navbar .nav-tabs .notifications .nav-link:after, .navbar .nav-tabs .mcp .nav-link:after, .navbar .nav-tabs .acp .nav-link:after, .navbar .nav-tabs .faq .nav-link:after, .navbar .nav-tabs .logout .nav-link:after, .navbar .nav-tabs .login .nav-link:after, .navbar .nav-tabs .register .nav-link:after, .navbar .nav-tabs .leftside .boardrules .nav-link:after, .navbar .nav-tabs .leftside .pages .nav-link:after { text-align: center; font-size: 14px; left: 8px; }
   .rtl .navbar .nav-tabs .responsive-menu .nav-link:after, .rtl .navbar .nav-tabs .members .nav-link:after, .rtl .navbar .nav-tabs .forums .nav-link:after, .rtl .navbar .nav-tabs .account .nav-link:after, .rtl .navbar .nav-tabs .pm .nav-link:after, .rtl .navbar .nav-tabs .notifications .nav-link:after, .rtl .navbar .nav-tabs .mcp .nav-link:after, .rtl .navbar .nav-tabs .acp .nav-link:after, .rtl .navbar .nav-tabs .faq .nav-link:after, .rtl .navbar .nav-tabs .logout .nav-link:after, .rtl .navbar .nav-tabs .login .nav-link:after, .rtl .navbar .nav-tabs .register .nav-link:after, .rtl .navbar .nav-tabs .leftside .boardrules .nav-link:after, .rtl .navbar .nav-tabs .leftside .pages .nav-link:after { left: auto; right: 8px; }
   .navbar .nav-tabs .responsive-menu .nav-link + strong, .navbar .nav-tabs .members .nav-link + strong, .navbar .nav-tabs .forums .nav-link + strong, .navbar .nav-tabs .account .nav-link + strong, .navbar .nav-tabs .pm .nav-link + strong, .navbar .nav-tabs .notifications .nav-link + strong, .navbar .nav-tabs .mcp .nav-link + strong, .navbar .nav-tabs .acp .nav-link + strong, .navbar .nav-tabs .faq .nav-link + strong, .navbar .nav-tabs .logout .nav-link + strong, .navbar .nav-tabs .login .nav-link + strong, .navbar .nav-tabs .register .nav-link + strong, .navbar .nav-tabs .leftside .boardrules .nav-link + strong, .navbar .nav-tabs .leftside .pages .nav-link + strong { right: -2px; }
@@ -146,10 +144,12 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
 .navbar .nav-tabs .members .nav-link:after { content: '\f10d'; }
 @media (max-width: 550px) { .navbar .nav-tabs .members .nav-link { padding: 0 8px !important; } }
 .navbar .nav-tabs .forums .nav-link:after { content: '\f270'; }
-.navbar .nav-tabs .account .nav-link:after { content: '\f103'; }
+.navbar .nav-tabs .account .nav-link:after { content: '\f103'; top: -1px; }
 .navbar .nav-tabs .pm .nav-link:after { content: '\f453'; }
+.navbar .nav-tabs .pm.non-zero .nav-link:after { text-indent: 999px; }
 .navbar .nav-tabs .notifications .nav-link:after { content: '\f191'; }
-.navbar .nav-tabs .mcp .nav-link:after { content: '\f390'; }
+.navbar .nav-tabs .notifications.non-zero .nav-link:after { text-indent: 999px; }
+.navbar .nav-tabs .mcp .nav-link:after { content: '\f390'; top: -1px; }
 .navbar .nav-tabs .acp .nav-link:after { content: '\f572'; }
 .navbar .nav-tabs .faq .nav-link:after { content: '\f3ef'; }
 .navbar .nav-tabs .logout .nav-link:after { content: '\f435'; }
@@ -2099,11 +2099,14 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 
 .mdl-badge.mdl-badge--overlap:after { right: -10px; }
 
-/* custom style badge */
-.mdl-badge.mdl-badge--small { margin-right: 8.5px; }
+/* custom style badge for navbar */
+.mdl-badge.mdl-badge--small { margin-right: 0px; }
+.mdl-badge.mdl-badge--small .nav-link { margin-left: 4px !important; }
 
-.mdl-badge.mdl-badge--small:after { top: 3px; right: -8px; width: 16.5px; height: 16.5px; font-weight: 400; font-size: 9px; }
+.mdl-badge.mdl-badge--small:after { top: 6px; left: 8px; font-weight: 400; }
 
+@media screen and (max-width: 550px) { .mdl-badge.mdl-badge--small:after { left: 4px; }
+  .mdl-badge.mdl-badge--small .nav-link { z-index: 1; margin-left: 0px !important; } }
 @media (max-width: 700px) { .responsive-hide { display: none !important; }
   .responsive-show { display: block !important; }
   .responsive-show-inline { display: inline !important; }
@@ -2259,8 +2262,8 @@ code.spoiler { font-family: monospace; font-size: 14px; display: none; }
 .post-rate-block .button-circle.post-reputation.positive { color: #43A047; }
 .post-rate-block .button-circle.rated_good, .post-rate-block .button-circle.rated_bad { display: none; }
 
-/* CARD EFFECT PRESET */
-.card-with-opacity { position: relative; /* Primary navbar nav tabs card effect with customizable opacity */ }
-.card-with-opacity:after { box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); opacity: 1; content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 100%; pointer-events: none; }
+/**  CARD EFFECT PRESET TODO: When attr implementend do -> opacity = attr(data-card-opacity) */
+.card[data-card] { position: relative; /* Primary navbar nav tabs card effect with customizable opacity */ }
+.card[data-card]:after { box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); opacity: 1; content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 100%; pointer-events: none; }
 
-.card-hidden:after { opacity: 0 !important; }
+.card[data-card="0"]:after { opacity: 0; }

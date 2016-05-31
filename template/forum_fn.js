@@ -1318,17 +1318,14 @@ function parseDocument($container) {
 				windowWidth,
 				queued = false,
 				throttled = false,
-				navbarBox = $('.inner.page-width.card-with-opacity'),
-				headerBox = $('#page-header-box.card-with-opacity'),
+				navbarBox = $('.inner.page-width.card'),
+				headerBox = $('#page-header-box.card'),
 				breakLine = 0,
 				currOffset = 0,
-				prevOffset = 0,
-				debug_k911 = false;
+				prevOffset = 0;
 			
 			function enableStatic()
 			{
-				if(debug_k911) 
-					console.log('enabled static');
 				$('#page-header-box').css('padding-top', Math.floor(navigation.height()) + 'px');
 				navigation.addClass('static');
 				parent.removeClass('not-static');
@@ -1338,11 +1335,9 @@ function parseDocument($container) {
 
 			function disableStatic()
 			{
-				if(debug_k911) 
-					console.log('disabled static');
 				$('#page-header-box').css('padding-top', 0);
-				navbarBox.addClass('card-hidden');
-				headerBox.removeClass('card-hidden');
+				navbarBox.attr('data-card', 0);
+				headerBox.attr('data-card', 1);
 				navigation.removeClass('static');
 				parent.addClass('not-static');
 				isStatic = false;
@@ -1412,21 +1407,18 @@ function parseDocument($container) {
 					}
 					
 					/**
-					* 	Smooth transition shadow box from header to navbar
-					*/
+					 * Smooth transition shadow box from header to navbar
+					 * ---      k911@elektryczny.tk © 2016           ---
+					 */
 					currOffset = $w.scrollTop();
 					breakLine = headerBox.height();
-					if(debug_k911) 
-						console.log('currOffset: ' + currOffset + ' switch @ ' + Math.abs(breakLine-currOffset) + ' more!');
 					if(Math.abs(currOffset - prevOffset) > Math.abs(breakLine - prevOffset)) {
-						if(debug_k911) 
-							console.log('~~switched!');
 						if(currOffset < breakLine) {
-							navbarBox.addClass('card-hidden');
-							headerBox.removeClass('card-hidden');
+							navbarBox.attr('data-card', 0);
+							headerBox.attr('data-card', 1);
 						} else {
-							navbarBox.removeClass('card-hidden');
-							headerBox.addClass('card-hidden');
+							navbarBox.attr('data-card', 1);
+							headerBox.attr('data-card', 0);
 						}
 						prevOffset = currOffset;
 					}

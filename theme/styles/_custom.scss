@@ -80,8 +80,11 @@ code.spoiler {
 	}
 }
 
-/* CARD EFFECT PRESET */
-.card-with-opacity {
+/** 
+ * CARD EFFECT PRESET
+ * TODO: When attr implementend do -> opacity = attr(data-card-opacity)
+ */
+.card[data-card] {
 	position: relative;
 	/* Primary navbar nav tabs card effect with customizable opacity */
 	&:after {
@@ -97,10 +100,6 @@ code.spoiler {
 		pointer-events: none;
 	}
 }
-.card-hidden {
-	&:after {
-		opacity: 0 !important;
-	}
+.card[data-card="0"]:after {
+	opacity: 0;
 }
-
-
