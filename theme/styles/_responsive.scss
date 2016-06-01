@@ -17,15 +17,13 @@ body {
 }
 
 #wrap {
-	border: none;
-	border-radius: 0;
 	margin: 0;
 	padding: 0 5px;
 }
 
 .page-width, .navbar .inner.static > .static-inner {
 	min-width: 290px;
-	margin: 0;
+	margin: 0 5px;
 }
 
 .navbar .inner.static > .static-inner,
@@ -35,28 +33,6 @@ body {
 
 // Common block wrappers
 // ----------------------------------------
-.forabg, .forumbg, .post, .panel {
-	border-radius: 0;
-	margin-left: -5px;
-	margin-right: -5px;
-}
-.headerbar, .navbar {
-	border-radius: 0;
-}
-#wrap .headerbar, #wrap .navbar {
-	margin-left: -5px;
-	margin-right: -5px;
-}
-
-#cp-main .forabg, #cp-main .forumdb, #cp-main .post, #cp-main .panel {
-	border-radius: 0;
-}
-
-@if $tabbed-navigation == false {
-	.navbar.tabbed .nav-tabs, .navbar.tabbed .nav-tabs .tab {
-		border-radius: 0 !important;
-	}
-}
 
 // Logo block
 // ----------------------------------------
