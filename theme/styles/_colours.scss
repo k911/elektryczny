@@ -110,20 +110,7 @@ hr {
 	background-color: $primary-color;
 }
 
-// Navigation
-//.breadcrumbs .crumb:before {
-//	color: $muted-color;
-//}
-.breadcrumbs a {
-	text-decoration: none;
-	color: $breadcrumb-color;
-	&:hover {
-		color: $breadcrumb-color-hover;
-	}
-}
-
 .navbar {
-	background-image: none;
 	&.secondary {
 		color: $link-color;
 		> ul > li:hover,
@@ -134,6 +121,23 @@ hr {
 		}
 		.dropdown {
 			color: $text-color;
+		}
+	}
+	
+	&.nav-breadcrumbs {
+		//background-color: $primary-color-dark;
+		//color: $overlay-color;
+		
+		// Navigation
+		//.breadcrumbs .crumb:before {
+		//	color: $muted-color;
+		//}
+		.breadcrumbs a {
+			text-decoration: none;
+			color: $primary-color;
+			&:hover {
+				color: $primary-color-dark;
+			}
 		}
 	}
 
@@ -216,6 +220,32 @@ hr {
 					background: none;
 				}
 			}
+		}
+	}
+}
+
+div.forum-info {
+	background-color: $block-background;
+	color: $primary-color;
+	
+	div.forum-title-group {
+		border-left-color: $secondary-color-accent-dark;
+		/*h2.forum-title a, p.forum-mods a {
+			color: $overlay-color;
+			&:hover {
+				text-decoration: none;
+			}
+		}*/
+	}
+}
+
+div.rules {
+	background-color: $primary-color-dark;
+	color: $overlay-color;
+	& a {
+		color: $overlay-color;
+		&:hover {
+			text-decoration: none;
 		}
 	}
 }
@@ -438,13 +468,8 @@ li.reported:hover {
 	// you can add a background for stickies and announcements
 }
 
-div.rules {
-	background-color: mix($content-background, $rules-color, 85%);
-	color: $rules-color;
-}
-
 p.post-notice {
-	background-color: mix($block-background, $rules-color, 85%);
+	background-color: mix($block-background, $rules-color, 60%);
 	color: $rules-color;
 	background-image: none;
 }

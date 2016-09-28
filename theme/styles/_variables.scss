@@ -5,7 +5,7 @@ $logo-block-padding:					0;
 $logo-width:							96px;
 $responsive-hide-logo:					false;	// Hide logo on mobile devices. true or false
 
-$show-forum-title:						true;	// true or false
+$show-site-title:						true;	// true or false
 
 $profile-width:							150px;
 $profile-side:							left;	// left or right
@@ -163,8 +163,8 @@ $block-inner-border:					$block-bottom-border;	// Border inside blocks where the
 $block-title-color:						desaturate($link-color, 5%);	// Title inside blocks, such as post title
 
 // Breadcrumbs
-$breadcrumb-color:						$primary-color;
-$breadcrumb-color-hover:				$secondary-color-dark;
+$breadcrumb-color:						$faint-color;
+$breadcrumb-color-hover:				$overlay-color;
 
 // Tabs
 $tab-height: 							$nav-primary-font-size + 23px !default; // main tab width

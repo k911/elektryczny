@@ -79,13 +79,13 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
 .logo:hover { text-decoration: none; }
 
 #site-description { padding: 1.25em; }
-#site-description #site-description-text { display: inline-block; height: 96px; }
+#site-description #site-description-text { display: inline-block; padding-left: 1.25em; height: 96px; }
 #site-description .sitename { margin-top: 20px; color: #fff; font-size: 24px; }
 #site-description span { display: inline-block; font-size: 12px; margin-top: 7px; margin-left: 1px; color: #E0E0E0; }
 
 .headerbar > .inner { position: relative; }
 
-.navbar { background: #F5F5F5; border: 0 solid #e0e0e0; border-radius: 0; padding: 0 9px; clear: both; /* Primary navbar nav-tabs main class */ }
+.navbar { background: #F5F5F5; border: 0 solid #e0e0e0; border-radius: 0; padding: 0 9px; /* Primary navbar nav-tabs main class */ }
 .navbar.tabbed, .navbar.secondary { background: transparent; border-width: 0; border-radius: 0; box-shadow: none; padding: 0; }
 .navbar + .navbar { margin-top: 5px; }
 .navbar.tabbed { padding: 0; }
@@ -101,6 +101,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
 .navbar.secondary > ul > li.search-box { display: block; margin: 0; float: right; }
 .rtl .navbar.secondary > ul > li.search-box { float: left; }
 .navbar.secondary + .nav-breadcrumbs { margin-top: 0; }
+.navbar.nav-breadcrumbs { padding: 0 0.6em; }
 .navbar li.small-icon > a { padding-left: 18px; }
 .navbar .nav-tabs > ul { list-style-type: none; margin: 0; height: 35px; }
 .navbar .nav-tabs > ul.leftside, .rtl .navbar .nav-tabs > ul.rightside { float: left; }
@@ -162,6 +163,16 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
 .navbar .inner.static > .static-inner { box-sizing: border-box; margin: 0 auto; max-width: none; min-width: 625px; margin: 0 12px; padding-top: 0 !important; padding-bottom: 0 !important; }
 .navbar .inner.static .nav-tabs .tab > strong { position: relative; top: 0; left: 0; right: 0; bottom: 0; vertical-align: top; margin-top: 8px; margin-left: -7px; margin-right: 5px; padding-bottom: 1px; pointer-events: none; }
 .navbar .inner.static .nav-tabs .tab > strong .arrow { display: none; }
+
+div.forum-info { padding: 1em .5em; }
+div.forum-info div.forum-title-group { padding: 0 1em; margin-bottom: .5em; border-left-width: .3em; border-left-style: solid; }
+div.forum-info div.forum-title-group h2.forum-title { margin: 0; padding-bottom: .25em; }
+div.forum-info div.forum-title-group p.forum-mods { margin: 0; }
+div.forum-info p.forum-desc { padding: .5em 1.3em 0 1.3em; margin: 0; }
+
+div.rules { margin-bottom: 10px; font-size: 11px; padding: .5em 1.8em; border-radius: 0; }
+
+div.rules ul, div.rules ol { margin-left: 20px; }
 
 .forabg { padding: 0; margin: 5px 0; }
 
@@ -453,10 +464,6 @@ fieldset.fields1 dl.pmlist dd.recipients { margin-left: 0 !important; }
 .headerspace { margin-top: 20px; }
 
 .error { font-weight: 500; font-size: 11px; }
-
-div.rules { margin: 10px 0; font-size: 11px; padding: 5px 10px; border-radius: 0; }
-
-div.rules ul, div.rules ol { margin-left: 20px; }
 
 p.post-notice { position: relative; padding: 5px; padding-left: 26px; min-height: 14px; margin-bottom: 1em; font-size: 12px; }
 
@@ -1571,13 +1578,11 @@ hr { border-color: #fafafa; border-top-color: #c7c7c7; }
 
 #page-header-box { background-color: #2196F3; }
 
-.breadcrumbs a { text-decoration: none; color: #2196F3; }
-.breadcrumbs a:hover { color: #FF6F00; }
-
-.navbar { background-image: none; }
 .navbar.secondary { color: #2196F3; }
 .navbar.secondary > ul > li:hover, .navbar.secondary > ul > li:hover:after, .navbar.secondary > ul > li:hover:before, .navbar.secondary > ul > li.dropdown-visible, .navbar.secondary > ul > li.dropdown-visible:after, .navbar.secondary > ul > li.dropdown-visible:before { color: #01579B; }
 .navbar.secondary .dropdown { color: #141414; }
+.navbar.nav-breadcrumbs .breadcrumbs a { text-decoration: none; color: #2196F3; }
+.navbar.nav-breadcrumbs .breadcrumbs a:hover { color: #1565C0; }
 .navbar .nav-tabs { background-color: #2196F3; }
 .navbar .nav-tabs .tab { color: #E0E0E0; }
 .navbar .nav-tabs .tab.selected { color: #fff; background-color: #64B5F6; border-bottom-color: #FFC107; }
@@ -1585,6 +1590,18 @@ hr { border-color: #fafafa; border-top-color: #c7c7c7; }
 .navbar .nav-tabs .tab > strong { color: #fff; background-color: #ff0707; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); }
 .navbar .nav-tabs .tab > strong .arrow { border-top-color: #ff0707; }
 .navbar .nav-tabs .tab .dropdown { color: #141414; }
+
+div.forum-info { background-color: #F5F5F5; color: #2196F3; }
+div.forum-info div.forum-title-group { border-left-color: #FFAB00; /*h2.forum-title a, p.forum-mods a {
+	color: $overlay-color;
+	&:hover {
+		text-decoration: none;
+	}
+}*/ }
+
+div.rules { background-color: #1565C0; color: #fff; }
+div.rules a { color: #fff; }
+div.rules a:hover { text-decoration: none; }
 
 .panel { background-color: #F5F5F5; color: #141414; }
 
@@ -1663,9 +1680,7 @@ dl.details dd { color: #BDBDBD; }
 
 li.reported:hover { background-color: #f5ede9; }
 
-div.rules { background-color: #e5dbbf; color: #FFC107; }
-
-p.post-notice { background-color: #f7edd1; color: #FFC107; background-image: none; }
+p.post-notice { background-color: #f9e096; color: #FFC107; background-image: none; }
 
 p.post-notice.deleted:before, p.post-notice.unapproved:before, p.post-notice.reported:before, p.post-notice.error:before { font-family: "Material Design Icons"; }
 
@@ -2116,6 +2131,7 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
   .page-width, .navbar .inner.static > .static-inner { min-width: 290px; margin: 0 5px; }
   .navbar .inner.static > .static-inner, #wrap .navbar .inner.static > .static-inner { padding: 0; }
   #site-description { width: auto; text-align: center; }
+  #site-description #site-description-text { padding-left: 0; }
   .logo { float: none; margin: 0 auto; width: 64px; }
   .logo img { margin: 0 auto; }
   #site-description h1, #site-description p { text-align: inherit; float: none; margin: 0 !important; line-height: 1.2em; overflow: hidden; text-overflow: ellipsis; }
@@ -2226,20 +2242,26 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 @media print { @page { margin: 0.5cm; }
   *, *:after, *:before { box-shadow: none !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
   body { background: transparent !important; }
-  a[href]:not([href^="./"] [href^="#"] [href^="javascript:"]):after { content: " (" attr(href) ")"; }
+  a[href].postlink:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
   /* Exceptions */
-  .ir a:after, a.logo:after, .post-rate-block a:after, .boxprofile a:after { content: "" !important; }
-  pre, blockquote { page-break-inside: avoid; }
+  .ir a:after, a.logo:after, .post-rate-block a:after, .boxprofile a:after { content: '' !important; }
+  pre, blockquote, div.post { page-break-inside: avoid; }
   thead { display: table-header-group; }
   tr, img { page-break-inside: avoid; }
   img { max-width: 100% !important; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
   /* custom */
-  #page-header-box { padding-top: 0 !important; }
-  #page-header-box .navbar.tabbed { display: none; }
-  #page-footer, .stat-block { display: none; } }
+  #page-header #page-header-box { background: none; padding-top: 0 !important; }
+  #page-header #page-header-box .navbar.tabbed { display: none; }
+  #page-header #page-header-box #site-description { padding: 0; }
+  #page-header #page-header-box #site-description #site-description-text h1 { color: #2196F3; }
+  #page-header #page-header-box #site-description #site-description-text span { color: #BDBDBD; }
+  #page-header .navbar { display: none; }
+  #page-body h2.topic-title { margin: 0; padding: .5em; }
+  #page-body div.navbar, #page-body div.action-bar, #page-body p.jumpbox-return, #page-body #jumpbox, #page-body .stat-block { display: none; }
+  #qr-postform, #wrap div.navbar, form#viewtopic, .hide-on-print { display: none; } }
 /* FIXES */
 /* ---fix for icon displaying on the user's name */
 .navbar.secondary > ul > li > a.small-icon { padding-left: 1.5em !important; }

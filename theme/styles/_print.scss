@@ -10,17 +10,17 @@
 body {
 	background: transparent !important;
 }
-a[href]:not([href^="./"] [href^="#"] [href^="javascript:"]):after {
-    content: " (" attr(href) ")";
+a[href].postlink:after {
+	content: " (" attr(href) ")";
 }
 abbr[title]:after {
     content: " (" attr(title) ")";
 }
 /* Exceptions */
 .ir a:after, a.logo:after, .post-rate-block a:after, .boxprofile a:after {
-    content: "" !important;
+    content: '' !important;
 }
-pre, blockquote {
+pre, blockquote, div.post {
     page-break-inside: avoid;
 }
 thead {
@@ -41,12 +41,36 @@ h2, h3 {
 }
 
 /* custom */
-#page-header-box {
-	padding-top: 0 !important;
-	& .navbar.tabbed {
+#page-header {
+	#page-header-box {
+		background: none;
+		padding-top: 0 !important;
+		& .navbar.tabbed {
+			display: none;
+		}
+		#site-description {
+			padding: 0;
+			#site-description-text h1 {
+				color: $primary-color;
+			}
+			#site-description-text span {
+				color: $muted-color;
+			}
+		}
+	}
+	.navbar {
 		display: none;
 	}
 }
-#page-footer, .stat-block {
+#page-body {
+	h2.topic-title {
+		margin: 0;
+		padding: .5em;
+	}
+	div.navbar, div.action-bar, p.jumpbox-return, #jumpbox, .stat-block {
+		display: none;
+	}
+}
+#qr-postform, #wrap div.navbar, form#viewtopic, .hide-on-print {
 	display: none;
 }

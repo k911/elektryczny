@@ -39,6 +39,9 @@ body {
 #site-description {
 	width: auto;
 	text-align: center;
+	#site-description-text {
+		padding-left: 0;
+	}
 }
 
 .logo {

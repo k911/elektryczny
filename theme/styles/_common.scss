@@ -285,6 +285,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	
 	#site-description-text {
 		display: inline-block;
+		padding-left: 1.25em;
 		height: 96px;
 	}
 	
@@ -306,7 +307,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 		text-align: center;
 	}
 
-	@if $show-forum-title == false {
+	@if $show-site-title == false {
 		h1, span {
 			display: none;
 		}
@@ -329,7 +330,6 @@ $nav-alert-font-size:		9px !default;
 .navbar {
 	@include section;
 	padding: 0 9px;
-	clear: both;
 
 	&.tabbed, &.secondary {
 		@include section-empty;
@@ -391,6 +391,10 @@ $nav-alert-font-size:		9px !default;
 		+ .nav-breadcrumbs {
 			margin-top: 0;
 		}
+	}
+	
+	&.nav-breadcrumbs {
+		padding: 0 0.6em;
 	}
 
 	li.small-icon > a {
@@ -876,6 +880,40 @@ $nav-alert-font-size:		9px !default;
 			}
 		}
 	}
+}
+
+div.forum-info {
+	padding: 1em .5em;
+	div.forum-title-group {
+		padding: 0 1em;
+		margin-bottom: .5em;
+		border-left-width: .3em;
+		border-left-style: solid;
+		h2.forum-title {
+			margin: 0;
+			padding-bottom: .25em;
+		}
+		p.forum-mods {
+			margin: 0;
+		}
+	}
+	p.forum-desc {
+		padding: .5em 1.3em 0 1.3em;
+		margin: 0;
+	}
+}
+
+$rules-font-size:	$font-size !default;
+
+div.rules {
+	margin-bottom: 10px;
+	font-size: $rules-font-size;
+	padding: .5em 1.8em;
+	border-radius: $border-radius;
+}
+
+div.rules ul, div.rules ol {
+	margin-left: 20px;
 }
 
 .forabg {
@@ -1776,19 +1814,6 @@ $pagination-link-line-height:		$font-size !default;
 .error {
 	font-weight: 500;
 	font-size: $font-size;
-}
-
-$rules-font-size:	$font-size !default;
-
-div.rules {
-	margin: 10px 0;
-	font-size: $rules-font-size;
-	padding: 5px 10px;
-	border-radius: $border-radius;
-}
-
-div.rules ul, div.rules ol {
-	margin-left: 20px;
 }
 
 $post-notice-font-size:		$font-size + 1px;

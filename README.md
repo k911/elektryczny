@@ -17,7 +17,7 @@ These instructions are for Unix operating systems
      git clone <our repo>
      sudo chmod 777 -R /opt/lampp`
 
- 6. Go to the localhost/phpbb -> Administration Control Panel -> customise -> styles -> details -> Elektryczny (active: Yes, Make default style: Yes)
+ 6. Go to the localhost/phpbb -> Administration Control Panel -> customise -> styles -> details -> elektryczny (active: Yes, Make default style: Yes)
 after this deactivate prosilver theme.
  7. Go to our repo type npm install.
 
