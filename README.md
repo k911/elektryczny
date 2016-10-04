@@ -5,7 +5,7 @@ theme created for private purposes
 
 <phpBB> - phpBB3 installation path (where file 'config.php' is located)
 
- ## Installation
+## Installation
 
 1. Clone this repository to:
 	`<phpBB>/styles/`
