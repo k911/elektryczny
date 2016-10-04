@@ -17,15 +17,16 @@ theme created for private purposes
 	and run
 	`nmp install`
 	
-optional - only when you want to edit this theme
+optional - only when you want to edit and compile this theme
 
 ## Edit
 
-0. You have to install npm
 1. You can find and edit SASS files in:
 	`<phpBB>/styles/elektryczny/theme/styles/`
 	
 ## Compile
+
+0. You have to make step 3 from `Installation` in case to use bellow sass compilers
 
 #### Node-sass
 
