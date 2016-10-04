@@ -26,7 +26,7 @@ optional - only when you want to edit and compile this theme
 	
 ## Compile
 
-0. You have to make step 3 from `Installation` in case to use bellow sass compilers
+0. You have to make step 3 from [Installation](https://github.com/k911/elektryczny#installation) in case to use bellow sass compilers
 
 #### Node-sass
 
