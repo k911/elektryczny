@@ -3,41 +3,34 @@
   "version": "1.0.0-beta3",
   "description": "phpBB forum theme - http://elektryczny.tk/forum",
   "main": "gulpfile.js",
-  "scripts": {
-    "compile-sass": "node-sass --include-path theme/styles theme/stylesheet.scss theme/stylesheet.css",
-	"compile-sass-print": "node-sass --include-path theme/styles theme/print.scss theme/print.css"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/k911/elektryczny.git"
+    "url": "git+https://github.com/k911/elektryczny.git"
   },
   "keywords": [
     "theme",
     "scss",
     "PK"
   ],
-  "author": { 
-	"name" : "K911", 
-	"email" : "konradobal@gmail.com", 
-	"url" : "http://k911blog.tk/"
-  },
+  "author": "K911 <konradobal@gmail.com> (http://k911blog.tk/)",
   "contributors": [
-	  { 
-		"name" : "FieryCod",
-		"email": "kwcharllie379@gmail.com",
-		"url": "https://fierycod.github.io/homepage/"
-	  }
+    "FieryCod <kwcharllie379@gmail.com> (https://fierycod.github.io/homepage/)"
   ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/k911/elektryczny/issues",
-	"email": "admin@elektryczny.tk"
+    "email": "admin@elektryczny.tk"
   },
   "homepage": "http://elektryczny.tk/forum",
+  "dependencies": {
+    "mdi": "1.7.22"
+  },
   "devDependencies": {
-	"node-sass": "^3.10.1",
     "gulp": "^3.9.1",
-    "gulp-livereload": "^3.8.1",
-    "gulp-sass": "^2.3.2"
+    "gulp-clean": "^0.3.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0"
   }
 }
