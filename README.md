@@ -3,7 +3,7 @@
 phpbb3 theme fork
 theme created for private purposes
 
-<phpBB> - phpBB3 installation path (where file 'config.php' is located)
+`<phpBB>` phpBB3 installation path (where file 'config.php' is located)
 
 ## Installation
 
@@ -29,11 +29,11 @@ theme created for private purposes
 - You can use your private sass compiler to compile *.scss files in 
 	`<phpBB>/styles/elektryczny/theme/`
 - Or use previously defined gulp task
-	1. Open cmd at directory
+	- Open cmd at directory
 		`<phpBB>/styles/elektryczny/`
-	2. Run `gulp compile-sass` to compile each *.scss files
+	- Run `gulp compile-sass` to compile each *.scss files
 - You can also turn on 'auto-compilation
-	1. Open cmd at directory
+	- Open cmd at directory
 		`<phpBB>/styles/elektryczny/`
-	2. Run `gulp` or `gulp compile-sass:watch`
-	3. ..and you have turned on auto-compilation until you terminate cmd process
+	- Run `gulp` or `gulp compile-sass:watch`
+	- ..and you have turned on auto-compilation until you terminate cmd process
