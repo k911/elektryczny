@@ -11,34 +11,29 @@ theme created for private purposes
 	`<phpBB>/styles/`
 	so your path to stylesheet.css (main css file) should look like:
 	`<phpBB>/styles/elektryczny/theme/stylesheet.css`
-2. Theme is precopiled, and ready to use.
-3. (optional) Open cmd at directory
+2. Open cmd at directory
 	`<phpBB>/styles/elektryczny/` 
-	and run
+3. Run
 	`nmp install`
-	
-optional - only when you want to edit and compile this theme
+4. Then
+	`gulp init`
+5. Theme is ready to use.
 
 ## Edit
 
-1. You can find and edit SASS files in:
+- You can find and edit SASS files in:
 	`<phpBB>/styles/elektryczny/theme/styles/`
 	
 ## Compile
 
-0. You have to make step 3 from [Installation](https://github.com/k911/elektryczny#installation) in case to use bellow sass compilers
-
-#### Node-sass
-
-1. Open cmd at directory
-	`<phpBB>/styles/elektryczny/`
-2. Run script 
-	`npm run compile-sass` to compile stylesheet.scss
-	`npm run compile-sass-print` to compile print.scss
-
-#### Gulp (TODO)
-
-1. Open cmd at directory 
-	`<phpBB>/styles/elektryczny/`
-2. Run script 
-	`sudo gulp` to compile
+- You can use your private sass compiler to compile *.scss files in 
+	`<phpBB>/styles/elektryczny/theme/`
+- Or use previously defined gulp task
+	1. Open cmd at directory
+		`<phpBB>/styles/elektryczny/`
+	2. Run `gulp compile-sass` to compile each *.scss files
+- You can also turn on 'auto-compilation
+	1. Open cmd at directory
+		`<phpBB>/styles/elektryczny/`
+	2. Run `gulp` or `gulp compile-sass:watch`
+	3. ..and you have turned on auto-compilation until you terminate cmd process
