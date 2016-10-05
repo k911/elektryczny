@@ -14,7 +14,7 @@ theme created for private purposes
 2. Open cmd at directory
 	`<phpBB>/styles/elektryczny/` 
 3. Run
-	`nmp install`
+	`npm install`
 4. Then
 	`gulp init`
 5. Theme is ready to use.
