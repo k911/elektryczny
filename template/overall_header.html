@@ -40,7 +40,6 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(wf, s);
   })(); </script>
-	<link rel="stylesheet" href="//cdn.materialdesignicons.com/1.4.57/css/materialdesignicons.min.css">
 <!-- ELSE -->
 <script type="text/javascript">
   WebFontConfig = {
@@ -54,7 +53,6 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(wf, s);
   })(); </script>
-	<link rel="stylesheet" href="{T_THEME_PATH}/fonts/mdi-1.4.57/css/materialdesignicons.min.css">
 <!-- ENDIF -->
 
 <link href="{T_STYLESHEET_LINK}" rel="stylesheet">
@@ -106,16 +104,14 @@
 					<!-- EVENT overall_header_searchbox_before -->
 					<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
 					<!-- DEFINE $SEARCH_BOX -->
-					<div id="search-box" class="search-box search-header" role="search">
-						<form action="{U_SEARCH}" method="get" id="search">
-						<fieldset>
+					<form action="{U_SEARCH}" method="get" id="search">
+						<div id="search-box" class="search-box search-header" role="search">
 							<input name="keywords" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search tiny" size="20" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
 							<button class="button icon-button search-icon" type="submit" title="{L_SEARCH}">{L_SEARCH}</button>
 							<a href="{U_SEARCH}" class="button icon-button search-adv-icon" title="{L_SEARCH_ADV}">{L_SEARCH_ADV}</a>
 							{S_SEARCH_HIDDEN_FIELDS}
-						</fieldset>
-						</form>
-					</div>
+						</div>
+					</form>
 					<!-- ENDDEFINE -->
 					<!-- IF $SEARCH_IN_NAVBAR == 0 -->{$SEARCH_BOX}<!-- ENDIF -->
 					<!-- ENDIF -->
@@ -141,13 +137,15 @@
 
 	<a id="start_here" class="anchor"></a>
 	<div id="page-body" role="main">
-		<!-- IF $CARD_BREADCRUMBS != 1 -->{$BREADCRUMBS}<!-- ENDIF -->
+		<!-- IF not $ENABLE_FORUM_INFO -->
+		{$BREADCRUMBS}
 		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
 		<div id="information" class="rules">
 			<div class="inner">
 				<strong>{L_INFORMATION}{L_COLON}</strong> {L_BOARD_DISABLED}
 			</div>
 		</div>
+		<!-- ENDIF -->
 		<!-- ENDIF -->
 
 		<!-- EVENT overall_header_content_before -->

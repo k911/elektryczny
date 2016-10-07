@@ -1,0 +1,20 @@
+/** 
+ * EXTERNAL IMPORTS
+ */
+
+// TODO: gulp -> copyfiles from node_modules/mdi/fonts/.. to theme/fonts
+$mdi-font-path: 	"fonts";
+@import "../node_modules/mdi/scss/materialdesignicons";
+ 
+/** 
+ * INTERNAL IMPORTS
+ */
+
+// stylesheet variables
+@import "styles/variables";
+
+// stylesheet functions
+@import "styles/functions";
+
+// mixins 
+@import "styles/mixins";

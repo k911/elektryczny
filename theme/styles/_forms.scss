@@ -31,8 +31,8 @@ select {
 	font-size: $input-font-size;
 }
 
-select:focus {
-	outline-style: none;
+select:focus, input:focus, input:hover, select:hover, button:focus, button:hover {
+	outline: none !important;
 }
 
 option {
@@ -272,18 +272,15 @@ fieldset.submit-buttons input {
 // Input field styles
 // ----------------------------------------
 .inputbox {
-	border: 1px solid transparent;
-	padding: 2px;
-	border-radius: $input-border-radius;
+	border-width: 0;
 	-webkit-appearance: none;
 }
 
 .inputbox:hover, .inputbox:focus {
-	border: 1px solid transparent;
 	outline-style: none;
 }
 
-input.inputbox	{ width: 85%; }
+input.inputbox	{ width: 100%; }
 input.medium	{ width: 50%; }
 input.narrow	{ width: 25%; }
 input.tiny	{ width: 150px; }
@@ -379,87 +376,29 @@ input.button1:focus, input.button2:focus, button.button2:focus, input.button3:fo
 }
 
 // Topic and forum Search
+
 .search-box {
-	float: left;
-}
-
-.search-box .inputbox {
-	background-image: none;
-	border-right-width: 0;
-	border-radius: $big-button-border-radius 0 0 $big-button-border-radius;
-	float: left;
-	height: $button-outer-height;
-	padding: 3px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	.rtl & {
-		border-radius: 0 $big-button-border-radius $big-button-border-radius 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	
+	.inputbox {
+		height: $button-height;
 	}
-}
-
-.search-box button {
-	float: left;
-}
-
-.search-box button.search-icon {
-	border-radius: 0;
-	font-size: 0;
-	height: $button-outer-height;
-	margin: 0;
-	padding: 3px 5px;
-}
-
-.search-box a.button {
-	border-left-width: 0;
-	border-radius: 0 $big-button-border-radius $big-button-border-radius 0;
-	font-size: 0;
-	margin: 0;
-	padding: 2px 5px 2px 3px;
-	.rtl & {
-		border-radius: $big-button-border-radius 0 0 $big-button-border-radius;
+	input {
+		height: $button-height;
+		outline: none;
 	}
 }
 
 // Search box (header)
 // ---------------------------------------------
-.search-header {
-	border-radius: $big-button-border-radius;
-	display: block;
+.search-header {	
+	justify-content: flex-end;
+	
 	.navbar.with-search & {
 		margin-top: 1px;
 	}
-	@if $tabbed-navigation {
-		.navbar.not-static + .navbar.with-search & {
-			&, & a.button, & .inputbox {
-				border-radius: 0;
-			}
-			margin-right: -3px;
-			.rtl & {
-				margin-right: 0;
-				margin-left: -3px;
-			}
-		}
-	}
-	.headerbar & {
-		position: absolute;
-		top: 50%;
-		right: 5px;
-		margin-top: -13px;
-	}
-}
-
-.search-header .inputbox { border: 0; }
-
-.search-header button {
-	border-top: 0;
-	border-bottom: 0;
-}
-
-.search-header a.button {
-	border: 0;
-	border-left: 1px;
-	padding: 3px 5px 3px 4px;
 }
 
 .full { width: 95%; }

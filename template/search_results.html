@@ -19,15 +19,13 @@
 	<div class="action-bar top">
 
 	<!-- IF TOTAL_MATCHES > 0 -->
+	<form method="post" action="{S_SEARCH_ACTION}">
 		<div class="search-box" role="search">
-			<form method="post" action="{S_SEARCH_ACTION}">
-			<fieldset>
-				<input class="inputbox search tiny" type="search" name="add_keywords" id="add_keywords" value="" placeholder="{L_SEARCH_IN_RESULTS}" />
-				<button class="button icon-button search-icon" type="submit" title="{L_SEARCH}">{L_SEARCH}</button>
-				<a href="{U_SEARCH}" class="button icon-button search-adv-icon" title="{L_SEARCH_ADV}">{L_SEARCH_ADV}</a>
-			</fieldset>
-			</form>
+			<input class="inputbox search tiny" type="search" name="add_keywords" id="add_keywords" value="" placeholder="{L_SEARCH_IN_RESULTS}" />
+			<button class="button icon-button search-icon" type="submit" title="{L_SEARCH}">{L_SEARCH}</button>
+			<a href="{U_SEARCH}" class="button icon-button search-adv-icon" title="{L_SEARCH_ADV}">{L_SEARCH_ADV}</a>
 		</div>
+	</form>
 	<!-- ENDIF -->
 
 		<!-- EVENT search_results_searchbox_after -->

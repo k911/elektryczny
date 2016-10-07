@@ -1,13 +1,13 @@
 /**
- * Main stylesheet file
- * -- stylesheet.css replacement --
- * This file requires SASS compiler.
+ *	Print stylesheet file
+ *	-- print.css replacement --
+ *	This file requires SASS compiler.
  */
  
 // Default imports
 @import "imports";
 
-// - Layouts
+// layout
 @import "styles/common";
 @import "styles/links";
 @import "styles/content";
@@ -18,15 +18,13 @@
 @import "styles/colours";
 @import "styles/mdl-badge";
 
+// custom fixes
+@import "styles/custom";
+
 // media queries
 @media screen and (max-width: 700px) {
 	@import "styles/responsive";
 }
 
-// custom fixes
-@import "styles/custom";
-
-// print mode 'dynamically'
-@media print {
-	@import "styles/print";
-}
+// print mode as default
+@import "styles/print";

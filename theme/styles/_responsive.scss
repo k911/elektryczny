@@ -72,7 +72,7 @@ body {
 	height: auto !important;
 }
 
-#site-description p, .headerbar .search-header {
+#site-description p {
 	display: none;
 }
 
@@ -90,6 +90,17 @@ body {
 	overflow: hidden;
 	text-decoration: none;
 	text-align: center;
+}
+
+.search-header {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.search-box {
+	input.inputbox.tiny {
+		width: 100%;
+	}
 }
 
 // .topiclist lists
@@ -378,12 +389,6 @@ fieldset.quick-login label[for="autologin"] {
 		display: inline-block !important;
 		margin-top: 10px;
 		vertical-align: middle;
-	}
-}
-
-@media (max-width: 430px) {
-	.section-viewtopic .search-box .inputbox {
-		width: 110px;
 	}
 }
 

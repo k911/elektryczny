@@ -1,3 +1,10 @@
+/**
+Some REGEX Replacement for old icons
+Search:
+	content:[\s\t]['"]([\\a-zA-Z0-9]{5})['"];[\s\t]// icon: mdi-([a-z-]+)
+Replace:
+	content: mdi\("\2"\);\t// icon: mdi-\2
+*/
 // Blank Material Design Icon replacement
 %imageset-glyph {
 	position: relative;
@@ -93,20 +100,20 @@ span.imageset {
 // 		height: 13px;
 // 		font-size: 11px;
 // 		line-height: 13px;
-// 		content: '\f152';	// icon: mdi-arrow-right-bold-circle-outline
+// 		content: mdi("arrow-right-bold-circle-outline");	// icon: mdi-arrow-right-bold-circle-outline
 // 		text-align: left;
 // 	}
 // 	.rtl &:after {
-// 		content: '\f14d';	// icon: mdi-arrow-left-bold-circle-outline
+// 		content: mdi("arrow-left-bold-circle-outline");	// icon: mdi-arrow-left-bold-circle-outline
 // 	}
 // }
 // .imageset.icon_post_target_unread {
 // 	@extend .imageset.icon_post_target;
 // 	&:after {
-// 		content: '\f151';	// icon: mdi-arrow-right-bold-circle
+// 		content: mdi("arrow-right-bold-circle");	// icon: mdi-arrow-right-bold-circle
 // 	}
 // 	.rtl &:after {
-// 		content: '\f14c';	// icon: mdi-arrow-left-bold-circle
+// 		content: mdi("arrow-left-bold-circle");	// icon: mdi-arrow-left-bold-circle
 // 	}
 // }
 .imageset.icon_post_target, .imageset.icon_post_target_unread {
@@ -118,14 +125,14 @@ span.imageset {
 	@extend %imageset-mdi;
 	@extend %imageset-12;
 	&:after {
-		content: '\f15d';	// icon: mdi-attachment
+		content: mdi("attachment");	// icon: mdi-attachment
 	}
 }
 .imageset.icon_topic_latest {
 	@extend %imageset-mdi;
 	@extend %imageset-arrow;
 	&:after {
-		content: '\f150';	// icon: mdi-arrow-right-bold
+		content: mdi("arrow-right-bold");	// icon: mdi-arrow-right-bold
 	}
 }
 .imageset.icon_topic_newest {
@@ -137,7 +144,7 @@ span.imageset {
 	@extend %imageset-16;
 	@extend %imageset-secondary-color;
 	&:after {
-		content: '\f125';	// icon: mdi-alert
+		content: mdi("alert");	// icon: mdi-alert
 	}
 }
 .imageset.icon_topic_deleted {
@@ -145,7 +152,7 @@ span.imageset {
 	@extend %imageset-16;
 	@extend %imageset-secondary-color;
 	&:after {
-		content: '\f252';	// icon: mdi-close-octagon
+		content: mdi("close-octagon");	// icon: mdi-close-octagon
 	}
 }
 .imageset.icon_topic_unapproved {
@@ -153,14 +160,14 @@ span.imageset {
 	@extend %imageset-16;
 	@extend %imageset-secondary-color;
 	&:after {
-		content: '\f1a3';	// icon: mdi-block-helper
+		content: mdi("block-helper");	// icon: mdi-block-helper
 	}
 }
 .imageset.icon_topic_poll {
 	@extend %imageset-mdi;
 	@extend %imageset-12;
 	&:after {
-		content: '\f50e';	// icon: mdi-poll
+		content: mdi("poll");	// icon: mdi-poll
 	}
 }
 
@@ -168,13 +175,13 @@ span.imageset {
 	@extend %imageset-mdi;
 	@extend %imageset-12;
 	&:after {
-		content: '\f46c';	// icon: mdi-more
+		content: mdi("more");	// icon: mdi-more
 	}
 	&:hover:after {
-		content: '\f236';	// icon: mdi-chevron-down
+		content: mdi("chevron-down");	// icon: mdi-chevron-down
 	}
 	.dropdown-up &:hover:after {
-		content: '\f239';	// icon: mdi-chevron-up
+		content: mdi("chevron-up");	// icon: mdi-chevron-up
 	}
 }
 
@@ -217,7 +224,7 @@ span.imageset {
 %icon-search-old {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f43b';	// icon: mdi-magnify
+		content: mdi("magnify");	// icon: mdi-magnify
 	}
 }
 
@@ -232,49 +239,49 @@ span.imageset {
 .icon-acp {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f572';	// icon: mdi-security
+		content: mdi("security");	// icon: mdi-security
 	}
 }
 .icon-bookmark {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f1b6';	// icon: mdi-bookmark
+		content: mdi("bookmark");	// icon: mdi-bookmark
 	}
 }
 .icon-bump {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f634';	// icon: mdi-twitter-retweet
+		content: mdi("reload");	// icon: mdi-reload
 	}
 }
 .icon-contact {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f284';	// icon: mdi-contact-mail
+		content: mdi("contact-mail");	// icon: mdi-contact-mail
 	}
 }
 .icon-delete-cookies {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f2b5';	//icon: mdi-delete
+		content: mdi("delete-forever");	// icon: mdi-delete-forever
 	}
 }
 .icon-download {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f2cf';	// icon: mdi-download
+		content: mdi("download");	// icon: mdi-download
 	}
 }
 .icon-faq {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f3ef';	// icon: mdi-information
+		content: mdi("help-circle");	// icon: mdi-help-circle
 	}
 }
 .icon-home {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f3d1';	// icon: mdi-home-variant
+		content: mdi("home-variant");	// icon: mdi-home-variant
 	}
 	&.breadcrumbs:after {
 		text-align: left;
@@ -283,73 +290,74 @@ span.imageset {
 .icon-logout {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f435';	// icon: mdi-logout
+		content: mdi("logout-variant");	// icon: mdi-logout-variant
 	}
 }
 .icon-login {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f434';	// icon: mdi-login
+		content: mdi("login-variant");	// icon: mdi-login-variant
 	}
 }
 .icon-mark {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f222';	// icon: mdi-check
+		content: mdi("check");	// icon: mdi-check
 	}
 }
 .icon-mcp {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f390';	// icon: mdi-gavel
+		content: mdi("gavel");	// icon: mdi-gavel
 	}
 }
 .icon-members {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f10d';	// icon: mdi-account-multiple
+		content: mdi("account-multiple");	// icon: mdi-account-multiple
 	}
 }
 .icon-notification {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f193';	// icon: mdi-bell-outline
+		content: mdi("bell-outline");	// icon: mdi-bell-outline
 	}
 	&.non-zero:after {
-		content: '\f191';	// icon: mdi-bell
+		content: mdi("bell");	// icon: mdi-bell
 	}
 }
 .icon-pages {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f285';	// icon: mdi-content-copy
+		// todo: check usage
+		content: mdi("content-copy");	// icon: mdi-content-copy
 	}
 }
 .icon-pm {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f457';	// icon: mdi-message-outline
+		content: mdi("message-outline");	// icon: mdi-message-outline
 	}
 	&.non-zero:after {
-		content: '\f453';	// icon: mdi-message
+		content: mdi("message-text");	// icon: mdi-message-text
 	}
 }
 .icon-print {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f519';	// icon: mdi-printer
+		content: mdi("printer");	// icon: mdi-printer
 	}
 }
 .icon-profile {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f103';	// icon: mdi-account
+		content: mdi("face");	// icon: mdi-face
 	}
 }
 .icon-register{
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f113';	// icon: mdi-account-plus
+		content: mdi("account-plus");	// icon: mdi-account-plus
 	}
 }
 .icon-search, .responsive-search a	{ @extend %icon-search-old; }
@@ -362,69 +370,55 @@ span.imageset {
 .icon-sendemail {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f2e3';	// icon: mdi-email
+		content: mdi("email");	// icon: mdi-email
 	}
 }
 .icon-subscribe {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f229';	// icon: mdi-checkbox-marked-circle
-	}
-}
-.icon-team {
-	@extend %icon-image-mdi;
-	&:after {
-		content: '\f6a2';	// icon: mdi-worker
-	}
-}
-.icon-ucp {
-	@extend %icon-image-mdi;
-	&:after {
-		content: '\f582';	// icon: mdi-settings
+		content: mdi("checkbox-marked-circle");	// icon: mdi-checkbox-marked-circle
 	}
 }
 .icon-unsubscribe {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f22a';	// icon: mdi-checkbox-marked-circle-outline
+		content: mdi("checkbox-marked-circle-outline");	// icon: mdi-checkbox-marked-circle-outline
+	}
+}
+.icon-team {
+	@extend %icon-image-mdi;
+	&:after {
+		content: mdi("worker");	// icon: mdi-worker
+	}
+}
+.icon-ucp {
+	@extend %icon-image-mdi;
+	&:after {
+		content: mdi("account-settings-variant");	// icon: mdi-account-settings-variant
 	}
 }
 .icon-new-posts {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f277';	// icon: mdi-comment-multiple-outline // no new posts icon
+		// todo: change in future
+		content: mdi("comment-multiple-outline");	// icon: mdi-comment-multiple-outline
 	}
 }
 .icon-forums {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f381';	// icon: mdi-forum
+		content: mdi("forum");	// icon: mdi-forum
 	}
 }
 .icon-chat {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f45b';	// icon: mdi-message-text
+		content: mdi("message-text");	// icon: mdi-message-text
 	}
 }
 .icon-time {
 	@extend %icon-image-mdi;
 	&:after {
-		content: '\f246';	// icon: mdi-clock
-	}
-}
-
-// Thanks for posts mod
-.icon-thanks {
-	@extend %icon-image-mdi;
-	&:after {
-		content: '\f601';	// icon: mdi-thumb-up
-	}
-}
-
-.icon-thanks_toplist {
-	@extend %icon-image-mdi;
-	&:after {
-		content: '\f5bd';	// icon: mdi-star-circle
+		content: mdi("clock");	// icon: mdi-clock
 	}
 }

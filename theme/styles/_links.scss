@@ -38,7 +38,7 @@ a:hover	{ text-decoration: underline; }
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	line-height: 50px;
+	line-height: 60px;
 	font-size: 16px;
 }
 
@@ -140,7 +140,7 @@ $top-link-font-size:		ceil(($font-size + 1px) / 2) * 2 !default;
 $top-link-line-height:		$top-link-font-size + 2px !default;
 
 a.top:after, a.top2:after {
-	content: '\f239';	// icon: mdi-chevron-up
+	content: mdi("chevron-up");	// icon: mdi-chevron-up
 	font-family: "Material Design Icons";
 	position: absolute;
 	top: 50%;
@@ -181,7 +181,7 @@ a.top:after, a.top2:after {
 a.arrow-up {
 	@extend %arrow;
 	&:after {
-		content: '\f239';	// icon: mdi-chevron-up
+		content: mdi("chevron-up");	// icon: mdi-chevron-up
 		left: 0;
 	}
 	.rtl &:after {
@@ -191,7 +191,7 @@ a.arrow-up {
 a.arrow-down {
 	@extend %arrow;
 	&:after {
-		content: '\f236';	// icon: mdi-chevron-down
+		content: mdi("chevron-down");	// icon: mdi-chevron-down
 		right: 0;
 	}
 	.rtl &:after {
@@ -201,14 +201,14 @@ a.arrow-down {
 a.arrow-left, .rtl a.arrow-right {
 	@extend %arrow;
 	&:after {
-		content: '\f237';	// icon: mdi-chevron-left
+		content: mdi("chevron-left");	// icon: mdi-chevron-left
 		left: 0;
 	}
 }
 a.arrow-right, .rtl a.arrow-left {
 	@extend %arrow;
 	&:after {
-		content: "\f238";	// icon: mdi-chevron-right
+		content: mdi("chevron-right");	// icon: mdi-chevron-right
 		right: 0;
 	}
 }
@@ -264,7 +264,7 @@ a.feed-icon-forum {
 }
 
 a.feed-icon-forum:after {
-	content: '\f55b';	// icon: mdi-rss-box
+	content: mdi("rss-box");	// icon: mdi-rss-box
 	position: absolute;
 	left: 0;
 	right: 0;

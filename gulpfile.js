@@ -15,7 +15,7 @@ var settings = {
     sassConfig: {
         outputStyle: 'compressed' // ['nested', 'expanded', 'compact', 'compressed']
     },
-	defaultTasks: ['info', 'compile-sass:watch']
+	defaultTasks: ['info', 'compile-sass', 'compile-sass:watch']
 };
 
 /**

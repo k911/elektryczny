@@ -26,9 +26,6 @@ h2 {
 
 h3 {
 	color: $stats-title-color;
-	.post & {
-		color: $block-title-color;
-	}
 	a {
 		color: inherit;
 		&:hover {
@@ -45,50 +42,15 @@ hr {
 // Search box
 // ---------------------------------------------
 
-.search-box .inputbox,
-.search-box .inputbox:hover,
-.search-box .inputbox:focus,
-.search-box .button:hover {
-	border-color: $search-box-border;
-}
-
-.search-box .button {
-	&, &:hover {
-		background-color: $block-background !important;
-		border-color: $search-box-border !important;
-	}
-	&, &:before, &:after {
-		color: $primary-color;
-	}
-	&:hover, &:hover:before, &:hover:after {
-		color: $secondary-color !important;
-	}
-}
-
-.search-header {
-	box-shadow: $search-box-shadow;
-	.navbar.with-search & {
-		box-shadow: none;
-	}
-	.inputbox, .button {
-		background: $block-background !important;
-		border-color: $block-background !important;
-	}
-	.navbar.with-search & .button {
-		&, &:before, &:after {
-			color: $link-color;
-		}
-	}
-	.inputbox:hover, .inputbox:focus {
-		background-color: $block-background3 !important;
-		color: $bold-text-color !important;
-		border-color: $block-background !important;
-	}
-	.button:hover, .button:focus {
-		&, &:before, &:after {
-			background-color: $secondary-color !important;
-			color: #fff !important;
-			border-color: $secondary-color !important;
+.search-box {
+	.button, .button:after, .button:before {
+		border-color: $search-box-button-bg;
+		background-color: $search-box-button-bg;
+		color: $search-box-button-color;
+		&:hover {
+			border-color: $search-box-button-bg-hover;
+			background-color: $search-box-button-bg-hover;
+			color: $search-box-button-color-hover;
 		}
 	}
 }
@@ -111,6 +73,7 @@ hr {
 }
 
 .navbar {
+	background-color: $block-background;
 	&.secondary {
 		color: $link-color;
 		> ul > li:hover,
@@ -168,60 +131,6 @@ hr {
 			}
 		}
 	}
-
-	// Tabbed navigation
-	@if $tabbed-navigation {
-		&.tabbed.not-static {
-			.nav-tabs {
-				li.tab {
-					// Tabs layout
-					color: $link-color;
-					background-color: $block-background;
-
-					&.selected {
-						@include tabbed-nav-layout-all {
-							background-color: $primary-color;
-							color: $overlay-color;
-						}
-					}
-
-					&:hover {
-						@include tabbed-nav-layout-all {
-							background-color: $secondary-color;
-							color: $overlay-color;
-						}
-					}
-
-					&.dropdown-visible {
-						@include tabbed-nav-layout-all {
-							background-color: $primary-color;
-							color: $overlay-color;
-						}
-					}
-				}
-			}
-
-			// Second row
-			+ .navbar.secondary {
-				background: $primary-color;
-				color: $overlay-color;
-
-				> ul > li {
-					&, &:after, &:before {
-						color: $overlay-color;
-					}
-				}
-
-				> ul > li:hover,
-				> ul > li.dropdown-visible {
-					&, &:after, &:before {
-						color: $overlay-color;
-					}
-					background: none;
-				}
-			}
-		}
-	}
 }
 
 div.forum-info {
@@ -255,12 +164,18 @@ div.rules {
 	color: $text-color;
 }
 
-.post:target .content {
-	color: $bold-text-color;
-}
-
-.post:target h3 a {
-	color: $bold-text-color;
+.post {
+	h3 {
+		color: $block-title-color;
+	}
+	&:target {
+		h3 a {
+			color: $bold-text-color;
+		}
+		.content {
+			color: $bold-text-color;
+		}
+	}
 }
 
 .bg1 {
@@ -372,11 +287,6 @@ table.table1 tbody tr {
 	border-color: $block-inner-border;
 }
 
-table.table1 tbody tr:hover, table.table1 tbody tr.hover {
-	background-color: $block-background3;
-	color: $bold-text-color;
-}
-
 table.table1 td {
 	color: $text-color;
 }
@@ -481,19 +391,19 @@ p.post-notice {
 
 p.post-notice.deleted:before {
 	@extend %post-notice;
-	content: '\f252';	// icon: mdi-close-octagon
+	content: mdi("close-octagon");	// icon: mdi-close-octagon
 	color: $secondary-color;
 }
 
 p.post-notice.unapproved:before {
 	@extend %post-notice;
-	content: '\f1a3';	// icon: mdi-block-helper
+	content: mdi("block-helper");	// icon: mdi-block-helper
 	color: $secondary-color;
 }
 
 p.post-notice.reported:before, p.post-notice.error:before {
 	@extend %post-notice;
-	content: '\f128';	// icon: mdi-alert-octagon
+	content: mdi("alert-octagon");	// icon: mdi-alert-octagon
 	color: $secondary-color;
 }
 
@@ -511,7 +421,7 @@ a { color: $link-color; }
 a:hover	{ color: $link-hover-color; }
 
 a.time { 
-	color: $faint-color; 
+	color: $muted-color; 
 	&:hover {
 		color: $link-hover-color;
 	}
@@ -871,31 +781,27 @@ dd.profile-warnings {
 }
 
 .dropdown-select {
-	.buttons > & {
-		color: $muted-color;
+	&:after {
+		border-color: mix($button-bg, $content-background, 60%);
 	}
+	&:hover, .dropdown-container.dropdown-visible & {
+		background-color: $button-bg-hover;
+		color: $button-text-hover;
+	}
+	
 }
-
-.dropdown-select:after { 
-	border-color: mix($button-bg, $content-background, 60%);
-}
-.dropdown-select:hover	{ 
-	border-color: $button-border; 
-}
-
 .dropdown-select:hover:after, .dropdown-visible .dropdown-select:after, .nojs .dropdown-container:hover .dropdown-select:after	{ 
-	border-color: mix($secondary-color, $content-background, 90%);
+	border-color: mix($button-bg-hover, $content-background, 50%);
 }
-
 .dropdown-visible .dropdown-select, .dropdown-visible .dropdown-select:hover, .nojs .dropdown-container:hover .dropdown-select,
 .buttons > .button:hover,
 .button:hover, .dropdown-visible .dropdown-select, .nojs .dropdown-container:hover .dropdown-select {
-	border-color: $secondary-color;
-	background-color: $secondary-color;
-	color: $overlay-color;
+	border-color: $button-bg-hover;
+	background-color: $button-bg-hover;
+	color: $button-text-hover;
 
 	&:after, &:before {
-		color: $overlay-color !important;
+		color: $button-icon-hover !important;
 	}
 }
 
@@ -1550,4 +1456,9 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 	&:after {
 		color: desaturate(mix($primary-color, $block-background, 80%), 30%);
 	}
+}
+
+.big-column {
+	font-variant: small-caps;
+	background-color: $primary-color-content;
 }

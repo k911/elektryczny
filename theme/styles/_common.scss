@@ -36,7 +36,6 @@ blockquote, q {
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
 	content: none;
 }
 table {
@@ -160,6 +159,16 @@ p.jumpbox-return {
 	margin-top: 1em;
 }
 
+div.jumpbox {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	
+	#jumpbox {
+		margin-left: auto;
+	}
+}
+
 b, strong {
 	font-weight: 500;
 }
@@ -209,7 +218,6 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 
 @mixin page-width {
 	box-sizing: border-box;
-	margin: 0 auto;
 	max-width: $max-width;
 	min-width: 625px;
 	@if $max-width != none {
@@ -328,7 +336,6 @@ $nav-primary-glyph-margin:		0px - ($nav-primary-glyph-font-size  / 2) !default;
 $nav-alert-font-size:		9px !default;
 
 .navbar {
-	@include section;
 	padding: 0 9px;
 
 	&.tabbed, &.secondary {
@@ -448,7 +455,7 @@ $nav-alert-font-size:		9px !default;
 				position: relative;
 				&:before {
 					$nav-primary-font-size-toggle:	ceil($nav-primary-font-size * 2 / 3) !default;
-					content: '\f236';	// icon: mdi-chevron-down
+					content: mdi("chevron-down");	// icon: mdi-chevron-down
 					font-family: "Material Design Icons";
 					position: absolute;
 					right: calc(50% - #{$tab-padding-glyph-left/2});
@@ -571,7 +578,7 @@ $nav-alert-font-size:		9px !default;
 			@extend %glyph-only;
 			&:after {
 				@extend %glyph-mdi;
-				content: '\f44e';	// icon: mdi-menu
+				content: mdi("menu");	// icon: mdi-menu
 			}
 			@media (max-width: 550px) {
 				@extend %glyph-only-media;
@@ -588,7 +595,7 @@ $nav-alert-font-size:		9px !default;
 			}
 			&:after {
 				@extend %glyph-mdi;
-				content: '\f10d';	// icon: mdi-account-multiple
+				content: mdi("account-multiple");	// icon: mdi-account-multiple
 			}
 			@media (max-width: 550px) {
 				@extend %glyph-only-media;
@@ -600,7 +607,7 @@ $nav-alert-font-size:		9px !default;
 			@extend %glyph;
 			&:after {
 				@extend %glyph-mdi;
-				content: '\f270';	// icon: mdi-comment
+				content: mdi("comment");	// icon: mdi-comment
 			}
 			@media (max-width: 550px) {
 				@extend %glyph-only-media;
@@ -611,7 +618,7 @@ $nav-alert-font-size:		9px !default;
 			@extend %glyph-only;
 			&:after {
 				@extend %glyph-mdi;
-				content: '\f103';	// icon: mdi-account
+				content: mdi("account");	// icon: mdi-account
 				top: -1px; 			// icon fix
 			}
 			@media (max-width: 550px) {
@@ -624,7 +631,7 @@ $nav-alert-font-size:		9px !default;
 				@extend %glyph-only;
 				&:after {
 					@extend %glyph-mdi;
-					content: '\f453';	// icon: mdi-message
+					content: mdi("message-text");	// icon: mdi-message-text
 				}
 				@media (max-width: 550px) {
 					@extend %glyph-only-media;
@@ -640,7 +647,7 @@ $nav-alert-font-size:		9px !default;
 				@extend %glyph-only;
 				&:after {
 					@extend %glyph-mdi;
-					content: '\f191';	// icon: mdi-bell //TODO: (.active).click(): check mdi-bell-off
+					content: mdi("bell");	// icon: mdi-bell //TODO: (.active).click(): check mdi-bell-off
 				}
 				@media (max-width: 550px) {
 					@extend %glyph-only-media;
@@ -655,7 +662,7 @@ $nav-alert-font-size:		9px !default;
 			@extend %glyph-only;
 			&:after {
 				@extend %glyph-mdi;
-				content: '\f390';	// icon: mdi-gavel
+				content: mdi("gavel");	// icon: mdi-gavel
 				top: -1px;			// icon fix
 			}
 			@media (max-width: 550px) {
@@ -667,7 +674,7 @@ $nav-alert-font-size:		9px !default;
 			@extend %glyph-only;
 			&:after {
 				@extend %glyph-mdi;
-				content: '\f572';	// icon: mdi-security
+				content: mdi("security");	// icon: mdi-security
 			}
 			@media (max-width: 550px) {
 				@extend %glyph-only-media;
@@ -678,7 +685,8 @@ $nav-alert-font-size:		9px !default;
 			@extend %glyph-only;
 			&:after {
 				@extend %glyph-mdi;
-				content: '\f3ef';	// icon: mdi-information
+				content: mdi("help-circle");	// icon: mdi-help-circle
+				top: -1px;
 			}
 			@media (max-width: 550px) {
 				@extend %glyph-only-media;
@@ -689,7 +697,7 @@ $nav-alert-font-size:		9px !default;
 			@extend %glyph-only;
 			&:after {
 				@extend %glyph-mdi;
-				content: '\f435';	// icon: mdi-logout
+				content: mdi("logout-variant");	// icon: mdi-logout-variant
 			}
 			@media (max-width: 550px) {
 				@extend %glyph-only-media;
@@ -700,7 +708,7 @@ $nav-alert-font-size:		9px !default;
 			@extend %glyph-only;
 			&:after {
 				@extend %glyph-mdi;
-				content: '\f434';	// icon: mdi-login
+				content: mdi("login-variant");	// icon: mdi-login-variant
 			}
 			@media (max-width: 550px) {
 				@extend %glyph-only-media;
@@ -711,7 +719,7 @@ $nav-alert-font-size:		9px !default;
 			@extend %glyph-only;
 			&:after {
 				@extend %glyph-mdi;
-				content: '\f113';	// icon: mdi-account-plus
+				content: mdi("account-plus");	// icon: mdi-account-plus
 			}
 			@media (max-width: 550px) {
 				@extend %glyph-only-media;
@@ -722,7 +730,7 @@ $nav-alert-font-size:		9px !default;
 		.boardrules .nav-link {
 			&:after {
 				@extend %glyph-mdi;
-				content: '\f125';	// icon: mdi-alert
+				content: mdi("alert");	// icon: mdi-alert
 			}
 		}
 		.leftside .boardrules .nav-link {
@@ -738,7 +746,7 @@ $nav-alert-font-size:		9px !default;
 		.pages .nav-link {
 			&:after {
 				@extend %glyph-mdi;
-				content: '\f30e';	// icon: mdi-file-document
+				content: mdi("file-document");	// icon: mdi-file-document
 			}
 		}
 		.leftside .pages .nav-link {
@@ -751,96 +759,7 @@ $nav-alert-font-size:		9px !default;
 			@extend %glyph-only;
 		}
 	}
-
-	// Tabbed navigation
-	@if $tabbed-navigation {
-		&.tabbed.not-static {
-			@if $use-wrapper {
-				// Add spacing between top of wrapper and tabs on mobile devices
-				@media (max-width: 700px) {
-					#wrap > div:first-child > &:first-child:before {
-						content: '';
-						display: block;
-						height: 10px;
-					}
-				}
-			}
-			
-			// Primary navbar nav-tabs NOT FIXED (Sticked to the top)
-			.nav-tabs {
-				position: relative;
-				#quick-links {
-					margin: 0 3px;
-				}
-				li.tab {
-					// Tabs layout
-					margin: 0 3px;
-					padding: 0;
-					border-width: 0;
-					border-radius: 0;
-					text-shadow: none;
-
-					@media (max-width: 700px) {
-						margin: 0 2px;
-					}
-
-					// Link TODO: wtf is that
-					.nav-link.dropdown-toggle {
-						&:before {
-							display: none;
-							right: 2px;
-							.rtl & {
-								right: auto;
-								left: 2px;
-							}
-						}
-						&:hover:before {
-							display: block;
-						}
-					}
-
-					// Dropdown position
-					&.dropdown-right .dropdown {
-						left: -1px;
-					}
-
-					&.dropdown-left .dropdown {
-						right: -1px;
-					}
-
-					&.dropdown-down .dropdown {
-						top: ($tab-height - 1);
-					}
-
-					&.dropdown-up .dropdown {
-						bottom: ($tab-height - 1);
-					}
-				}
-
-				.rightside li.tab {
-					margin: 0 2px;
-				}
-			}
-
-			// Second row
-			+ .navbar.secondary {
-				border-width: 0;
-				border-radius: $border-radius;
-				font-size: $nav-secondary-font-size;
-				z-index: 2;
-				position: relative;
-				margin: 0 0 10px;
-				padding: 0 5px;
-
-				@media (max-width: 700px) {
-					border-radius: 0;
-					border-left-width: 0;
-					border-right-width: 0;
-				}
-			}
-		}
-	}
-
+	
 	// Static navigation (fixed to the top of page)
 	.inner.static {
 		position: fixed;
@@ -882,6 +801,11 @@ $nav-alert-font-size:		9px !default;
 	}
 }
 
+div.forum-info-group {
+	@include card($card-default);
+	margin-bottom: 10px;
+}
+
 div.forum-info {
 	padding: 1em .5em;
 	div.forum-title-group {
@@ -892,6 +816,9 @@ div.forum-info {
 		h2.forum-title {
 			margin: 0;
 			padding-bottom: .25em;
+			&:last-child {
+				padding: 0;
+			}
 		}
 		p.forum-mods {
 			margin: 0;
@@ -906,10 +833,12 @@ div.forum-info {
 $rules-font-size:	$font-size !default;
 
 div.rules {
-	margin-bottom: 10px;
 	font-size: $rules-font-size;
 	padding: .5em 1.8em;
 	border-radius: $border-radius;
+	&.rules-link a:hover {
+		text-decoration: underline;
+	}
 }
 
 div.rules ul, div.rules ol {
@@ -948,8 +877,6 @@ div.rules ul, div.rules ol {
 }
 
 .panel {
-	@include section;
-	
 	margin: 10px 0;
 
 	// UCP/MCP panel
@@ -978,11 +905,10 @@ $panel-heading-line-height:	$line-height !default;
 }
 
 .panel:not(.bg3) .inner {
-	padding: .75em .5em;
+	padding: 1em;
 }
 
 .post {
-	@include section;
 	padding: 0;
 	margin-bottom: 10px;
 	position: relative;
@@ -1059,7 +985,7 @@ ul.linklist li.responsive-menu a.responsive-menu-link {
 ul.linklist li.responsive-menu a.responsive-menu-link {
 	&:before {
 		font-family: "Material Design Icons";
-		content: '\f44e'; // icon: mdi-menu
+		content: mdi("menu");	// icon: mdi-menu
 		position: absolute;
 		left: 0;
 		top: 50%;
@@ -1102,7 +1028,7 @@ ul.linklist .dropdown-up .dropdown {
 // ----------------------------------------
 ul.linklist.bulletin > li:before {
 	display: inline-block;
-	content: "\2022";
+	content: "\2022";		// TODO: what is it?
 	font-size: inherit;
 	line-height: inherit;
 	padding-right: 4px;
@@ -1139,7 +1065,7 @@ ul.linklist.bulletin > li.no-bulletin:before {
 }
 
 .header-avatar span:after {
-	content: '\f236';	// icon: mdi-chevron-down
+	content: mdi("chevron-down");	// icon: mdi-chevron-down
 	font-family: "Material Design Icons";
 	display: inline-block;
 	font-size: 7px;
@@ -1314,7 +1240,7 @@ $dropdown-content-line-height:	$line-height !default;
 }
 
 .breadcrumbs .crumb:before {
-	content: "\f238";	// icon: mdi-chevron-right
+	content: mdi("chevron-right");	// icon: mdi-chevron-right
 	font-family: "Material Design Icons";
 	font-weight: normal;
 	position: absolute;
@@ -1329,7 +1255,7 @@ $dropdown-content-line-height:	$line-height !default;
 	.rtl & {
 		left: auto;
 		right: 1px;
-		content: '\f237';	// icon: mdi-chevron-left
+		content: mdi("chevron-left");	// icon: mdi-chevron-left
 	}
 }
 
@@ -1642,7 +1568,7 @@ $pagination-link-line-height:		$font-size !default;
 	font-weight: normal;
 	text-indent: 0;
 	font-family: "Material Design Icons";
-	content: '\f429';	// icon: mdi-link
+	content: mdi("link");	// icon: mdi-link
 }
 
 .pagination li.page-jump a:after {
@@ -1651,14 +1577,14 @@ $pagination-link-line-height:		$font-size !default;
 
 .rtl .pagination li.previous a:after,
 .pagination li.next a:after {
-	content: "\f238";	// icon: mdi-chevron-right
+	content: mdi("chevron-right");	// icon: mdi-chevron-right
 	right: 1px;
 	left: 3px;
 }
 
 .rtl .pagination li.next a:after,
 .pagination li.previous a:after {
-	content: '\f237';	// icon: mdi-chevron-left
+	content: mdi("chevron-left");	// icon: mdi-chevron-left
 	left: 1px;
 	right: 3px;
 }
@@ -1718,7 +1644,7 @@ $pagination-link-line-height:		$font-size !default;
 .phpbb_alert .alert_close:before {
 	font-family: "Material Design Icons";
 	position: absolute;
-	content: '\f24f';	// icon: mdi-close-circle
+	content: mdi("close-circle");	// icon: mdi-close-circle
 	font-size: 20px;
 	line-height: 10px;
 	font-weight: normal;
@@ -1849,10 +1775,6 @@ p.post-notice:before {
 
 form > p.post-notice strong {
 	line-height: 20px;
-}
-
-#jumpbox {
-	margin: 5px 0;
 }
 
 .stat-block {

@@ -7,16 +7,24 @@
 	<!-- ENDIF -->
 <!-- DEFINE $NAVLINKS_SHOW_DEFAULT = 1 -->
 <!-- ENDDEFINE -->
-<!-- DEFINE $CARD_BREADCRUMBS = 1 -->
+<!-- DEFINE $ENABLE_FORUM_INFO = 1 -->
 <!-- INCLUDE overall_header.html -->
 
-<div class="card" data-card="1">
+<div class="forum-info-group">
+	<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+	<div id="information" class="rules">
+		<div class="inner">
+			<span class="mdi mdi-information-outline"></span> <strong>{L_INFORMATION}{L_COLON}</strong> {L_BOARD_DISABLED}
+		</div>
+	</div>
+	<!-- ENDIF -->
+	
 	{$BREADCRUMBS}
 
 	<div class="forum-info">
 		<div class="forum-title-group">
 			<!-- EVENT viewforum_forum_title_before -->
-			<h2 class="forum-title"><!-- EVENT viewforum_forum_name_prepend --><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a><!-- EVENT viewforum_forum_name_append --></h2>
+			<h2 class="forum-title">{L_FORUM}: <!-- EVENT viewforum_forum_name_prepend --><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a><!-- EVENT viewforum_forum_name_append --></h2>
 			<!-- EVENT viewforum_forum_title_after -->
 			<!-- IF MODERATORS -->
 			<p class="forum-mods"><strong><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->{L_COLON}</strong> {MODERATORS}</p>
@@ -31,7 +39,7 @@
 		<div class="inner">
 
 		<!-- IF U_FORUM_RULES -->
-			<a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a>
+			<a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a> <span class="mdi mdi-forward"></span>
 		<!-- ELSE -->
 			<strong>{L_FORUM_RULES}</strong><br />
 			{FORUM_RULES}
@@ -62,16 +70,14 @@
 	<!-- ENDIF -->
 
 	<!-- IF S_DISPLAY_SEARCHBOX -->
+	<form method="get" id="forum-search" action="{S_SEARCHBOX_ACTION}">
 		<div class="search-box" role="search">
-			<form method="get" id="forum-search" action="{S_SEARCHBOX_ACTION}">
-			<fieldset>
 				<input class="inputbox search tiny" type="search" name="keywords" id="search_keywords" size="20" placeholder="{L_SEARCH_FORUM}" />
 				<button class="button icon-button search-icon" type="submit" title="{L_SEARCH}">{L_SEARCH}</button>
 				<a href="{U_SEARCH}" class="button icon-button search-adv-icon" title="{L_SEARCH_ADV}">{L_SEARCH_ADV}</a>
 				{S_SEARCH_LOCAL_HIDDEN_FIELDS}
-			</fieldset>
-			</form>
 		</div>
+	</form>
 	<!-- ENDIF -->
 
 	<div class="pagination">

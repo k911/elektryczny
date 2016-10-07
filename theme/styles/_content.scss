@@ -28,7 +28,7 @@ ul.topiclist li {
 			transition: opacity 0.3s ease;
 			opacity: .5;
 			&:after {
-				content: '\f465';	// icon: mdi-minus
+				content: mdi("minus");	// icon: mdi-minus
 				font-family: "Material Design Icons";
 				position: absolute;
 				top: 0;
@@ -39,7 +39,7 @@ ul.topiclist li {
 				line-height: 16px;
 			}
 			&.toggled:after {
-				content: '\f504';	// icon: mdi-plus
+				content: mdi("plus");	// icon: mdi-plus
 			}
 			&:hover {
 				opacity: 1;
@@ -650,8 +650,7 @@ $panel-line-height:		$line-height !default;
 dl.faq {
 	font-family: $post-content-font-family;
 	font-size: $post-content-font-size;
-	margin-top: 1em;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 	line-height: $post-content-line-height;
 }
 
@@ -1270,6 +1269,7 @@ table.fixed-width-table {
 //
 
 // Thanks for posts
+// TODO: Wtf
 a.post {
 	display: inline !important;
 	background: none !important;

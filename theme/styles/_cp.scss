@@ -195,7 +195,7 @@ a.responsive-tab-link {
 		text-decoration: none;
 	}
 	.responsive-tab > &:before {
-		content: '\f44e'; // icon: mdi-menu
+		content: mdi("menu");	// icon: mdi-menu
 		font-family: "Material Design Icons";
 		position: absolute;
 		left: 10px;
@@ -212,7 +212,7 @@ a.responsive-tab-link {
 	}
 	.dropdown-visible.responsive-tab > &:before,
 	.responsive-tab > &:hover:before {
-		content: '\f236';	// icon: mdi-chevron-down
+		content: mdi("chevron-down");	// icon: mdi-chevron-down
 	}
 }
 

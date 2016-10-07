@@ -15,9 +15,6 @@ $use-wrapper:							false;	// true or false
 $max-width:								none;	// Maximum width. Set to "none" to make layout fluid
 
 $split-forums:							true;	// Changes layout of forums list. Values are true or false
-
-$tabbed-navigation:						false;	// true or false. Toggles tabbed navigation layout
-
 //
 // Fonts
 //
@@ -48,10 +45,6 @@ $list-heading-font-family:				'Roboto', sans-serif;
 $forum-heading-font-size:				$list-heading-font-size + 2px;
 $forum-heading-font-family:				$list-heading-font-family;
 $forum-heading-font-weight:				500;
-
-$button-font-size:						$font-size + 3px;
-$button-line-height:					floor(($font-size + 8px) / 2) * 2;	// Convert to even number
-$button-glyph-font-size:				10px; //floor($font-size / 2) * 2;	// Convert to even number
 
 $dropdown-header-font-size:				$font-size + 2px;
 $dropdown-header-font-family:			'Roboto', sans-serif;
@@ -276,22 +269,28 @@ $input-focus-bg:						$input-bg;
 $input-focus-border:					$primary-color;
 $input-border-radius:					2px;
 
-$search-box-border:						#c6c6c6;	// Border for search box block
-$search-box-border-header:				#ccc;		// Same as above, for search box in header
-$search-box-shadow:						1px 1px 3px rgba(0, 0, 0, .1);	// Box-shadow for search box in header
+$search-box-button-bg:					$block-background;
+$search-box-button-color:				$primary-color;
+$search-box-button-bg-hover:			$secondary-color-accent-dark;
+$search-box-button-color-hover:			$overlay-color;
 
 // Buttons
-$button-bg:								mix($block-background, $primary-color, 10%);
+$button-font-size:						14px;
+$button-line-height:					20px;
+$button-top-padding:					2px;
+$button-side-padding:					8px;
+$button-border-width:					0;
+$button-height:							$button-line-height + ($button-border-width + $button-top-padding) * 2;
+$button-glyph-font-size:				10px; //floor($font-size / 2) * 2;	// Convert to even number
+
+$button-bg:								$primary-color;
+$button-bg-hover:						$secondary-color;
 $button-border-radius:					3px;
 $button-border:							$button-bg;
 $button-icon:							$overlay-color;
 $button-icon-hover:						$overlay-color;
 $button-text:							$overlay-color;
-
-$button-top-padding:					2px;
-$button-side-padding:					8px;
-$button-border-width:					1px;
-$button-height:							$button-line-height + ($button-top-padding + $button-border-width) * 2;
+$button-text-hover:						$overlay-color;
 
 $big-button-border-radius:				0;	// For big buttons and blocks like quick search
 $big-button-variant-border-radius:		3px; // Big buttons variant;

@@ -1,12 +1,7 @@
 // Mixins
-@mixin section {
-	background: $block-background;
-	border: 0 solid $block-border;
-	border-radius: $border-radius;
-}
 
 @mixin section-forum {
-	@include section;
+	background: $block-background;
 	padding: 5px;
 }
 
@@ -21,12 +16,9 @@
 
 // Heading block
 @mixin section-heading {
-	margin: -5px -10px 5px;
-	border-radius: max(0, $border-radius - 1px);
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
+	margin: 0 auto;
 	background: $heading-bg;
-	border: 0 solid $heading-border;
+	border-color: $heading-border;
 	padding: 5px;
 	text-transform: none;
 	font-size: $heading-font-size;
