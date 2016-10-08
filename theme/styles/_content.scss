@@ -810,20 +810,13 @@ blockquote.uncited {
 $post-code-line-height:		1.3 !default;
 
 .codebox {
-	border: 0px solid transparent;
 	border-left-width: 3px;
-	border-radius: $bbcode-border-radius;
 	margin: 8px 12px;
 	padding: 3px;
 	font-size: $post-code-font-size;
-	.rtl & {
-		border-left-width: 0;
-		border-right-width: 3px;
-	}
 }
 
 .codebox p {
-	// text-transform: uppercase;
 	border-bottom: 1px solid transparent;
 	margin-bottom: 3px;
 	font-family: $post-block-title-font-family;

@@ -16,7 +16,8 @@
 
 // Heading block
 @mixin section-heading {
-	margin: 0 auto;
+	// margin: 0 auto;
+	margin: -11px -11px 6px -11px;
 	background: $heading-bg;
 	border-color: $heading-border;
 	padding: 5px;

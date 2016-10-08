@@ -661,13 +661,13 @@ function parseDocument($container) {
 	/**
 	* Adjust HTML code for IE8 and older versions
 	*/
-	if (oldBrowser) {
-		// Fix .linklist.bulletin lists
-		$container
-			.find('ul.linklist.bulletin > li')
-			.filter(':first-child, .rightside:last-child')
-			.addClass('no-bulletin');
-	}
+	// if (oldBrowser) {
+	// 	// Fix .linklist.bulletin lists
+	//	$container
+	//		.find('ul.linklist.bulletin > li')
+	//		.filter(':first-child, .rightside:last-child')
+	//		.addClass('no-bulletin');
+	//}
 
 	/**
 	* Resize navigation (breadcrumbs) block to keep all links on same line
@@ -1442,7 +1442,7 @@ function parseDocument($container) {
 	*/
 	$('a.spoiler').click(function(e) {
 		e.preventDefault();
-		$(this).next('code.spoiler').show();
+		$(this).next('div.spoiler').show();
 		$(this).hide();
 	});
 	

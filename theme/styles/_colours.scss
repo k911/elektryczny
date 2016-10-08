@@ -43,6 +43,9 @@ hr {
 // ---------------------------------------------
 
 .search-box {
+	.inputbox {
+		border-width: 0;
+	}
 	.button, .button:after, .button:before {
 		border-color: $search-box-button-bg;
 		background-color: $search-box-button-bg;
@@ -608,16 +611,9 @@ blockquote:before {
 // Code block
 .codebox {
 	background-color: $bbcode-background;
-	border-color: $bbcode-outer-border;
-	border-left-color: lighten(desaturate($primary-color, 20%), 20%);
-	.rtl & {
-		border-left-color: $bbcode-outer-border;
-		border-right-color: lighten(desaturate($primary-color, 20%), 20%);
-	}
 }
 
 .codebox p {
-	border-bottom-color:  $bbcode-inner-border;
 }
 
 .codebox code {
@@ -1194,6 +1190,7 @@ fieldset.quick-login input.inputbox {
 .inputbox, select {
 	background-color: $input-bg;
 	border-color: $input-border;
+	border-width: 1px;
 	color: $input-text;
 }
 

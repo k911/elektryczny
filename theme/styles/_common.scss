@@ -896,8 +896,7 @@ $panel-heading-line-height:	$line-height !default;
 .panel > .inner > h3:first-child,
 .panel > h3:first-child {
 	@include section-heading;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 0 10px;
 	.panel-container & {
 		font-size: $panel-heading-font-size;
 		line-height: $panel-heading-line-height;
@@ -1477,7 +1476,8 @@ fieldset.fields1 dl.pmlist dd.recipients {
 // Action-bars (container for post/reply buttons, pagination, etc.)
 // ----------------------------------------
 .action-bar {
-	font-size: $font-size;
+	display: flex;
+	flex-flow: row nowrap;
 	margin: 4px 0;
 }
 
@@ -1493,15 +1493,10 @@ $pagination-link-font-size:			$font-size !default;
 $pagination-link-line-height:		$font-size !default;
 
 .pagination {
-	float: right;
 	font-size: $font-size;
 	margin-top: 3px;
-	text-align: right;
+	margin-left: auto;
 	width: auto;
-}
-
-.action-bar.bottom .pagination {
-	margin-top: 0;
 }
 
 .pagination > ul {
