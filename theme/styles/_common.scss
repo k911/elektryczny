@@ -896,7 +896,6 @@ $panel-heading-line-height:	$line-height !default;
 .panel > .inner > h3:first-child,
 .panel > h3:first-child {
 	@include section-heading;
-	padding: 0 10px;
 	.panel-container & {
 		font-size: $panel-heading-font-size;
 		line-height: $panel-heading-line-height;
