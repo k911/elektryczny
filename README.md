@@ -1,7 +1,7 @@
 # Elektryczny
 
-phpbb3 theme fork
-theme created for private purposes
+phpbb3 theme
+theme created for private purposes (preview: http://elektryczny.tk/forum/)
 tested versions of phpbb:
 - 3.2.0-RC1
 theme will be maintained at least till phpbb release stable 3.2.0 version
