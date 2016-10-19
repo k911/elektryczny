@@ -10,7 +10,7 @@ theme will be maintained at least till phpbb release stable 3.2.0 version
 
 ## (optional) Installation
 
-#### Style is precompiled you do not have to use this instructions unless you want to edit it
+#### Theme is precompiled you do not have to use this instructions unless you want to make some changes to this theme / fork
 
 1. Clone this repository to:
 	`<phpBB>/styles/`
