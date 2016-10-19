@@ -1,0 +1,92 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * See: http://www.getmdl.io/components/#badges-section
+ *
+ * Usage:
+ *  $1 = "any text or number";
+ * 	<div class="mdl-badge (unnecessary: mdl-badge--overlap | mdl-badge--small)" data-badge="$1"></div>
+ *
+ */
+  
+.mdl-badge {
+    position: relative;
+    white-space: nowrap;
+    margin-right: 24px
+}
+.mdl-badge:not([data-badge]) {
+    margin-right: auto;
+}
+.mdl-badge[data-badge]:after {
+    content: attr(data-badge);
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: absolute;
+    top: -11px;
+    right: -24px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: $badge-background;
+    color: $badge-color;
+}
+.mdl-badge.mdl-badge--overlap {
+    margin-right: 10px;
+}
+.mdl-badge.mdl-badge--overlap:after {
+    right: -10px;
+}
+/* custom style badge for navbar */
+.mdl-badge.mdl-badge--small {
+	margin-right: 0px;
+	.nav-link {
+		margin-left: 4px !important;
+	}
+}
+.mdl-badge.mdl-badge--small:after {
+	top: 6px;
+	left: 8px;
+	font-weight: 400;
+}
+@media screen and (max-width: 550px) {
+	.mdl-badge.mdl-badge--small {
+		&:after {
+			left: 4px;
+		}
+		.nav-link {
+			z-index: 1;
+			margin-left: 0px !important;
+		}
+	}
+}

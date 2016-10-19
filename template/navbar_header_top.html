@@ -31,7 +31,7 @@
 			<ul class="leftside">
 				<li id="quick-links" class="tab responsive-menu dropdown-container{% if quick_links_all == '' %} empty{% endif %}">
 					<a href="#" class="nav-link dropdown-trigger">{L_QUICK_LINKS}</a>
-					<div class="dropdown hidden">
+					<div class="dropdown">
 						<div class="pointer"><div class="pointer-inner"></div></div>
 						<ul class="dropdown-contents" role="menu">
 							{{ quick_links_first_block }}
@@ -55,7 +55,7 @@
 				<!-- IF not S_IS_BOT and (S_DISPLAY_MEMBERLIST or U_TEAM) -->
 					<li class="tab members dropdown-container" data-select-match="member" data-responsive-class="small-icon icon-members">
 						<a class="nav-link dropdown-trigger" href="{U_MEMBERLIST}">{L_MEMBERLIST}</a>
-						<div class="dropdown hidden">
+						<div class="dropdown">
 							<div class="pointer"><div class="pointer-inner"></div></div>
 							<ul class="dropdown-contents" role="menu">
 								<!-- IF S_DISPLAY_MEMBERLIST --><li class="small-icon icon-members"><a href="{U_MEMBERLIST}" role="menuitem">{L_MEMBERLIST}</a></li><!-- ENDIF -->
@@ -81,7 +81,7 @@
 				<!-- IF S_REGISTERED_USER -->
 					<li id="username_logged_in" class="tab account dropdown-container" data-skip-responsive="true" data-select-match="ucp">
 						<a href="{U_PROFILE}" class="nav-link dropdown-trigger">{CURRENT_USERNAME_SIMPLE}</a>
-						<div class="dropdown hidden">
+						<div class="dropdown">
 							<div class="pointer"><div class="pointer-inner"></div></div>
 							<ul class="dropdown-contents" role="menu">
 								<!-- IF U_RESTORE_PERMISSIONS --><li class="small-icon icon-restore-permissions"><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->

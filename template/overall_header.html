@@ -2,7 +2,7 @@
 <html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
 <head>
 <meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 {META}
 <title><!-- IF UNREAD_NOTIFICATIONS_COUNT -->({UNREAD_NOTIFICATIONS_COUNT}) <!-- ENDIF --><!-- IF not S_VIEWTOPIC and not S_VIEWFORUM -->{SITENAME} - <!-- ENDIF --><!-- IF S_IN_MCP -->{L_MCP} - <!-- ELSEIF S_IN_UCP -->{L_UCP} - <!-- ENDIF -->{PAGE_TITLE}<!-- IF S_VIEWTOPIC or S_VIEWFORUM --> - {SITENAME}<!-- ENDIF --></title>
@@ -10,13 +10,13 @@
 <!-- INCLUDE _style_config.html -->
 
 <!-- IF S_ENABLE_FEEDS -->
-	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}"><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news"><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums"><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{U_FEED}?mode=topics"><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active"><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}"><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}"><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{{ path('phpbb_feed_index') }}"><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{{ path('phpbb_feed_news') }}"><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{{ path('phpbb_feed_forums') }}"><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{{ path('phpbb_feed_topics') }}"><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{{ path('phpbb_feed_topics_active') }}"><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{{ path('phpbb_feed_forum', { forum_id : S_FORUM_ID } ) }}"><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{{ path('phpbb_feed_topic', { topic_id : S_TOPIC_ID } ) }}"><!-- ENDIF -->
 	<!-- EVENT overall_header_feeds -->
 <!-- ENDIF -->
 
@@ -25,36 +25,6 @@
 <!-- ENDIF -->
 
 <link rel="icon" href="{T_THEME_PATH}/images/elektryczny1_square_compress.png" sizes="256x256" type="image/png">
-
-<!-- IF S_ALLOW_CDN -->
-<script type="text/javascript">
-	//TODO: Guess //
-  WebFontConfig = {
-    google: { families: [ 'Roboto:400,300,500:latin,latin-ext' ] }
-  };
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })(); </script>
-<!-- ELSE -->
-<script type="text/javascript">
-  WebFontConfig = {
-    google: { families: [ 'Roboto:400,300,500:latin,latin-ext' ] }
-  };
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })(); </script>
-<!-- ENDIF -->
-
 <link href="{T_STYLESHEET_LINK}" rel="stylesheet">
 
 <!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
@@ -76,20 +46,19 @@
 <!-- EVENT overall_header_stylesheets_after -->
 
 </head>
-<body id="phpbb" class="nojs notouch section-{SCRIPT_NAME} {S_CONTENT_DIRECTION} {BODY_CLASS}" data-online-text="{LA_ONLINE}">
+<body id="phpbb" class="nojs notouch section-{SCRIPT_NAME} {S_CONTENT_DIRECTION} {BODY_CLASS}"<!-- IF $PROFILE_ONLINE_IMG --> data-online-text="{L_ONLINE}"<!-- ENDIF -->>
 
 <!-- EVENT overall_header_body_before -->
 
 <!-- IF $WRAP_HEADER == 1 -->
 <div id="wrap" class="page-width">
 <!-- ENDIF -->
-	<a id="top" class="anchor" accesskey="t"></a>
+	<a id="top" class="top-anchor" accesskey="t"></a>
 	<div id="page-header" class="page-width">
 		<div id="page-header-box" class="card" data-card="1">
 			<!-- INCLUDE navbar_header_top.html -->
 			<div class="headerbar" role="banner">
 				<div class="inner">
-					<!-- TODO: tidy a little bit -->
 					<div id="site-description">
 						<a id="logo" class="logo" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->"><img src="{T_THEME_PATH}/images/elektryczny1_square_compress.png" data-src-hd="{T_THEME_PATH}/images/elektryczny1_square_compress.png" /></a>
 						
@@ -136,7 +105,7 @@
 	<!-- EVENT overall_header_page_body_before -->
 
 	<a id="start_here" class="anchor"></a>
-	<div id="page-body" role="main">
+	<div id="page-body" class="page-body" role="main">
 		<!-- IF not $ENABLE_FORUM_INFO -->
 		{$BREADCRUMBS}
 		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->

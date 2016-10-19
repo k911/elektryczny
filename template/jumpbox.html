@@ -1,31 +1,41 @@
+<div class="action-bar jumpbox-box">
+
+<!-- IF S_VIEWTOPIC -->
+	<a href="{U_VIEW_FORUM}" class="jumpbox-return button arrow-{S_CONTENT_FLOW_BEGIN}" accesskey="r">
+		<i class="icon mdi mdi-chevron-{S_CONTENT_FLOW_BEGIN}" aria-hidden="true"></i><span>{L_RETURN_TO_FORUM}</span>
+	</a>
+<!-- ELSEIF S_VIEWFORUM -->
+	<a href="{U_INDEX}" class="jumpbox-return button arrow-{S_CONTENT_FLOW_BEGIN}" accesskey="r">
+		<i class="icon mdi mdi-chevron-{S_CONTENT_FLOW_BEGIN}" aria-hidden="true"></i><span>{L_RETURN_TO_INDEX}</span>
+	</a>
+<!-- ELSEIF SEARCH_TOPIC -->
+	<a class="jumpbox-return button arrow-{S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH_TOPIC}" accesskey="r">
+		<i class="icon mdi mdi-chevron-{S_CONTENT_FLOW_BEGIN}" aria-hidden="true"></i><span>{L_RETURN_TO_TOPIC}</span>
+	</a>
+<!-- ELSEIF S_SEARCH_ACTION -->
+	<a class="jumpbox-return button arrow-{S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH}" title="{L_SEARCH_ADV}" accesskey="r">
+		<i class="icon mdi mdi-chevron-{S_CONTENT_FLOW_BEGIN}" aria-hidden="true"></i><span>{L_GO_TO_SEARCH_ADV}</span>
+	</a>
+<!-- ENDIF -->
+
 <!-- IF S_DISPLAY_JUMPBOX -->
-	<div class="jumpbox">
-		<!-- IF S_VIEWTOPIC -->
-		<a href="{U_VIEW_FORUM}" class="button" accesskey="r"><span class="mdi mdi-chevron-left"></span> {L_RETURN_TO_FORUM}</a>
-		<!-- ELSEIF S_VIEWFORUM -->
-		<a href="{U_INDEX}" class="button" accesskey="r"><span class="mdi mdi-chevron-left"></span> {L_RETURN_TO_INDEX}</a>
-		<!-- ELSEIF SEARCH_TOPIC -->
-		<a href="{U_SEARCH_TOPIC}" class="button" accesskey="r"><span class="mdi mdi-chevron-left"></span> {L_RETURN_TO_TOPIC}</a>
-		<!-- ELSEIF S_SEARCH_ACTION -->
-		<a href="{U_SEARCH}" title="{L_SEARCH_ADV}" class="button" accesskey="r"><span class="mdi mdi-chevron-left"></span> {L_GO_TO_SEARCH_ADV}</a>
-		<!-- ENDIF -->
-		
-		<div class="dropdown-container dropdown-container-{S_CONTENT_FLOW_END}<!-- IF not S_IN_MCP --> dropdown-up<!-- ENDIF --> dropdown-{S_CONTENT_FLOW_BEGIN} dropdown-button-control" id="jumpbox">
-			<span title="<!-- IF S_IN_MCP and S_MERGE_SELECT -->{L_SELECT_TOPICS_FROM}<!-- ELSEIF S_IN_MCP -->{L_MODERATE_FORUM}<!-- ELSE -->{L_JUMP_TO}<!-- ENDIF -->" class="dropdown-trigger button dropdown-select">
-				<!-- IF S_IN_MCP and S_MERGE_SELECT -->{L_SELECT_TOPICS_FROM}<!-- ELSEIF S_IN_MCP -->{L_MODERATE_FORUM}<!-- ELSE -->{L_JUMP_TO}<!-- ENDIF -->
-			</span>
-			<div class="dropdown hidden">
-				<div class="pointer"><div class="pointer-inner"></div></div>
-				<ul class="dropdown-contents">
-				<!-- BEGIN jumpbox_forums -->
-					<!-- IF jumpbox_forums.FORUM_ID neq -1 -->
-						<li><!-- BEGIN level -->&nbsp; &nbsp;<!-- END level --><a href="{jumpbox_forums.LINK}">{jumpbox_forums.FORUM_NAME}</a></li>
-					<!-- ENDIF -->
-				<!-- END jumpbox_forums -->
-				</ul>
-			</div>
+
+	<div class="jumpbox dropdown-container dropdown-container-right<!-- IF not S_IN_MCP --> dropdown-up<!-- ENDIF --> dropdown-{S_CONTENT_FLOW_BEGIN} dropdown-button-control" id="jumpbox">
+		<span title="<!-- IF S_IN_MCP and S_MERGE_SELECT -->{L_SELECT_TOPICS_FROM}<!-- ELSEIF S_IN_MCP -->{L_MODERATE_FORUM}<!-- ELSE -->{L_JUMP_TO}<!-- ENDIF -->" class="button button-secondary dropdown-trigger dropdown-select">
+			<span><!-- IF S_IN_MCP and S_MERGE_SELECT -->{L_SELECT_TOPICS_FROM}<!-- ELSEIF S_IN_MCP -->{L_MODERATE_FORUM}<!-- ELSE -->{L_JUMP_TO}<!-- ENDIF --></span>
+			<span class="caret"><i class="icon mdi mdi-menu-down" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+			<!-- BEGIN jumpbox_forums -->
+				<!-- IF jumpbox_forums.FORUM_ID neq -1 -->
+					<li><a href="{jumpbox_forums.LINK}" class="<!-- IF jumpbox_forums.level -->jumpbox-sub-link<!-- ELSEIF jumpbox_forums.S_IS_CAT -->jumpbox-cat-link<!-- ELSE -->jumpbox-forum-link<!-- ENDIF -->"><!-- BEGIN level --><span class="spacer"></span><!-- END level --> <span><!-- IF jumpbox_forums.level --> &#8627;&nbsp;<!-- ENDIF --> {jumpbox_forums.FORUM_NAME}</span></a></li>
+				<!-- ENDIF -->
+			<!-- END jumpbox_forums -->
+			</ul>
 		</div>
 	</div>
-<!-- ELSE -->
-	<br /><br />
 <!-- ENDIF -->
+
+</div>

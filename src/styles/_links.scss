@@ -1,0 +1,199 @@
+// Link Styles
+// ----------------------------------------
+
+// Links adjustment to correctly display an order of rtl/ltr mixed content
+a {
+	direction: ltr;
+	unicode-bidi: embed;
+	text-decoration: none;
+}
+
+a:hover	{ text-decoration: underline; }
+
+// Coloured usernames
+.username-coloured {
+	font-weight: 500;
+	display: inline !important;
+	padding: 0 !important;
+}
+
+// Links on gradient backgrounds
+.forumbg .header a, .forabg .header a, th a {
+	text-decoration: none;
+}
+
+.forumbg .header a:hover, .forabg .header a:hover, th a:hover {
+	text-decoration: underline;
+}
+
+// Notification mark read link
+.dropdown-extended a.mark_read {
+	display: none;
+	position: absolute;
+	z-index: 2;
+	right: 0;
+	top: 0;
+	height: 100%;
+	padding: 8px 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	line-height: 60px;
+	font-size: 16px;
+}
+
+.dropdown-extended li:hover a.mark_read {
+	display: block;
+}
+
+// Links for forum/topic lists
+a.forumtitle {
+	display: inline-block;
+	font-family: $forum-link-font-family;
+	font-size: $forum-link-font-size;
+	line-height: $forum-link-line-height;
+	font-weight: 500;
+	padding-bottom: 2px;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+a.topictitle {
+	@extend a.forumtitle;
+	font-family: $topic-link-font-family;
+	font-size: $topic-link-font-size;
+}
+
+a.lastsubject {
+	font-weight: 500;
+	text-decoration: none;
+}
+
+a.lastsubject:hover {
+	text-decoration: underline;
+}
+
+// Profile links
+.postprofile a, .postprofile dt.author a {
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.postprofile a:hover, .postprofile dt.author a:hover {
+	text-decoration: underline;
+}
+
+// Profile searchresults
+.search .postprofile a {
+	text-decoration: none;
+	font-weight: normal;
+}
+
+.search .postprofile a:hover {
+	text-decoration: underline;
+}
+
+// Back to top of page
+.back2top {
+	clear: both;
+	height: 14px;
+	text-align: right;
+	.post > & {
+		position: absolute;
+		right: 5px;
+		bottom: 5px;
+		.rtl & {
+			right: auto;
+			left: 5px;
+		}
+	}
+}
+
+a.top {
+	text-decoration: none;
+	width: 14px;
+	height: 14px;
+	display: block;
+	float: right;
+	overflow: hidden;
+	text-indent: 999px;
+}
+
+a.top2 {
+	text-decoration: none;
+	padding-left: 15px;
+	dl.faq & {
+		float: right;
+		.rtl & {
+			float: left;
+		}
+	}
+}
+
+a.top, a.top2 {
+	position: relative;
+}
+
+$top-link-font-size:		ceil(($font-size + 1px) / 2) * 2 !default;
+$top-link-line-height:		$top-link-font-size + 2px !default;
+
+a.top:after, a.top2:after {
+	content: mdi("chevron-up");	// icon: mdi-chevron-up
+	font-family: "Material Design Icons";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: $top-link-line-height;
+	width: $top-link-line-height;
+	margin-top: (0px - $top-link-line-height / 2);
+	text-align: center;
+	font-size: $top-link-font-size;
+	line-height: $top-link-line-height;
+	vertical-align: baseline;
+	font-weight: normal;
+	font-style: normal;
+	text-transform: none;
+	text-indent: 0;
+	pointer-events: none;
+}
+
+// invisible skip link, used for accessibility
+.skiplink {
+	position: absolute;
+	left: -999px;
+	width: 990px;
+}
+
+// Feed icon in forumlist_body.html
+a.feed-icon-forum {
+	float: right;
+	margin: 3px;
+	width: 16px;
+	height: 16px;
+	position: relative;
+}
+
+.topiclist.forums a.feed-icon-forum {
+	margin-top: 12px;
+}
+
+a.feed-icon-forum:after {
+	content: mdi("rss-box");	// icon: mdi-rss-box
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 16px;
+	height: 16px;
+	font-family: "Material Design Icons";
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 16px;
+	text-align: center;
+}
+
+a.anchor {
+	display: block;
+}

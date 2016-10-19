@@ -1,0 +1,383 @@
+// Button Styles
+// ----------------------------------------
+
+$button-inner-height:	$button-line-height + $button-top-padding * 2;
+$button-outer-height:	$button-inner-height + $button-border-width * 2;
+
+.button {
+	cursor: pointer;
+	display: inline-block;
+	white-space: nowrap;
+	font-family: 'Roboto', sans-serif;
+	text-decoration: none !important;
+	
+	height: $button-height;
+	font-size: $button-font-size;
+	line-height: $button-line-height;
+	padding: $button-top-padding $button-side-padding;
+	box-sizing: border-box;
+
+
+	& > strong {
+		font-weight: 600;
+	}
+	
+	.button-text {
+		@media (max-width: 550px) {
+			display: none;
+		}
+	}
+}
+button.button {
+	border-width: 0;
+	line-height: normal;
+}
+ 
+.icon-button {
+	font-size: 0;
+	&:before {
+		background: transparent !important;
+		font-family: "Material Design Icons";
+		content: mdi("wrench");	// icon: mdi-wrench
+		display: inline-block;
+		font-size: $button-glyph-font-size;
+		text-align: center;
+		font-weight: normal;
+		text-indent: 0;
+		font-style: normal;
+		text-transform: none;
+		
+		.buttons > & {
+			position: relative;
+			top: -1px;
+			right: -1px;
+			.rtl & {
+				right: auto;
+				right: -1px;
+			}
+		}
+	}
+}
+
+%icon-button {
+	font-family: "Material Design Icons";
+}
+
+.dropdown-select.icon-button:before {
+	margin-right: 4px;
+}
+
+.buttons, .buttons .button {
+	float: left;
+}
+
+// Big button images
+.reply-icon:before, .pmreply-icon:before {
+	@extend %icon-button;
+	content: mdi("reply");	// icon: mdi-reply
+}
+
+.post-icon:before, .newpm-icon:before {
+	@extend %icon-button;
+	content: mdi("pencil");	// icon: mdi-pencil
+}
+
+.reply-all:before {
+	@extend %icon-button;
+	content: mdi("reply-all");	// icon: mdi-reply-all
+}
+
+.locked-icon:before {
+	@extend %icon-button;
+	content: mdi("pencil-lock");	// icon: mdi-pencil-lock
+}
+
+.forwardpm-icon:before {
+	@extend %icon-button;
+	content: mdi("share");	// icon: mdi-share
+}
+
+.modtools-icon {
+	width: 22px;
+	text-indent: 999px;
+	overflow: hidden;
+}
+
+.tools-icon:before, .modtools-icon:before, .search-icon:before, .search-adv-icon:before {
+	@extend %icon-button;
+	@extend %icon-button-visible;
+	font-size: 14px;
+	height: $button-line-height;
+	margin-top: 0;
+	width: 16px;
+	line-height: $button-line-height;
+}
+
+.tools-icon:before {
+	content: mdi("wrench");	// icon: mdi-wrench
+}
+.search-icon:before {
+	content: mdi("magnify");	// icon: mdi-magnify
+}
+.search-adv-icon:before {
+	content: mdi("settings");	// icon: mdi-settings
+}
+.modtools-icon:before {
+	content: mdi("gavel");	// icon: mdi-gavel
+}
+
+// Icon images
+// ----------------------------------------
+.small-icon {
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	background-image: none;
+}
+
+.small-icon > a {
+	display: inline-block;
+	padding: 0 0 0 18px;
+}
+
+ul.linklist.bulletin > li.small-icon:before {
+	display: none;
+}
+
+.dropdown .small-icon > a {
+	display: block;
+}
+
+// Poster contact icons
+// ----------------------------------------
+.contact-icons.dropdown-contents {
+	min-width: 0;
+	padding: 0;
+	font-size: 0;
+}
+
+.contact-icon {
+	position: relative;
+	display: block;
+	height: 16px;
+	width: 16px;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+		font-family: "Material Design Icons";
+		font-size: 14px;
+		line-height: 16px;
+		vertical-align: baseline;
+		font-weight: normal;
+		font-style: normal;
+		text-transform: none;
+		text-indent: 0;
+		pointer-events: none;
+	}
+}
+.contact-icons a {
+	border-bottom: 1px dotted;
+	border-right: 1px dotted;
+	display: block;
+	float: left;
+	padding: 8px;
+}
+
+.contact-icons .last-cell {
+	border-right: none;
+}
+
+.contact-icons div:last-child a {
+	border-bottom: none;
+}
+
+.contact-icons div {
+	clear: left;
+}
+
+// Profile icons
+.pm-icon:after {
+	content: mdi("message-text");	// icon: mdi-message-text
+}
+.email-icon:after {
+	content: mdi("email");	// icon: mdi-email
+}
+.jabber-icon:after {
+	content: mdi("lightbulb");	// icon: mdi-lightbulb
+	font-size: 16px;
+}
+.phpbb_icq-icon:after {
+	content: mdi("flower");	// icon: mdi-flower
+}
+.phpbb_wlm-icon:after {
+	content: mdi("account");	// icon: mdi-account
+}
+.phpbb_aol-icon:after {
+	content: mdi("walk");	// icon: mdi-walk
+}
+.phpbb_website-icon:after {
+	content: mdi("web");	// icon: mdi-web
+}
+.phpbb_youtube-icon:after {
+	content: mdi("youtube-play");	// icon: mdi-youtube-play
+}
+.phpbb_facebook-icon:after {
+	content: mdi("facebook-box");	// icon: mdi-facebook-box
+}
+.phpbb_googleplus-icon:after {
+	content: mdi("google-plus");	// icon: mdi-google-plus
+}
+.phpbb_skype-icon:after {
+	content: mdi("skype");	// icon: mdi-skype
+}
+.phpbb_twitter-icon:after {
+	content: mdi("twitter");	// icon: mdi-twitter
+}
+.phpbb_yahoo-icon:after {
+	content: mdi("alert-box");	// icon: mdi-alert-box (no yahoo icon)
+}
+
+// Post control buttons
+// ---------------------------------------------
+.post-buttons {
+	list-style: none;
+	margin-top: 2px;
+	.rtl & {
+		float: left;
+	}
+}
+
+.has-profile .post-buttons {
+	float: none;
+	position: absolute;
+	margin: 0;
+	top: 5px;
+
+	@if $profile-side == left {
+		right: 0;
+		.rtl & {
+			left: 0;
+		}
+	}
+	@else {
+		right: $post-margin;
+		.rtl & {
+			left: $post-margin;
+		}
+	}
+
+	.rtl & {
+		right: auto;
+	}
+}
+
+.post-buttons > li {
+	float: left;
+	margin-right: 3px;
+}
+
+// .hastouch .post-buttons .icon-button {
+// 	padding: 2px 8px;
+// }
+
+.post-buttons .icon-button span {
+	display: block;
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+}
+
+.quote-icon:before {
+	@extend %icon-button;
+	content: mdi("format-quote");	// icon: mdi-format-quote
+	font-size: 14px;
+}
+.edit-icon:before {
+	@extend %icon-button;
+	content: mdi("pencil");	// icon: mdi-pencil
+	font-size: 14px;
+}
+.warn-icon:before {
+	@extend %icon-button;
+	content: mdi("account-alert");	// icon: mdi-account-alert
+	font-size: 14px;
+}
+.delete-icon:before {
+	@extend %icon-button;
+	content: mdi("close");	// icon: mdi-close
+	font-size: 14px;
+}
+.report-icon:before {
+	@extend %icon-button;
+	content: mdi("alert");	// icon: mdi-alert
+	font-size: 14px;
+}
+.info-icon:before {
+	@extend %icon-button;
+	content: mdi("information");	// icon: mdi-information
+	font-size: 14px;
+}
+.button.responsive-menu-link:before {
+	@extend %icon-button;
+	content: mdi("menu");	// icon: mdi-menu
+	font-size: 14px;
+}
+
+.post-buttons > #expand > a {
+	@extend .button;
+	@extend .icon-button;
+	width: 12px;
+	overflow: hidden;
+	text-indent: 999px;
+	&:before {
+		@extend %icon-button;
+		content: mdi("chevron-down");	// icon: mdi-chevron-down
+	}
+	&.expanded:before {
+		content: mdi("chevron-up");	// icon: mdi-chevron-up
+	}
+}
+
+// Responsive buttons in post body
+.post-buttons .dropdown {
+	top: 20px;
+}
+
+$post-dropdown-glyphs-font-size:	floor($dropdown-content-font-size / 2) * 2;
+
+.post-buttons .dropdown a {
+	display: block;
+	font-size: $dropdown-content-font-size;
+	line-height: $dropdown-content-line-height;
+	text-align: left;
+	margin-left: 18px;
+	position: relative;
+	&:before {
+		position: absolute;
+		left: -16px;
+		top: 50%;
+		height: $post-dropdown-glyphs-font-size;
+		line-height: $post-dropdown-glyphs-font-size + 2px;
+		margin: -#{$post-dropdown-glyphs-font-size / 2} 0 0;
+		pointer-events: none;
+		color: inherit;
+	}
+	.rtl & {
+		text-align: right;
+	}
+}
+
+.hasjs .postbody .post-buttons {
+	max-width: 40%;
+}
+
+// Browser-specific tweaks
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0
+}

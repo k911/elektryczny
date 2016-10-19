@@ -49,7 +49,7 @@
 		<li class="breadcrumbs">
 			<!-- IF U_SITE_HOME -->
 			<span class="crumb"><a href="{U_SITE_HOME}"{$MICRODATA} data-navbar-reference="home" itemprop="url">
-				<span class="mdi mdi-home-variant icon-link"></span> <span itemprop="title">{L_SITE_HOME}</span>
+				<i class="icon mdi mdi-home-variant icon-link" aria-hidden="true"></i><span itemprop="title">{L_SITE_HOME}</span>
 			</a></span>
 			<!-- ENDIF -->
 			<!-- EVENT overall_header_breadcrumb_prepend -->
@@ -70,12 +70,15 @@
 			-->
 		<!-- ENDIF -->
 		<li class="rightside dropdown-container icon-only">
-			<a href="#" class="dropdown-trigger time" title="{CURRENT_TIME}"><span class="mdi mdi-clock"></span></a>
-			<div class="dropdown hidden">
+			<a href="#" class="dropdown-trigger time" title="{CURRENT_TIME}"><i class="icon mdi mdi-clock" aria-hidden="true"></i></a>
+			<div class="dropdown">
 				<div class="pointer"><div class="pointer-inner"></div></div>
 				<ul class="dropdown-contents">
 					<li>{CURRENT_TIME}</li>
 					<li>{S_TIMEZONE}</li>
+					<!-- IF S_USER_LOGGED_IN -->
+					<li>{LAST_VISIT_DATE}</li>
+					<!-- ENDIF -->
 				</ul>
 			</div>
 		</li>
