@@ -793,7 +793,6 @@ $nav-alert-font-size:		9px !default;
 
 div.forum-info-group {
 	@include card($card-default);
-	margin-bottom: 10px;
 }
 
 div.forum-info {
@@ -1457,9 +1456,15 @@ fieldset.fields1 dl.pmlist dd.recipients {
 .action-bar {
 	display: flex;
 	flex-flow: row wrap;
-	margin: 4px 0;
-	& > *:not(:first-child) {
-		margin-left: 5px;
+	margin-bottom: 5px;
+	& > * {
+		margin-top: 5px;
+		&:not(:last-child) {
+			margin-right: 5px;
+		}
+	}
+	& + .action-bar {
+		margin-top: -5px;
 	}
 }
 
@@ -1475,7 +1480,7 @@ $pagination-link-font-size:			$font-size !default;
 $pagination-link-line-height:		$font-size !default;
 
 .pagination {
-	font-size: $button-font-size;
+	align-self: center;
 	width: auto;
 	.action-bar > & {
 		margin-left: auto;
@@ -1483,9 +1488,10 @@ $pagination-link-line-height:		$font-size !default;
 }
 
 .pagination > ul {
+	font-size: $button-font-size;
 	display: inline-block;
 	list-style: none !important;
-	margin-left: 5px;
+	margin-left: .5em;
 }
 
 .pagination > ul > li {
