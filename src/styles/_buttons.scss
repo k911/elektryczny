@@ -11,9 +11,7 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 	font-family: 'Roboto', sans-serif;
 	text-decoration: none !important;
 	
-	height: $button-height;
 	font-size: $button-font-size;
-	line-height: $button-line-height;
 	padding: $button-top-padding $button-side-padding;
 	box-sizing: border-box;
 

@@ -149,8 +149,8 @@ $block-background3:						#f8f8f8;	// Blocks with .bg3 background color - mostly 
 
 $block-border:							#e0e0e0;	// Border color for blocks
 $border-radius:							0;		// Main border radius
-$block-top-border:						lighten($block-background, 10%);	// Top border of forums in forums list
-$block-bottom-border:					darken($block-background, 5%);		// Bottom border of forums in forums list
+$block-top-border:						darken($block-background, 5%);	// Top border of forums in forums list
+$block-bottom-border:					darken($block-background, 10%);		// Bottom border of forums in forums list
 $block-inner-border:					$block-bottom-border;	// Border inside blocks where there is only 1 border instead of top/bottom borders
 
 $block-title-color:						desaturate($link-color, 5%);	// Title inside blocks, such as post title

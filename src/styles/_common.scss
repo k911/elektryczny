@@ -1128,23 +1128,13 @@ ul.linklist.bulletin > li.no-bulletin:before {
 	z-index: 30;
 	overflow: hidden;
 	overflow-y: auto;
-	border: 0px solid transparent;
-	border-radius: 0 0 min($border-radius, 5px) min($border-radius, 5px);
 	padding: 5px;
 	position: relative;
-	min-width: 40px;
 	max-height: 300px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	.notifications & {
 		min-width: 300px;
 	}
-}
-
-.dropdown-up .dropdown-contents {
-	border-top-width: 0;
-	border-radius: min($border-radius, 5px) min($border-radius, 5px) 0 0;
 }
 
 $dropdown-content-font-size:	$font-size + 1px !default;
@@ -1466,7 +1456,7 @@ fieldset.fields1 dl.pmlist dd.recipients {
 // ----------------------------------------
 .action-bar {
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: row wrap;
 	margin: 4px 0;
 	& > *:not(:first-child) {
 		margin-left: 5px;
@@ -1485,10 +1475,11 @@ $pagination-link-font-size:			$font-size !default;
 $pagination-link-line-height:		$font-size !default;
 
 .pagination {
-	font-size: $font-size;
-	margin-top: 3px;
-	margin-left: auto !important;
+	font-size: $button-font-size;
 	width: auto;
+	.action-bar > & {
+		margin-left: auto;
+	}
 }
 
 .pagination > ul {
@@ -1498,22 +1489,15 @@ $pagination-link-line-height:		$font-size !default;
 }
 
 .pagination > ul > li {
-	display: inline-block !important;
-	padding: 0;
-	font-size: $font-size;
+	display: inline-block;
 	line-height: normal;
-	vertical-align: middle;
 }
 
 .pagination li a, .pagination li span {
-	border: 1px solid transparent;
-	border-radius: 2px;
-	display: block;
-	font-size: $pagination-link-font-size;
+	display: inline-block;
 	font-weight: normal;
-	line-height: $pagination-link-line-height;
-	min-width: 10px;
-	padding: 3px;
+	padding: 4px $button-side-padding;
+	box-sizing: border-box;
 	text-align: center;
 	text-decoration: none;
 }
@@ -1527,14 +1511,6 @@ $pagination-link-line-height:		$font-size !default;
 	margin-right: 5px;
 }
 
-.pagination li.page-jump a, .pagination li.next a, .pagination li.previous a {
-	position: relative;
-	font-size: 0;
-	height: $pagination-link-line-height;
-	width: $pagination-link-font-size;
-	padding: 3px;
-}
-
 .pagination li.page-jump a {
 	width: $pagination-font-size + 4px;
 	background: transparent none !important;
@@ -1543,37 +1519,8 @@ $pagination-link-line-height:		$font-size !default;
 	padding-right: 0;
 }
 
-.pagination li.page-jump a:after, .pagination li.next a:after, .pagination li.previous a:after {
-	position: absolute;
-	left: 3px;
-	right: 3px;
-	top: 4px;
-	height: $pagination-link-line-height;
-	font-size: $pagination-link-font-size;
-	line-height: $pagination-link-line-height;
-	text-align: center;
-	font-weight: normal;
-	text-indent: 0;
-	font-family: "Material Design Icons";
-	content: mdi("link");	// icon: mdi-link
-}
-
 .pagination li.page-jump a:after {
 	font-size: $pagination-font-size;
-}
-
-.rtl .pagination li.previous a:after,
-.pagination li.next a:after {
-	content: mdi("chevron-right");	// icon: mdi-chevron-right
-	right: 1px;
-	left: 3px;
-}
-
-.rtl .pagination li.next a:after,
-.pagination li.previous a:after {
-	content: mdi("chevron-left");	// icon: mdi-chevron-left
-	left: 1px;
-	right: 3px;
 }
 
 // Pagination in viewforum for multipage topics
@@ -1589,7 +1536,6 @@ $pagination-link-line-height:		$font-size !default;
 }
 
 .row .pagination li a, .row .pagination li span {
-	border-radius: 1px;
 	padding: 2px 1px;
 }
 

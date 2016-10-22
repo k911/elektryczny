@@ -381,12 +381,7 @@ input.button1:focus, input.button2:focus, button.button2:focus, input.button3:fo
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-start;
-	
-	.inputbox {
-		height: $button-height;
-	}
 	input {
-		height: $button-height;
 		outline: none;
 	}
 }

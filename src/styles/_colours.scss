@@ -328,7 +328,7 @@ dl.details dd {
 .pagination li a {
 	color: $link-color;
 	background-color: $block-background;
-	border-color: $block-inner-border;
+	border-color: $block-background;
 }
 
 .pagination li.ellipsis span {
@@ -714,16 +714,12 @@ dd.profile-warnings {
 		border-color: $button-border;
 		background-color: $button-bg;
 		color: $button-text;
-		box-shadow: none;
 	}
 
 	.buttons > &.locked-icon {
 		color: $button-icon;
 		&:after, &:before {
 			color: $button-icon !important;
-		}
-		&:hover {
-			box-shadow: none;
 		}
 	}
 }
