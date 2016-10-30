@@ -113,27 +113,61 @@ ul.cplist {
 
 // CP tabs shared
 // ----------------------------------------
-$tabs-shared-padding: 9px;
+.tabs {
+	& > ul {
+		display: flex;
+		flex-flow: row wrap; // forum_fn script measures height, so when it wraps to new line it can trigger dropdown menu
+		justify-content: space-around;
+    	width: 50%;
+	}
+	
+	.tab {
+		display: block;
+		font-size: $tab-font-size;
+		line-height: $tab-line-height;
 
-#tabs, #minitabs {
+		& > a {
+			display: block;
+			padding: 0 $tabs-shared-padding;
+			position: relative;
+			text-decoration: none;
+			white-space: nowrap;
+		}
+		&:not(.responsive-tab) a, & a.responsive-tab-link {
+			padding-top: $tab-border-bottom-width;
+			border-bottom-width: $tab-border-bottom-width;
+			border-bottom-style: $tab-border-bottom-style;
+			&:first-child {
+				padding-left: #{$tabs-shared-padding + $tab-border-bottom-width};
+			}
+			&:last-child {
+				padding-right: #{$tabs-shared-padding + $tab-border-bottom-width};
+			}
+		} 
+		a.responsive-tab-link {
+			line-height: inherit;
+		}
+	}
+}
+
+#minitabs {
 	line-height: normal;
 }
 
-#tabs > ul, #minitabs > ul {
+#minitabs > ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	position: relative;
 }
 
-#tabs .tab, #minitabs .tab {
+#minitabs .tab {
 	display: block;
-	float: left;
 	font-size: $tab-font-size;
 	line-height: $tab-line-height;
 }
 
-#tabs .tab > a, #minitabs .tab > a {
+#minitabs .tab > a {
 	display: block;
 	padding: 0 $tabs-shared-padding;
 	position: relative;
@@ -142,20 +176,6 @@ $tabs-shared-padding: 9px;
 	cursor: pointer;
 	font-size: inherit;
 	line-height: inherit;
-}
-
-// CP tabbed menu
-// ----------------------------------------
-#tabs .tab:not(.responsive-tab) a, #tabs .tab a.responsive-tab-link {
-	padding-top: $tab-border-bottom-width;
-	border-bottom-width: $tab-border-bottom-width;
-	border-bottom-style: $tab-border-bottom-style;
-	&:first-child {
-		padding-left: #{$tabs-shared-padding + $tab-border-bottom-width};
-	}
-	&:last-child {
-		padding-right: #{$tabs-shared-padding + $tab-border-bottom-width};
-	}
 }
 
 // Mini tabbed menu used in MCP
@@ -216,7 +236,7 @@ a.responsive-tab-link {
 	}
 }
 
-#tabs .dropdown, #minitabs .dropdown {
+.tabs .dropdown, #minitabs .dropdown {
 	top: $tab-line-height + 2px;
 	margin-right: -2px;
 	font-size: $dropdown-content-font-size;
@@ -228,12 +248,12 @@ a.responsive-tab-link {
 	margin-right: -4px;
 }
 
-#tabs .dropdown-up .dropdown, #minitabs .dropdown-up .dropdown {
+.tabs .dropdown-up .dropdown, #minitabs .dropdown-up .dropdown {
 	bottom: $tab-line-height + 2px;
 	top: auto;
 }
 
-#tabs .dropdown li {
+.tabs .dropdown li {
 	text-align: right;
 }
 
@@ -377,7 +397,7 @@ ol.def-rules li {
 // ----------------------------------------
 @media (max-width: 900px)
 {
-	.nojs #tabs a span, .nojs #minitabs a span {
+	.nojs .tabs a span, .nojs #minitabs a span {
 		max-width: 40px;
 		overflow: hidden;
 		text-overflow: ellipsis;

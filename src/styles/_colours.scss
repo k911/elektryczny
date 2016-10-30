@@ -935,21 +935,29 @@ dd.profile-warnings {
 // CP tabbed menu
 // ----------------------------------------
 
-#tabs .tab {
-	&:not(.responsive-tab) a, & a.responsive-tab-link {
-		color: $tab-color;
-		background: $tab-background;
-		border-bottom-color: $tab-background;
-		&:hover {
-			color: $tab-hover-color;
-			background: $tab-hover-background;
-			border-bottom-color: $tab-hover-border-bottom;
-		}
+.tabs {
+	ul {
+		background-color: $tab-background;
 	}
-	&.activetab:not(.responsive-tab) a, &.activetab a.responsive-tab-link {
-		color: $tab-selected-color;
-		background: $tab-selected-background;
-		border-bottom-color: $tab-selected-border-bottom;
+
+	.tab {
+		&:not(.responsive-tab) a, & a.responsive-tab-link {
+			color: $tab-color;
+			border-bottom-color: $tab-background;
+			&:hover {
+				color: $tab-hover-color;
+				background: $tab-hover-background;
+				border-bottom-color: $tab-hover-border-bottom;
+			}
+		}
+		&.activetab:not(.responsive-tab) a, &.activetab a.responsive-tab-link {
+			color: $tab-selected-color;
+			background: $tab-selected-background;
+			border-bottom-color: $tab-selected-border-bottom;
+		}
+		& a.responsive-tab-link:hover, &.activetab a.responsive-tab-link {
+			border-bottom-color: $tab-background;
+		}
 	}
 }
 

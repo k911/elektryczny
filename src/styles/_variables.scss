@@ -15,6 +15,7 @@ $use-wrapper:							false;	// true or false
 $max-width:								none;	// Maximum width. Set to "none" to make layout fluid
 
 $split-forums:							true;	// Changes layout of forums list. Values are true or false
+
 //
 // Fonts
 //
@@ -60,9 +61,6 @@ $forum-list-description-font-size:		$font-size + 2px;
 
 $topic-link-font-size:					$font-size + 4px;
 $topic-link-font-family:				$forum-link-font-family;
-
-$tab-font-size:							$font-size;
-$tab-line-height:						$tab-font-size * 2 + 4px;
 
 // Posts
 $post-content-font-size:				$font-size + 2px;	// Post content
@@ -160,6 +158,9 @@ $breadcrumb-color:						$faint-color;
 $breadcrumb-color-hover:				$overlay-color;
 
 // Tabs
+$tab-font-size:							$font-size;
+$tab-line-height:						$tab-font-size * 2 + 4px;
+
 $tab-height: 							$nav-primary-font-size + 23px !default; // main tab width
 $tab-padding: 							12px !default;
 $tab-padding-glyph: 					8px !default;
@@ -178,6 +179,8 @@ $tab-selected-border-bottom:			$secondary-color-accent;
 
 $tab-border-bottom-style:				solid;
 $tab-border-bottom-width:				2px;
+
+$tabs-shared-padding: 					9px;
 
 // Badge
 $badge-color:							$overlay-color;

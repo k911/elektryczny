@@ -168,7 +168,6 @@ ul.topiclist dd.mark {
 ul.topiclist.forums dd.topics dfn, ul.topiclist.topics dd.posts dfn {
 	position: relative;
 	left: 0;
-	width: auto;
 	display: inline;
 	font-weight: normal;
 }
@@ -615,4 +614,18 @@ fieldset.display-actions {
 		margin-top: 5px;
 		width: 100%;
 	}
+}
+
+/**
+ * Tabs
+ */
+.tabs ul {
+	width: 100%;
+}
+
+/**
+ * Hardcoded fixes
+ */
+#cp-menu {
+	padding-right: 0;
 }
