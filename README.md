@@ -29,12 +29,12 @@ theme will be maintained at least till phpbb release stable 3.2.0 version
 ## Edit
 
 - You can find and edit SASS files in:
-	`<phpBB>/styles/elektryczny/dev/styles/`
+	`<phpBB>/styles/elektryczny/src/styles/`
 	
 ## Compile
 
 - You can use your private sass compiler to compile *.scss files in 
-	`<phpBB>/styles/elektryczny/dev/`
+	`<phpBB>/styles/elektryczny/src/`
 - Or use previously defined gulp task
 	- Open cmd at directory
 		`<phpBB>/styles/elektryczny/`
