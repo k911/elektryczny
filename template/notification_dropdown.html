@@ -3,7 +3,9 @@
 	<div class="dropdown-contents">
 		<div class="header">
 			{L_NOTIFICATIONS}
-			<a href="{U_NOTIFICATION_SETTINGS}" class="header_settings" title="{L_SETTINGS}"><i class="icon mdi mdi-settings" aria-hidden="true"></i></a>
+			<a href="{U_NOTIFICATION_SETTINGS}" class="header_settings" title="{L_SETTINGS}">
+				<i class="icon mdi mdi-settings" aria-hidden="true"></i>
+			</a>
 		</div>
 
 		<ul>
@@ -27,7 +29,7 @@
 						</div>
 					<!-- IF notifications.URL --></a><!-- ENDIF -->
 					<!-- IF notifications.UNREAD -->
-						<a href="{notifications.U_MARK_READ}" class="mark_read" data-ajax="notification.mark_read" title="{L_MARK_READ}">
+						<a href="{notifications.U_MARK_READ}" class="mark_read icon-mark" data-ajax="notification.mark_read" title="{L_MARK_READ}">
 							<i class="icon mdi mdi-check" aria-hidden="true"></i><span class="sr-only">{L_MARK_READ}</span>
 						</a>
 					<!-- ENDIF -->
@@ -36,10 +38,8 @@
 		</ul>
 
 		<div class="footer">
-			<a href="{U_VIEW_ALL_NOTIFICATIONS}">{L_SEE_ALL}</a>
-			<!-- IF NOTIFICATIONS_COUNT -->
-				<a href="{U_MARK_ALL_NOTIFICATIONS}" data-ajax="notification.mark_all_read" class="mark_all_read" title="{L_MARK_ALL_READ}"><i class="icon mdi mdi-notification-clear-all" aria-hidden="true"></i></a>
-			<!-- ENDIF -->
+			<a href="{U_VIEW_ALL_NOTIFICATIONS}"><span>{L_SEE_ALL}</span></a>
+			<!-- IF NOTIFICATIONS_COUNT --><a href="{U_MARK_ALL_NOTIFICATIONS}" data-ajax="notification.mark_all_read" class="mark_all_read" title="{L_MARK_ALL_READ}"><i class="icon mdi mdi-notification-clear-all" aria-hidden="true"></i></a><!-- ENDIF -->
 		</div>
 	</div>
 </div>
