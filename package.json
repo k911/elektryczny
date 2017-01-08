@@ -1,6 +1,6 @@
 {
   "name": "elektryczny",
-  "version": "1.0.0-beta3",
+  "version": "1.0.0-RC1",
   "description": "phpBB forum theme - http://elektryczny.tk/forum",
   "main": "gulpfile.js",
   "scripts": {},
@@ -33,7 +33,7 @@
     "gulp-download-stream": "0.0.13",
     "gulp-notify": "^2.2.0",
     "gulp-sass": "^3.0.0",
-    "gulp-sourcemaps": "^2.2.0",
+    "gulp-sourcemaps": "^2.2.2",
     "gulp-uglify": "^2.0.0"
   }
 }
