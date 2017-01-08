@@ -4,7 +4,9 @@ var gulp = require('gulp'),
 	sourcemaps = require('gulp-sourcemaps'),
 	notify = require('gulp-notify'),
 	clean = require('gulp-clean'),
-	uglify = require('gulp-uglify');
+	uglify = require('gulp-uglify')
+	download = require('gulp-download-stream'),
+	fs = require('fs');
 
 /**
  * @var string 'jsSrc' js files to uglify (minify)
@@ -24,6 +26,13 @@ var settings = {
     sassConfig: {
         outputStyle: 'compressed' // ['nested', 'expanded', 'compact', 'compressed']
     },
+	downloadSrc: [
+		{ 
+			url: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500&subset=latin-ext',
+			file: 'google-fonts.css'
+		}
+	],	
+	downloadDest: 'src/download',
 	defaultTasks: ['info', 'compile-sass:watch', 'uglify-js:watch']
 };
 
@@ -41,6 +50,30 @@ gulp.task('info', function() {
 	console.log('\nCurrent settings:\n');
 	console.log(settings);
 	console.log('\n');
+});
+
+gulp.task('download-if-not-exists', function() 
+{
+	var files = settings.downloadSrc.map(function(obj){return settings.downloadDest + '/' + obj.file});
+	var foundAll = true;
+	try {
+		files.forEach(function(file)
+		{
+			fs.statSync(file);
+		});
+	} catch(err)
+	{
+		foundAll = false;
+	}
+
+	if(!foundAll)
+	{
+		console.log('Started download..');
+		return download(settings.downloadSrc)
+			.pipe(gulp.dest(settings.downloadDest));
+	} else {
+		console.log('Files already downloaded.');
+	}
 });
 
 /**
@@ -67,7 +100,7 @@ gulp.task('copy-fonts', ['clean-fonts'], function() {
  */
 
 gulp.task('cleanup', ['clean-fonts'], function() {
-	return gulp.src(['theme/*.css', 'template/*.js'], {read: false})
+	return gulp.src(['theme/*.css', 'template/*.js', 'src/download'], {read: false})
 		.pipe(clean())
 		.pipe(notify('Deleted: <%= file.relative %>'));
 });
@@ -75,7 +108,7 @@ gulp.task('cleanup', ['clean-fonts'], function() {
 /**
  * Compile all styles task
  */
-gulp.task('compile-sass', function() {
+gulp.task('compile-sass', ['download-if-not-exists'], function() {
     return gulp.src(settings.sassSrc)
         .pipe(sass(settings.sassConfig).on('error', sass.logError))
         .pipe(gulp.dest(settings.sassDest))
