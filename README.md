@@ -23,25 +23,23 @@ theme will be maintained at least till phpbb release stable 3.2.0 version
 4. (optional) if you have not install gulp globally or you are not sure enter:
 	`npm install --global gulp`
 5. Then
-	`gulp init`
-6. Theme is ready to use.
+	`gulp init` or `npm run init`
+6. If no errors occured, theme should be ready to use.
 
 ## Edit
 
-- You can find and edit SASS files in:
+- JS files are in:
+	`<phpBB>/styles/elektryczny/src/scripts/`
+- SASS files in:
 	`<phpBB>/styles/elektryczny/src/styles/`
+- Downloaded dependencies are keeped in
+	`<phpBB>/styles/elektryczny/src/download/`
 	
-## Compile
+## Comands
 
-- You can use your private sass compiler to compile *.scss files in 
-	`<phpBB>/styles/elektryczny/src/`
-- Or use previously defined gulp task
-	- Open cmd at directory
-		`<phpBB>/styles/elektryczny/`
-	- Run `gulp compile-sass` to compile each *.scss files
-- You can also turn on auto-compilation and auto-uglify js files
-	- Open cmd at directory
-		`<phpBB>/styles/elektryczny/`
-	- Run `gulp` or `gulp compile-sass:watch` and `gulp uglify-js:watch`
-	- ..and you have turned on auto-compilation until you terminate cmd process
-- Command `gulp cleanup` removes whole stuff created by script `gulp init`
+- Intialization (compile, uglify, download and copy dependencies):
+	`npm run init` or `gulp init`
+- Cleanup all 
+	`npm run clean` or `gulp cleanup`
+- Auto-compilation/uglification of scripts/sass files
+	`npm run watch` or `gulp`

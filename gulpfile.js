@@ -18,7 +18,7 @@ var gulp = require('gulp'),
  * @var array 'defaultTask' tasks run on 'default' task is invoked eg. when in cmd is typed only 'gulp'
  */
 var settings = {
-	jsSrc: 'src/javascript/*.js',
+	jsSrc: 'src/scripts/*.js',
 	jsDest: 'template',
 	fontsDest: 'theme/fonts',
 	sassWatch: ['src/*.scss', 'src/styles/*.scss'],
@@ -140,7 +140,7 @@ gulp.task('uglify-js', function(){
 	return gulp.src(settings.jsSrc)
 		.pipe(sourcemaps.init())
 			.pipe(uglify())
-		.pipe(sourcemaps.write(''))
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(settings.jsDest))
 		.pipe(notify('USM: <%= file.relative %>'));;
 });
