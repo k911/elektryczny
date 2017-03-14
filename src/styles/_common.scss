@@ -1489,8 +1489,8 @@ $pagination-link-line-height:		$font-size !default;
 
 .pagination > ul {
 	font-size: $button-font-size;
-	display: inline-block;
-	list-style: none !important;
+	display: inline-flex;
+	list-style: none;
 	margin-left: .5em;
 }
 
@@ -1531,18 +1531,19 @@ $pagination-link-line-height:		$font-size !default;
 
 // Pagination in viewforum for multipage topics
 .row .pagination {
-	display: block;
-	margin-top: 0;
-	padding: 1px 0;
-	font-size: $pagination-link-font-size;
-}
-
-.row .pagination > ul {
-	margin: 0;
-}
-
-.row .pagination li a, .row .pagination li span {
-	padding: 2px 1px;
+	ul {
+		margin: 0;
+		
+		li:not(:last-child) {
+			a 
+			{
+				&:after 
+				{
+					content: ',';
+				}
+			}
+		}
+	}
 }
 
 // jQuery popups

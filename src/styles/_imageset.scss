@@ -360,7 +360,6 @@ span.imageset {
 		content: mdi("account-plus");	// icon: mdi-account-plus
 	}
 }
-.icon-search, .responsive-search a	{ @extend %icon-search-old; }
 .icon-search-active			{ @extend %icon-search-old; }
 .icon-search-advanced		{ @extend %icon-search-old; }
 .icon-search-new			{ @extend %icon-search-new; }
