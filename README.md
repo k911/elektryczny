@@ -2,6 +2,7 @@
 
 phpbb3 theme
 theme created for private purposes (preview: http://elektryczny.tk/forum/)
+
 tested on phpBB v3.2.0
 
 `<phpBB>` phpBB3 installation path (where file 'config.php' is located)
