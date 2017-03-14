@@ -2,9 +2,7 @@
 
 phpbb3 theme
 theme created for private purposes (preview: http://elektryczny.tk/forum/)
-tested versions of phpbb:
-- 3.2.0-RC1
-theme will be maintained at least till phpbb release stable 3.2.0 version
+tested on phpBB v3.2.0
 
 `<phpBB>` phpBB3 installation path (where file 'config.php' is located)
 
