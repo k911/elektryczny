@@ -20,11 +20,17 @@ var gulp = require('gulp'),
 var settings = {
 	jsSrc: 'src/javascript/*.js',
 	jsDest: 'template',
+	fontsDest: 'theme/fonts',
 	sassWatch: ['src/*.scss', 'src/styles/*.scss'],
 	sassSrc: ['src/*.scss', '!_*.scss'],
 	sassDest: 'theme',
     sassConfig: {
-        outputStyle: 'compressed' // ['nested', 'expanded', 'compact', 'compressed']
+        outputStyle: 'compressed', // ['nested', 'expanded', 'compact', 'compressed']
+		errLogToConsole: true,
+		onError: function(err)
+		{
+			return notify().write(err);
+		}
     },
 	downloadSrc: [
 		{ 
@@ -33,7 +39,8 @@ var settings = {
 		}
 	],	
 	downloadDest: 'src/download',
-	defaultTasks: ['info', 'compile-sass:watch', 'uglify-js:watch']
+	defaultTasks: ['info', 'compile-sass:watch', 'uglify-js:watch'],
+	cleanupFiles: ['theme/*.css', 'theme/*.css.map', 'template/*.js', 'src/download'],
 };
 
 /**
@@ -80,7 +87,7 @@ gulp.task('download-if-not-exists', function()
  * Deletes old folder with fonts
  */
 gulp.task('clean-fonts', function() {
-	return gulp.src('theme/fonts', {read: false})
+	return gulp.src(settings.fontsDest, {read: false})
 		.pipe(clean())
 		.pipe(notify('Deleted: <%= file.relative %>'));
 });
@@ -90,29 +97,31 @@ gulp.task('clean-fonts', function() {
  */
 gulp.task('copy-fonts', ['clean-fonts'], function() {
 	return gulp.src('node_modules/mdi/fonts/*', {base: 'node_modules/mdi/fonts/'})
-		.pipe(gulp.dest('theme/fonts'))
-		.pipe(notify('Copied dependecy: <%= file.relative %>'));
+		.pipe(gulp.dest(settings.fontsDest))
+		.pipe(notify('Copied: <%= file.relative %>'));
 });
 
 /**
  * Task to do general cleanup in project
  * Deletes all compiled, copied or minified/uglified files
  */
-
 gulp.task('cleanup', ['clean-fonts'], function() {
-	return gulp.src(['theme/*.css', 'template/*.js', 'src/download'], {read: false})
+	return gulp.src(settings.cleanupFiles, {read: false})
 		.pipe(clean())
 		.pipe(notify('Deleted: <%= file.relative %>'));
 });
 
 /**
- * Compile all styles task
+ * Compile all styles and create source maps
+ * CUSM = Compiled, Ugflified (Minified), Source Maps created
  */
 gulp.task('compile-sass', ['download-if-not-exists'], function() {
     return gulp.src(settings.sassSrc)
-        .pipe(sass(settings.sassConfig).on('error', sass.logError))
+		.pipe(sourcemaps.init())
+        	.pipe(sass(settings.sassConfig))
+		.pipe(sourcemaps.write(''))
         .pipe(gulp.dest(settings.sassDest))
-		.pipe(notify('Compiled, minified: <%= file.relative %>'));
+		.pipe(notify('CUSM: <%= file.relative %>'));
 });
 
 /**
@@ -124,13 +133,16 @@ gulp.task('compile-sass:watch', ['compile-sass'], function() {
 });
 
 /**
- * Minify all javascript task
+ * Minify all javascript and create source maps task
+ * USM = Ugflified and Source Maps created
  */
 gulp.task('uglify-js', function(){
 	return gulp.src(settings.jsSrc)
-		.pipe(uglify())
+		.pipe(sourcemaps.init())
+			.pipe(uglify())
+		.pipe(sourcemaps.write(''))
 		.pipe(gulp.dest(settings.jsDest))
-		.pipe(notify('Uglified: <%= file.relative %>'));;
+		.pipe(notify('USM: <%= file.relative %>'));;
 });
 
 /**
@@ -139,20 +151,6 @@ gulp.task('uglify-js', function(){
 gulp.task('uglify-js:watch', ['uglify-js'], function() {
 	console.log('\nAuto-uglifing js enabled\n');
 	gulp.watch(settings.jsSrc, ['uglify-js']);
-});
-
-/**
- * @experimental
- * Compile all styles task with source maps
- * TODO: in the future
- */
-gulp.task('compile-sass-maps', function() {
-    return gulp.src(settings.sassSrc)
-		.pipe(sourcemaps.init())
-        .pipe(sass(settings.sassConfig).on('error', sass.logError))
-        .pipe(gulp.dest(settings.sassDest))
-		.pipe(sourcemaps.write('theme/maps'))
-		.pipe(notify('Compiled, minified and created sourcemap: <%= file.relative %>'));
 });
 
 /**
