@@ -20,11 +20,9 @@ theme will be maintained at least till phpbb release stable 3.2.0 version
 	`<phpBB>/styles/elektryczny/` 
 3. Run
 	`npm install`
-4. (optional) if you have not install gulp globally or you are not sure enter:
-	`npm install --global gulp`
-5. Then
-	`gulp init` or `npm run init`
-6. If no errors occured, theme should be ready to use.
+4. Then
+	`npm run compile`
+5. If no errors occured, theme should be ready to use.
 
 ## Edit
 
@@ -38,8 +36,10 @@ theme will be maintained at least till phpbb release stable 3.2.0 version
 ## Comands
 
 - Intialization (compile, uglify, download and copy dependencies):
-	`npm run init` or `gulp init`
+	`npm start`
+- Check results in linters:
+	`npm run lint`
 - Cleanup all 
-	`npm run clean` or `gulp cleanup`
+	`npm run clean`
 - Auto-compilation/uglification of scripts/sass files
-	`npm run watch` or `gulp`
+	`npm run auto`
