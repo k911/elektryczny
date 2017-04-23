@@ -379,8 +379,8 @@ function checkNavigation(force)
 			}
 
 			cloneClass = (
-					$this.attr('data-responsive-class') === undefined ? 
-						($this.hasClass('small-icon') ? $this.attr('class') : '') : 
+					$this.attr('data-responsive-class') === undefined ?
+						($this.hasClass('small-icon') ? $this.attr('class') : '') :
 						$this.attr('data-responsive-class')
 				) + ' responsive-index-' + i;
 
@@ -502,8 +502,8 @@ function initResponsiveNavigation()
 			}
 			// Secondary menu
 			lists.eq(0).prepend('<li class="responsive-menu dropdown-container" style="display: none;"><a href="#" class="dropdown-trigger dropdown-toggle"><i class="mdi mdi-menu" aria-hidden="true"></a>' +
-					'<div class="dropdown hidden">' + 
-						'<div class="pointer"><div class="pointer-inner"></div></div>' + 
+					'<div class="dropdown hidden">' +
+						'<div class="pointer"><div class="pointer-inner"></div></div>' +
 						'<ul class="dropdown-contents" /></ul>' +
 					'</div>' +
 				'</li>');
@@ -578,7 +578,7 @@ function parseDocument($container) {
 		$('.tab[data-select-match]', this).each(function() {
 			var matches = $(this).attr('data-select-match').split(','),
 				i, match, item;
-			
+
 			for (i=0; i<matches.length; i++) {
 				match = matches[i].trim();
 				if (current.indexOf(match) != -1) {
@@ -1323,7 +1323,7 @@ function parseDocument($container) {
 				breakLine = 0,
 				currOffset = 0,
 				prevOffset = 0;
-			
+
 			function enableStatic()
 			{
 				$('#page-header-box').css('padding-top', Math.floor(navigation.height()) + 'px');
@@ -1386,7 +1386,7 @@ function parseDocument($container) {
 					testHash();
 				}
 			}
-			$w.on('scroll resize', function() { 
+			$w.on('scroll resize', function() {
 				if (!isStatic) {
 					check(false);
 				}
@@ -1405,7 +1405,7 @@ function parseDocument($container) {
 					else {
 						queued = true;
 					}
-					
+
 					/**
 					 * Smooth transition shadow box from header to navbar
 					 * ---      k911@elektryczny.tk © 2016           ---
@@ -1433,7 +1433,7 @@ function parseDocument($container) {
 	* Empty last post column
 	*/
 	$container.find('dd.lastpost > span:only-child > br:only-child').parents('dd.lastpost').addClass('empty');
-	
+
 	/**
 	* Spoiler à la wykop.pl
 	* Usage:
@@ -1445,7 +1445,7 @@ function parseDocument($container) {
 		$(this).next('div.spoiler').show();
 		$(this).hide();
 	});
-	
+
 	/**
 	* HD images
 	*/
@@ -1457,7 +1457,7 @@ function parseDocument($container) {
 				hdLoaded = false,
 				normalLoaded = false;
 
-			function replaceImage() 
+			function replaceImage()
 			{
 				$this.css('width', (img.naturalWidth ? img.naturalWidth : img.width) + 'px');
 				img.setAttribute('src', img.getAttribute('data-src-hd'));

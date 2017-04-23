@@ -132,7 +132,7 @@ phpbb.markNotifications = function($popup, unreadCount) {
 
 	// Update the unread count.
 	$('.notifications.tab').attr('data-badge', unreadCount).toggleClass('non-zero mdl-badge mdl-badge--small', unreadCount > 0);
-	
+
 	// Remove the Mark all read link if there are no unread notifications.
 	if (!unreadCount) {
 		$('.mark_all_read').remove();

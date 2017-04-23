@@ -1,12 +1,16 @@
-/** 
+/**
  * EXTERNAL IMPORTS
  */
- 
+
 /**
  * Google Font: Roboto 300, 400, 500
  * @see https://fonts.google.com/selection?selection.family=Roboto:300,400,500
  */
-@import "../download/google-fonts";
+// Roboto Font Familly
+$roboto-font-path: 'fonts';
+@import '../../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface-light';
+@import '../../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface-regular';
+@import '../../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface-medium';
 
 /**
  * Material Design Icons
@@ -14,8 +18,8 @@
  */
 $mdi-font-path: 	"fonts";
 @import "../../node_modules/mdi/scss/materialdesignicons";
- 
-/** 
+
+/**
  * INTERNAL IMPORTS
  */
 
@@ -25,5 +29,5 @@ $mdi-font-path: 	"fonts";
 // stylesheet functions
 @import "functions";
 
-// mixins 
+// mixins
 @import "mixins";

@@ -10,7 +10,7 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 	white-space: nowrap;
 	font-family: 'Roboto', sans-serif;
 	text-decoration: none !important;
-	
+
 	font-size: $button-font-size;
 	padding: $button-top-padding $button-side-padding;
 	box-sizing: border-box;
@@ -19,7 +19,7 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 	& > strong {
 		font-weight: 600;
 	}
-	
+
 	.button-text {
 		@media (max-width: 550px) {
 			display: none;
@@ -30,7 +30,7 @@ button.button {
 	border-width: 0;
 	line-height: normal;
 }
- 
+
 .icon-button {
 	font-size: 0;
 	&:before {
@@ -44,7 +44,7 @@ button.button {
 		text-indent: 0;
 		font-style: normal;
 		text-transform: none;
-		
+
 		.buttons > & {
 			position: relative;
 			top: -1px;
@@ -292,7 +292,7 @@ ul.linklist.bulletin > li.small-icon:before {
 
 .quote-icon:before {
 	@extend %icon-button;
-	content: mdi("format-quote");	// icon: mdi-format-quote
+	content: mdi("format-quote-close");	// icon: mdi-format-quote-close
 	font-size: 14px;
 }
 .edit-icon:before {
