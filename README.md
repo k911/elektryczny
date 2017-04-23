@@ -2,9 +2,8 @@
 
 phpbb3 theme
 theme created for private purposes (preview: http://elektryczny.tk/forum/)
-tested versions of phpbb:
-- 3.2.0-RC1
-theme will be maintained at least till phpbb release stable 3.2.0 version
+
+tested on phpBB v3.2.0
 
 `<phpBB>` phpBB3 installation path (where file 'config.php' is located)
 
@@ -21,7 +20,7 @@ theme will be maintained at least till phpbb release stable 3.2.0 version
 3. Run
 	`npm install`
 4. Then
-	`npm run compile`
+	`npm start`
 5. If no errors occured, theme should be ready to use.
 
 ## Edit
