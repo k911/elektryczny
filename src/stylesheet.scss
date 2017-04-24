@@ -3,10 +3,9 @@
  * -- stylesheet.css replacement --
  * This file requires SASS compiler.
  */
- 
+
 // Default imports
 @import "styles/imports";
-
 // - Layouts
 @import "styles/common";
 @import "styles/links";
@@ -20,16 +19,14 @@
 @import "styles/utils";
 @import "styles/mdl-badge";
 @import "styles/plupload";
-
 // media queries
 @media screen and (max-width: 700px) {
-	@import "styles/responsive";
+  @import "styles/responsive";
 }
 
 // custom fixes
 @import "styles/custom";
-
 // print mode 'dynamically'
 @media print {
-	@import "styles/print";
+  @import "styles/print";
 }

@@ -3,10 +3,9 @@
  *	-- print.css replacement --
  *	This file requires SASS compiler.
  */
- 
+
 // Default imports
 @import "styles/imports";
-
 // layout
 @import "styles/common";
 @import "styles/links";
@@ -19,13 +18,11 @@
 @import "styles/colours";
 @import "styles/utils";
 @import "styles/mdl-badge";
-
 // custom fixes
 @import "styles/custom";
-
 // media queries
 @media screen and (max-width: 700px) {
-	@import "styles/responsive";
+  @import "styles/responsive";
 }
 
 // print mode as default

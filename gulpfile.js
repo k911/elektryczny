@@ -30,11 +30,11 @@ const settings = {
   sassSrc: ['src/*.scss', '!_*.scss'],
   sassDest: 'theme',
   sassConfig: {
-    outputStyle: 'compressed', // ['nested', 'expanded', 'compact', 'compressed']
+    outputStyle: 'compressed',
     errLogToConsole: true,
     onError(err) {
       return notify().write(err);
-    },
+    }
   },
   downloadSrc: [
     // {
@@ -44,23 +44,23 @@ const settings = {
   ],
   downloadDest: 'src/download',
   defaultTasks: ['info', 'compile-sass:watch', 'uglify-js:watch'],
-  cleanupFiles: ['theme/*.css', 'theme/*.css.map', 'template/*.js', 'src/download'],
+  cleanupFiles: ['theme/*.css', 'theme/*.css.map', 'template/*.js', 'src/download']
 };
 
 /**
  * Initialize all needed for first time
  */
 gulp.task('init', ['copy-fonts', 'compile-sass', 'uglify-js'], () => {
-  console.log('Doing some things..');
+  console.info('Doing some things..');
 });
 
 /**
  * Show default info
  */
 gulp.task('info', () => {
-  console.log('\nCurrent settings:\n');
-  console.log(settings);
-  console.log('\n');
+  console.info('\nCurrent settings:\n');
+  console.info(settings);
+  console.info('\n');
 });
 
 gulp.task('download-if-not-exists', () => {
@@ -75,11 +75,12 @@ gulp.task('download-if-not-exists', () => {
   }
 
   if (!foundAll) {
-    console.log('Started download..');
+    console.info('Started download..');
     return download(settings.downloadSrc)
       .pipe(gulp.dest(settings.downloadDest));
   }
-  console.log('Files already downloaded.');
+  console.info('Files already downloaded.');
+  return null;
 });
 
 /**
@@ -111,7 +112,7 @@ gulp.task('copy-fonts', ['copy-roboto-fonts'],
  * Deletes all compiled, copied or minified/uglified files
  */
 gulp.task('cleanup', ['clean-fonts'], () => gulp.src(settings.cleanupFiles, {
-  read: false,
+  read: false
 })
   .pipe(clean())
   .pipe(notify('Deleted: <%= file.relative %>')));
@@ -131,7 +132,7 @@ gulp.task('compile-sass', ['download-if-not-exists'], () => gulp.src(settings.sa
  * Auto compile all styles task during changes
  */
 gulp.task('compile-sass:watch', ['compile-sass'], () => {
-  console.log('\nAuto-compiling sass enabled\n');
+  console.info('\nAuto-compiling sass enabled\n');
   gulp.watch(settings.sassWatch, ['compile-sass']);
 });
 
@@ -150,7 +151,7 @@ gulp.task('uglify-js', () => gulp.src(settings.jsSrc)
  * Auto uglify javascript task during changes
  */
 gulp.task('uglify-js:watch', ['uglify-js'], () => {
-  console.log('\nAuto-uglifing js enabled\n');
+  console.info('\nAuto-uglifing js enabled\n');
   gulp.watch(settings.jsSrc, ['uglify-js']);
 });
 
@@ -158,5 +159,5 @@ gulp.task('uglify-js:watch', ['uglify-js'], () => {
  * @default tasks
  */
 gulp.task('default', settings.defaultTasks, () => {
-  console.log('\nDeflaut tasks successfully invoked.\n');
+  console.info('\nDeflaut tasks successfully invoked.\n');
 });

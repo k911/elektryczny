@@ -1,10 +1,10 @@
-extends: airbnb-base
+extends: "airbnb-es5"
 plugins:
   - standard
   - promise
 env:
-    node: true
-    mocha: true
+    jquery: true
+    browser: true
 rules:
     indent: ["error", 2]
     semi: ["error", "always", {omitLastInOneLineBlock: true}]
@@ -12,7 +12,9 @@ rules:
     no-trailing-spaces: ["error"]
     one-var-declaration-per-line: ["error", "initializations"]
     no-irregular-whitespace: ["error"]
-    no-var: ["error"]
+    no-var: "off"
+    func-names: "off"
+    valid-jsdoc: "off"
     no-empty: ["error"]
     linebreak-style: ["error", "unix"]
     eol-last: ["error", "always"]

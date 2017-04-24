@@ -5,85 +5,86 @@ Search:
 Replace:
 	content: mdi\("\2"\);\t// icon: mdi-\2
 */
+
 // Blank Material Design Icon replacement
 %imageset-glyph {
-	position: relative;
-	text-indent: 999px;
-	&:after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		text-align: center;
-		font-size: 13px;
-		line-height: 13px;
-		vertical-align: baseline;
-		font-weight: normal;
-		font-style: normal;
-		text-transform: none;
-		text-indent: 0;
-		pointer-events: none;
-	}
+  position: relative;
+  text-indent: 999px;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 13px;
+    line-height: 13px;
+    vertical-align: baseline;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    text-indent: 0;
+    pointer-events: none;
+  }
 }
 
 %imageset-mdi {
-	@extend %imageset-glyph;
-	&:after {
-		font-family: "Material Design Icons";
-	}
+  @extend %imageset-glyph;
+  &::after {
+    font-family: "Material Design Icons";
+  }
 }
 
 %imageset-16 {
-	width: 16px;
-	height: 16px;
-	&:after {
-		top: 50%;
-		bottom: auto;
-		margin-top: -8px;
-		height: 16px;
-		font-size: 14px;
-		line-height: 16px;
-	}
+  width: 16px;
+  height: 16px;
+  &::after {
+    top: 50%;
+    bottom: auto;
+    margin-top: -8px;
+    height: 16px;
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 
 %imageset-12 {
-	width: 12px;
-	height: 12px;
-	&:after {
-		top: 50%;
-		bottom: auto;
-		margin-top: -6px;
-		height: 12px;
-		font-size: 10px;
-		line-height: 12px;
-	}
+  width: 12px;
+  height: 12px;
+  &::after {
+    top: 50%;
+    bottom: auto;
+    margin-top: -6px;
+    height: 12px;
+    font-size: 10px;
+    line-height: 12px;
+  }
 }
 
 %imageset-arrow {
-	// For latest topic arrows
-	width: 11px;
-	height: 10px;
-	&:after {
-		top: 50%;
-		bottom: auto;
-		margin-top: -5px;
-		height: 10px;
-		font-size: 10px;
-		line-height: 10px;
-	}
+  // For latest topic arrows
+  width: 11px;
+  height: 10px;
+  &::after {
+    top: 50%;
+    bottom: auto;
+    margin-top: -5px;
+    height: 10px;
+    font-size: 10px;
+    line-height: 10px;
+  }
 }
 
 // Former imageset
 span.imageset {
-	display: inline-block !important;
-	background: transparent none 0 0 no-repeat;
-	margin: 0;
-	padding: 0;
-	width: 0;
-	height: 0;
-	overflow: hidden;
+  display: inline-block !important;
+  background: transparent none 0 0 no-repeat;
+  margin: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 // Global imageset items
@@ -93,7 +94,7 @@ span.imageset {
 // 	top: 2px;
 // 	width: 12px;
 // 	height: 13px;
-// 	&:after {
+// 	&::after {
 // 		top: 50%;
 // 		bottom: auto;
 // 		margin-top: -6px;
@@ -103,321 +104,373 @@ span.imageset {
 // 		content: mdi("arrow-right-bold-circle-outline");	// icon: mdi-arrow-right-bold-circle-outline
 // 		text-align: left;
 // 	}
-// 	.rtl &:after {
+// 	.rtl &::after {
 // 		content: mdi("arrow-left-bold-circle-outline");	// icon: mdi-arrow-left-bold-circle-outline
 // 	}
 // }
 // .imageset.icon_post_target_unread {
 // 	@extend .imageset.icon_post_target;
-// 	&:after {
+// 	&::after {
 // 		content: mdi("arrow-right-bold-circle");	// icon: mdi-arrow-right-bold-circle
 // 	}
-// 	.rtl &:after {
+// 	.rtl &::after {
 // 		content: mdi("arrow-left-bold-circle");	// icon: mdi-arrow-left-bold-circle
 // 	}
 // }
-.imageset.icon_post_target, .imageset.icon_post_target_unread {
-	background-size: 11px 9px;
-	padding-left: 11px;
-	padding-top: 9px;
+.imageset.icon_post_target,
+.imageset.icon_post_target_unread {
+  background-size: 11px 9px;
+  padding-left: 11px;
+  padding-top: 9px;
 }
+
 .imageset.icon_topic_attach {
-	@extend %imageset-mdi;
-	@extend %imageset-12;
-	&:after {
-		content: mdi("attachment");	// icon: mdi-attachment
-	}
+  @extend %imageset-mdi;
+  @extend %imageset-12;
+  &::after {
+    content: mdi("attachment"); // icon: mdi-attachment
+  }
 }
+
 .imageset.icon_topic_latest {
-	@extend %imageset-mdi;
-	@extend %imageset-arrow;
-	&:after {
-		content: mdi("arrow-right-bold");	// icon: mdi-arrow-right-bold
-	}
+  @extend %imageset-mdi;
+  @extend %imageset-arrow;
+  &::after {
+    content: mdi("arrow-right-bold"); // icon: mdi-arrow-right-bold
+  }
 }
+
 .imageset.icon_topic_newest {
-	@extend .imageset.icon_topic_latest;
-	@extend %imageset-secondary-color;
+  @extend .imageset.icon_topic_latest;
+  @extend %imageset-secondary-color;
 }
+
 .imageset.icon_topic_reported {
-	@extend %imageset-mdi;
-	@extend %imageset-16;
-	@extend %imageset-secondary-color;
-	&:after {
-		content: mdi("alert");	// icon: mdi-alert
-	}
+  @extend %imageset-mdi;
+  @extend %imageset-16;
+  @extend %imageset-secondary-color;
+  &::after {
+    content: mdi("alert"); // icon: mdi-alert
+  }
 }
+
 .imageset.icon_topic_deleted {
-	@extend %imageset-mdi;
-	@extend %imageset-16;
-	@extend %imageset-secondary-color;
-	&:after {
-		content: mdi("close-octagon");	// icon: mdi-close-octagon
-	}
+  @extend %imageset-mdi;
+  @extend %imageset-16;
+  @extend %imageset-secondary-color;
+  &::after {
+    content: mdi("close-octagon"); // icon: mdi-close-octagon
+  }
 }
+
 .imageset.icon_topic_unapproved {
-	@extend %imageset-mdi;
-	@extend %imageset-16;
-	@extend %imageset-secondary-color;
-	&:after {
-		content: mdi("block-helper");	// icon: mdi-block-helper
-	}
+  @extend %imageset-mdi;
+  @extend %imageset-16;
+  @extend %imageset-secondary-color;
+  &::after {
+    content: mdi("block-helper"); // icon: mdi-block-helper
+  }
 }
+
 .imageset.icon_topic_poll {
-	@extend %imageset-mdi;
-	@extend %imageset-12;
-	&:after {
-		content: mdi("poll");	// icon: mdi-poll
-	}
+  @extend %imageset-mdi;
+  @extend %imageset-12;
+  &::after {
+    content: mdi("poll"); // icon: mdi-poll
+  }
 }
 
 .imageset.icon_contact {
-	@extend %imageset-mdi;
-	@extend %imageset-12;
-	&:after {
-		content: mdi("more");	// icon: mdi-more
-	}
-	&:hover:after {
-		content: mdi("chevron-down");	// icon: mdi-chevron-down
-	}
-	.dropdown-up &:hover:after {
-		content: mdi("chevron-up");	// icon: mdi-chevron-up
-	}
+  @extend %imageset-mdi;
+  @extend %imageset-12;
+  &::after {
+    content: mdi("more"); // icon: mdi-more
+  }
+  &:hover::after {
+    content: mdi("chevron-down"); // icon: mdi-chevron-down
+  }
+  .dropdown-up &:hover::after {
+    content: mdi("chevron-up"); // icon: mdi-chevron-up
+  }
 }
-
 
 // Icon images
 // ----------------------------------------
 %icon-image {
-	position: relative;
-	background-image: none;
-	&:after {
-		content: '';
-		position: absolute;
-		top: 50%;
-		left: 0;
-		height: 14px;
-		margin-top: -7px; //test
-		text-align: center;
-		font-size: 12px;
-		line-height: 14px;
-		vertical-align: baseline;
-		font-weight: normal;
-		font-style: normal;
-		text-transform: none;
-		text-indent: 0;
-		pointer-events: none;
-	}
-	&.small-icon:after {
-		width: 18px;
-		text-align: center;
-	}
+  position: relative;
+  background-image: none;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 14px;
+    margin-top: -7px; //test
+    text-align: center;
+    font-size: 12px;
+    line-height: 14px;
+    vertical-align: baseline;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    text-indent: 0;
+    pointer-events: none;
+  }
+  &.small-icon::after {
+    width: 18px;
+    text-align: center;
+  }
 }
 
 %icon-image-mdi {
-	@extend %icon-image;
-	&:after {
-		font-family: "Material Design Icons";
-	}
+  @extend %icon-image;
+  &::after {
+    font-family: "Material Design Icons";
+  }
 }
 
 %icon-search-old {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("magnify");	// icon: mdi-magnify
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("magnify"); // icon: mdi-magnify
+  }
 }
 
 %icon-search-new {
-	@extend %icon-search-old;
+  @extend %icon-search-old;
 }
 
 %icon-search-misc {
-	@extend %icon-search-old;
+  @extend %icon-search-old;
 }
 
 .icon-acp {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("security");	// icon: mdi-security
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("security"); // icon: mdi-security
+  }
 }
+
 .icon-bookmark {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("bookmark");	// icon: mdi-bookmark
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("bookmark"); // icon: mdi-bookmark
+  }
 }
+
 .icon-bump {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("reload");	// icon: mdi-reload
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("reload"); // icon: mdi-reload
+  }
 }
+
 .icon-contact {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("contact-mail");	// icon: mdi-contact-mail
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("contact-mail"); // icon: mdi-contact-mail
+  }
 }
+
 .icon-delete-cookies {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("delete-forever");	// icon: mdi-delete-forever
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("delete-forever"); // icon: mdi-delete-forever
+  }
 }
+
 .icon-download {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("download");	// icon: mdi-download
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("download"); // icon: mdi-download
+  }
 }
+
 .icon-faq {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("help-circle");	// icon: mdi-help-circle
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("help-circle"); // icon: mdi-help-circle
+  }
 }
+
 .icon-home {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("home-variant");	// icon: mdi-home-variant
-	}
-	&.breadcrumbs:after {
-		text-align: left;
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("home-variant"); // icon: mdi-home-variant
+  }
+  &.breadcrumbs::after {
+    text-align: left;
+  }
 }
+
 .icon-logout {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("logout-variant");	// icon: mdi-logout-variant
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("logout-variant"); // icon: mdi-logout-variant
+  }
 }
+
 .icon-login {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("login-variant");	// icon: mdi-login-variant
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("login-variant"); // icon: mdi-login-variant
+  }
 }
+
 .icon-mark {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("check");	// icon: mdi-check
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("check"); // icon: mdi-check
+  }
 }
+
 .icon-mcp {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("gavel");	// icon: mdi-gavel
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("gavel"); // icon: mdi-gavel
+  }
 }
+
 .icon-members {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("account-multiple");	// icon: mdi-account-multiple
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("account-multiple"); // icon: mdi-account-multiple
+  }
 }
+
 .icon-notification {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("bell-outline");	// icon: mdi-bell-outline
-	}
-	&.non-zero:after {
-		content: mdi("bell");	// icon: mdi-bell
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("bell-outline"); // icon: mdi-bell-outline
+  }
+  &.non-zero::after {
+    content: mdi("bell"); // icon: mdi-bell
+  }
 }
+
 .icon-pages {
-	@extend %icon-image-mdi;
-	&:after {
-		// todo: check usage
-		content: mdi("content-copy");	// icon: mdi-content-copy
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    // todo: check usage
+    content: mdi("content-copy"); // icon: mdi-content-copy
+  }
 }
+
 .icon-pm {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("message-outline");	// icon: mdi-message-outline
-	}
-	&.non-zero:after {
-		content: mdi("message-text");	// icon: mdi-message-text
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("message-outline"); // icon: mdi-message-outline
+  }
+  &.non-zero::after {
+    content: mdi("message-text"); // icon: mdi-message-text
+  }
 }
+
 .icon-print {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("printer");	// icon: mdi-printer
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("printer"); // icon: mdi-printer
+  }
 }
+
 .icon-profile {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("face");	// icon: mdi-face
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("face"); // icon: mdi-face
+  }
 }
-.icon-register{
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("account-plus");	// icon: mdi-account-plus
-	}
+
+.icon-register {
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("account-plus"); // icon: mdi-account-plus
+  }
 }
-.icon-search-active			{ @extend %icon-search-old; }
-.icon-search-advanced		{ @extend %icon-search-old; }
-.icon-search-new			{ @extend %icon-search-new; }
-.icon-search-self			{ @extend %icon-search-misc; }
-.icon-search-unanswered		{ @extend %icon-search-new; }
-.icon-search-unread			{ @extend %icon-search-new; }
+
+.icon-search-active {
+  @extend %icon-search-old;
+}
+
+.icon-search-advanced {
+  @extend %icon-search-old;
+}
+
+.icon-search-new {
+  @extend %icon-search-new;
+}
+
+.icon-search-self {
+  @extend %icon-search-misc;
+}
+
+.icon-search-unanswered {
+  @extend %icon-search-new;
+}
+
+.icon-search-unread {
+  @extend %icon-search-new;
+}
+
 .icon-sendemail {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("email");	// icon: mdi-email
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("email"); // icon: mdi-email
+  }
 }
+
 .icon-subscribe {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("checkbox-marked-circle");	// icon: mdi-checkbox-marked-circle
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("checkbox-marked-circle"); // icon: mdi-checkbox-marked-circle
+  }
 }
+
 .icon-unsubscribe {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("checkbox-marked-circle-outline");	// icon: mdi-checkbox-marked-circle-outline
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("checkbox-marked-circle-outline"); // icon: mdi-checkbox-marked-circle-outline
+  }
 }
+
 .icon-team {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("worker");	// icon: mdi-worker
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("worker"); // icon: mdi-worker
+  }
 }
+
 .icon-ucp {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("account-settings-variant");	// icon: mdi-account-settings-variant
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("account-settings-variant"); // icon: mdi-account-settings-variant
+  }
 }
+
 .icon-new-posts {
-	@extend %icon-image-mdi;
-	&:after {
-		// todo: change in future
-		content: mdi("comment-multiple-outline");	// icon: mdi-comment-multiple-outline
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    // todo: change in future
+    content: mdi("comment-multiple-outline"); // icon: mdi-comment-multiple-outline
+  }
 }
+
 .icon-forums {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("forum");	// icon: mdi-forum
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("forum"); // icon: mdi-forum
+  }
 }
+
 .icon-chat {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("message-text");	// icon: mdi-message-text
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("message-text"); // icon: mdi-message-text
+  }
 }
+
 .icon-time {
-	@extend %icon-image-mdi;
-	&:after {
-		content: mdi("clock");	// icon: mdi-clock
-	}
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("clock"); // icon: mdi-clock
+  }
 }

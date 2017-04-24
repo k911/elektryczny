@@ -1,439 +1,446 @@
 // Control Panel Styles
 // ----------------------------------------
-
-
 // Main CP box
 // ----------------------------------------
 #cp-menu {
-	float:left;
-	width: 19%;
-	padding-right: 7px;
-	box-sizing: border-box;
-	.rtl & {
-		float: right;
-		padding-left: 7px;
-		padding-right: 0;
-	}
+  float: left;
+  width: 19%;
+  padding-right: 7px;
+  box-sizing: border-box;
+  .rtl & {
+    float: right;
+    padding-left: 7px;
+    padding-right: 0;
+  }
 }
 
 #cp-main {
-	float: left;
-	width: 81%;
-	.rtl & {
-		float: right;
-	}
+  float: left;
+  width: 81%;
+  .rtl & {
+    float: right;
+  }
 }
 
 #cp-main .content {
-	padding: 0;
+  padding: 0;
 }
 
 .panel-container .panel {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .panel-container .panel p {
-	font-size: $panel-font-size;
-	line-height: $panel-line-height;
+  font-size: $panel-font-size;
+  line-height: $panel-line-height;
 }
 
 .panel-container .panel ol {
-	margin-left: 2em;
-	font-size: $panel-font-size;
+  margin-left: 2em;
+  font-size: $panel-font-size;
 }
 
 .panel-container .panel li.row {
-	border-bottom: 1px solid transparent;
-	border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
 }
 
 ul.cplist {
-	margin-bottom: 5px;
-	border-top: 1px solid transparent;
+  margin-bottom: 5px;
+  border-top: 1px solid transparent;
 }
 
-.panel-container .panel li.header dd, .panel-container .panel li.header dt {
-	margin-bottom: 2px;
+.panel-container .panel li.header dd,
+.panel-container .panel li.header dt {
+  margin-bottom: 2px;
 }
 
 .panel-container table.table1 {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .panel-container table.table1 thead th {
-	@include table-heading-transparent;
-	padding: 5px;
-	font-weight: 500;
-	font-size: inherit;
-	line-height: inherit;
+  @include table-heading-transparent;
+  padding: 5px;
+  font-weight: 500;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .panel-container table.table1 tbody th {
-	font-style: italic;
-	background-color: transparent !important;
-	border-bottom: none;
+  font-style: italic;
+  background-color: transparent !important;
+  border-bottom: none;
 }
 
 #cp-main .pm-message {
-	border: 1px solid transparent;
-	margin: 10px 0;
-	width: auto;
-	float: none;
+  border: 1px solid transparent;
+  margin: 10px 0;
+  width: auto;
+  float: none;
 }
 
 .pm-message h2 {
-	padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 
-#cp-main .postbody h3, #cp-main .box2 h3 {
-	margin-top: 0;
+#cp-main .postbody h3,
+#cp-main .box2 h3 {
+  margin-top: 0;
 }
 
 .panel-container .postbody p.author {
-	font-size: $font-size;
+  font-size: $font-size;
 }
 
 #cp-main .buttons {
-	margin-left: 0;
+  margin-left: 0;
 }
 
 #cp-main ul.linklist {
-	margin: 0;
+  margin: 0;
 }
 
 // MCP Specific tweaks
 .mcp-main .postbody {
-	width: 100%;
+  width: 100%;
 }
 
 .tabs-container h2 {
-	float: left;
-	margin-bottom: 0px;
+  float: left;
+  margin-bottom: 0px;
 }
 
 // CP tabs shared
 // ----------------------------------------
 .tabs {
-	& > ul {
-		display: flex;
-		flex-flow: row wrap; // forum_fn script measures height, so when it wraps to new line it can trigger dropdown menu
-		justify-content: space-around;
-    	width: 50%;
-	}
-	
-	.tab {
-		display: block;
-		font-size: $tab-font-size;
-		line-height: $tab-line-height;
-
-		& > a {
-			display: block;
-			padding: 0 $tabs-shared-padding;
-			position: relative;
-			text-decoration: none;
-			white-space: nowrap;
-		}
-		&:not(.responsive-tab) a, & a.responsive-tab-link {
-			padding-top: $tab-border-bottom-width;
-			border-bottom-width: $tab-border-bottom-width;
-			border-bottom-style: $tab-border-bottom-style;
-			&:first-child {
-				padding-left: #{$tabs-shared-padding + $tab-border-bottom-width};
-			}
-			&:last-child {
-				padding-right: #{$tabs-shared-padding + $tab-border-bottom-width};
-			}
-		} 
-		a.responsive-tab-link {
-			line-height: inherit;
-		}
-	}
+  & > ul {
+    display: flex;
+    flex-flow: row wrap; // forum_fn script measures height, so when it wraps to new line it can trigger dropdown menu
+    justify-content: space-around;
+    width: 50%;
+  }
+  .tab {
+    display: block;
+    font-size: $tab-font-size;
+    line-height: $tab-line-height;
+    & > a {
+      display: block;
+      padding: 0 $tabs-shared-padding;
+      position: relative;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    &:not(.responsive-tab) a,
+    & a.responsive-tab-link {
+      padding-top: $tab-border-bottom-width;
+      border-bottom-width: $tab-border-bottom-width;
+      border-bottom-style: $tab-border-bottom-style;
+      &:first-child {
+        padding-left: #{$tabs-shared-padding + $tab-border-bottom-width};
+      }
+      &:last-child {
+        padding-right: #{$tabs-shared-padding + $tab-border-bottom-width};
+      }
+    }
+    a.responsive-tab-link {
+      line-height: inherit;
+    }
+  }
 }
 
 #minitabs {
-	line-height: normal;
+  line-height: normal;
 }
 
 #minitabs > ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 #minitabs .tab {
-	display: block;
-	font-size: $tab-font-size;
-	line-height: $tab-line-height;
+  display: block;
+  font-size: $tab-font-size;
+  line-height: $tab-line-height;
 }
 
 #minitabs .tab > a {
-	display: block;
-	padding: 0 $tabs-shared-padding;
-	position: relative;
-	text-decoration: none;
-	white-space: nowrap;
-	cursor: pointer;
-	font-size: inherit;
-	line-height: inherit;
+  display: block;
+  padding: 0 $tabs-shared-padding;
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 // Mini tabbed menu used in MCP
 // ----------------------------------------
 #minitabs {
-	float: right;
-	margin: 15px 7px 0 0;
-	max-width: 50%;
+  float: right;
+  margin: 15px 7px 0 0;
+  max-width: 50%;
 }
 
 #minitabs .tab {
-	float: right;
+  float: right;
 }
 
 #minitabs .tab > a {
-	border-radius: 5px 5px 0 0;
-	margin-left: 2px;
+  border-radius: 5px 5px 0 0;
+  margin-left: 2px;
 }
 
 #minitabs .tab > a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 // Responsive tabs
 // ----------------------------------------
 .responsive-tab {
-	position: relative;
+  position: relative;
 }
 
 a.responsive-tab-link {
-	.responsive-tab > & {
-		display: block;
-		font-size: 16px;
-		position: relative;
-		width: 16px;
-		line-height: 14px;
-		text-decoration: none;
-	}
-	.responsive-tab > &:before {
-		content: mdi("menu");	// icon: mdi-menu
-		font-family: "Material Design Icons";
-		position: absolute;
-		left: 10px;
-		top: 50%;
-		margin-top: -7px;
-		width: 14px;
-		font-size: 13px;
-		line-height: 15px;
-		height: 15px;
-		text-align: center;
-		font-weight: normal;
-		font-style: normal;
-		text-indent: 0;
-	}
-	.dropdown-visible.responsive-tab > &:before,
-	.responsive-tab > &:hover:before {
-		content: mdi("chevron-down");	// icon: mdi-chevron-down
-	}
+  .responsive-tab > & {
+    display: block;
+    font-size: 16px;
+    position: relative;
+    width: 16px;
+    line-height: 14px;
+    text-decoration: none;
+  }
+  .responsive-tab > &::before {
+    content: mdi("menu"); // icon: mdi-menu
+    font-family: "Material Design Icons";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -7px;
+    width: 14px;
+    font-size: 13px;
+    line-height: 15px;
+    height: 15px;
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
+    text-indent: 0;
+  }
+  .dropdown-visible.responsive-tab > &::before,
+  .responsive-tab > &:hover::before {
+    content: mdi("chevron-down"); // icon: mdi-chevron-down
+  }
 }
 
-.tabs .dropdown, #minitabs .dropdown {
-	top: $tab-line-height + 2px;
-	margin-right: -2px;
-	font-size: $dropdown-content-font-size;
-	line-height: $dropdown-content-line-height;
-	font-weight: normal;
+.tabs .dropdown,
+#minitabs .dropdown {
+  top: $tab-line-height + 2px;
+  margin-right: -2px;
+  font-size: $dropdown-content-font-size;
+  line-height: $dropdown-content-line-height;
+  font-weight: normal;
 }
 
 #minitabs .dropdown {
-	margin-right: -4px;
+  margin-right: -4px;
 }
 
-.tabs .dropdown-up .dropdown, #minitabs .dropdown-up .dropdown {
-	bottom: $tab-line-height + 2px;
-	top: auto;
+.tabs .dropdown-up .dropdown,
+#minitabs .dropdown-up .dropdown {
+  bottom: $tab-line-height + 2px;
+  top: auto;
 }
 
 .tabs .dropdown li {
-	text-align: right;
+  text-align: right;
 }
 
 #minitabs .dropdown li {
-	text-align: left;
+  text-align: left;
 }
 
 // UCP navigation menu
 // ----------------------------------------
 // Container for sub-navigation list
 #navigation {
-	width: 100%;
-	hr {
-		display: none;
-		+ ul {
-			margin-top: 10px;
-		}
-	}
+  width: 100%;
+  hr {
+    display: none;
+    + ul {
+      margin-top: 10px;
+    }
+  }
 }
 
 #navigation ul {
-	list-style: none;
+  list-style: none;
 }
 
 // Default list state
 #navigation li {
-	display: inline;
-	font-weight: 500;
-	padding: 0;
+  display: inline;
+  font-weight: 500;
+  padding: 0;
 }
 
 // Link styles for the sub-section links
 #navigation a {
-	display: block;
-	padding: 5px;
-	margin: 2px 0;
-	text-decoration: none;
-	font-size: $font-size;
-	line-height: $line-height;
+  display: block;
+  padding: 5px;
+  margin: 2px 0;
+  text-decoration: none;
+  font-size: $font-size;
+  line-height: $line-height;
 }
+
 #navigation li:first-child a {
-	margin-top: 0px;
+  margin-top: 0px;
 }
+
 #navigation li:last-child a {
-	margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 #navigation a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 // Preferences pane layout
 // ----------------------------------------
 #cp-main h2 {
-	padding: 0;
+  padding: 0;
 }
 
 // Friends list
 .cp-mini {
-	max-height: 200px;
-	overflow-y: auto;
-	margin-top: 2px;
-	padding: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 2px;
+  padding: 5px;
 }
 
 dl.mini dt {
-	font-weight: 500;
+  font-weight: 500;
 }
 
 dl.mini dd {
-	padding-top: 4px;
+  padding-top: 4px;
 }
 
 .friend-online {
-	font-weight: 500;
+  font-weight: 500;
 }
 
 .friend-offline {
-	font-style: italic;
+  font-style: italic;
 }
 
 // PM Styles
 // ----------------------------------------
 #pm-menu {
-	line-height: 2.5em;
+  line-height: 2.5em;
 }
 
 // Defined rules list for PM options
 ol.def-rules {
-	padding-left: 0;
+  padding-left: 0;
 }
 
 ol.def-rules li {
-	line-height: 180%;
-	padding: 1px;
+  line-height: 180%;
+  padding: 1px;
 }
 
 // PM marking colours
 .pmlist li.bg1 {
-	padding: 0 3px;
+  padding: 0 3px;
 }
 
 .pmlist li.bg2 {
-	padding: 0 3px;
+  padding: 0 3px;
 }
 
-.pmlist li.pm_message_reported_colour, .pm_message_reported_colour {
-	border-left-color: transparent;
-	border-right-color: transparent;
+.pmlist li.pm_message_reported_colour,
+.pm_message_reported_colour {
+  border-left-color: transparent;
+  border-right-color: transparent;
 }
 
-.pmlist li.pm_marked_colour, .pm_marked_colour,
-.pmlist li.pm_replied_colour, .pm_replied_colour,
-.pmlist li.pm_friend_colour, .pm_friend_colour,
-.pmlist li.pm_foe_colour, .pm_foe_colour {
-	padding: 0;
-	border: solid 3px transparent;
-	border-width: 0 3px;
+.pmlist li.pm_marked_colour,
+.pm_marked_colour,
+.pmlist li.pm_replied_colour,
+.pm_replied_colour,
+.pmlist li.pm_friend_colour,
+.pm_friend_colour,
+.pmlist li.pm_foe_colour,
+.pm_foe_colour {
+  padding: 0;
+  border: solid 3px transparent;
+  border-width: 0 3px;
 }
 
 .pm-legend {
-	border-left-width: 10px;
-	border-left-style: solid;
-	border-right-width: 0;
-	margin-bottom: 3px;
-	padding-left: 3px;
+  border-left-width: 10px;
+  border-left-style: solid;
+  border-right-width: 0;
+  margin-bottom: 3px;
+  padding-left: 3px;
 }
 
 // Avatar gallery
 #gallery label {
-	position: relative;
-	float: left;
-	margin: 10px;
-	padding: 5px;
-	width: auto;
-	border: 1px solid transparent;
-	text-align: center;
+  position: relative;
+  float: left;
+  margin: 10px;
+  padding: 5px;
+  width: auto;
+  border: 1px solid transparent;
+  text-align: center;
 }
 
 // Responsive *CP navigation
 // ----------------------------------------
-@media (max-width: 900px)
-{
-	.nojs .tabs a span, .nojs #minitabs a span {
-		max-width: 40px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		letter-spacing: -.5px;
-	}
-
-	#cp-menu, #navigation, #cp-main {
-		float: none;
-		width: auto;
-		margin: 0;
-	}
-
-	#cp-menu:after {
-		content: ' ';
-		display: table;
-		clear: both;
-	}
-
-	#navigation {
-		padding: 0;
-		#cp-menu & {
-			float: left;
-			min-width: 35vw;
-		}
-		&, #cp-menu &:only-child {
-			float: left;
-			min-width: 50vw;
-		}
-		#cp-menu & + .cp-mini {
-			float: left;
-			margin: 0 10px;
-			max-width: 50vw;
-		}
-	}
-
-	#navigation a {
-		background-image: none;
-	}
+@media (max-width: 900px) {
+  .nojs .tabs a span,
+  .nojs #minitabs a span {
+    max-width: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -.5px;
+  }
+  #cp-menu,
+  #navigation,
+  #cp-main {
+    float: none;
+    width: auto;
+    margin: 0;
+  }
+  #cp-menu::after {
+    content: ' ';
+    display: table;
+    clear: both;
+  }
+  #navigation {
+    padding: 0;
+    #cp-menu & {
+      float: left;
+      min-width: 35vw;
+    }
+    &,
+    #cp-menu &:only-child {
+      float: left;
+      min-width: 50vw;
+    }
+    #cp-menu & + .cp-mini {
+      float: left;
+      margin: 0 10px;
+      max-width: 50vw;
+    }
+  }
+  #navigation a {
+    background-image: none;
+  }
 }
