@@ -10,8 +10,7 @@ body {
     &.simple {
       background-color: $content-background;
     }
-  }
-  @else {
+  } @else {
     background-color: $content-background;
   }
 }
@@ -480,7 +479,7 @@ a.feed-icon-forum:hover::after {
 // --------------------------------------------------------------
 ul.topiclist li {
   color: $text-color;
-  @if $split-forums==false {
+  @if $split-forums == false {
     .forabg &,
     .forumbg & {
       background: transparent;
@@ -1511,11 +1510,9 @@ ul.linklist li.responsive-menu.visible a.responsive-menu-link::before {
 }
 
 .dropdown .dropdown-contents {
+  @include card($card-default);
   background: $dropdown-bg;
   border-color: $dropdown-border;
-  /* card effect - dropdown contents */
-  @include card($card-default);
-  /* card effect end */
 }
 
 .dropdown-up .dropdown-contents {

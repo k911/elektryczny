@@ -23,6 +23,13 @@ $mdi-font-path: "fonts";
 @import "../../node_modules/mdi/scss/materialdesignicons";
 
 /**
+ * Material Design Lite
+ * Components: Badge
+ * @see https://getmdl.io/components/index.html#badges-section
+ */
+@import "../../node_modules/material-design-lite/src/badge/badge";
+
+/**
  * INTERNAL IMPORTS
  */
 

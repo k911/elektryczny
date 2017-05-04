@@ -16,7 +16,7 @@
 // Heading block
 @mixin section-heading {
   // margin: 0 auto;
-  margin: -11px -11px 6px -11px;
+  margin: -11px -11px 6px;
   background: $heading-bg;
   padding: 5px 10px;
   font-size: $heading-font-size;
@@ -42,7 +42,7 @@
 
 @mixin section-heading-forum {
   @include section-heading; // @include card($lite-card-depth);
-  @if $split-forums==false {
+  @if $split-forums == false {
     margin: -5px -5px 0;
   }
   @else {

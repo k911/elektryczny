@@ -80,28 +80,41 @@ div.bb-flex {
  * TODO: When attr implementend do -> opacity = attr(data-card-opacity)
  */
 
-.card[data-card] {
-  position: relative;
-  /* Primary navbar nav tabs card effect with customizable opacity */
-  &::after {
-    @include card($card-default);
-    opacity: 1; // Block covering all #page-header-box content
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    pointer-events: none;
+.card {
+  &[data-card] {
+    position: relative;
+    /* Primary navbar nav tabs card effect with customizable opacity */
+    &::after {
+      @include card($card-default);
+      opacity: 1; // Block covering all #page-header-box content
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+    }
   }
-}
-
-.card[data-card="0"]::after {
-  opacity: 0;
+  &[data-card="0"]::after {
+    opacity: 0;
+  }
 }
 
 .imageset.icon_user_online {
   background-image: url("images/icon_user_online.gif");
   padding-left: 58px;
   padding-top: 58px;
+}
+
+.mdl-badge.mdl-badge--small .nav-link {
+  margin-left: 4px !important;
+}
+
+.mdl-badge {
+  margin-right: 0;
+  &[data-badge]::after {
+    top: 6px;
+    left: 8px;
+  }
 }

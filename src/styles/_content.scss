@@ -128,7 +128,7 @@ li.row {
   border-top-width: 1px;
   border-bottom-width: 1px;
   border-style: solid;
-  @if $split-forums==true {
+  @if $split-forums == true {
     ul.topiclist & {
       .forabg &,
       .forumbg & {
@@ -158,13 +158,13 @@ li.header dd {
 }
 
 li.header dt {
+  width: 100%;
+  margin-right: -440px;
   .forabg & {
     font-family: $forum-heading-font-family;
     font-weight: $forum-heading-font-weight;
     font-size: $forum-heading-font-size;
   }
-  width: 100%;
-  margin-right: -440px;
   .list-inner {
     margin-right: 440px;
   }
@@ -425,12 +425,12 @@ dd.option {
   .postprofile + & {
     float: $post-side;
     margin-#{$profile-side}: -#{$post-margin};
+    width: 100%;
+    position: relative;
     .rtl & {
       margin-#{$profile-side}: 0;
       margin-#{$post-side}: -#{$post-margin};
     }
-    width: 100%;
-    position: relative;
     .search & {
       margin-#{$profile-side}: (-100px - $post-margin);
       .rtl & {
@@ -474,7 +474,7 @@ dd.option {
   // Postbody requires a different h3 format - so change it here
   float: left;
   font-size: $post-title-font-size;
-  padding: 2px 0 0 0;
+  padding: 2px 0 0;
   margin-top: 0 !important;
   margin-bottom: 0.3em !important;
   text-transform: none;
@@ -625,13 +625,13 @@ dl.faq dt {
 }
 
 .posthilit {
-  padding: 0 2px 1px 2px;
+  padding: 0 2px 1px;
 }
 
 // Post author
 p.author {
   margin-bottom: 0.3em;
-  padding: 0 0 5px 0;
+  padding: 0 0 5px;
   font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
@@ -690,12 +690,12 @@ ul.searchresults {
   list-style: none;
   text-align: right;
   clear: both;
-  @if $profile-side==right {
+  @if $profile-side == right {
     margin-right: ($post-margin + 100px);
   }
   .rtl & {
     text-align: left;
-    @if $profile-side==right {
+    @if $profile-side == right {
       margin-right: 0;
       margin-left: ($post-margin + 100px);
     }
@@ -706,7 +706,7 @@ ul.searchresults {
 // ----------------------------------------
 // Quote block
 blockquote {
-  border: 0px solid transparent;
+  border: 0 solid transparent;
   border-left-width: 3px;
   border-radius: $bbcode-border-radius;
   font-size: $post-quote-font-size;
@@ -747,8 +747,6 @@ blockquote cite {
   font-size: $post-block-title-font-size;
   line-height: $post-block-title-line-height;
 }
-
-blockquote cite cite {}
 
 blockquote.uncited {
   padding-top: 25px;
@@ -795,7 +793,7 @@ blockquote .codebox {
   max-width: 100%;
   margin: 5px 5px 5px 0;
   padding: 6px;
-  border: 0px solid transparent;
+  border: 0 solid transparent;
   border-left-width: 3px;
   border-radius: $bbcode-border-radius;
   clear: left;
@@ -969,7 +967,7 @@ fieldset.polls dd div {
   margin: 0;
   padding: 5px 0;
   min-height: 80px;
-  border: 0px solid transparent;
+  border: 0 solid transparent;
   border-#{$post-side}-width: 1px;
   width: $profile-width;
   float: $profile-side;
@@ -1088,7 +1086,7 @@ dd.profile-contact {
     top: 17px;
     white-space: nowrap;
     #{$profile-side}: -25px;
-    @if $profile-side==left {
+    @if $profile-side == left {
       -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
       transform: rotate(-45deg);
@@ -1105,7 +1103,7 @@ dd.profile-contact {
     .rtl & {
       #{$profile-side}: auto;
       #{$post-side}: -25px;
-      @if $profile-side==right {
+      @if $profile-side == right {
         -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);

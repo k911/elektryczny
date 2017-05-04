@@ -140,8 +140,10 @@ dd select {
   width: auto;
 }
 
-dd select[multiple] {
-  width: 100%;
+dd select {
+  &[multiple] {
+    width: 100%;
+  }
 }
 
 dd textarea {
@@ -176,7 +178,7 @@ fieldset.quick-login label {
 // Display options on viewtopic/viewforum pages
 fieldset.display-options {
   text-align: center;
-  margin: 3px 0 5px 0;
+  margin: 3px 0 5px;
 }
 
 fieldset.display-options label {
@@ -207,12 +209,12 @@ fieldset.sort-options {
 
 // MCP forum selection
 fieldset.forum-selection {
-  margin: 5px 0 3px 0;
+  margin: 5px 0 3px;
   float: right;
 }
 
 fieldset.forum-selection2 {
-  margin: 13px 0 3px 0;
+  margin: 13px 0 3px;
   float: right;
 }
 
@@ -233,7 +235,7 @@ fieldset.submit-buttons input {
 // ----------------------------------------
 // Buttons used in the editor
 #format-buttons {
-  margin: 15px 0 2px 0;
+  margin: 15px 0 2px;
 }
 
 #format-buttons input,

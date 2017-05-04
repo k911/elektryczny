@@ -181,7 +181,7 @@ h2 {
   font-family: $h2-font-family;
   font-weight: normal;
   font-size: $h2-font-size;
-  margin: 0.8em 0 0.2em 0;
+  margin: 0.8em 0 0.2em;
 }
 
 h2.solo {
@@ -293,9 +293,9 @@ ul ul ul {
 
 #wrap {
   @if $use-wrapper {
+    @include wrapper-padding;
     border: 1px solid transparent;
     border-radius: 8px;
-    @include wrapper-padding;
   }
 }
 
@@ -303,12 +303,11 @@ ul ul ul {
   box-sizing: border-box;
   max-width: $max-width;
   min-width: 625px;
-  @if $max-width !=none {
+  @if $max-width != none {
     @media (max-width: ($max-width + 24px)) {
       margin: 0 12px;
     }
-  }
-  @else {
+  } @else {
     margin: 0 12px;
   }
 }
@@ -323,13 +322,13 @@ ul ul ul {
 
 #page-body {
   margin: 4px 0;
+  clear: both;
   #wrap > &:first-of-type {
     margin-top: 0;
   }
   #wrap > &:last-of-type {
     margin-bottom: 0;
   }
-  clear: both;
 }
 
 #page-footer {
@@ -344,11 +343,12 @@ ul ul ul {
 }
 
 .logo {
-  @if $show-logo==true {
+  @if $show-logo == true {
     display: block;
     box-sizing: border-box;
     width: $logo-width;
-    @if $center-logo==true {
+    padding: $logo-block-padding;
+    @if $center-logo == true {
       &,
       & img {
         margin: 0 auto;
@@ -361,7 +361,6 @@ ul ul ul {
       display: block;
       max-width: 100%;
     }
-    padding: $logo-block-padding;
     &:hover {
       text-decoration: none;
     }
@@ -392,10 +391,10 @@ ul ul ul {
     margin-left: 1px;
     color: $faint-color;
   }
-  @if $center-logo==true {
+  @if $center-logo == true {
     text-align: center;
   }
-  @if $show-site-title==false {
+  @if $show-site-title == false {
     h1,
     span {
       display: none;
@@ -412,7 +411,7 @@ ul ul ul {
 }
 
 $nav-primary-glyph-font-size: $nav-primary-font-size + 2px !default;
-$nav-primary-glyph-margin: 0px - ($nav-primary-glyph-font-size / 2) !default;
+$nav-primary-glyph-margin: - ($nav-primary-glyph-font-size / 2) !default;
 $nav-alert-font-size: 9px !default;
 .navbar {
   padding: 0 9px;
@@ -450,10 +449,10 @@ $nav-alert-font-size: 9px !default;
         font-size: $nav-secondary-font-size;
       }
       &:hover {
+        border-radius: 3px;
         > a {
           text-decoration: none;
         }
-        border-radius: 3px;
       }
       &.small-icon > a {
         padding-left: 18px;
@@ -873,7 +872,7 @@ div.forum-info {
     }
   }
   p.forum-desc {
-    padding: .5em 1.3em 0 1.3em;
+    padding: .5em 1.3em 0;
     margin: 0;
   }
 }
@@ -894,7 +893,7 @@ div.rules ol {
 }
 
 .forabg {
-  @if $split-forums==false {
+  @if $split-forums == false {
     @include section-forum;
     margin-bottom: 4px;
     clear: both;
@@ -909,7 +908,7 @@ div.rules ol {
 }
 
 .forumbg {
-  @if $split-forums==false {
+  @if $split-forums == false {
     @include section-forum;
     margin-bottom: 4px;
     clear: both;
@@ -959,7 +958,7 @@ $panel-heading-line-height: $line-height !default;
 }
 
 .rowbg {
-  margin: 5px 5px 2px 5px;
+  margin: 5px 5px 2px;
 }
 
 // Horizontal lists
@@ -1051,10 +1050,6 @@ ul.linklist li.responsive-menu a.responsive-menu-link {
 .hasjs ul.linklist.fullwidth {
   max-width: none;
 }
-
-li.responsive-menu.dropdown-right .dropdown {}
-
-li.responsive-menu.dropdown-left .dropdown {}
 
 ul.linklist .dropdown {
   top: $list-font-size * 2;
@@ -1673,7 +1668,7 @@ $pagination-link-line-height: $font-size !default;
   border-style: solid;
   display: none;
   left: 0;
-  padding: 0 25px 20px 25px;
+  padding: 0 25px 20px;
   position: fixed;
   right: 0;
   top: 150px;

@@ -270,13 +270,12 @@ ul.linklist.bulletin > li.small-icon::before {
   position: absolute;
   margin: 0;
   top: 5px;
-  @if $profile-side==left {
+  @if $profile-side == left {
     right: 0;
     .rtl & {
       left: 0;
     }
-  }
-  @else {
+  } @else {
     right: $post-margin;
     .rtl & {
       left: $post-margin;

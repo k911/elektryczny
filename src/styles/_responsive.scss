@@ -55,7 +55,7 @@ body {
 }
 
 .logo {
-  @if $responsive-hide-logo==true {
+  @if $responsive-hide-logo == true {
     display: none;
   }
   float: none;
@@ -68,7 +68,7 @@ body {
 
 #site-description h1,
 #site-description p {
-  @if $responsive-hide-logo==true {
+  @if $responsive-hide-logo == true {
     display: block;
   }
   text-align: inherit;
@@ -192,7 +192,7 @@ ul.topiclist.topics dd.posts dfn {
   font-weight: normal;
 }
 
-@media (max-width: 550px) {
+@media screen and (max-width: 550px) {
   ul.topiclist.forums dt {
     margin-right: 0;
   }
@@ -201,6 +201,16 @@ ul.topiclist.topics dd.posts dfn {
   }
   ul.topiclist.forums dd.lastpost {
     display: none;
+  }
+
+  .mdl-badge.mdl-badge--small {
+    &::after {
+      left: 6px !important;
+    }
+    .nav-link {
+      z-index: 1;
+      margin-left: 0 !important;
+    }
   }
 }
 
@@ -487,7 +497,7 @@ fieldset.polls dd.poll_option_percent {
 
 .post .postprofile {
   width: auto;
-  border-width: 0 0 1px 0;
+  border-width: 0 0 1px;
   padding-bottom: 5px;
   margin: 0;
   margin-bottom: 5px;

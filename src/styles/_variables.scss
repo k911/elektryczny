@@ -253,4 +253,4 @@ $bbcode-heading-text: #666;
 
 $bbcode-code-color: code-color(128deg);
 // Do not edit few lines below
-$post-side: if($profile-side==left, right, left);
+$post-side: if($profile-side == left, right, left);

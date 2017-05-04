@@ -155,7 +155,7 @@ a.top2::after {
   left: 0;
   height: $top-link-line-height;
   width: $top-link-line-height;
-  margin-top: (0px - $top-link-line-height / 2);
+  margin-top: - $top-link-line-height / 2;
   text-align: center;
   font-size: $top-link-font-size;
   line-height: $top-link-line-height;
