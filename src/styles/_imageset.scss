@@ -229,21 +229,6 @@ span.imageset {
   }
 }
 
-%icon-search-old {
-  @extend %icon-image-mdi;
-  &::after {
-    content: mdi("magnify"); // icon: mdi-magnify
-  }
-}
-
-%icon-search-new {
-  @extend %icon-search-old;
-}
-
-%icon-search-misc {
-  @extend %icon-search-old;
-}
-
 .icon-acp {
   @extend %icon-image-mdi;
   &::after {
@@ -387,28 +372,35 @@ span.imageset {
   }
 }
 
-.icon-search-active {
-  @extend %icon-search-old;
+%icon-search {
+  @extend %icon-image-mdi;
+  &::after {
+    content: mdi("magnify"); // icon: mdi-magnify
+  }
 }
 
-.icon-search-advanced {
-  @extend %icon-search-old;
-}
-
-.icon-search-new {
-  @extend %icon-search-new;
+.icon-search {
+  @extend %icon-search;
 }
 
 .icon-search-self {
-  @extend %icon-search-misc;
+  @extend %icon-search;
 }
 
-.icon-search-unanswered {
-  @extend %icon-search-new;
+.icon-search-new {
+  @extend %icon-search;
 }
 
 .icon-search-unread {
-  @extend %icon-search-new;
+  @extend %icon-search;
+}
+
+.icon-search-unanswered {
+  @extend %icon-search;
+}
+
+.icon-search-active {
+  @extend %icon-search;
 }
 
 .icon-sendemail {

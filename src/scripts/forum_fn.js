@@ -27,11 +27,7 @@ function find_username(url) {
 function popup(url, width, height, name) {
   'use strict';
 
-  if (!name) {
-    name = '_popup';
-  }
-
-  window.open(url.replace(/&amp;/g, '&'), name, 'height=' + height + ',resizable=yes,scrollbars=yes, width=' + width);
+  window.open(url.replace(/&amp;/g, '&'), name || '_popup', 'height=' + height + ',resizable=yes,scrollbars=yes, width=' + width);
   return false;
 }
 
@@ -81,23 +77,20 @@ function viewableArea(e, itself) {
     return;
   }
 
-  if (!itself) {
-    e = e.parentNode;
-  }
-
-  if (!e.vaHeight) {
+  var element = (!itself) ? e.parentNode : e;
+  if (!element.vaHeight) {
     // Store viewable area height before changing style to auto
-    e.vaHeight = e.offsetHeight;
-    e.vaMaxHeight = e.style.maxHeight;
-    e.style.height = 'auto';
-    e.style.maxHeight = 'none';
-    e.style.overflow = 'visible';
+    element.vaHeight = element.offsetHeight;
+    element.vaMaxHeight = element.style.maxHeight;
+    element.style.height = 'auto';
+    element.style.maxHeight = 'none';
+    element.style.overflow = 'visible';
   } else {
     // Restore viewable area height to the default
-    e.style.height = e.vaHeight + 'px';
-    e.style.overflow = 'auto';
-    e.style.maxHeight = e.vaMaxHeight;
-    e.vaHeight = false;
+    element.style.height = element.vaHeight + 'px';
+    element.style.overflow = 'auto';
+    element.style.maxHeight = element.vaMaxHeight;
+    element.vaHeight = false;
   }
 }
 
@@ -108,11 +101,11 @@ jQuery(function ($) {
   'use strict';
 
   $('.sub-panels').each(function () {
-    var $childNodes = $('a[data-subpanel]', this),
-      panels = $childNodes.map(function () {
-        return this.getAttribute('data-subpanel');
-      }),
-      showPanel = this.getAttribute('data-show-panel');
+    var $childNodes = $('a[data-subpanel]', this);
+    var panels = $childNodes.map(function () {
+      return this.getAttribute('data-subpanel');
+    });
+    var showPanel = this.getAttribute('data-show-panel');
 
     if (panels.length) {
       activateSubPanel(showPanel, panels);
@@ -127,21 +120,20 @@ jQuery(function ($) {
 /**
  * Activate specific subPanel
  */
-function activateSubPanel(p, panels) {
+function activateSubPanel(p, panelsOption) {
   'use strict';
 
-  var i, showPanel;
+  var i;
+  var showPanel;
+  var panels = (typeof panelsOption === 'undefined') ?
+    jQuery('.sub-panels a[data-subpanel]').map(function () {
+      return this.getAttribute('data-subpanel');
+    }) : panelsOption;
 
   if (typeof p === 'string') {
     showPanel = p;
   }
   $('input[name="show_panel"]').val(showPanel);
-
-  if (typeof panels === 'undefined') {
-    panels = jQuery('.sub-panels a[data-subpanel]').map(function () {
-      return this.getAttribute('data-subpanel');
-    });
-  }
 
   for (i = 0; i < panels.length; i++) {
     jQuery('#' + panels[i]).css('display', panels[i] === showPanel ? 'block' : 'none');
@@ -154,7 +146,8 @@ function selectCode(a) {
 
   // Get ID of code block
   var e = a.parentNode.parentNode.getElementsByTagName('CODE')[0];
-  var s, r;
+  var s;
+  var r;
 
   // Not IE and IE9+
   if (window.getSelection) {
@@ -170,9 +163,8 @@ function selectCode(a) {
         s.removeAllRanges();
         s.addRange(r);
       }
-    }
     // Firefox and Opera
-    else {
+    } else {
       // workaround for bug # 42885
       if (window.opera && e.innerHTML.substring(e.innerHTML.length - 4) === '<BR>') {
         e.innerHTML = e.innerHTML + '&nbsp;';
@@ -183,14 +175,14 @@ function selectCode(a) {
       s.removeAllRanges();
       s.addRange(r);
     }
-    // Some older browsers
+  // Some older browsers
   } else if (document.getSelection) {
     s = document.getSelection();
     r = document.createRange();
     r.selectNodeContents(e);
     s.removeAllRanges();
     s.addRange(r);
-    // IE
+  // IE
   } else if (document.selection) {
     r = document.body.createTextRange();
     r.moveToElementText(e);
@@ -206,7 +198,8 @@ function play_qt_file(obj) {
   'use strict';
 
   var rectangle = obj.GetRectangle();
-  var width, height;
+  var width;
+  var height;
 
   if (rectangle) {
     rectangle = rectangle.split(',');
@@ -293,12 +286,13 @@ jQuery(function ($) {
 function insertUser(formId, value) {
   'use strict';
 
-  var $form = jQuery(formId),
-    formName = $form.attr('data-form-name'),
-    fieldName = $form.attr('data-field-name'),
-    item = opener.document.forms[formName][fieldName];
+  var $form = jQuery(formId);
+  var formName = $form.attr('data-form-name');
+  var fieldName = $form.attr('data-field-name');
+  var item = opener.document.forms[formName][fieldName];
 
   if (item.value.length && item.type === 'textarea') {
+    // eslint-disable-next-line
     value = item.value + '\n' + value;
   }
 
@@ -328,9 +322,9 @@ function insert_single_user(formId, user) {
  * Resize poster profile block
  */
 function adjustPosterProfile(postbody) {
-  var profile = postbody.parent().prev(),
-    post = profile.parent(),
-    resized = profile.hasClass('resized');
+  var profile = postbody.parent().prev();
+  var post = profile.parent();
+  var resized = profile.hasClass('resized');
 
   function unresize() {
     profile.removeClass('resized').css('min-height', '');
@@ -340,7 +334,7 @@ function adjustPosterProfile(postbody) {
     if (resized) {
       unresize();
     }
-    return false;
+    return;
   }
 
   if (resized) {
@@ -364,20 +358,17 @@ function checkNavigation(force) {
     nav.noToggle = $();
     nav.contents.children('.separator:last-child').hide();
     nav.items = nav.lists.children().not(nav.menu).each(function (i) {
-      var $this = $(this),
-        cloneClass;
+      var $this = $(this);
+      var cloneClass;
 
-      if ($this.is('.not-responsive, .responsive-menu, .dropdown-container, .selected') || $this.attr('data-skip-responsive') == 'true') {
+      if ($this.is('.not-responsive, .responsive-menu, .dropdown-container, .selected') || $this.attr('data-skip-responsive') === 'true') {
         $this.attr('data-responsive-index', -1);
         nav.noToggle = nav.noToggle.add($this);
         return;
       }
 
-      cloneClass = (
-        $this.attr('data-responsive-class') === undefined ?
-        ($this.hasClass('small-icon') ? $this.attr('class') : '') :
-        $this.attr('data-responsive-class')
-      ) + ' responsive-index-' + i;
+      cloneClass = $this.attr('data-responsive-class') || $this.hasClass('small-icon') ? $this.attr('class') : ''
+        + ' responsive-index-' + i;
 
       nav.contents.append(
         $this.clone(true).attr('class', cloneClass).addClass('responsive-clone').removeClass('tab')
@@ -393,13 +384,18 @@ function checkNavigation(force) {
     nav.initialized = true;
   }
 
-  function check(nav, force) {
-    var containerWidth, total, width, menuWidth, hiding;
+  function check(nav, forceCheck) {
+    var containerWidth;
+    var total;
+    var width;
+    var menuWidth;
+    var hiding;
 
     // Setup navigation
     if (!nav.initialized) {
       init(nav);
-      force = true;
+      // eslint-disable-next-line
+      forceCheck = true;
     }
 
     if (!nav.itemCount) {
@@ -409,7 +405,7 @@ function checkNavigation(force) {
 
     // Check width
     containerWidth = nav.container.width();
-    if (!force && containerWidth == nav.lastWidth) {
+    if (!forceCheck && containerWidth === nav.lastWidth) {
       return;
     }
     nav.lastWidth = containerWidth;
@@ -438,8 +434,9 @@ function checkNavigation(force) {
     // Test all other items
     hiding = (width >= containerWidth);
     nav.canToggle.each(function () {
-      var $this = $(this),
-        itemWidth, margin;
+      var $this = $(this);
+      var itemWidth;
+      var margin;
 
       if (!$this.is(':visible')) {
         return;
@@ -481,10 +478,10 @@ function initResponsiveNavigation() {
   styleConfig._responsiveNavigation = [];
 
   $('.nav-tabs, .navbar.secondary').each(function () {
-    var $this = $(this),
-      lists = $this.children('ul'),
-      menu = lists.children('.responsive-menu:first'),
-      alwaysShowMenu = (menu.length > 0);
+    var $this = $(this);
+    var lists = $this.children('ul');
+    var menu = lists.children('.responsive-menu:first');
+    var alwaysShowMenu = (menu.length > 0);
 
     // Create empty hidden menu
     if (!menu.length) {
@@ -519,9 +516,9 @@ function initResponsiveNavigation() {
 function parseDocument($container) {
   'use strict';
 
-  var test = document.createElement('div'),
-    oldBrowser = (typeof test.style.borderRadius === 'undefined'),
-    $body = $('body');
+  var test = document.createElement('div');
+  var oldBrowser = (typeof test.style.borderRadius === 'undefined');
+  var $body = $('body');
 
   /**
    * Adjust navigation tabs
@@ -531,12 +528,11 @@ function parseDocument($container) {
 
     // Fix tabs structure
     tabs.not('.tab').each(function () {
-      var tab = $(this),
-        className = tab.attr('class').split(' '),
-        i;
+      var tab = $(this);
+      var className = tab.attr('class').split(' ');
       tab.attr('class', 'tab');
-      for (i = 0; i < className.length; i++) {
-        if (className[i].substr(0, 5) == 'icon-') {
+      for (var i = 0; i < className.length; i++) {
+        if (className[i].substr(0, 5) === 'icon-') {
           tab.addClass(className[i].substr(5));
         }
       }
@@ -544,8 +540,8 @@ function parseDocument($container) {
 
     // Tooltips for tabs
     tabs.each(function () {
-      var $this = $(this),
-        title = '';
+      var $this = $(this);
+      var title = '';
       if (!$this.attr('title')) {
         title = $this.children('.nav-link').text().trim();
         if (!title.length) return;
@@ -562,18 +558,22 @@ function parseDocument($container) {
    * Switch selected tab
    */
   $container.find('.nav-tabs[data-current-page]').each(function () {
-    var tabs = $(this),
-      current = tabs.attr('data-current-page'),
-      found = false,
-      content, classes, i, key;
+    var tabs = $(this);
+    var current = tabs.attr('data-current-page');
+    var found = false;
+    var content;
+    var classes;
+    var i;
+    var key;
 
     $('.tab[data-select-match]', this).each(function () {
-      var matches = $(this).attr('data-select-match').split(','),
-        i, match, item;
+      var matches = $(this).attr('data-select-match').split(',');
+      var match;
+      var item;
 
-      for (i = 0; i < matches.length; i++) {
-        match = matches[i].trim();
-        if (current.indexOf(match) != -1) {
+      for (var j = 0; j < matches.length; j++) {
+        match = matches[j].trim();
+        if (current.indexOf(match) !== -1) {
           // Found a match!
           item = $(this);
           if (!item.hasClass('selected')) {
@@ -581,7 +581,7 @@ function parseDocument($container) {
             item.addClass('selected');
           }
           found = true;
-          return false;
+          return;
         }
       }
     });
@@ -598,6 +598,7 @@ function parseDocument($container) {
       for (i = 0; i < classes.length && !found; i++) {
         key = classes[i].trim();
         if (key !== 'content' && key !== 'pages-content') {
+          // eslint-disable-next-line
           $container.find('.tab.pages.' + key).each(function () {
             tabs.find('.tab.selected').removeClass('selected');
             $(this).addClass('selected');
@@ -665,27 +666,26 @@ function parseDocument($container) {
    * Resize navigation (breadcrumbs) block to keep all links on same line
    */
   $container.find('.navlinks').each(function () {
-    var $this = $(this),
-      $left = $this.children().not('.rightside'),
-      $right = $this.children('.rightside'),
-      queued = false,
-      throttled = false;
+    var $this = $(this);
+    var $left = $this.children().not('.rightside');
+    var $right = $this.children('.rightside');
+    var queued = false;
+    var throttled = false;
 
     if ($left.length !== 1 || !$right.length) {
       return;
     }
 
     function resize() {
-      var width = 0,
-        diff = $left.outerWidth(true) - $left.width(),
-        minWidth = Math.max($this.width() / 3, 240),
-        maxWidth;
+      var width = 0;
+      var diff = $left.outerWidth(true) - $left.width();
+      var minWidth = Math.max($this.width() / 3, 240);
+      var maxWidth;
 
       throttled = false;
       $right.each(function () {
-        var $this = $(this);
-        if ($this.is(':visible')) {
-          width += $this.outerWidth(true);
+        if ($(this).is(':visible')) {
+          width += $(this).outerWidth(true);
         }
       });
 
@@ -715,16 +715,16 @@ function parseDocument($container) {
    * Makes breadcrumbs responsive
    */
   $container.find('.breadcrumbs:not([data-skip-responsive])').each(function () {
-    var $this = $(this),
-      $links = $this.find('.crumb'),
-      length = $links.length,
-      classes = ['wrapped-max', 'wrapped-wide', 'wrapped-medium', 'wrapped-small', 'wrapped-tiny'],
-      classesLength = classes.length,
-      maxHeight = 0,
-      lastWidth = false,
-      wrapped = false,
-      queued = false,
-      throttled = false;
+    var $this = $(this);
+    var $links = $this.find('.crumb');
+    var length = $links.length;
+    var classes = ['wrapped-max', 'wrapped-wide', 'wrapped-medium', 'wrapped-small', 'wrapped-tiny'];
+    var classesLength = classes.length;
+    var maxHeight = 0;
+    var lastWidth = false;
+    var wrapped = false;
+    var queued = false;
+    var throttled = false;
 
     // Set tooltips
     $this.find('a').each(function () {
@@ -734,8 +734,8 @@ function parseDocument($container) {
 
     // Function that checks breadcrumbs
     function check() {
-      var height = $this.height(),
-        width;
+      var height = $this.height();
+      var width;
 
       // Test max-width set in code for .navlinks above
       width = parseInt($this.css('max-width'), 10);
@@ -806,16 +806,16 @@ function parseDocument($container) {
   var selector = '.linklist:not(.navlinks, [data-skip-responsive]),' +
     '.postbody .post-buttons:not([data-skip-responsive])';
   $container.find(selector).each(function () {
-    var $this = $(this),
-      filterSkip = '.breadcrumbs, [data-skip-responsive]',
-      filterLast = '.edit-icon, .quote-icon, [data-last-responsive]',
-      $linksAll = $this.children(),
-      $linksNotSkip = $linksAll.not(filterSkip), // All items that can potentially be hidden
-      $linksFirst = $linksNotSkip.not(filterLast), // The items that will be hidden first
-      $linksLast = $linksNotSkip.filter(filterLast), // The items that will be hidden last
-      persistent = $this.attr('id') === 'nav-main', // Does this list already have a menu (such as quick-links)?
-      html = '<li class="responsive-menu hidden"><a href="javascript:void(0);" class="responsive-menu-link"></a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner" /></div><ul class="dropdown-contents" /></div></li>',
-      slack = 3; // Vertical slack space (in pixels). Determines how sensitive the script is in determining whether a line-break has occured.
+    var $this = $(this);
+    var filterSkip = '.breadcrumbs, [data-skip-responsive]';
+    var filterLast = '.edit-icon, .quote-icon, [data-last-responsive]';
+    var $linksAll = $this.children();
+    var $linksNotSkip = $linksAll.not(filterSkip); // All items that can potentially be hidden
+    var $linksFirst = $linksNotSkip.not(filterLast); // The items that will be hidden first
+    var $linksLast = $linksNotSkip.filter(filterLast); // The items that will be hidden last
+    var persistent = $this.attr('id') === 'nav-main'; // Does this list already have a menu (such as quick-links)?
+    var html = '<li class="responsive-menu hidden"><a href="javascript:void(0);" class="responsive-menu-link"></a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner" /></div><ul class="dropdown-contents" /></div></li>';
+    var slack = 3; // Vertical slack space (in pixels). Determines how sensitive the script is in determining whether a line-break has occured.
 
     // Add a hidden drop-down menu to each links list (except those that already have one)
     if (!persistent) {
@@ -828,16 +828,16 @@ function parseDocument($container) {
     }
 
     // Set some object references and initial states
-    var $menu = $this.children('.responsive-menu'),
-      $menuContents = $menu.find('.dropdown-contents'),
-      persistentContent = $menuContents.find('li:not(.separator)').length,
-      lastWidth = false,
-      compact = false,
-      responsive1 = false,
-      responsive2 = false,
-      copied1 = false,
-      copied2 = false,
-      maxHeight = 0;
+    var $menu = $this.children('.responsive-menu');
+    var $menuContents = $menu.find('.dropdown-contents');
+    var persistentContent = $menuContents.find('li:not(.separator)').length;
+    var lastWidth = false;
+    var compact = false;
+    var responsive1 = false;
+    var responsive2 = false;
+    var copied1 = false;
+    var copied2 = false;
+    var maxHeight = 0;
 
     // Find the tallest element in the list (we assume that all elements are roughly the same height)
     $linksAll.each(function () {
@@ -976,10 +976,10 @@ function parseDocument($container) {
    * Fix container for messages
    */
   $container.find('.postbody').each(function () {
-    var $this = $(this),
-      children = $this.children();
+    var $this = $(this);
+    var children = $this.children();
 
-    if (children.length == 1 && children.is('div')) {
+    if (children.length === 1 && children.is('div')) {
       return;
     }
 
@@ -1014,9 +1014,9 @@ function parseDocument($container) {
    * responsive-show-all to list of classes
    */
   $container.find('.topiclist.responsive-show-all > li > dl').each(function () {
-    var $this = $(this),
-      $block = $this.find('dt .responsive-show:last-child'),
-      first = true;
+    var $this = $(this);
+    var $block = $this.find('dt .responsive-show:last-child');
+    var first = true;
 
     // Create block that is visible only on mobile devices
     if (!$block.length) {
@@ -1028,9 +1028,9 @@ function parseDocument($container) {
 
     // Copy contents of each column
     $this.find('dd').not('.mark').each(function () {
-      var column = $(this),
-        $children = column.children(),
-        html = column.html();
+      var column = $(this);
+      var $children = column.children();
+      var html = column.html();
 
       if ($children.length === 1 && $children.text() === column.text()) {
         html = $children.html();
@@ -1050,9 +1050,9 @@ function parseDocument($container) {
    * responsive-show-columns to list of classes
    */
   $container.find('.topiclist.responsive-show-columns').each(function () {
-    var $list = $(this),
-      headers = [],
-      headersLength = 0;
+    var $list = $(this);
+    var headers = [];
+    var headersLength = 0;
 
     // Find all headers, get contents
     $list.prev('.topiclist').find('li.header dd').not('.mark').each(function () {
@@ -1066,9 +1066,9 @@ function parseDocument($container) {
 
     // Parse each row
     $list.find('dl').each(function () {
-      var $this = $(this),
-        $block = $this.find('dt .responsive-show:last-child'),
-        first = true;
+      var $this = $(this);
+      var $block = $this.find('dt .responsive-show:last-child');
+      var first = true;
 
       // Create block that is visible only on mobile devices
       if (!$block.length) {
@@ -1080,9 +1080,9 @@ function parseDocument($container) {
 
       // Copy contents of each column
       $this.find('dd').not('.mark').each(function (i) {
-        var column = $(this),
-          children = column.children(),
-          html = column.html();
+        var column = $(this);
+        var children = column.children();
+        var html = column.html();
 
         if (children.length === 1 && children.text() === column.text()) {
           html = children.html();
@@ -1104,22 +1104,22 @@ function parseDocument($container) {
    * Responsive tables
    */
   $container.find('table.table1').not('.not-responsive').each(function () {
-    var $this = $(this),
-      $th = $this.find('thead > tr > th'),
-      headers = [],
-      totalHeaders = 0,
-      i, headersLength;
+    var $this = $(this);
+    var $th = $this.find('thead > tr > th');
+    var headers = [];
+    var totalHeaders = 0;
+    var headersLength;
 
     // Find each header
     $th.each(function (column) {
-      var cell = $(this),
-        colspan = parseInt(cell.attr('colspan'), 10),
-        dfn = cell.attr('data-dfn'),
-        text = dfn ? dfn : cell.text();
+      var cell = $(this);
+      var colspan = parseInt(cell.attr('colspan'), 10);
+      var dfn = cell.attr('data-dfn');
+      var text = dfn ? dfn : cell.text();
 
       colspan = isNaN(colspan) || colspan < 1 ? 1 : colspan;
 
-      for (i = 0; i < colspan; i++) {
+      for (var i = 0; i < colspan; i++) {
         headers.push(text);
       }
       totalHeaders++;
@@ -1140,9 +1140,9 @@ function parseDocument($container) {
     }
 
     $this.find('tbody > tr').each(function () {
-      var row = $(this),
-        cells = row.children('td'),
-        column = 0;
+      var row = $(this);
+      var cells = row.children('td');
+      var column = 0;
 
       if (cells.length === 1) {
         row.addClass('big-column');
@@ -1150,9 +1150,9 @@ function parseDocument($container) {
       }
 
       cells.each(function () {
-        var cell = $(this),
-          colspan = parseInt(cell.attr('colspan'), 10),
-          text = $.trim(cell.text());
+        var cell = $(this);
+        var colspan = parseInt(cell.attr('colspan'), 10);
+        var text = $.trim(cell.text());
 
         if (headersLength <= column) {
           return;
@@ -1184,24 +1184,23 @@ function parseDocument($container) {
    * Responsive tabs
    */
   $container.find('#tabs, #minitabs').not('[data-skip-responsive]').each(function () {
-    var $this = $(this),
-      $ul = $this.children(),
-      $tabs = $ul.children().not('[data-skip-responsive]'),
-      $links = $tabs.children('a'),
-      $item = $ul.append('<li class="tab responsive-tab" style="display:none;"><a href="javascript:void(0);" class="responsive-tab-link">&nbsp;</a><div class="dropdown tab-dropdown" style="display: none;"><div class="pointer"><div class="pointer-inner" /></div><ul class="dropdown-contents" /></div></li>').find('li.responsive-tab'),
-      $menu = $item.find('.dropdown-contents'),
-      maxHeight = 0,
-      lastWidth = false,
-      responsive = false;
+    var $this = $(this);
+    var $ul = $this.children();
+    var $tabs = $ul.children().not('[data-skip-responsive]');
+    var $links = $tabs.children('a');
+    var $item = $ul.append('<li class="tab responsive-tab" style="display:none;"><a href="javascript:void(0);" class="responsive-tab-link">&nbsp;</a><div class="dropdown tab-dropdown" style="display: none;"><div class="pointer"><div class="pointer-inner" /></div><ul class="dropdown-contents" /></div></li>').find('li.responsive-tab');
+    var $menu = $item.find('.dropdown-contents');
+    var maxHeight = 0;
+    var lastWidth = false;
+    var responsive = false;
 
     $links.each(function () {
-      var $this = $(this);
-      maxHeight = Math.max(maxHeight, Math.max($this.outerHeight(true), $this.parent().outerHeight(true)));
+      maxHeight = Math.max(maxHeight, Math.max($(this).outerHeight(true), $(this).parent().outerHeight(true)));
     });
 
     function check() {
-      var width = $body.width(),
-        height = $this.height();
+      var width = $body.width();
+      var height = $this.height();
 
       if (!arguments.length && (!responsive || width <= lastWidth) && height <= maxHeight) {
         return;
@@ -1223,11 +1222,11 @@ function parseDocument($container) {
       $item.show();
       $menu.html('');
 
-      var $availableTabs = $tabs.filter(':not(.activetab, .responsive-tab)'),
-        total = $availableTabs.length,
-        i, $tab;
+      var $availableTabs = $tabs.filter(':not(.activetab, .responsive-tab)');
+      var total = $availableTabs.length;
+      var $tab;
 
-      for (i = total - 1; i >= 0; i--) {
+      for (var i = total - 1; i >= 0; i--) {
         $tab = $availableTabs.eq(i);
         $menu.prepend($tab.clone(true).removeClass('tab'));
         $tab.hide();
@@ -1266,10 +1265,10 @@ function parseDocument($container) {
    * Replace responsive text
    */
   $container.find('[data-responsive-text]').each(function () {
-    var $this = $(this),
-      fullText = $this.text(),
-      responsiveText = $this.attr('data-responsive-text'),
-      responsive = false;
+    var $this = $(this);
+    var fullText = $this.text();
+    var responsiveText = $this.attr('data-responsive-text');
+    var responsive = false;
 
     function check() {
       if ($(window).width() > 700) {
@@ -1296,23 +1295,22 @@ function parseDocument($container) {
    */
   if (styleConfig.staticNavigation) {
     $container.find('.navbar.tabbed > .inner').each(function (i) {
-      var nav = this,
-        navigation = $(nav),
-        isStatic = false,
-        parent = navigation.parent(),
-        inner,
-        $w = $(window),
-        minTopPosition = 0,
-        minWidth = styleConfig.staticNavigationMinWidth,
-        minHeight = styleConfig.staticNavigationMinHeight,
-        windowWidth,
-        queued = false,
-        throttled = false,
-        navbarBox = $('.inner.page-width.card'),
-        headerBox = $('#page-header-box.card'),
-        breakLine = 0,
-        currOffset = 0,
-        prevOffset = 0;
+      var nav = this;
+      var navigation = $(nav);
+      var isStatic = false;
+      var parent = navigation.parent();
+      var inner;
+      var $w = $(window);
+      var minTopPosition = 0;
+      var minWidth = styleConfig.staticNavigationMinWidth;
+      var minHeight = styleConfig.staticNavigationMinHeight;
+      var queued = false;
+      var throttled = false;
+      var navbarBox = $('.inner.page-width.card');
+      var headerBox = $('#page-header-box.card');
+      var breakLine = 0;
+      var currOffset = 0;
+      var prevOffset = 0;
 
       function enableStatic() {
         $('#page-header-box').css('padding-top', Math.floor(navigation.height()) + 'px');
@@ -1341,9 +1339,9 @@ function parseDocument($container) {
       }
 
       function check(checkHash) {
-        var windowTop = 0,
-          windowWidth = Math.floor($w.width()),
-          top;
+        var windowTop = 0;
+        var windowWidth = Math.floor($w.width());
+        var top;
 
         if (windowWidth < minWidth || $w.height() < minHeight) {
           if (isStatic) {
@@ -1437,11 +1435,11 @@ function parseDocument($container) {
    */
   if (window.matchMedia && window.matchMedia('(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.5dppx)').matches) {
     $container.find('img[data-src-hd]').each(function () {
-      var img = this,
-        $this = $(this),
-        hdImage = new Image(),
-        hdLoaded = false,
-        normalLoaded = false;
+      var img = this;
+      var $this = $(this);
+      var hdImage = new Image();
+      var hdLoaded = false;
+      var normalLoaded = false;
 
       function replaceImage() {
         $this.css('width', (img.naturalWidth ? img.naturalWidth : img.width) + 'px');
@@ -1476,8 +1474,8 @@ function parseDocument($container) {
    * Split buttons
    */
   $container.find('div.buttons a.button.icon-button').each(function () {
-    var $this = $(this),
-      words;
+    var $this = $(this);
+    var words;
 
     if ($this.children().length) return;
 
@@ -1515,23 +1513,23 @@ function parseDocument($container) {
    */
   if (styleConfig.collapseForums) {
     $container.find('.forabg li.header').each(function () {
-      var $this = $(this),
-        forum = $this.parent().next('ul.forums'),
-        id = 0,
-        toggled = false,
-        toggle;
+      var $this = $(this);
+      var forum = $this.parent().next('ul.forums');
+      var id = 0;
+      var toggled = false;
+      var toggle;
 
-      if (forum.length != 1) {
+      if (forum.length !== 1) {
         return;
       }
 
       // Find category id
       $('a[data-id]', $this).each(function () {
-        id = parseInt(this.getAttribute('data-id'));
+        id = parseInt(this.getAttribute('data-id'), 10);
       });
       if (!id) {
         forum.find('.forumtitle[data-id]:first').each(function () {
-          id = parseInt(this.getAttribute('data-id'));
+          id = parseInt(this.getAttribute('data-id'), 10);
           if (!isNaN(id)) {
             id = 'f' + id;
           }
@@ -1560,7 +1558,7 @@ function parseDocument($container) {
       });
 
       // Check default state
-      if (phpbb.getCookie('toggled-' + id, styleConfig.cookieConfig) == '1') {
+      if (phpbb.getCookie('toggled-' + id, styleConfig.cookieConfig) === '1') {
         forum.stop(true, true).slideUp(0);
         toggled = true;
         toggle.addClass('toggled');
@@ -1587,8 +1585,8 @@ jQuery(function ($) {
     }
   }
 
-  var transforms = ['transform', 'webkitTransform', 'msTransform'],
-    i, test;
+  var transforms = ['transform', 'webkitTransform', 'msTransform'];
+  var test;
 
   // Cookie configuration
   styleConfig.cookieConfig = {
@@ -1610,7 +1608,7 @@ jQuery(function ($) {
 
   // Check for transformations
   test = $('#phpbb').get(0);
-  for (i = 0; i < transforms.length; i++) {
+  for (var i = 0; i < transforms.length; i++) {
     if (typeof (test.style[transforms[i]]) !== 'undefined') {
       $('#phpbb').addClass('can-transform');
       break;
@@ -1619,13 +1617,14 @@ jQuery(function ($) {
 
   // Cookies
   phpbb.setCookie = function (name, value, config) {
+    // eslint-disable-next-line
     config = $.extend({
       prefix: '',
       path: '/'
     }, typeof config === 'object' ? config : {});
 
     document.cookie = config.prefix + name + '=' + encodeURIComponent(value) +
-      (config.expires === undefined ? '' : ';expires=' + config.expires.toUTCString()) +
+      (typeof config.expires === 'undefined' ? '' : ';expires=' + config.expires.toUTCString()) +
       (config.path ? ';path=' + config.path : '') +
       (config.domain ? ';domain=' + config.domain : '');
 
@@ -1633,8 +1632,10 @@ jQuery(function ($) {
   };
 
   phpbb.getCookie = function (name, config) {
-    var expr, cookie;
+    var expr;
+    var cookie;
 
+    // eslint-disable-next-line
     config = $.extend({
       prefix: '',
       path: '/'
@@ -1650,6 +1651,7 @@ jQuery(function ($) {
   };
 
   phpbb.deleteCookie = function (name, config) {
+    // eslint-disable-next-line
     config = $.extend({
       prefix: '',
       path: '/'

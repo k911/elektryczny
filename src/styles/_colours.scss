@@ -838,18 +838,6 @@ dd.profile-warnings {
   }
 }
 
-%icon-search-new {
-  &::after {
-    color: $primary-color;
-  }
-}
-
-%icon-search-misc {
-  &::after {
-    color: $primary-color;
-  }
-}
-
 .icon-home {
   &.breadcrumbs::after {
     color: $primary-color;

@@ -20,4 +20,6 @@ rules:
     eol-last: ["error", "always"]
     no-console: ["warn", {"allow": ["warn", "error", "info"]}]
     no-use-before-define: ["error", { "functions": false }]
-    no-unused-vars: ["error", {"argsIgnorePattern":"^next"}]
+    no-unused-vars: "off"
+    camelcase: "off"
+    new-cap: "off"
