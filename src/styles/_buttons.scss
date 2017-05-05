@@ -258,6 +258,7 @@ ul.linklist.bulletin > li.small-icon::before {
 // Post control buttons
 // ---------------------------------------------
 .post-buttons {
+  float: right;
   list-style: none;
   margin-top: 2px;
   .rtl & {
