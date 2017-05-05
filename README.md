@@ -15,6 +15,17 @@ tested on phpBB v3.2.0
 	`<phpBB>/styles/elektryczny/theme/stylesheet.css`
 2. That's all.
 
+## Google Analytics
+
+To template files is included commented out script for google analytics.
+You can simply uncomment that block and replace `XXXX` with your google analytics id.
+Following files need to be edited:
+- template/overall_footer.html
+- template/simple_footer.html
+- template/viewtopic_print.html
+
+You do NOT have to recompile theme afterwards.
+
 ## Development
 
 #### Theme is precompiled you do not have to follow next instructions unless you want to make some changes
