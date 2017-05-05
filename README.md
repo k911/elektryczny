@@ -1,29 +1,31 @@
-# Elektryczny
+# Elektryczny Theme
 
 phpbb3 theme
-theme created for private purposes (preview: http://elektryczny.tk/forum/)
+theme created for private purposes (preview: https://elektryczny.tk/forum/)
 
 tested on phpBB v3.2.0
 
 `<phpBB>` phpBB3 installation path (where file 'config.php' is located)
 
-## (optional) Installation
-
-#### Theme is precompiled you do not have to use this instructions unless you want to make some changes to this theme / fork
+## Installation
 
 1. Clone this repository to:
 	`<phpBB>/styles/`
 	so your path to stylesheet.css (main css file) should look like:
 	`<phpBB>/styles/elektryczny/theme/stylesheet.css`
-2. Open cmd at directory
-	`<phpBB>/styles/elektryczny/` 
-3. Run
-	`npm install`
-4. Then
-	`npm start`
-5. If no errors occured, theme should be ready to use.
+2. That's all.
 
-## Edit
+## Development
+
+#### Theme is precompiled you do not have to follow next instructions unless you want to make some changes
+
+1. Open cmd at directory
+	`<phpBB>/styles/elektryczny/` 
+2. Run
+	`npm install`
+3. Then
+	`npm start`
+4. If no errors occured, theme should be ready to use.
 
 - JS files are in:
 	`<phpBB>/styles/elektryczny/src/scripts/`
