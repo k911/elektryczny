@@ -45,7 +45,7 @@ You do NOT have to recompile theme afterwards.
 - Downloaded dependencies are keeped in
 	`<phpBB>/styles/elektryczny/src/download/`
 	
-## Comands
+## Commands
 
 - Intialization (compile, uglify, download and copy dependencies):
 	`npm start`
